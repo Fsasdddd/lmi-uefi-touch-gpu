@@ -49,7 +49,7 @@ index a92a4ef..ee349c4 100755
              job.setdefault('EnvironmentVariables', {})['OS_ACTIVITY_DT_MODE'] = 'YES'
          with open(f'{dest}/{name}', 'wb') as f:
 diff --git a/userland/src/inject.c b/userland/src/inject.c
-index c5e9d90..141429c 100644
+index c5e9d90..726eaf4 100644
 --- a/userland/src/inject.c
 +++ b/userland/src/inject.c
 @@ -33,6 +33,9 @@
@@ -79,16 +79,99 @@ index c5e9d90..141429c 100644
  			break;
  		}
  		for (int tenths = 0; tenths < 20 && !made->opened; tenths++) {
-@@ -933,7 +946,7 @@ make_service(IOHIDEventSystemClientRef client, const char *product, int page, in
+@@ -932,8 +945,90 @@ make_service(IOHIDEventSystemClientRef client, const char *product, int page, in
+ 	return service;
  }
  
- /* One frame of the touch screen: the hand, and under it every finger that is down or has just lifted. */
--static void
+-/* One frame of the touch screen: the hand, and under it every finger that is down or has just lifted. */
++#ifdef LMI_HID_USAGE_RECHECK
++/* The virtual service can already advertise 0xd/4 while BKIOHIDService's
++ * initial property reads cached 0/0 (v30). Re-read through the stock serialized
++ * property accessor before matching publishes the initialized sender. Never
++ * infer a device type from an event or change a nonzero cached usage. */
++static void (*input_usage_original)(id, SEL);
++
++static id
++input_usage_property(id service, CFStringRef key)
++{
++	return ((id (*)(id, SEL, id))objc_msgSend)(service, sel_registerName("propertyForKey:"), (id)key);
++}
++
++static unsigned
++input_usage_cached(id service, const char *selector)
++{
++	return ((unsigned (*)(id, SEL))objc_msgSend)(service, sel_registerName(selector));
++}
++
++static void
++input_usage_set(id service, const char *selector, unsigned value)
++{
++	((void (*)(id, SEL, unsigned))objc_msgSend)(service, sel_registerName(selector), value);
++}
++
+ static void
++input_usage_initial_properties(id self, SEL cmd)
++{
++	input_usage_original(self, cmd);
++	unsigned page = input_usage_cached(self, "primaryUsagePage");
++	unsigned usage = input_usage_cached(self, "primaryUsage");
++	if (page != 0 || usage != 0) {
++		return;
++	}
++	id product = input_usage_property(self, CFSTR("Product"));
++	id maker = input_usage_property(self, CFSTR("Manufacturer"));
++	if (!product || !maker || !CFEqual((CFTypeRef)product, CFSTR("Redwood touch screen")) ||
++	    !CFEqual((CFTypeRef)maker, CFSTR("redwood"))) {
++		return;
++	}
++	id p = input_usage_property(self, CFSTR("PrimaryUsagePage"));
++	id u = input_usage_property(self, CFSTR("PrimaryUsage"));
++	int actual_page = 0, actual_usage = 0;
++	if (!p || !u || CFGetTypeID((CFTypeRef)p) != CFNumberGetTypeID() ||
++	    CFGetTypeID((CFTypeRef)u) != CFNumberGetTypeID() ||
++	    !CFNumberGetValue((CFNumberRef)p, kCFNumberIntType, &actual_page) ||
++	    !CFNumberGetValue((CFNumberRef)u, kCFNumberIntType, &actual_usage) ||
++	    actual_page != HID_PAGE_DIGITIZER || actual_usage != HID_USAGE_TOUCH_SCREEN) {
++		say("LMI_HID_USAGE_RECHECK unavailable page=%d usage=%d\n", actual_page, actual_usage);
++		return;
++	}
++	input_usage_set(self, "setPrimaryUsagePage:", actual_page);
++	input_usage_set(self, "setPrimaryUsage:", actual_usage);
++	say("LMI_HID_USAGE_RECHECK restored page=%d usage=%d\n", actual_page, actual_usage);
++}
++
++static void
++input_usage_install(void)
++{
++	Class cls = objc_getClass("BKIOHIDService");
++	Method method = cls ? class_getInstanceMethod(cls, sel_registerName("_setUpInitialProperties")) : NULL;
++	IMP original = method ? method_getImplementation(method) : NULL;
++	if (!original || strcmp(method_getTypeEncoding(method), "v16@0:8") != 0 ||
++	    (uintptr_t)original != 0x1be1936f4UL + slide || *(const uint32_t *)original != 0xd10203ffU) {
++		say("LMI_HID_USAGE_RECHECK hook_refused\n");
++		return;
++	}
++	const char *selectors[] = { "propertyForKey:", "primaryUsagePage", "primaryUsage", "setPrimaryUsagePage:", "setPrimaryUsage:" };
++	const char *encodings[] = { "@24@0:8@16", "I16@0:8", "I16@0:8", "v20@0:8I16", "v20@0:8I16" };
++	for (unsigned i = 0; i < 5; i++) {
++		Method accessor = class_getInstanceMethod(cls, sel_registerName(selectors[i]));
++		if (!accessor || strcmp(method_getTypeEncoding(accessor), encodings[i]) != 0) {
++			say("LMI_HID_USAGE_RECHECK accessor_refused selector=%s\n", selectors[i]);
++			return;
++		}
++	}
++	input_usage_original = (void (*)(id, SEL))original;
++	method_setImplementation(method, (IMP)input_usage_initial_properties);
++	say("LMI_HID_USAGE_RECHECK installed\n");
++}
++#endif
++
++/* One frame of the touch screen: the hand, and under it every finger that is down or has just lifted. */
 +static int
  send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
  {
  	uint32_t change = t->type == REDWOOD_TOUCH_MOVE ? DIGITIZER_POSITION : DIGITIZER_RANGE | DIGITIZER_TOUCH;
-@@ -942,7 +955,12 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
+@@ -942,7 +1037,12 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
  	unsigned f = t->finger;
  
  	if (f >= MAX_FINGERS || (t->type != REDWOOD_TOUCH_DOWN && !fingers[f].touching)) {
@@ -102,7 +185,7 @@ index c5e9d90..141429c 100644
  	}
  	fingers[f].touching = t->type != REDWOOD_TOUCH_UP;
  	fingers[f].x = t->x / 65535.0;
-@@ -970,8 +988,17 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
+@@ -970,8 +1070,17 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
  		IOHIDEventAppendEvent(hand, finger, 0);
  		CFRelease(finger);
  	}
@@ -121,7 +204,7 @@ index c5e9d90..141429c 100644
  }
  
  /*
-@@ -1025,10 +1052,125 @@ micros(uint64_t absolute)
+@@ -1025,10 +1134,179 @@ micros(uint64_t absolute)
  	return absolute * timebase.numer / timebase.denom / 1000;
  }
  
@@ -169,7 +252,28 @@ index c5e9d90..141429c 100644
 + * from the standalone iOS 16.5 20F66 backboardd, not the shared cache. */
 +static long (*routing_process_original)(id, SEL, IOHIDEventRef *, id, id);
 +static id (*routing_service_original)(id, SEL, IOHIDEventRef, id, bool *);
++static id (*routing_state_original)(id, SEL, id);
 +static unsigned routing_process_count, routing_service_count;
++static unsigned routing_state_count;
++
++static id
++routing_state(id self, SEL cmd, id service)
++{
++	id state = routing_state_original(self, cmd, service);
++	unsigned n = __atomic_add_fetch(&routing_state_count, 1, __ATOMIC_RELAXED);
++	if (n <= 4) {
++		char text[1024] = "nil_or_description_unavailable";
++		CFStringRef description = state ? CFCopyDescription((CFTypeRef)state) : NULL;
++		if (description) {
++			CFStringGetCString(description, text, sizeof(text), kCFStringEncodingUTF8);
++			CFRelease(description);
++		}
++		for (size_t pos = 0; pos < strlen(text); pos += 160) {
++			say("LMI_BK_STATE n=%u part=%zu state=%p %.160s\n", n, pos / 160, state, text + pos);
++		}
++	}
++	return state;
++}
 +
 +static long
 +routing_process(id self, SEL cmd, IOHIDEventRef *event, id sender, id dispatcher)
@@ -198,6 +302,17 @@ index c5e9d90..141429c 100644
 +			    micros(IOHIDEventGetTimeStamp(event)), service,
 +			    from_touchpad ? *from_touchpad : -1, sender ? object_getClassName(sender) : "nil");
 +		}
++		if (n <= 2 && service) {
++			char text[1024] = "description_unavailable";
++			CFStringRef description = CFCopyDescription((CFTypeRef)service);
++			if (description) {
++				CFStringGetCString(description, text, sizeof(text), kCFStringEncodingUTF8);
++				CFRelease(description);
++			}
++			for (size_t pos = 0; pos < strlen(text); pos += 160) {
++				say("LMI_BK_SERVICE_INFO n=%u part=%zu %.160s\n", n, pos / 160, text + pos);
++			}
++		}
 +	}
 +	return service;
 +}
@@ -208,17 +323,23 @@ index c5e9d90..141429c 100644
 +	Class cls = objc_getClass("BKHIDDirectTouchEventProcessor");
 +	Method method = cls ? class_getInstanceMethod(cls, sel_registerName(name)) : NULL;
 +	IMP original = method ? method_getImplementation(method) : NULL;
-+	if (!original || strcmp(method_getTypeEncoding(method), encoding) != 0 ||
-+	    (uintptr_t)original != expected || *(const uint32_t *)original != instruction) {
-+		say("LMI_BK_HOOK selector=%s skipped\n", name);
++	const char *reason = !cls ? "class_missing" : !method ? "method_missing" : !original ? "no_imp" :
++	    strcmp(method_getTypeEncoding(method), encoding) != 0 ? "abi_mismatch" :
++	    (uintptr_t)original != expected ? "address_mismatch" :
++	    *(const uint32_t *)original != instruction ? "instruction_mismatch" : NULL;
++	if (reason) {
++		say("LMI_BK_HOOK selector=%s skipped=%s original=%p expected=%p\n", name, reason,
++		    original, (void *)expected);
 +		return NULL;
 +	}
-+	/* Publish the original before replacing the method. The install runs in the
-+	 * injected constructor, before the event server starts processing input. */
++	/* Publish the original before replacing the method. The input thread has
++	 * not started reading or dispatching the physical samples yet. */
 +	if (wrapper == (IMP)routing_process) {
 +		routing_process_original = (long (*)(id, SEL, IOHIDEventRef *, id, id))original;
-+	} else {
++	} else if (wrapper == (IMP)routing_service) {
 +		routing_service_original = (id (*)(id, SEL, IOHIDEventRef, id, bool *))original;
++	} else {
++		routing_state_original = (id (*)(id, SEL, id))original;
 +	}
 +	method_setImplementation(method, wrapper);
 +	say("LMI_BK_HOOK selector=%s installed\n", name);
@@ -228,11 +349,27 @@ index c5e9d90..141429c 100644
 +static void
 +input_routing_watch(void)
 +{
-+	uintptr_t image_slide = (uintptr_t)_dyld_get_image_vmaddr_slide(0);
++	/* Match the loaded executable's header, without assuming that dyld index
++	 * zero or the shared-cache slide describes this standalone Mach-O image. */
++	uintptr_t image_base = 0;
++	for (uint32_t i = 0; i < _dyld_image_count(); i++) {
++		const char *path = _dyld_get_image_name(i);
++		const char *name = path ? strrchr(path, '/') : NULL;
++		if (path && strcmp(name ? name + 1 : path, "backboardd") == 0) {
++			image_base = (uintptr_t)_dyld_get_image_header(i);
++			break;
++		}
++	}
++	if (!image_base) {
++		say("LMI_BK_HOOK executable_header_missing\n");
++		return;
++	}
 +	routing_replace("processEvent:sender:dispatcher:", "q40@0:8N^^{__IOHIDEvent}16@24@32",
-+	    0x10003aea0UL + image_slide, 0xd10243ffU, (IMP)routing_process);
++	    image_base + 0x3aea0UL, 0xd10243ffU, (IMP)routing_process);
 +	routing_replace("_determineServiceForEvent:sender:fromTouchPad:", "@40@0:8^{__IOHIDEvent=}16@24^B32",
-+	    0x10003cba0UL + image_slide, 0xd10183ffU, (IMP)routing_service);
++	    image_base + 0x3cba0UL, 0xd10183ffU, (IMP)routing_service);
++	routing_replace("_queue_digitizerStateForService:", "@24@0:8@16",
++	    image_base + 0x3c1a8UL, 0xa9bd57f6U, (IMP)routing_state);
 +}
 +#endif
 +
@@ -247,7 +384,7 @@ index c5e9d90..141429c 100644
  	IOHIDEventSystemClientRef client = NULL;
  	IOHIDServiceClientRef screen = NULL, buttons = NULL;
  	struct redwood_touch t;
-@@ -1044,6 +1186,10 @@ input_thread(__unused void *arg)
+@@ -1044,6 +1322,10 @@ input_thread(__unused void *arg)
  			touch_latency = strstr(arguments, "touch_lat=1") != NULL;
  		}
  		mach_timebase_info(&timebase);
@@ -258,10 +395,13 @@ index c5e9d90..141429c 100644
  	}
  	device = open(REDWOOD_TOUCH_DEVICE, O_RDONLY);
  	if (device < 0) {
-@@ -1072,9 +1218,14 @@ input_thread(__unused void *arg)
+@@ -1072,9 +1354,17 @@ input_thread(__unused void *arg)
  	if (screen == NULL) {
  		return NULL;
  	}
++#ifdef LMI_HID_ROUTING_TRACE
++	input_routing_watch();
++#endif
 +#ifdef LMI_INPUT_TRACE
 +	input_monitor_start();
 +#endif
@@ -273,7 +413,7 @@ index c5e9d90..141429c 100644
  
  		if (count++ < 4) {
  			say("redwood: input: sample type %u finger %u at %u %u\n", t.type, t.finger, t.x, t.y);
-@@ -1084,6 +1235,7 @@ input_thread(__unused void *arg)
+@@ -1084,6 +1374,7 @@ input_thread(__unused void *arg)
  				send_button(buttons, &t);
  			}
  		} else if (t.type == REDWOOD_TOUCH_DOWN && (touch_mode & 0xff) == TOUCH_MODE_WAKE && buttons != NULL) {
@@ -281,7 +421,7 @@ index c5e9d90..141429c 100644
  			/*
  			 * The display is off and a tap is to wake it. The lock button is what wakes it here:
  			 * press it for the finger, and keep the rest of this touch to ourselves.
-@@ -1095,16 +1247,32 @@ input_thread(__unused void *arg)
+@@ -1095,16 +1386,32 @@ input_thread(__unused void *arg)
  			send_button(buttons, &press);
  			waking |= 1u << (t.finger & 31);
  		} else if (waking & (1u << (t.finger & 31))) {
@@ -315,7 +455,7 @@ index c5e9d90..141429c 100644
  	}
  	say("redwood: input: %s: %s\n", REDWOOD_TOUCH_DEVICE, strerror(errno));
  	return NULL;
-@@ -1145,6 +1313,47 @@ container_manager_fixes(void)
+@@ -1145,6 +1452,47 @@ container_manager_fixes(void)
  	say("redwood: container manager: no personas\n");
  }
  
@@ -363,12 +503,12 @@ index c5e9d90..141429c 100644
  /* ---------------------------------------------------------------------------------------------- */
  
  /*
-@@ -1259,8 +1468,16 @@ redwood_init(void)
+@@ -1259,8 +1607,16 @@ redwood_init(void)
  		 * moved the start of the event server onto the moment make_service() now knows how to
  		 * survive; not tried again since, and until it is, the five seconds stay.)
  		 */
-+#ifdef LMI_HID_ROUTING_TRACE
-+		input_routing_watch();
++#ifdef LMI_HID_USAGE_RECHECK
++		input_usage_install();
 +#endif
  		input_start();
  	} else if (strncmp(name, "containermanagerd", 17) == 0) {

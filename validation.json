@@ -7,8 +7,10 @@
     "GPU_desktop": "PASS: adoption, independent DMA/parity, ring wrap, cache ordering, CB1/ASID2 invalidation, held releases; ASan/UBSan",
     "HID_startup": "PASS: 4 retry and 4 legacy controls; ASan/UBSan",
     "input_observers": "PASS: 414 unchanged forwards, 384 bounded logs; ASan/UBSan",
-    "HID_routing": "PASS: 5 refusal controls, 140 unchanged forwards, 64 bounded records; ASan/UBSan",
-    "Python_syntax": "PASS"
+    "HID_routing": "PASS: 5 refusal controls, 210 unchanged forwards and return/output values; bounded records; ASan/UBSan",
+    "Python_syntax": "PASS",
+    "HID_usage_recheck": "PASS: 1 restoration and 13 refusal/preservation controls; ASan/UBSan"
   },
-  "hardware_verified_by_this_publication": false
+  "hardware_verified_by_this_publication": false,
+  "touch_update_source_sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882"
 }

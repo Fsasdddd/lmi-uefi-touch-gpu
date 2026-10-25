@@ -53,7 +53,11 @@ result = dict(
     backboard_hooks=[x for x in lines if x.startswith('LMI_BK_HOOK ')],
     backboard_process_records=records('LMI_BK_PROCESS'),
     backboard_service_records=records('LMI_BK_SERVICE'),
-    backboard_touching_records=sum('presence: touching' in x for x in lines),
+    backboard_service_info_records=[x for x in lines if x.startswith('LMI_BK_SERVICE_INFO ')],
+    hid_usage_recheck_records=[x for x in lines if x.startswith('LMI_HID_USAGE_RECHECK ')],
+    backboard_state_records=[x for x in lines if x.startswith('LMI_BK_STATE ')],
+    backboard_touching_records=sum(x.startswith('LMI_BK_STATE ') and
+                                  ('presence: touching' in x or '; touching;' in x) for x in lines),
     ignored_touch_records=[x for x in lines if 'ignoring touch event' in x],
     digitizer_state_records=[x for x in lines if 'UISensor mode changing' in x],
     display_windows=[dict(frames=int(f),window_ms=int(ms),window_fps=int(hz),

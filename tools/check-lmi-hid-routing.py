@@ -27,6 +27,14 @@ struct method { IMP imp; const char *encoding; };
 typedef struct method *Method;
 struct event { uint32_t type; uint64_t timestamp; };
 typedef struct event *IOHIDEventRef;
+typedef const void *CFTypeRef;
+typedef const char *CFStringRef;
+#define kCFStringEncodingUTF8 0
+static CFStringRef CFCopyDescription(CFTypeRef object) {(void)object;return "observed state";}
+static bool CFStringGetCString(CFStringRef value,char *buffer,size_t length,int encoding) {
+    (void)encoding;snprintf(buffer,length,"%s",value);return true;
+}
+static void CFRelease(CFStringRef value) {(void)value;}
 static struct method method;
 static unsigned scenario, installs, logs, forwards;
 static uint32_t instruction = 0xd10243ffU;
@@ -44,7 +52,9 @@ static const char *object_getClassName(id object) {assert(object==wanted_sender)
 static uint32_t IOHIDEventGetType(IOHIDEventRef e) {return e->type;}
 static uint64_t IOHIDEventGetTimeStamp(IOHIDEventRef e) {return e->timestamp;}
 static uint64_t micros(uint64_t t) {return t;}
-static intptr_t _dyld_get_image_vmaddr_slide(unsigned image) {(void)image;return 0;}
+static uint32_t _dyld_image_count(void) {return 0;}
+static const char *_dyld_get_image_name(uint32_t i) {(void)i;return NULL;}
+static const void *_dyld_get_image_header(uint32_t i) {(void)i;return NULL;}
 static void say(const char *format,...) {
     if(!strncmp(format,"LMI_BK_PROCESS n=",17)||!strncmp(format,"LMI_BK_SERVICE n=",17)) logs++;
 }
@@ -59,6 +69,10 @@ static id original_service(id self,SEL cmd,IOHIDEventRef event,id sender,bool *t
     assert(touchpad==wanted_touchpad);if(touchpad)*touchpad=true;
     forwards++;return (id)0x650;
 }
+static id original_state(id self,SEL cmd,id service) {
+    assert(self==wanted_self && !strcmp(cmd,"state") && service==wanted_sender);
+    forwards++;return (id)0x123;
+}
 '''
 suffix = r'''
 int main(void) {
@@ -71,6 +85,7 @@ int main(void) {
         assert(installs-before==(scenario==0));
     }
     routing_process_original=original_process;routing_service_original=original_service;
+    routing_state_original=original_state;
     for(unsigned n=0;n<70;n++) {
         struct event event={n==65?3:11,1000+n}, other={11,2000+n}, before=event;
         wanted_event=(n==66||n==67)?NULL:&event;
@@ -84,18 +99,19 @@ int main(void) {
         assert(wanted_pointer==NULL||pointer==replacement);
         assert(routing_service(wanted_self,"service",wanted_event,wanted_sender,wanted_touchpad)==(id)0x650);
         assert(wanted_touchpad==NULL||touchpad);
+        assert(routing_state(wanted_self,"state",wanted_sender)==(id)0x123);
         assert(!memcmp(&event,&before,sizeof(event)));
     }
-    assert(forwards==140 && logs==64);
+    assert(forwards==210 && logs==64 && routing_state_count==70);
     assert(routing_process_count==67 && routing_service_count==67);
-    puts("PASS: 5 refusal controls; 140 unchanged forwards and return/output values; 64 bounded records");
+    puts("PASS: 5 refusal controls; 210 unchanged forwards and return/output values; bounded records");
 }
 '''
 (out/'check.c').write_text(prefix+body+suffix)
 subprocess.run(['clang','-O1','-g','-fsanitize=address,undefined','-fno-omit-frame-pointer',
                 str(out/'check.c'),'-o',str(out/'check')],check=True)
 subprocess.run([str(out/'check')],check=True)
-report=dict(result='PASS',refusal_controls=5,unchanged_forwards=140,bounded_logs=64,
+report=dict(result='PASS',refusal_controls=5,unchanged_forwards=210,bounded_logs=64,
             source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),hardware_verified=False)
 (out/'result.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report))

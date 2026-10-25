@@ -29,3 +29,20 @@ SMP 启动会改变输入服务与 event server 的时序。当前 `make_service
 v21/v22：192 个事件都被接受/观测，但实际交互仍完全无响应。v23：实际交互中触控恢复、动画卡顿；原严格 GPU 验证仍是 INCOMPLETE。由此只能确认这一轮交互恢复，不能推导长期触控修复完成，也不能仅凭 UIKit observer 无日志确定唯一丢点位置。
 
 相关测试：`check-lmi-hid-startup.py`、`check-lmi-input-observers.py`、`check-lmi-hid-routing.py`；分析器：`analyze-lmi-touch-log.py`。
+
+
+## 5. v31/v32：修正 BackBoard 的零用途属性缓存
+
+2026-10-25 的 v30 诊断在同一个 sender 上观察到：底层 IOHIDService 的 `primaryUsagePage=0xd`、`primaryUsage=0x4`，但 BKIOHIDService 的缓存仍为 `0/0`。因此，服务创建、事件被接受以及 HID monitor 收到事件都不足以证明它已被识别为主触屏。这个属性错配解释了该轮触屏路由异常；不据此断言此前所有故障都只有这一个原因。
+
+`inject.c` 新增显式开关 `LMI_HID_USAGE_RECHECK`：在原 `_setUpInitialProperties` 返回后、服务匹配发布前，通过系统原有的序列化 `propertyForKey:` 重新读取实际属性。只在两个缓存值均为零、Product 精确为 `Redwood touch screen`、Manufacturer 精确为 `redwood`，且 CFNumber 类型/取值验证得到 page=13、usage=4 时，经原 setter 更新缓存。任何非零缓存、其他设备、属性缺失、类型错误、转换失败或用途不符都保持原行为；不从事件猜设备类型、不强制覆盖其他服务。
+
+安装前检查 BKIOHIDService 类、原方法 ABI、带 slide 的固定入口、首条指令及五个 accessor 的 ABI。它只适配已核对的 iOS 16.5 构建，不是跨版本通用 hook。原初始化始终先执行一次；日志记录 `installed` 和 `restored page=13 usage=4`。
+
+镜像构建通过 `build-lmi-gpu-gl-image.py --hid-usage-recheck` 启用，并在 manifest 中记录该开关。测试器要求 14 场景主机检查 PASS，且检查报告、候选 inject.c 和镜像 manifest 的源码哈希一致。`check-lmi-hid-usage.py` 覆盖一个恢复场景和 13 个拒绝/保持场景。
+
+同时改进有界路由观察：通过已加载 backboardd 的 Mach-O header 定位独立可执行文件，不混用 shared-cache slide；增加 service/digitizer state 摘录；将路由 observer 安装放到输入服务创建后、物理采样投递前。observer 保持原转发、返回值和输出参数，不代替修复本身。
+
+v31/v32 使用同一候选镜像、八核、两轮各 180 秒的有界 RAM 测试。两轮实际交互均确认触控正常、设置可打开；均出现用途恢复日志，并恢复 Android、核对 boot/dtbo 哈希一致。v31 原整体结果仍为 INCOMPLETE，v32 checkpoint 流程 PASS；触控交互验证与整体测试判定分别保留。当前只确认这两轮的修正有效，不代表长时间稳定或全手势覆盖。动画卡顿和上下撕裂仍待处理。
+
+公开证据见 `evidence/v31-touch-fix.json`、`evidence/v32-touch-fix.json`；两轮 inject.c 的 SHA256 与本次公开源码一致：`12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882`。

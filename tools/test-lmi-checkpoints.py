@@ -338,10 +338,18 @@ if args.ios_probe:
             routing_check=root/'out/lmi-hid-routing-host/result.json'
             routing=json.loads(routing_check.read_text())
             assert routing['result']=='PASS' and routing['refusal_controls']==5
-            assert routing['unchanged_forwards']==140 and routing['bounded_logs']==64
+            assert routing['unchanged_forwards'] in (140,210) and routing['bounded_logs']==64
             assert routing['source_sha256']==gl_manifest['input_trace_source_sha256']['inject.c']
             shutil.copy2(routing_check,out/'hid-routing-host-check.json')
             shutil.copy2(root/'tools/check-lmi-hid-routing.py',provenance/'check-lmi-hid-routing.py')
+        if gl_manifest.get('hid_usage_recheck'):
+            usage_check=root/'out/lmi-hid-usage-host/result.json'
+            usage=json.loads(usage_check.read_text())
+            assert usage['result']=='PASS' and usage['scenarios']==14
+            assert usage['source_sha256']==gl_manifest['input_trace_source_sha256']['inject.c']
+            assert hashlib.sha256((candidate.parent/'inject.c').read_bytes()).hexdigest()==usage['source_sha256']
+            shutil.copy2(usage_check,out/'hid-usage-host-check.json')
+            shutil.copy2(root/'tools/check-lmi-hid-usage.py',provenance/'check-lmi-hid-usage.py')
 subprocess.run(['python',str(root/'hackios/xnuloader/mkpayload.py'),'-o',str(payload),*items,'--cmdline=-v','--checkpoint=1'],check=True)
 adb=['D:/Gaoji/adb.exe','-s','YOUR_ADB_SERIAL']
 fb=['D:/Gaoji/fastboot.exe']

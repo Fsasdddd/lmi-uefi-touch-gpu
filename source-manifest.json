@@ -1295,19 +1295,19 @@
     },
     {
       "path": "docs/BUILD.zh-CN.md",
-      "sha256": "d49ff77844d421823d58855203fce13ebdd19e040720faed26d9f415f4c3762e"
+      "sha256": "7cd15da5b1350c142a46b47692a10b2f9d76a1085aa264a5442093ba65e22030"
     },
     {
       "path": "docs/EVIDENCE.zh-CN.md",
-      "sha256": "2aa08052d5691a42d838fc99e4fcc54d53f11d48e12a2b0a811551fb8081c0a4"
+      "sha256": "5f0b63239199cff457a1aab8fb5915499fafd0ca8cd2ab2d57d5207f7c8ad1c3"
     },
     {
       "path": "docs/GPU.zh-CN.md",
-      "sha256": "e0f59775cd3d8e8c7c81f41ac64baf515f21bd9a9691bc535272e08fc21d08b4"
+      "sha256": "1721fbe304cae30d0b611a3652f47497a066f0506cab51fd0e0490849b115f3d"
     },
     {
       "path": "docs/TOUCH.zh-CN.md",
-      "sha256": "7f3601c7cee932e9d86e76a2f732cb296a6f60ef7dbe1fb57c8ea99fa97882b1"
+      "sha256": "a4d95f305189d2c9354600c7cf4f466327ff102ba6846654e4346ca0f39ed0c9"
     },
     {
       "path": "docs/UEFI.zh-CN.md",
@@ -1344,6 +1344,14 @@
     {
       "path": "evidence/v23-user-interaction.json",
       "sha256": "c421be26ac940380d3035f50260a1fad792a9694fbc70c1dfd609f408699ddc6"
+    },
+    {
+      "path": "evidence/v31-touch-fix.json",
+      "sha256": "11f8f9dbd64900d64cbc80f412c8b1fc547ffbbc34e8bc03f41b7f155b84f175"
+    },
+    {
+      "path": "evidence/v32-touch-fix.json",
+      "sha256": "f36d3bf52ba0e3bc6b196dc0b87aef4a239b18e513bb8a2a96f1626694938327"
     },
     {
       "path": "LICENSE",
@@ -1387,7 +1395,7 @@
     },
     {
       "path": "patches/userland-local-changes.patch",
-      "sha256": "e7411a006fde1ff7390fcba86a06e84eb325ed1c719c52a1706841800c589b3f"
+      "sha256": "df84e18c275003c5fbd85dc40761ad04e79a6be0ba9765316916e8853371e919"
     },
     {
       "path": "port-drafts/uefi/lmi.toml",
@@ -1443,7 +1451,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "4e35c54ea54ca202294166a3a5d245c05bbf2b7539f9931a26ce09579be9568f"
+      "sha256": "d67ab4bf6abd8419a725ce5cfe041c4186c7558db1645626f4a4c1db4a2cb2d6"
     },
     {
       "path": "tools/analyze-lmi-loader-memory.py",
@@ -1451,7 +1459,7 @@
     },
     {
       "path": "tools/analyze-lmi-touch-log.py",
-      "sha256": "f4c107b643422a0530d7f2421a7a239adec249be5c023d9fa1aeb20202bbaf84"
+      "sha256": "61faf57f0106879a5670b6280ba74016712da41bdc4191ab93048eb5a5671faf"
     },
     {
       "path": "tools/analyze_memory.py",
@@ -1515,7 +1523,7 @@
     },
     {
       "path": "tools/build-lmi-gpu-gl-image.py",
-      "sha256": "c8ddc67bc4a5214070d51cd3c9c976d4738c15da1ffd4a020c8a997781421048"
+      "sha256": "e46474d0974f1b0dfad80f24fee3e0c5cb674f0b53cbfa460a77aa56b8e9bc35"
     },
     {
       "path": "tools/build-lmi-gpu-image.py",
@@ -1759,11 +1767,15 @@
     },
     {
       "path": "tools/check-lmi-hid-routing.py",
-      "sha256": "d36893e978fc0a8cada494d98745675d363e3e81c474aa5d85eec33753dcad45"
+      "sha256": "a2107502b16568b9f3c87151bc6bbef71a22f5f3477c629caea8324494f85191"
     },
     {
       "path": "tools/check-lmi-hid-startup.py",
       "sha256": "fbd7e7b0053cb72395eb2eefa5ffc528478602687475b985a90f9070c39ea06c"
+    },
+    {
+      "path": "tools/check-lmi-hid-usage.py",
+      "sha256": "d88cc3d37526c51d90ed02ef19a30a15d47e158e5a54b1ecfcf919aa4a6d4b3d"
     },
     {
       "path": "tools/check-lmi-input-observers.py",
@@ -2043,7 +2055,7 @@
     },
     {
       "path": "tools/test-lmi-checkpoints.py",
-      "sha256": "7c3c8d59869ae76fe7860ca9837b484e7c29352b960af08a5e52021c86a3df55"
+      "sha256": "e25fa81d0e73bf2f7de0033860e2489c9953e5a1176dc6769b41bf622d5a9af5"
     },
     {
       "path": "tools/test-lmi-loader.py",
@@ -2363,7 +2375,7 @@
     },
     {
       "path": "userland-source/userland/src/inject.c",
-      "sha256": "3091aaa29426f44084392a8654bef14093400ec05149e9292952c8719561142b"
+      "sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882"
     },
     {
       "path": "userland-source/userland/src/inject_sb.c",
@@ -2387,7 +2399,46 @@
     },
     {
       "path": "validation.json",
-      "sha256": "316257eec0fed9429bc0db8fe1a3902e99baeefb18e2b891a938dd5de4e42f4a"
+      "sha256": "75afaa1458bf8e748bd02a4087b45983800255528e3bc1d9e3880a13793a58b5"
     }
-  ]
+  ],
+  "touch_update": {
+    "captured_at": "2026-10-25T15:23:08.001498+08:00",
+    "tested_rounds": [
+      "v31",
+      "v32"
+    ],
+    "source_files": [
+      {
+        "path": "tools/analyze-lmi-touch-log.py",
+        "original_sha256": "61faf57f0106879a5670b6280ba74016712da41bdc4191ab93048eb5a5671faf",
+        "sha256": "61faf57f0106879a5670b6280ba74016712da41bdc4191ab93048eb5a5671faf"
+      },
+      {
+        "path": "tools/test-lmi-checkpoints.py",
+        "original_sha256": "18bdaf9fb8b12ddff6c66451d622c1e1b4fcfbd9b465d1d6925f6f61b29cdd52",
+        "sha256": "e25fa81d0e73bf2f7de0033860e2489c9953e5a1176dc6769b41bf622d5a9af5"
+      },
+      {
+        "path": "tools/check-lmi-hid-usage.py",
+        "original_sha256": "d88cc3d37526c51d90ed02ef19a30a15d47e158e5a54b1ecfcf919aa4a6d4b3d",
+        "sha256": "d88cc3d37526c51d90ed02ef19a30a15d47e158e5a54b1ecfcf919aa4a6d4b3d"
+      },
+      {
+        "path": "tools/check-lmi-hid-routing.py",
+        "original_sha256": "a2107502b16568b9f3c87151bc6bbef71a22f5f3477c629caea8324494f85191",
+        "sha256": "a2107502b16568b9f3c87151bc6bbef71a22f5f3477c629caea8324494f85191"
+      },
+      {
+        "path": "tools/build-lmi-gpu-gl-image.py",
+        "original_sha256": "e46474d0974f1b0dfad80f24fee3e0c5cb674f0b53cbfa460a77aa56b8e9bc35",
+        "sha256": "e46474d0974f1b0dfad80f24fee3e0c5cb674f0b53cbfa460a77aa56b8e9bc35"
+      },
+      {
+        "path": "userland-source/userland/src/inject.c",
+        "original_sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882",
+        "sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882"
+      }
+    ]
+  }
 }

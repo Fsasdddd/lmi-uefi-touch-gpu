@@ -28,6 +28,7 @@ clang -O1 -g -fsanitize=address,undefined tools/check-lmi-touch-timing.c -o out/
 ./out/touch-timing
 clang -O1 -g -fsanitize=address,undefined tools/check-lmi-gpu-desktop.c -o out/gpu-desktop
 ./out/gpu-desktop
+python3 tools/check-lmi-hid-usage.py
 python3 tools/check-lmi-hid-startup.py
 python3 tools/check-lmi-input-observers.py
 python3 tools/check-lmi-hid-routing.py
@@ -46,3 +47,5 @@ python3 tools/build-lmi-gpu-mode.py 46 --tile --desktop --ios-observe-seconds 18
 `build-lmi-gpu-gl-image.py` 仅组装已有 Mesa/shim/probe 产物；不能代替 Mesa 编译。`--ios-boot-image` 才替换 checkpoint63 最终 md1 候选，`--root-image` 不是等价参数。构建需核对 kernel、loader、源文件、timing header、镜像 manifest 的绑定。
 
 `test-lmi-checkpoints.py` 是会操作真实设备的历史测试器；本次发布未运行它。研究者应自行核实有界 RAM 返回、设备标识和前置条件。原测试采用临时 fastboot boot，不提供或要求分区刷写。
+
+触控用途缓存修正通过 `build-lmi-gpu-gl-image.py --hid-usage-recheck` 显式启用，需与已有 payload、固件、trace/ABI 检查保持匹配。v31/v32 的成功结论仅对应已归档的同一镜像，不默认推广到其他构建。
