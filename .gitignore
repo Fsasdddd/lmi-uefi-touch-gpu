@@ -1,0 +1,10 @@
+out/
+__pycache__/
+*.pyc
+*.img
+*.apfs
+*.dylib
+*.bin
+*.elf
+*.o
+*.vhdx

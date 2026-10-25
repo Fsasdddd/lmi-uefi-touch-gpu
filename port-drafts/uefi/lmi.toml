@@ -1,0 +1,6 @@
+# Offline compilation profile. Hardware validation is pending.
+[status]
+model_count = 1
+[uefi_fd]
+base = 0x9fc00000
+size = 0x300000
