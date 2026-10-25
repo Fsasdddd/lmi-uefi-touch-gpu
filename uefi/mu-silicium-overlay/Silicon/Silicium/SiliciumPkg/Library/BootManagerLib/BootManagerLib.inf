@@ -1,0 +1,58 @@
+##
+#  Copyright (C) Microsoft Corporation. All rights reserved.
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010018
+  BASE_NAME                      = BootManagerLib
+  FILE_GUID                      = DF8F3324-5448-46BC-872C-BE198ECF2F76
+  VERSION_STRING                 = 1.0
+  MODULE_TYPE                    = DXE_DRIVER
+  UEFI_SPECIFICATION_VERSION     = 2.7
+  LIBRARY_CLASS                  = PlatformBootManagerLib|DXE_DRIVER
+
+[Sources]
+  BootManager.c
+  XnuLoader.c
+  KeyCallback.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  PcBdsPkg/PcBdsPkg.dec
+  MsCorePkg/MsCorePkg.dec
+  MsGraphicsPkg/MsGraphicsPkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SiliciumPkg/SiliciumPkg.dec
+
+[LibraryClasses]
+  UefiLib
+  PcdLib
+  DebugLib
+  AcpiTableUpdateLib
+  DeviceBootManagerLib
+  UefiRuntimeServicesTableLib
+  UefiBootServicesTableLib
+  SecureBootHandlerLib
+  MemoryAllocationLib
+  MsBootOptionsLib
+  BootGraphicsLib
+  DevicePathLib
+  PrintLib
+  BaseLib
+  BaseMemoryLib
+
+[Pcd]
+  gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut
+
+[Guids]
+  gEfiEndOfDxeEventGroupGuid
+
+[Protocols]
+  gKeypadDeviceProtocolGuid
+  gEfiGraphicsOutputProtocolGuid
+  gEfiSimpleTextInputExProtocolGuid
+  gEfiBlockIoProtocolGuid
+  gEfiPartitionInfoProtocolGuid
+
+  gEfiUsbFunctionIoProtocolGuid

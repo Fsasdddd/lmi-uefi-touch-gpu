@@ -1,0 +1,471 @@
+diff --git a/userland/build.sh b/userland/build.sh
+index 582866f..ed2f7f3 100755
+--- a/userland/build.sh
++++ b/userland/build.sh
+@@ -362,7 +362,14 @@ if [ -d $IOS/rootfs/usr/lib ]; then
+ 		fi
+ 	fi
+ 	# (drawable_test is built in the same block as surf_test, so it is copied with it)
+-	cp obj/hello_dyn obj/svc_test obj/surf_test obj/drawable_test obj/rwtouch obj/mg_test root/bin/
++	cp obj/hello_dyn obj/svc_test obj/surf_test obj/rwtouch obj/mg_test root/bin/
++	# This checkout's PREBUILT set does not include the optional GPU import test.
++	# The regular iOS boot recipe does not run it; never substitute a fake binary.
++	if [ -f obj/drawable_test ]; then
++		cp obj/drawable_test root/bin/
++	else
++		echo "build.sh: drawable_test unavailable in PREBUILT; GPU diagnostic recipe requires a source build"
++	fi
+ 	[ -f obj/cpu_test ] && cp obj/cpu_test root/bin/        # (a prebuilt/ from before this program has none)
+ 	[ -f obj/cow_test ] && cp obj/cow_test root/bin/
+ 	[ -f obj/cg_test ] && cp obj/cg_test root/bin/
+diff --git a/userland/mkjobs.py b/userland/mkjobs.py
+index a92a4ef..ee349c4 100755
+--- a/userland/mkjobs.py
++++ b/userland/mkjobs.py
+@@ -281,9 +281,9 @@ for label in labels:
+     # it. The boot of 22 October showed what declining costs: SpringBoard's icons stopped being
+     # drawn, because its layers ask for one of those formats and a refused texture is a layer
+     # that never appears.
+-    for name in ('RWA_PACKED16',):
+-        if os.environ.get(name):
+-            job.setdefault('EnvironmentVariables', {})[name] = os.environ[name]
++    for env_name in ('RWA_PACKED16',):
++        if os.environ.get(env_name):
++            job.setdefault('EnvironmentVariables', {})[env_name] = os.environ[env_name]
+     # a job that is named is wanted, whatever hardware it says it is for: wifid's asks for a node "wlan" in the
+     # device tree, which the loader's tree does not have yet
+     job.pop('_LimitLoadToDeviceTree', None)
+@@ -322,9 +322,9 @@ if rest:
+         # it. The boot of 22 October showed what declining costs: SpringBoard's icons stopped being
+         # drawn, because its layers ask for one of those formats and a refused texture is a layer
+         # that never appears.
+-        for name in ('RWA_PACKED16',):
+-            if os.environ.get(name):
+-                job.setdefault('EnvironmentVariables', {})[name] = os.environ[name]
++        for env_name in ('RWA_PACKED16',):
++            if os.environ.get(env_name):
++                job.setdefault('EnvironmentVariables', {})[env_name] = os.environ[env_name]
+         if label in oslog:
+             job.setdefault('EnvironmentVariables', {})['OS_ACTIVITY_DT_MODE'] = 'YES'
+         with open(f'{dest}/{name}', 'wb') as f:
+diff --git a/userland/src/inject.c b/userland/src/inject.c
+index c5e9d90..141429c 100644
+--- a/userland/src/inject.c
++++ b/userland/src/inject.c
+@@ -33,6 +33,9 @@
+ #include <fcntl.h>
+ #include <mach/mach.h>
+ #include <mach/mach_time.h>
++#ifdef LMI_HID_ROUTING_TRACE
++#include <mach-o/dyld.h>
++#endif
+ #include <notify.h>
+ #include <objc/message.h>
+ #include <objc/runtime.h>
+@@ -916,6 +919,16 @@ make_service(IOHIDEventSystemClientRef client, const char *product, int page, in
+ 		made->opened = false;
+ 		service = IOHIDVirtualServiceClientCreateWithCallbacks(client, properties, &service_callbacks, NULL, made);
+ 		if (service == NULL) {
++#ifdef LMI_HID_SIMPLE_RETRY
++			/* An SMP boot can reach this before the event server will create
++			 * a simple client's service. Keep the supported sending client and
++			 * its scheduled connection; let it reconnect before trying again. */
++			if (attempt < 20) {
++				say("LMI_HID_CREATE_RETRY product=%s attempt=%d\n", product, attempt);
++				usleep(250000);
++				continue;
++			}
++#endif
+ 			break;
+ 		}
+ 		for (int tenths = 0; tenths < 20 && !made->opened; tenths++) {
+@@ -933,7 +946,7 @@ make_service(IOHIDEventSystemClientRef client, const char *product, int page, in
+ }
+ 
+ /* One frame of the touch screen: the hand, and under it every finger that is down or has just lifted. */
+-static void
++static int
+ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
+ {
+ 	uint32_t change = t->type == REDWOOD_TOUCH_MOVE ? DIGITIZER_POSITION : DIGITIZER_RANGE | DIGITIZER_TOUCH;
+@@ -942,7 +955,12 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
+ 	unsigned f = t->finger;
+ 
+ 	if (f >= MAX_FINGERS || (t->type != REDWOOD_TOUCH_DOWN && !fingers[f].touching)) {
+-		return;
++		return -1;
++	}
++	/* A release report can contain the last movement of a short swipe. Keep
++	 * that position change in the HID mask as well as the touch transition. */
++	if (fingers[f].touching && (fingers[f].x != t->x / 65535.0 || fingers[f].y != t->y / 65535.0)) {
++		change |= DIGITIZER_POSITION;
+ 	}
+ 	fingers[f].touching = t->type != REDWOOD_TOUCH_UP;
+ 	fingers[f].x = t->x / 65535.0;
+@@ -970,8 +988,17 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
+ 		IOHIDEventAppendEvent(hand, finger, 0);
+ 		CFRelease(finger);
+ 	}
+-	IOHIDVirtualServiceClientDispatchEvent(screen, hand);
++	Boolean delivered = IOHIDVirtualServiceClientDispatchEvent(screen, hand);
++#ifdef LMI_HID_SIMPLE_RETRY
++	static unsigned deliveries, failures;
++	if (deliveries++ < 12 || (!delivered && failures++ < 12)) {
++		say("LMI_HID_DISPATCH n=%u type=%u accepted=%d\n", deliveries, t->type, delivered != 0);
++	}
++#else
++	(void)delivered;
++#endif
+ 	CFRelease(hand);
++	return delivered != 0;
+ }
+ 
+ /*
+@@ -1025,10 +1052,125 @@ micros(uint64_t absolute)
+ 	return absolute * timebase.numer / timebase.denom / 1000;
+ }
+ 
++#ifdef LMI_INPUT_TRACE
++extern void IOHIDEventSystemClientRegisterEventCallback(IOHIDEventSystemClientRef client,
++    void (*callback)(void *, void *, void *, IOHIDEventRef), void *target, void *refcon);
++extern uint32_t IOHIDEventGetType(IOHIDEventRef event);
++extern uint64_t IOHIDEventGetTimeStamp(IOHIDEventRef event);
++extern uint64_t IOHIDEventGetSenderID(IOHIDEventRef event);
++
++/* A receiving monitor is independent of the service's dispatch return value.
++ * It observes the event server without replacing its client or changing events.
++ * This still does not prove delivery to SpringBoard or an application's UI. */
++static void
++input_observed(__unused void *target, __unused void *refcon, __unused void *sender, IOHIDEventRef event)
++{
++	static unsigned count;
++	if (event == NULL || IOHIDEventGetType(event) != 11 || count >= 192) {
++		return;
++	}
++	count++;
++	say("LMI_HID_OBSERVED n=%u posted_us=%llu observed_us=%llu sender=%llu\n", count,
++	    micros(IOHIDEventGetTimeStamp(event)), micros(mach_absolute_time()), IOHIDEventGetSenderID(event));
++}
++
++static void
++input_monitor_start(void)
++{
++	IOHIDEventSystemClientRef monitor = IOHIDEventSystemClientCreateWithType(NULL, 1, NULL); /* monitor */
++	if (monitor == NULL) {
++		say("LMI_HID_MONITOR unavailable\n");
++		return;
++	}
++	IOHIDEventSystemClientRegisterEventCallback(monitor, input_observed, NULL, NULL);
++	IOHIDEventSystemClientScheduleWithDispatchQueue(monitor, dispatch_queue_create("redwood.input-monitor", NULL));
++	say("LMI_HID_MONITOR scheduled\n");
++	/* Keep the created reference for the bounded RAM run, like the sending client. */
++}
++#endif
++
++#ifdef LMI_HID_ROUTING_TRACE
++/* Bounded observation of the stock BackBoard processor, without os_log's
++ * startup overhead. Both wrappers preserve every argument and return value.
++ * The exact method encodings, image-relative IMPs and first instructions are
++ * from the standalone iOS 16.5 20F66 backboardd, not the shared cache. */
++static long (*routing_process_original)(id, SEL, IOHIDEventRef *, id, id);
++static id (*routing_service_original)(id, SEL, IOHIDEventRef, id, bool *);
++static unsigned routing_process_count, routing_service_count;
++
++static long
++routing_process(id self, SEL cmd, IOHIDEventRef *event, id sender, id dispatcher)
++{
++	bool digitizer = event && *event && IOHIDEventGetType(*event) == 11;
++	uint64_t timestamp = digitizer ? IOHIDEventGetTimeStamp(*event) : 0;
++	long result = routing_process_original(self, cmd, event, sender, dispatcher);
++	if (digitizer) {
++		unsigned n = __atomic_add_fetch(&routing_process_count, 1, __ATOMIC_RELAXED);
++		if (n <= 32) {
++			say("LMI_BK_PROCESS n=%u posted_us=%llu result=%ld sender_class=%s\n", n,
++			    micros(timestamp), result, sender ? object_getClassName(sender) : "nil");
++		}
++	}
++	return result;
++}
++
++static id
++routing_service(id self, SEL cmd, IOHIDEventRef event, id sender, bool *from_touchpad)
++{
++	id service = routing_service_original(self, cmd, event, sender, from_touchpad);
++	if (event && IOHIDEventGetType(event) == 11) {
++		unsigned n = __atomic_add_fetch(&routing_service_count, 1, __ATOMIC_RELAXED);
++		if (n <= 32) {
++			say("LMI_BK_SERVICE n=%u posted_us=%llu service=%p touchpad=%d sender_class=%s\n", n,
++			    micros(IOHIDEventGetTimeStamp(event)), service,
++			    from_touchpad ? *from_touchpad : -1, sender ? object_getClassName(sender) : "nil");
++		}
++	}
++	return service;
++}
++
++static IMP
++routing_replace(const char *name, const char *encoding, uintptr_t expected, uint32_t instruction, IMP wrapper)
++{
++	Class cls = objc_getClass("BKHIDDirectTouchEventProcessor");
++	Method method = cls ? class_getInstanceMethod(cls, sel_registerName(name)) : NULL;
++	IMP original = method ? method_getImplementation(method) : NULL;
++	if (!original || strcmp(method_getTypeEncoding(method), encoding) != 0 ||
++	    (uintptr_t)original != expected || *(const uint32_t *)original != instruction) {
++		say("LMI_BK_HOOK selector=%s skipped\n", name);
++		return NULL;
++	}
++	/* Publish the original before replacing the method. The install runs in the
++	 * injected constructor, before the event server starts processing input. */
++	if (wrapper == (IMP)routing_process) {
++		routing_process_original = (long (*)(id, SEL, IOHIDEventRef *, id, id))original;
++	} else {
++		routing_service_original = (id (*)(id, SEL, IOHIDEventRef, id, bool *))original;
++	}
++	method_setImplementation(method, wrapper);
++	say("LMI_BK_HOOK selector=%s installed\n", name);
++	return original;
++}
++
++static void
++input_routing_watch(void)
++{
++	uintptr_t image_slide = (uintptr_t)_dyld_get_image_vmaddr_slide(0);
++	routing_replace("processEvent:sender:dispatcher:", "q40@0:8N^^{__IOHIDEvent}16@24@32",
++	    0x10003aea0UL + image_slide, 0xd10243ffU, (IMP)routing_process);
++	routing_replace("_determineServiceForEvent:sender:fromTouchPad:", "@40@0:8^{__IOHIDEvent=}16@24^B32",
++	    0x10003cba0UL + image_slide, 0xd10183ffU, (IMP)routing_service);
++}
++#endif
++
+ static void *
+ input_thread(__unused void *arg)
+ {
++#ifdef LMI_HID_SIMPLE_RETRY
++	static const int types[] = { HID_CLIENT_SIMPLE };
++#else
+ 	static const int types[] = { HID_CLIENT_SIMPLE, HID_CLIENT_RATE_CONTROLLED };
++#endif
+ 	IOHIDEventSystemClientRef client = NULL;
+ 	IOHIDServiceClientRef screen = NULL, buttons = NULL;
+ 	struct redwood_touch t;
+@@ -1044,6 +1186,10 @@ input_thread(__unused void *arg)
+ 			touch_latency = strstr(arguments, "touch_lat=1") != NULL;
+ 		}
+ 		mach_timebase_info(&timebase);
++#ifdef LMI_INPUT_TRACE
++		say("LMI_INPUT_TIMEBASE numer=%u denom=%u now=%llu\n", timebase.numer, timebase.denom,
++		    mach_absolute_time());
++#endif
+ 	}
+ 	device = open(REDWOOD_TOUCH_DEVICE, O_RDONLY);
+ 	if (device < 0) {
+@@ -1072,9 +1218,14 @@ input_thread(__unused void *arg)
+ 	if (screen == NULL) {
+ 		return NULL;
+ 	}
++#ifdef LMI_INPUT_TRACE
++	input_monitor_start();
++#endif
+ 
+ 	while (read(device, &t, sizeof(t)) == (ssize_t)sizeof(t)) {
+ 		uint64_t read_at = mach_absolute_time();
++		int accepted = -1;
++		const char *route = "button";
+ 
+ 		if (count++ < 4) {
+ 			say("redwood: input: sample type %u finger %u at %u %u\n", t.type, t.finger, t.x, t.y);
+@@ -1084,6 +1235,7 @@ input_thread(__unused void *arg)
+ 				send_button(buttons, &t);
+ 			}
+ 		} else if (t.type == REDWOOD_TOUCH_DOWN && (touch_mode & 0xff) == TOUCH_MODE_WAKE && buttons != NULL) {
++			route = "wake";
+ 			/*
+ 			 * The display is off and a tap is to wake it. The lock button is what wakes it here:
+ 			 * press it for the finger, and keep the rest of this touch to ourselves.
+@@ -1095,16 +1247,32 @@ input_thread(__unused void *arg)
+ 			send_button(buttons, &press);
+ 			waking |= 1u << (t.finger & 31);
+ 		} else if (waking & (1u << (t.finger & 31))) {
++			route = "waking";
+ 			if (t.type == REDWOOD_TOUCH_UP) {
+ 				waking &= ~(1u << (t.finger & 31));
+ 			}
+ 		} else {
+-			send_touch(screen, &t);
++			route = "touch";
++			accepted = send_touch(screen, &t);
+ 			if (touch_latency) {
+ 				say("tl: i %u posted %llu read %llu sent %llu\n", t.type, micros(t.time), micros(read_at),
+ 				    micros(mach_absolute_time()));
+ 			}
+ 		}
++#ifdef LMI_INPUT_TRACE
++		/* Bounded diagnostic build: observe the original sample and delivery
++		 * times without changing its coordinates, phases or HID timestamp. */
++		if (count <= 192) {
++			say("LMI_INPUT_SAMPLE n=%u type=%u finger=%u x=%u y=%u posted_us=%llu read_us=%llu sent_us=%llu route=%s accepted=%d mode=%d\n",
++			    count, t.type, t.finger, t.x, t.y, micros(t.time), micros(read_at),
++			    micros(mach_absolute_time()), route, accepted, touch_mode);
++			if (count == 192) {
++				say("LMI_INPUT_TRACE_LIMIT 192\n");
++			}
++		}
++#endif
++		(void)accepted;
++		(void)route;
+ 	}
+ 	say("redwood: input: %s: %s\n", REDWOOD_TOUCH_DEVICE, strerror(errno));
+ 	return NULL;
+@@ -1145,6 +1313,47 @@ container_manager_fixes(void)
+ 	say("redwood: container manager: no personas\n");
+ }
+ 
++#ifdef LMI_LSD_SINGLE_USER
++/* In the RAM-only single-user port there are no persona volumes. lsd's
++ * InstalledContentLibrary enumerates them once per bundle while seeding its
++ * database; the stock synchronous usermanagerd query blocks its clients.
++ * An empty successful list keeps the stock default-persona fallback in
++ * __GetEligiblePersonaForBundle, without inventing identities or containers. */
++static CFArrayRef lsd_personas;
++static id
++lsd_persona_attributes(__unused id self, __unused SEL selector, id *error)
++{
++	static unsigned calls;
++	unsigned count = __atomic_add_fetch(&calls, 1, __ATOMIC_RELAXED);
++	if (error != NULL) {
++		*error = nil;
++	}
++	if (count <= 4) {
++		say("LMI_LSD_PERSONAS_EMPTY call=%u\n", count);
++	}
++	return (id)lsd_personas;
++}
++
++static void
++lsd_single_user_fixes(void)
++{
++	void *framework = dlopen("/System/Library/PrivateFrameworks/UserManagement.framework/UserManagement", RTLD_LAZY);
++	Class cls = framework ? objc_getClass("UMUserManager") : Nil;
++	Method method = cls ? class_getInstanceMethod(cls, sel_registerName("listAllPersonaAttributesWithError:")) : NULL;
++	IMP original = method ? method_getImplementation(method) : NULL;
++	if ((uintptr_t)original != 0x1920d35e8UL + slide ||
++	    *(const uint32_t *)original != 0xd10583ffU || method_getNumberOfArguments(method) != 3) {
++		say("LMI_LSD_PERSONAS_SKIPPED original=%#lx\n", original ? (uintptr_t)original - slide : 0);
++		return;
++	}
++	lsd_personas = CFArrayCreate(NULL, NULL, 0, &kCFTypeArrayCallBacks);
++	if (lsd_personas != NULL) {
++		method_setImplementation(method, (IMP)lsd_persona_attributes);
++		say("LMI_LSD_PERSONAS_INSTALLED single-user empty list\n");
++	}
++}
++#endif
++
+ /* ---------------------------------------------------------------------------------------------- */
+ 
+ /*
+@@ -1259,8 +1468,16 @@ redwood_init(void)
+ 		 * moved the start of the event server onto the moment make_service() now knows how to
+ 		 * survive; not tried again since, and until it is, the five seconds stay.)
+ 		 */
++#ifdef LMI_HID_ROUTING_TRACE
++		input_routing_watch();
++#endif
+ 		input_start();
+ 	} else if (strncmp(name, "containermanagerd", 17) == 0) {
+ 		container_manager_fixes();
+ 	}
++#ifdef LMI_LSD_SINGLE_USER
++	else if (strcmp(name, "lsd") == 0) {
++		lsd_single_user_fixes();
++	}
++#endif
+ }
+diff --git a/userland/src/inject_sb.c b/userland/src/inject_sb.c
+index 3773115..82f8e06 100644
+--- a/userland/src/inject_sb.c
++++ b/userland/src/inject_sb.c
+@@ -87,6 +87,73 @@ now_us(void)
+ 	return mach_absolute_time() * timebase.numer / timebase.denom / 1000;
+ }
+ 
++#ifdef LMI_INPUT_TRACE
++typedef struct __IOHIDEvent *LMIHIDEventRef;
++extern uint32_t IOHIDEventGetType(LMIHIDEventRef event);
++extern uint64_t IOHIDEventGetTimeStamp(LMIHIDEventRef event);
++extern uint64_t IOHIDEventGetSenderID(LMIHIDEventRef event);
++static void (*input_enqueue_original)(id, SEL, LMIHIDEventRef);
++static void (*input_handle_original)(id, SEL, LMIHIDEventRef);
++static unsigned input_enqueue_count, input_handle_count;
++
++static void
++input_uikit_line(const char *stage, unsigned *count, LMIHIDEventRef event)
++{
++	if (event == NULL || IOHIDEventGetType(event) != 11) {
++		return;
++	}
++	unsigned n = __sync_add_and_fetch(count, 1);
++	if (n <= 192) {
++		say("LMI_UIKIT_INPUT stage=%s n=%u posted_us=%llu observed_us=%llu sender=%llu\n", stage, n,
++		    IOHIDEventGetTimeStamp(event) * timebase.numer / timebase.denom / 1000,
++		    now_us(), IOHIDEventGetSenderID(event));
++	}
++}
++
++static void
++input_enqueue(id self, SEL cmd, LMIHIDEventRef event)
++{
++	input_uikit_line("enqueue", &input_enqueue_count, event);
++	input_enqueue_original(self, cmd, event);
++}
++
++static void
++input_handle(id self, SEL cmd, LMIHIDEventRef event)
++{
++	input_uikit_line("handle", &input_handle_count, event);
++	input_handle_original(self, cmd, event);
++}
++
++/* Optional observation at the recipient, always forwarding to the resolved
++ * original implementation. Refuse any selector whose runtime ABI differs from
++ * void(id, SEL, IOHIDEventRef); no events are created, changed or suppressed. */
++static void
++input_uikit_watch(void)
++{
++	Class cls = objc_getClass("UIApplication");
++	const char *names[] = { "_enqueueHIDEvent:", "_handleHIDEvent:" };
++	IMP wrappers[] = { (IMP)input_enqueue, (IMP)input_handle };
++	for (unsigned i = 0; i < 2; i++) {
++		Method method = cls ? class_getInstanceMethod(cls, sel_registerName(names[i])) : NULL;
++		char *result = method ? method_copyReturnType(method) : NULL;
++		char *argument = method && method_getNumberOfArguments(method) == 3 ? method_copyArgumentType(method, 2) : NULL;
++		bool valid = result && strcmp(result, "v") == 0 && argument && argument[0] == '^' &&
++		    strstr(argument, "__IOHIDEvent") != NULL;
++		free(result);
++		free(argument);
++		if (!valid) {
++			say("LMI_UIKIT_INPUT_HOOK selector=%s unavailable_or_abi_mismatch\n", names[i]);
++			continue;
++		}
++		IMP original = method_getImplementation(method);
++		if (i == 0) input_enqueue_original = (void (*)(id, SEL, LMIHIDEventRef))original;
++		else input_handle_original = (void (*)(id, SEL, LMIHIDEventRef))original;
++		method_setImplementation(method, wrappers[i]);
++		say("LMI_UIKIT_INPUT_HOOK selector=%s observing_original=%p\n", names[i], original);
++	}
++}
++#endif
++
+ static void
+ main_loop_turn(__unused CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info)
+ {
+@@ -1188,6 +1255,10 @@ redwood_springboard_init(void)
+ 	 * we are past UIApplication startup).
+ 	 */
+ 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
++#ifdef LMI_INPUT_TRACE
++		mach_timebase_info(&timebase);
++		input_uikit_watch();
++#endif
+ 		Class uidev = objc_getClass("UIDevice");
+ 		SEL current = sel_registerName("currentDevice");
+ 		SEL monitoring = sel_registerName("setBatteryMonitoringEnabled:");

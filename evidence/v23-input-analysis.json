@@ -1,0 +1,145 @@
+{
+  "samples": 192,
+  "accepted": 192,
+  "hid_observer_records": 192,
+  "matched_timestamps": 192,
+  "hid_delay_us": {
+    "median": 1865.5,
+    "max": 15771
+  },
+  "backboard_contact_records": 112,
+  "uikit_hooks_observed": false,
+  "raw_hardware_result": "INCOMPLETE",
+  "user_feedback": "Touch restored; animations stutter.",
+  "touch_fix_verified": false,
+  "incomplete_reason": "Original strict desktop GPU verifier rejected a runtime completion record interrupted by other log output; raw evidence was preserved.",
+  "display_windows": [
+    {
+      "frames": 4,
+      "window_ms": 40351,
+      "window_fps": 0,
+      "driver_us": 14667,
+      "gpu_wait_us": 1
+    },
+    {
+      "frames": 2,
+      "window_ms": 7858,
+      "window_fps": 0,
+      "driver_us": 9355,
+      "gpu_wait_us": 1
+    },
+    {
+      "frames": 76,
+      "window_ms": 5030,
+      "window_fps": 15,
+      "driver_us": 31441,
+      "gpu_wait_us": 27
+    },
+    {
+      "frames": 52,
+      "window_ms": 5043,
+      "window_fps": 10,
+      "driver_us": 31613,
+      "gpu_wait_us": 1
+    },
+    {
+      "frames": 68,
+      "window_ms": 5020,
+      "window_fps": 13,
+      "driver_us": 26060,
+      "gpu_wait_us": 57
+    },
+    {
+      "frames": 155,
+      "window_ms": 5032,
+      "window_fps": 30,
+      "driver_us": 30985,
+      "gpu_wait_us": 312
+    },
+    {
+      "frames": 140,
+      "window_ms": 5018,
+      "window_fps": 27,
+      "driver_us": 26550,
+      "gpu_wait_us": 262
+    },
+    {
+      "frames": 84,
+      "window_ms": 5022,
+      "window_fps": 16,
+      "driver_us": 36137,
+      "gpu_wait_us": 181
+    },
+    {
+      "frames": 137,
+      "window_ms": 5031,
+      "window_fps": 27,
+      "driver_us": 31404,
+      "gpu_wait_us": 185
+    },
+    {
+      "frames": 135,
+      "window_ms": 5013,
+      "window_fps": 26,
+      "driver_us": 28746,
+      "gpu_wait_us": 183
+    },
+    {
+      "frames": 150,
+      "window_ms": 5015,
+      "window_fps": 29,
+      "driver_us": 29588,
+      "gpu_wait_us": 109
+    },
+    {
+      "frames": 90,
+      "window_ms": 5289,
+      "window_fps": 17,
+      "driver_us": 35995,
+      "gpu_wait_us": 28
+    },
+    {
+      "frames": 144,
+      "window_ms": 5025,
+      "window_fps": 28,
+      "driver_us": 28655,
+      "gpu_wait_us": 160
+    },
+    {
+      "frames": 128,
+      "window_ms": 5008,
+      "window_fps": 25,
+      "driver_us": 32860,
+      "gpu_wait_us": 404
+    },
+    {
+      "frames": 148,
+      "window_ms": 5024,
+      "window_fps": 29,
+      "driver_us": 29604,
+      "gpu_wait_us": 310
+    },
+    {
+      "frames": 144,
+      "window_ms": 5015,
+      "window_fps": 28,
+      "driver_us": 19605,
+      "gpu_wait_us": 246
+    },
+    {
+      "frames": 141,
+      "window_ms": 5009,
+      "window_fps": 28,
+      "driver_us": 28870,
+      "gpu_wait_us": 152
+    },
+    {
+      "frames": 100,
+      "window_ms": 5051,
+      "window_fps": 19,
+      "driver_us": 28065,
+      "gpu_wait_us": 148
+    }
+  ],
+  "performance_scope": "Five-second averages include idle periods and are not continuous-animation FPS measurements. Driver work dominates these windows; no isolated-stage latency claim."
+}

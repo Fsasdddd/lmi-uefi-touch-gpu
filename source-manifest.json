@@ -1,0 +1,2393 @@
+{
+  "captured_at": "2026-10-25T13:47:21.771905+08:00",
+  "kernel_base": "8e61187098f2c26c5daee8f9f72b6416aa64b9ab",
+  "userland_base": "906425b75e02b4f99eb5d7bb1ef7c9583472d772",
+  "files": [
+    {
+      "path": "tools/analyze-lmi-loader-memory.py",
+      "sha256": "d953cc4014fc69fdab27d654ff6465ae2d5d4eb06c4d9b01ccfcd8829cdf67cc",
+      "original_sha256": "d953cc4014fc69fdab27d654ff6465ae2d5d4eb06c4d9b01ccfcd8829cdf67cc",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/analyze-lmi-touch-log.py",
+      "sha256": "f4c107b643422a0530d7f2421a7a239adec249be5c023d9fa1aeb20202bbaf84",
+      "original_sha256": "f4c107b643422a0530d7f2421a7a239adec249be5c023d9fa1aeb20202bbaf84",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/analyze_memory.py",
+      "sha256": "18c07b2d3cc1dbba0a0ce06bd281c791eab4dddeddf7875e6cf1e97a27076fd6",
+      "original_sha256": "18c07b2d3cc1dbba0a0ce06bd281c791eab4dddeddf7875e6cf1e97a27076fd6",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/audit-lmi-firmware.py",
+      "sha256": "e7a806939be0b7994e5e272f7980ad35e77c66d3c7fa1ca5a1fc200c5e8226c6",
+      "original_sha256": "e7a806939be0b7994e5e272f7980ad35e77c66d3c7fa1ca5a1fc200c5e8226c6",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/audit-lmi-gpu-desktop-region.py",
+      "sha256": "2099cc27e3360a67a82c1846c41368b81b0b7f076fc75508f0e7dee4bfbce438",
+      "original_sha256": "2099cc27e3360a67a82c1846c41368b81b0b7f076fc75508f0e7dee4bfbce438",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/audit-lmi-gpu-desktop.py",
+      "sha256": "df9b41b0a0d13af652f75a99242348c05f368f92dee37d342072c3daba13d230",
+      "original_sha256": "df9b41b0a0d13af652f75a99242348c05f368f92dee37d342072c3daba13d230",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/audit-lmi-gpu-frame-region.py",
+      "sha256": "52a8406ea0652c89aaa55736ad2fc32df545d7463e017990a6cba0b1a66dac07",
+      "original_sha256": "52a8406ea0652c89aaa55736ad2fc32df545d7463e017990a6cba0b1a66dac07",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/audit-lmi-gpu-init-region.py",
+      "sha256": "b37cbbe1f5ffb680246348e1a65b77b3113f6f26f895707f941db2ac52050f99",
+      "original_sha256": "b37cbbe1f5ffb680246348e1a65b77b3113f6f26f895707f941db2ac52050f99",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/audit-lmi-gpu-normal-diag-region.py",
+      "sha256": "9141df30edf86fa25ae6154cd92a7f1bbb9586aedf8810add09e78717a9256a0",
+      "original_sha256": "9141df30edf86fa25ae6154cd92a7f1bbb9586aedf8810add09e78717a9256a0",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/audit-lmi-gpu-padding.py",
+      "sha256": "ef95342ca2d20367803c6ef31346a6ae1cf907cb2f8b1cb6f997638db6b2e3e3",
+      "original_sha256": "ef95342ca2d20367803c6ef31346a6ae1cf907cb2f8b1cb6f997638db6b2e3e3",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/audit-lmi-gpu-unsecure-region.py",
+      "sha256": "97f41813e98b5d055635db46a23ae1e8b8e793f912857238e4ae84537ca87d99",
+      "original_sha256": "97f41813e98b5d055635db46a23ae1e8b8e793f912857238e4ae84537ca87d99",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/audit-lmi-gpu.py",
+      "sha256": "e16e7a6d116b9cce6245576bfcf826e2917672cec322948c5d35e03d16c48821",
+      "original_sha256": "9c34163164dc43b5c6fa08d597e78091c4683b63dfb763980cf9e1bbabd44afa",
+      "device_serial_redacted": true
+    },
+    {
+      "path": "tools/build-lmi-aligned-hello.py",
+      "sha256": "69a084c472c2ccd781bac5366d6204a6ff8eaa03bbfe80c6f4f9a8ecc9370372",
+      "original_sha256": "69a084c472c2ccd781bac5366d6204a6ff8eaa03bbfe80c6f4f9a8ecc9370372",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-bootstrap-probe.py",
+      "sha256": "71b05afb5099ed7a94a334279fbc7bb937f349e138a2cab682cb4ca480228dcf",
+      "original_sha256": "71b05afb5099ed7a94a334279fbc7bb937f349e138a2cab682cb4ca480228dcf",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-bsd-probe.py",
+      "sha256": "99b4370b7e3c1be16def9c8471a711f68ff424f8d3bb95b70d3036db9f2b73cc",
+      "original_sha256": "99b4370b7e3c1be16def9c8471a711f68ff424f8d3bb95b70d3036db9f2b73cc",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-console-probe.py",
+      "sha256": "5748073857c67e4e097d8af568c24aa1b9340335b5516912e4871f69afb0a6e9",
+      "original_sha256": "5748073857c67e4e097d8af568c24aa1b9340335b5516912e4871f69afb0a6e9",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-driver-probe.py",
+      "sha256": "a6d9002bdbfa593ce957c79ef7959aba787f125e848dbc08b86131ba9e9be81b",
+      "original_sha256": "a6d9002bdbfa593ce957c79ef7959aba787f125e848dbc08b86131ba9e9be81b",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-gpu-gl-image.py",
+      "sha256": "c8ddc67bc4a5214070d51cd3c9c976d4738c15da1ffd4a020c8a997781421048",
+      "original_sha256": "c8ddc67bc4a5214070d51cd3c9c976d4738c15da1ffd4a020c8a997781421048",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-gpu-image.py",
+      "sha256": "54c197573e1cdbcdd6b48f513a6ca95ed27d1fa1de4f3b1a9f14aaa0916fb225",
+      "original_sha256": "54c197573e1cdbcdd6b48f513a6ca95ed27d1fa1de4f3b1a9f14aaa0916fb225",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-gpu-mode.py",
+      "sha256": "38201d5550afa0e1f5b0355cd1f57d2f79a8ded56b902242f696f5c7b7ce08bd",
+      "original_sha256": "38201d5550afa0e1f5b0355cd1f57d2f79a8ded56b902242f696f5c7b7ce08bd",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-ios-probe.py",
+      "sha256": "fb520b94152c202ae4bc8422e9fb27f7890d6fc384bb9c847d8b8fad82c41c1e",
+      "original_sha256": "fb520b94152c202ae4bc8422e9fb27f7890d6fc384bb9c847d8b8fad82c41c1e",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-irq-probe.py",
+      "sha256": "9af09895f34594cd98c1f62766a3b6f1b2bd93658acc15fc5e68b1000b700d05",
+      "original_sha256": "9af09895f34594cd98c1f62766a3b6f1b2bd93658acc15fc5e68b1000b700d05",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-loader.py",
+      "sha256": "c3ebe7745fd49d2ae64c43be7c8b9db72e4a09782fce2ae99844453d000aa370",
+      "original_sha256": "c3ebe7745fd49d2ae64c43be7c8b9db72e4a09782fce2ae99844453d000aa370",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-lslog-image.py",
+      "sha256": "6baeddb6319dcceaef9129f364e9244daf39b80f50d7734698a5bec525fd2c6a",
+      "original_sha256": "6baeddb6319dcceaef9129f364e9244daf39b80f50d7734698a5bec525fd2c6a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-minimal-root.py",
+      "sha256": "502db887d6e9b23a6fe7914d744f30ed217c628b975f09d2e06d2777a0163cc2",
+      "original_sha256": "502db887d6e9b23a6fe7914d744f30ed217c628b975f09d2e06d2777a0163cc2",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-preirq-probe.py",
+      "sha256": "5714871aafc6f162afcd804c7ae3b1446febd32efed6a01e0d933b76af0fb672",
+      "original_sha256": "5714871aafc6f162afcd804c7ae3b1446febd32efed6a01e0d933b76af0fb672",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-root-probe.py",
+      "sha256": "136cdafb7e109bf16676a8f4193e1e68220d109d68968c1d679bcd5f6b0c6b3c",
+      "original_sha256": "136cdafb7e109bf16676a8f4193e1e68220d109d68968c1d679bcd5f6b0c6b3c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-shim.sh",
+      "sha256": "1cf53402fa43d338a7ed0e14a1c4d24883851db68258f26be76beffbc4167bcc",
+      "original_sha256": "1cf53402fa43d338a7ed0e14a1c4d24883851db68258f26be76beffbc4167bcc",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-uefi.sh",
+      "sha256": "05244765336477f49537532d9d7f520b321f2299c4dd49acb3f5c5d125c495a5",
+      "original_sha256": "05244765336477f49537532d9d7f520b321f2299c4dd49acb3f5c5d125c495a5",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-usb-probe.py",
+      "sha256": "d71fd1266e913523f1b68f115449f20e77de1ed58fdbb32d3327168d9711bc0c",
+      "original_sha256": "d71fd1266e913523f1b68f115449f20e77de1ed58fdbb32d3327168d9711bc0c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-user-probe.py",
+      "sha256": "bd6c9cc5add27e42f2eb505f4e05bd8229c1c522661e14ed0a39e4ef6fa6ba16",
+      "original_sha256": "bd6c9cc5add27e42f2eb505f4e05bd8229c1c522661e14ed0a39e4ef6fa6ba16",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/build-lmi-wallpaper-image.py",
+      "sha256": "84d02b2d9febb05e572417b35a4733d08221be0df0d5f005a6dd1046b70f58f8",
+      "original_sha256": "84d02b2d9febb05e572417b35a4733d08221be0df0d5f005a6dd1046b70f58f8",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-apfs-image.py",
+      "sha256": "e15a0b93ccd54f0ac9fdc203ecae5b4dc83710b2944d04b143da86692f76d519",
+      "original_sha256": "e15a0b93ccd54f0ac9fdc203ecae5b4dc83710b2944d04b143da86692f76d519",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-boot-source.py",
+      "sha256": "cab87096d77c75a5946ac23d7ec8d27c2be4054418bdd3ec2a3ec3b858308cfe",
+      "original_sha256": "cab87096d77c75a5946ac23d7ec8d27c2be4054418bdd3ec2a3ec3b858308cfe",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-boot.c",
+      "sha256": "e4fff38abdd8e63931a66bc3ed40ff44e1b51e1a5949b6f79d63dd5d43959cc3",
+      "original_sha256": "e4fff38abdd8e63931a66bc3ed40ff44e1b51e1a5949b6f79d63dd5d43959cc3",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-bus.py",
+      "sha256": "937650b19af8ebb6671717157e679b24c5e1be6d6714c3ea10334e9755ae0b5d",
+      "original_sha256": "937650b19af8ebb6671717157e679b24c5e1be6d6714c3ea10334e9755ae0b5d",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-clock.c",
+      "sha256": "e259d3ea5fe474fa3592d107ae5322b56b779ff03539bdf684af4fd05451d0b1",
+      "original_sha256": "e259d3ea5fe474fa3592d107ae5322b56b779ff03539bdf684af4fd05451d0b1",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-context.c",
+      "sha256": "b490d0d54392fc833f2eb0c4ac1ce5a8cd0966c7bb24e05e507d0a354988bc7b",
+      "original_sha256": "b490d0d54392fc833f2eb0c4ac1ce5a8cd0966c7bb24e05e507d0a354988bc7b",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-core-access.c",
+      "sha256": "f420a048de5c1c33474496aeefbfbded3a470427aca1d436c7f024871acc36e6",
+      "original_sha256": "f420a048de5c1c33474496aeefbfbded3a470427aca1d436c7f024871acc36e6",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-core-memory.c",
+      "sha256": "3af8e53e0532117a558cb39aec3effab48896e7bd18138e7ca8cfef8d71387be",
+      "original_sha256": "3af8e53e0532117a558cb39aec3effab48896e7bd18138e7ca8cfef8d71387be",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-cp-plan.c",
+      "sha256": "50ca26adb2b9ddc2105864f9c91cea00cb7a5635bda2eae1a973d2323346abbd",
+      "original_sha256": "50ca26adb2b9ddc2105864f9c91cea00cb7a5635bda2eae1a973d2323346abbd",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-cp-verifier.py",
+      "sha256": "999cb584da6b2adf2f3368e21a39c339ab4e65682cc26bdc48597423f73464a1",
+      "original_sha256": "999cb584da6b2adf2f3368e21a39c339ab4e65682cc26bdc48597423f73464a1",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-cp.c",
+      "sha256": "5784e63a42c4deff87ece77ead5cc18b14fd3d7cd2464337ded5ce8ac302c861",
+      "original_sha256": "5784e63a42c4deff87ece77ead5cc18b14fd3d7cd2464337ded5ce8ac302c861",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-desktop-region.py",
+      "sha256": "ce1b21965ab06e1de129436a916e60f64f14e18ed68a810262d4118f0d8561de",
+      "original_sha256": "ce1b21965ab06e1de129436a916e60f64f14e18ed68a810262d4118f0d8561de",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-desktop-source.py",
+      "sha256": "3541a8419908e555fb0da401f986007c8976cdf4a52e521cdfc88e27f5d142aa",
+      "original_sha256": "3541a8419908e555fb0da401f986007c8976cdf4a52e521cdfc88e27f5d142aa",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-desktop-verifier.py",
+      "sha256": "b6d5f6a5002337aaf8eec1885153c47707f00dc57c073b7a4dfaf6272779d95a",
+      "original_sha256": "b6d5f6a5002337aaf8eec1885153c47707f00dc57c073b7a4dfaf6272779d95a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-desktop.c",
+      "sha256": "68a1dfc0e0002dba458f511fbe43e6d45c2aab579788ce04829c21253fa9e404",
+      "original_sha256": "68a1dfc0e0002dba458f511fbe43e6d45c2aab579788ce04829c21253fa9e404",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-gl-verifier.py",
+      "sha256": "eafda412dec33d1115cf2e5e424f26ca693d54a83e27f8be55519078179807c8",
+      "original_sha256": "eafda412dec33d1115cf2e5e424f26ca693d54a83e27f8be55519078179807c8",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-gx-verifier.py",
+      "sha256": "dca53add59ed2df0e2bc31c05ca7e41bd3c177b234be0fca77d12c3b7d41a809",
+      "original_sha256": "dca53add59ed2df0e2bc31c05ca7e41bd3c177b234be0fca77d12c3b7d41a809",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-gx.c",
+      "sha256": "ca062d93fc21109e2deba0ccfef26770693d64054ce42aaba73400f1ea3eab71",
+      "original_sha256": "ca062d93fc21109e2deba0ccfef26770693d64054ce42aaba73400f1ea3eab71",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-core-verifier.py",
+      "sha256": "148365c677cd14ce997df724b7da4d1d5dd98b24e461c0fe9f91265df4ef701c",
+      "original_sha256": "148365c677cd14ce997df724b7da4d1d5dd98b24e461c0fe9f91265df4ef701c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-core.c",
+      "sha256": "67f3aa71eaf1790005a4c3e824f9f39aa9b6b42b92b70a3d374c0a4f07e69e87",
+      "original_sha256": "67f3aa71eaf1790005a4c3e824f9f39aa9b6b42b92b70a3d374c0a4f07e69e87",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-io-verifier.py",
+      "sha256": "c578f8ad9dcc96592268c795c32f93b83c036918266a826d81c21a7b4b7200b0",
+      "original_sha256": "c578f8ad9dcc96592268c795c32f93b83c036918266a826d81c21a7b4b7200b0",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-io.c",
+      "sha256": "0dae16ab764fd485a64749f0d2219f3ed1763eb764e26f5cfc2b24222fb9fc2b",
+      "original_sha256": "0dae16ab764fd485a64749f0d2219f3ed1763eb764e26f5cfc2b24222fb9fc2b",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-perf-verifier.py",
+      "sha256": "7bcac5b2a9c7bd9503c65c61df9424ab5b232bc2cf52697106ff7304bfcdfe05",
+      "original_sha256": "7bcac5b2a9c7bd9503c65c61df9424ab5b232bc2cf52697106ff7304bfcdfe05",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-perf.c",
+      "sha256": "34c90497ecf199b900ed87ab976abb8be1699947a65990c85b182a8d44281ebb",
+      "original_sha256": "34c90497ecf199b900ed87ab976abb8be1699947a65990c85b182a8d44281ebb",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi.c",
+      "sha256": "8ad2009371bbc9924f7e82c731c88e82e08b8375a83894df20fb8844da1530fd",
+      "original_sha256": "8ad2009371bbc9924f7e82c731c88e82e08b8375a83894df20fb8844da1530fd",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-normal-diag-region.py",
+      "sha256": "76df6e65de2aa83a3e725409310d6c590b404509b48defa62b3cc05296b1e660",
+      "original_sha256": "76df6e65de2aa83a3e725409310d6c590b404509b48defa62b3cc05296b1e660",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-normal-preflight.py",
+      "sha256": "e57f3e698ee640b0b2d01fb07c9ad5c4ccb13023571eabf286bd1d87081a591e",
+      "original_sha256": "e57f3e698ee640b0b2d01fb07c9ad5c4ccb13023571eabf286bd1d87081a591e",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-normal-verifier.py",
+      "sha256": "55964f494b069de91a7acb9e46a2caa06cf4c19164eb664344fe43a321f70593",
+      "original_sha256": "55964f494b069de91a7acb9e46a2caa06cf4c19164eb664344fe43a321f70593",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-ram.py",
+      "sha256": "85601bd389e7a3926b3e160be4311fd33d71eafdaeb23379d980a99005fee3c6",
+      "original_sha256": "85601bd389e7a3926b3e160be4311fd33d71eafdaeb23379d980a99005fee3c6",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-resources.c",
+      "sha256": "ed466f5382b8d7d1eba182ae8c0d80a1ab078adf6ae3edff2f8134d381d2b0f7",
+      "original_sha256": "ed466f5382b8d7d1eba182ae8c0d80a1ab078adf6ae3edff2f8134d381d2b0f7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-route.c",
+      "sha256": "aee91f6629534b0ee9c576c66b6ae9fc31077bb5fec3e3fae62e29c1aa56a6e7",
+      "original_sha256": "aee91f6629534b0ee9c576c66b6ae9fc31077bb5fec3e3fae62e29c1aa56a6e7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-rpmh.c",
+      "sha256": "a957bf34ffb9c5bb112bb00ef48b80a09839e4b6a13c0c26702ad0c5c32a31ab",
+      "original_sha256": "a957bf34ffb9c5bb112bb00ef48b80a09839e4b6a13c0c26702ad0c5c32a31ab",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-rsc-init.c",
+      "sha256": "c787c1640051fbfd03a7141e7fe693b87b723828dd5c09d2ebec95b54d826185",
+      "original_sha256": "c787c1640051fbfd03a7141e7fe693b87b723828dd5c09d2ebec95b54d826185",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-rsc-pdc-vote.c",
+      "sha256": "ea6f368c2bbd558a3b33eb6af780d6940288986cd716b83aac1c6344e83a38ee",
+      "original_sha256": "ea6f368c2bbd558a3b33eb6af780d6940288986cd716b83aac1c6344e83a38ee",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-rsc-state.py",
+      "sha256": "81b62d4781f369e4bab1945268c81bb73da9e73bf896704156b54a1534b9d6e2",
+      "original_sha256": "81b62d4781f369e4bab1945268c81bb73da9e73bf896704156b54a1534b9d6e2",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-scm.c",
+      "sha256": "d2fa2b032a5f71709e1d3cf02ccfcbfc2789f44fdb5367a2de974030d7ce31cb",
+      "original_sha256": "d2fa2b032a5f71709e1d3cf02ccfcbfc2789f44fdb5367a2de974030d7ce31cb",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-smmu.py",
+      "sha256": "f1902e75f37be8a2212df8aa22bf1450b63f6f7542b7598d0ffc206683322f99",
+      "original_sha256": "f1902e75f37be8a2212df8aa22bf1450b63f6f7542b7598d0ffc206683322f99",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-table-plan.c",
+      "sha256": "e161dab0679c6381916808eb8ce2ed881e863afdce474d9cd93f020c6ac218fd",
+      "original_sha256": "e161dab0679c6381916808eb8ce2ed881e863afdce474d9cd93f020c6ac218fd",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-table-verifier.py",
+      "sha256": "352f065bdf1b9742f21360d2348a45c5ce387346d83a57cf09203b878b8b4aeb",
+      "original_sha256": "352f065bdf1b9742f21360d2348a45c5ce387346d83a57cf09203b878b8b4aeb",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-tcm.py",
+      "sha256": "3234e85f7b48b8f8f0a93ed1bf338fbf482eeda297d01648bd33b2e7d18d097d",
+      "original_sha256": "3234e85f7b48b8f8f0a93ed1bf338fbf482eeda297d01648bd33b2e7d18d097d",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-tile-source.py",
+      "sha256": "9606f5b10d2be5ca7687594f4039e81a4fad6cf056266afced262f5088f6f214",
+      "original_sha256": "9606f5b10d2be5ca7687594f4039e81a4fad6cf056266afced262f5088f6f214",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-tile-verifier.py",
+      "sha256": "c0fd40c5b45635b7f1850a737a047b92048ae81489d1b294070319340c55b04c",
+      "original_sha256": "c0fd40c5b45635b7f1850a737a047b92048ae81489d1b294070319340c55b04c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-tile.c",
+      "sha256": "3d60304a842bc1a4973d77484a5a4641a1941848efff736e7e02c3d9dca51b6d",
+      "original_sha256": "3d60304a842bc1a4973d77484a5a4641a1941848efff736e7e02c3d9dca51b6d",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-unsecure.c",
+      "sha256": "7573fd90f0d3bc9cf4993982b899ac5c93165602f7d29c5446bcdd3b823b4a23",
+      "original_sha256": "7573fd90f0d3bc9cf4993982b899ac5c93165602f7d29c5446bcdd3b823b4a23",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-zap-load.c",
+      "sha256": "31e6a9558ee4c7b809ec4f722007031f1b68d81d64b740a396f6914090b4f753",
+      "original_sha256": "31e6a9558ee4c7b809ec4f722007031f1b68d81d64b740a396f6914090b4f753",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-gpu-zap-metadata.c",
+      "sha256": "30eb875c902ff65145a00d0034557938afe6719a96e8a55aa1ce3c88912f0e1a",
+      "original_sha256": "30eb875c902ff65145a00d0034557938afe6719a96e8a55aa1ce3c88912f0e1a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-hid-routing.py",
+      "sha256": "d36893e978fc0a8cada494d98745675d363e3e81c474aa5d85eec33753dcad45",
+      "original_sha256": "d36893e978fc0a8cada494d98745675d363e3e81c474aa5d85eec33753dcad45",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-hid-startup.py",
+      "sha256": "fbd7e7b0053cb72395eb2eefa5ffc528478602687475b985a90f9070c39ea06c",
+      "original_sha256": "fbd7e7b0053cb72395eb2eefa5ffc528478602687475b985a90f9070c39ea06c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-input-observers.py",
+      "sha256": "181ba5df4e5396f2c675ddaeaccbe63325662c3a86891a461ce72d4d66be0e70",
+      "original_sha256": "181ba5df4e5396f2c675ddaeaccbe63325662c3a86891a461ce72d4d66be0e70",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-mkjobs-rest.py",
+      "sha256": "f625d2b296d9e8612d304352bffde7d2ad3bfd321864732070dbc3e7519db9ae",
+      "original_sha256": "f625d2b296d9e8612d304352bffde7d2ad3bfd321864732070dbc3e7519db9ae",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-smp-return.py",
+      "sha256": "6120941e4cb57cf087aafd99765e13d9d9307f10d766d1d9fe50e6642aa70a58",
+      "original_sha256": "6120941e4cb57cf087aafd99765e13d9d9307f10d766d1d9fe50e6642aa70a58",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-touch-reports.py",
+      "sha256": "d9717778019c2d023a6903a721f223dfe936e982c0b4cc04fd8bd7c3e6a76ebc",
+      "original_sha256": "d9717778019c2d023a6903a721f223dfe936e982c0b4cc04fd8bd7c3e6a76ebc",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/check-lmi-touch-timing.c",
+      "sha256": "d224efda2f973d6364ece78c84121082665b1e4941be9f7a91572809089b5801",
+      "original_sha256": "d224efda2f973d6364ece78c84121082665b1e4941be9f7a91572809089b5801",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/collect-lmi-recovery-logs.py",
+      "sha256": "e937f797874eaa9b724eba850ac798629be7c6b732ef079864b876eb1511ebc8",
+      "original_sha256": "faff28a1ee6c67adafc72f9a515fd462e1be206da38899ed2da2ffd660b7489f",
+      "device_serial_redacted": true
+    },
+    {
+      "path": "tools/decode-lmi-framebuffer.py",
+      "sha256": "18117aecafdf9333f3565a92bb9e10d55e27f29086c1ba7af8adce707a63ceb3",
+      "original_sha256": "18117aecafdf9333f3565a92bb9e10d55e27f29086c1ba7af8adce707a63ceb3",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/export-lmi-ios-restfix.py",
+      "sha256": "277e0532d443106663600dbe3f645f5e68399b159724a4b4d37d16ae1d4687c2",
+      "original_sha256": "277e0532d443106663600dbe3f645f5e68399b159724a4b4d37d16ae1d4687c2",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/export-lmi-uefi.py",
+      "sha256": "5e16bbfaef755c4064ff9a5ff03c4b1ef40613ad61aa59e90f7484ecdde52ec7",
+      "original_sha256": "5e16bbfaef755c4064ff9a5ff03c4b1ef40613ad61aa59e90f7484ecdde52ec7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/extract-lmi-a650-tables.py",
+      "sha256": "51ebafcaa281509e1177ea17a6d27f065983f6de26fe4da53bed8eed41566b6a",
+      "original_sha256": "51ebafcaa281509e1177ea17a6d27f065983f6de26fe4da53bed8eed41566b6a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/generate_lmi_draft.py",
+      "sha256": "ce78823308955f81bb7e0a8295c34183991e1a082c2b0e4ec8afc007bafa83e2",
+      "original_sha256": "ce78823308955f81bb7e0a8295c34183991e1a082c2b0e4ec8afc007bafa83e2",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/guard-lmi-memory.py",
+      "sha256": "9c743775a5ee22d30266cfb26531ec3411b071ee355069f855052b2fbe4c0f1a",
+      "original_sha256": "9c743775a5ee22d30266cfb26531ec3411b071ee355069f855052b2fbe4c0f1a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/inspect-lmi-gmu-firmware.py",
+      "sha256": "351019e11b1c97fb1a01ac22449916c1bbda7111b72305b29608db12d213c5a8",
+      "original_sha256": "351019e11b1c97fb1a01ac22449916c1bbda7111b72305b29608db12d213c5a8",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/inspect-lmi-wallpaper.py",
+      "sha256": "d2454c708537bb54c00f8e284adb549cfd2af79af71f0ebcf85644538c862f44",
+      "original_sha256": "d2454c708537bb54c00f8e284adb549cfd2af79af71f0ebcf85644538c862f44",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/inspect_dtb.py",
+      "sha256": "d54e4067a245d95e21ba2ab6db068be5adcd5d4301cb065c5da5f77b4e657473",
+      "original_sha256": "d54e4067a245d95e21ba2ab6db068be5adcd5d4301cb065c5da5f77b4e657473",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gic-guard.c",
+      "sha256": "c49176837976eabcc00fbc073e72b1a7a8cd615a070050541eac8f86e112bd41",
+      "original_sha256": "c49176837976eabcc00fbc073e72b1a7a8cd615a070050541eac8f86e112bd41",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-boot-regs.h",
+      "sha256": "437efd685f69bb10984495dd6364b5a300ba10505a85b7fa6d11bbd6d3107903",
+      "original_sha256": "437efd685f69bb10984495dd6364b5a300ba10505a85b7fa6d11bbd6d3107903",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-boot.c",
+      "sha256": "5c0908b6677cae4469b4da23600a32c2c80c2e635f9d8cee46ffa3d772df6247",
+      "original_sha256": "5c0908b6677cae4469b4da23600a32c2c80c2e635f9d8cee46ffa3d772df6247",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-clock.c",
+      "sha256": "4639dca3334e7b7414f5781f945e0044e664e51733c00556dcda09a7a255a8c2",
+      "original_sha256": "4639dca3334e7b7414f5781f945e0044e664e51733c00556dcda09a7a255a8c2",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-context.c",
+      "sha256": "ecf8edfb4b18f38c2e369852e94c081654fa0bc24ea845543208f54d6cecc11d",
+      "original_sha256": "ecf8edfb4b18f38c2e369852e94c081654fa0bc24ea845543208f54d6cecc11d",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-core-access.c",
+      "sha256": "d5230921778d552a47f9bd88e50be89325478f6ae740f3e66112cd3ec91d4af7",
+      "original_sha256": "d5230921778d552a47f9bd88e50be89325478f6ae740f3e66112cd3ec91d4af7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-core-memory.c",
+      "sha256": "7a0fe12b0f90c1186193e2327b93ca38d0303884db2e2eefe1c27391581ac2eb",
+      "original_sha256": "7a0fe12b0f90c1186193e2327b93ca38d0303884db2e2eefe1c27391581ac2eb",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-cp-plan.c",
+      "sha256": "b03b0cd3fc1c21612ccb9f409a8614f29820842a22320c478fbaed9ca729f1b4",
+      "original_sha256": "b03b0cd3fc1c21612ccb9f409a8614f29820842a22320c478fbaed9ca729f1b4",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-cp.c",
+      "sha256": "d8a03e25938be35432c17b9f7cc94ab8aabcf109407504cf5a4d181a999db837",
+      "original_sha256": "d8a03e25938be35432c17b9f7cc94ab8aabcf109407504cf5a4d181a999db837",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-desktop-profile.py",
+      "sha256": "1eb18b477483ee56f3582181814ef4ee2e705dbcb90bf3f6b1958873bb16fffd",
+      "original_sha256": "1eb18b477483ee56f3582181814ef4ee2e705dbcb90bf3f6b1958873bb16fffd",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-desktop.c",
+      "sha256": "61dd1fa47603eb03a2c432851b062d1cae15c02946f421021f74ba9efda07b85",
+      "original_sha256": "61dd1fa47603eb03a2c432851b062d1cae15c02946f421021f74ba9efda07b85",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-gl-probe.c",
+      "sha256": "f31ea4e7d4c3bdc88a2500489730620e938ad78368b6e8c3ebdb6c37c7a51191",
+      "original_sha256": "f31ea4e7d4c3bdc88a2500489730620e938ad78368b6e8c3ebdb6c37c7a51191",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-gx.c",
+      "sha256": "4403c4c3711ce0f47972bddd633a75affb37b94130895ba718bbf1b414528adb",
+      "original_sha256": "4403c4c3711ce0f47972bddd633a75affb37b94130895ba718bbf1b414528adb",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-hfi-core.c",
+      "sha256": "2527aa5435bf499ebf73a19d51b77eb30a17d05aa57ccffd58bf55b66d1ee88f",
+      "original_sha256": "2527aa5435bf499ebf73a19d51b77eb30a17d05aa57ccffd58bf55b66d1ee88f",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-hfi-io.c",
+      "sha256": "52463bc0ba8a4753b70ad2df26e85117300e8afae8ac538772ee6ed228ae8acf",
+      "original_sha256": "52463bc0ba8a4753b70ad2df26e85117300e8afae8ac538772ee6ed228ae8acf",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-hfi-perf.c",
+      "sha256": "f80e5f5c07dcd5758a1fcd5f4125fa51107f4234be0f84a6b0808129ff60e041",
+      "original_sha256": "f80e5f5c07dcd5758a1fcd5f4125fa51107f4234be0f84a6b0808129ff60e041",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-hfi-transfer.h",
+      "sha256": "e0a3fd90623b822768c0d69c4e15c916bc10f0e97fd349666efa0752e4d90887",
+      "original_sha256": "e0a3fd90623b822768c0d69c4e15c916bc10f0e97fd349666efa0752e4d90887",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-hfi.c",
+      "sha256": "1c69a85600c1df93bb2e34b63c13b8f7318d8ccab209573f49ed4edbecc38b91",
+      "original_sha256": "1c69a85600c1df93bb2e34b63c13b8f7318d8ccab209573f49ed4edbecc38b91",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-probe.c",
+      "sha256": "54621a676d0081d91c9cbe8e49a166290230dd9df4a8134aaf341a059a82bc08",
+      "original_sha256": "54621a676d0081d91c9cbe8e49a166290230dd9df4a8134aaf341a059a82bc08",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-ram.c",
+      "sha256": "2728645313e1c9230685393e8d08081c942befcdfdf6112e76754e926dd1882b",
+      "original_sha256": "2728645313e1c9230685393e8d08081c942befcdfdf6112e76754e926dd1882b",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-resources.c",
+      "sha256": "3cae183397d9165e8b6b19c5dcf670845d3e4afb8e01a83da0bb734ea35b0a59",
+      "original_sha256": "3cae183397d9165e8b6b19c5dcf670845d3e4afb8e01a83da0bb734ea35b0a59",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-resources.h",
+      "sha256": "00006a4fe1d8a686cccd6c188edbae0282042ad23d31d52d58929e67b364fd01",
+      "original_sha256": "00006a4fe1d8a686cccd6c188edbae0282042ad23d31d52d58929e67b364fd01",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-route.c",
+      "sha256": "e7e5dcfed7b8ab7a4cb1f0fd1f9b001b5308ecd32a2d0c72e0eb6f57a5465bab",
+      "original_sha256": "e7e5dcfed7b8ab7a4cb1f0fd1f9b001b5308ecd32a2d0c72e0eb6f57a5465bab",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-rpmh.c",
+      "sha256": "296cf7489b6c7d6aa476e6be4acd09e45b99301a67f825302bc261f74d3f3bb8",
+      "original_sha256": "296cf7489b6c7d6aa476e6be4acd09e45b99301a67f825302bc261f74d3f3bb8",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-rsc-init.c",
+      "sha256": "e1bbc71783a4cbe53b8b0583df29004f9a6bd8166aeda2142787c322f172665d",
+      "original_sha256": "e1bbc71783a4cbe53b8b0583df29004f9a6bd8166aeda2142787c322f172665d",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-runtime.h",
+      "sha256": "3cdd424b12e957386c6e05a405609aaf3278a50251f1f43bd23c069e60c97fc5",
+      "original_sha256": "3cdd424b12e957386c6e05a405609aaf3278a50251f1f43bd23c069e60c97fc5",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-scm.c",
+      "sha256": "f5806e158cea6a8bb304b502a95b82c034837d0149a03ba8bee7b948cf48cbbd",
+      "original_sha256": "f5806e158cea6a8bb304b502a95b82c034837d0149a03ba8bee7b948cf48cbbd",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-table-plan.c",
+      "sha256": "1ecb66b621db485201d0f9e1dd33f615460a1c3b31923e6f12f66bc724081b6c",
+      "original_sha256": "1ecb66b621db485201d0f9e1dd33f615460a1c3b31923e6f12f66bc724081b6c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-table-plan.h",
+      "sha256": "0c9730934cacbb422a2c0e7acd4cf9f1151f2a64069bf5b489960171eb3cc8ed",
+      "original_sha256": "0c9730934cacbb422a2c0e7acd4cf9f1151f2a64069bf5b489960171eb3cc8ed",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-tile.c",
+      "sha256": "f4e0109f044118dbef03a7d9aeb30177f6e33000067e18330784c78439dd387c",
+      "original_sha256": "f4e0109f044118dbef03a7d9aeb30177f6e33000067e18330784c78439dd387c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-unsecure.c",
+      "sha256": "5eca088ed40f13f8e00dde23b0dc96dfd695d0f266a6aae9ff648e064b94fbcd",
+      "original_sha256": "5eca088ed40f13f8e00dde23b0dc96dfd695d0f266a6aae9ff648e064b94fbcd",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-zap-load.c",
+      "sha256": "64491717f21695f56075cedc0804bfeb905d2f09d4adf82165679bef07aa41e5",
+      "original_sha256": "64491717f21695f56075cedc0804bfeb905d2f09d4adf82165679bef07aa41e5",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-gpu-zap-metadata.c",
+      "sha256": "9847866d824b24e318b15b552c8b787af44b4844782a1ddc5d210ff18912bcec",
+      "original_sha256": "9847866d824b24e318b15b552c8b787af44b4844782a1ddc5d210ff18912bcec",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-ios-ld64.sh",
+      "sha256": "ec3643548449a3b85b785b0a7d88c263d9da37803e9aa88b3b69ffa14d5742bf",
+      "original_sha256": "ec3643548449a3b85b785b0a7d88c263d9da37803e9aa88b3b69ffa14d5742bf",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-kernel-log.c",
+      "sha256": "aa40686875625543432cb27843e2be04ecc1862d9eda550877d01f2c320c77f7",
+      "original_sha256": "aa40686875625543432cb27843e2be04ecc1862d9eda550877d01f2c320c77f7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-smp-return.S",
+      "sha256": "d10e8ab9f2b15383d9fb025c39a18049e5d140904b2209b7d4969a5eb1990f78",
+      "original_sha256": "d10e8ab9f2b15383d9fb025c39a18049e5d140904b2209b7d4969a5eb1990f78",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-touch-timing.h",
+      "sha256": "f5791261a2c4adf83b27d9d07cf6b42fd81f5dc2d7fcb135ebd64c832bcc1e91",
+      "original_sha256": "f5791261a2c4adf83b27d9d07cf6b42fd81f5dc2d7fcb135ebd64c832bcc1e91",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-touch.c",
+      "sha256": "9c5560246fcaa168a2bd5667cb1d012c6dda6fd12cad1b9ec3795b369e784127",
+      "original_sha256": "9c5560246fcaa168a2bd5667cb1d012c6dda6fd12cad1b9ec3795b369e784127",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-wallpaper-mount.c",
+      "sha256": "49f575899286809a37853c8b711e02a7baabc2fa842a16e43dc8b61d02f1a97e",
+      "original_sha256": "49f575899286809a37853c8b711e02a7baabc2fa842a16e43dc8b61d02f1a97e",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi-wallpaper-probe.c",
+      "sha256": "247d0541c4dc7e9bd6187498d3422ba9e8ca520078d001ec1ff571d3d835a9ab",
+      "original_sha256": "247d0541c4dc7e9bd6187498d3422ba9e8ca520078d001ec1ff571d3d835a9ab",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/lmi_checkpoint_policy.py",
+      "sha256": "53388e41c3c897e866dc812cf494d4e900192058d80fd65c8623dc6453356a96",
+      "original_sha256": "53388e41c3c897e866dc812cf494d4e900192058d80fd65c8623dc6453356a96",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/normalize-lmi-ios-sdk.py",
+      "sha256": "1504a67c0aec99e9db925629a6b8a16eba16893029eb571deb4a70fb7b83a958",
+      "original_sha256": "1504a67c0aec99e9db925629a6b8a16eba16893029eb571deb4a70fb7b83a958",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/package-lmi-diagnostics.py",
+      "sha256": "674cb98f2012b918f0a16684b4851ce67c3436f506f5b8ece9111e2dd31e9474",
+      "original_sha256": "674cb98f2012b918f0a16684b4851ce67c3436f506f5b8ece9111e2dd31e9474",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/patch-lmi-early-return.py",
+      "sha256": "cb6671dd19045f0751a762cea985ab9b4f3515dec005694491e45126bbb8b0e1",
+      "original_sha256": "cb6671dd19045f0751a762cea985ab9b4f3515dec005694491e45126bbb8b0e1",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/patch-lmi-firmware.py",
+      "sha256": "0761b38c578882b92b3b3218c8eae641232e0072d9f45f3a5acbbd5da82bdb82",
+      "original_sha256": "0761b38c578882b92b3b3218c8eae641232e0072d9f45f3a5acbbd5da82bdb82",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/patch-lmi-return-guard.py",
+      "sha256": "679f0c4e627ce233f54c7af4294dec7bd437bd04c29748a062613d94fbd010cf",
+      "original_sha256": "679f0c4e627ce233f54c7af4294dec7bd437bd04c29748a062613d94fbd010cf",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/prepare-lmi-ios-images.py",
+      "sha256": "bf6f68c640db8b51975216a04277957ee05572ca2fdd03dd9df91cd3b161731e",
+      "original_sha256": "bf6f68c640db8b51975216a04277957ee05572ca2fdd03dd9df91cd3b161731e",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/prepare-lmi-wallpaper-png.py",
+      "sha256": "dab4c7eaac6880a159a3cf7d969381d4e4ff424bd59bc9ea288eada689e64ec9",
+      "original_sha256": "dab4c7eaac6880a159a3cf7d969381d4e4ff424bd59bc9ea288eada689e64ec9",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/stage-lmi-uefi.py",
+      "sha256": "aced56f72bcbcf748de1d704a38905b07dbf07cfbd82e362d1e9f25b55934bd8",
+      "original_sha256": "aced56f72bcbcf748de1d704a38905b07dbf07cfbd82e362d1e9f25b55934bd8",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/symbolize-lmi-stacks.py",
+      "sha256": "3a29ee5df3901a7445782ec3752ec7b3215ef160378ddce0bfd999b07db71381",
+      "original_sha256": "3a29ee5df3901a7445782ec3752ec7b3215ef160378ddce0bfd999b07db71381",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/test-lmi-checkpoints.py",
+      "sha256": "7c3c8d59869ae76fe7860ca9837b484e7c29352b960af08a5e52021c86a3df55",
+      "original_sha256": "1044d29c7f52e588b8af7d346bf4598b70519cc76e449581849951aa84c26f88",
+      "device_serial_redacted": true
+    },
+    {
+      "path": "tools/test-lmi-loader.py",
+      "sha256": "bd2e26700f44273dfcdd9aa827186479973630209095ac13cac18af9e6cc82a8",
+      "original_sha256": "c23f30c7417109d03694276f0f80e517b9c86d248b76786bd623b35d5f9bce98",
+      "device_serial_redacted": true
+    },
+    {
+      "path": "tools/verify-lmi-apple-services.py",
+      "sha256": "e0403c400ee770b118ee86f7d1756d21f97d966b0c9bcd2e87b9ad057a700572",
+      "original_sha256": "e0403c400ee770b118ee86f7d1756d21f97d966b0c9bcd2e87b9ad057a700572",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-boot.py",
+      "sha256": "d18fa018ef9547bcbbecdd7966df393135ec28fa1dc6b211ac614ac199b7f398",
+      "original_sha256": "d18fa018ef9547bcbbecdd7966df393135ec28fa1dc6b211ac614ac199b7f398",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-clock.py",
+      "sha256": "a40ba8e138087e8a72188144825e4f644f158d035db1da3a3d247286ea27597a",
+      "original_sha256": "a40ba8e138087e8a72188144825e4f644f158d035db1da3a3d247286ea27597a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-core-access.py",
+      "sha256": "5b1e22219dc593e627816c6209d7536637835ee3d677f2e1a44d82bd9169755c",
+      "original_sha256": "5b1e22219dc593e627816c6209d7536637835ee3d677f2e1a44d82bd9169755c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-core-memory.py",
+      "sha256": "0840915f40a55bb2f2948d4d7822068fe9d93d02cbdb5b0321d6770086eb332f",
+      "original_sha256": "0840915f40a55bb2f2948d4d7822068fe9d93d02cbdb5b0321d6770086eb332f",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-cp-config-plan.py",
+      "sha256": "abf11567a99cdba0e758053502ee6ea5cf6961fc07cacd023329c987c20e77e9",
+      "original_sha256": "abf11567a99cdba0e758053502ee6ea5cf6961fc07cacd023329c987c20e77e9",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-cp-plan.py",
+      "sha256": "6f63c5ae7af3b20ba5238557306acf1bb3d19af1972d51f3a295ce77f36e5629",
+      "original_sha256": "6f63c5ae7af3b20ba5238557306acf1bb3d19af1972d51f3a295ce77f36e5629",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-cp.py",
+      "sha256": "7919a3a553003598c60c4fcbf55188708f486018beac90dc08e15427849517d7",
+      "original_sha256": "7919a3a553003598c60c4fcbf55188708f486018beac90dc08e15427849517d7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-desktop.py",
+      "sha256": "83fb6aa92d9be487bf283ca62de26245124d0ab0410ef764e8150cc8db5261ef",
+      "original_sha256": "83fb6aa92d9be487bf283ca62de26245124d0ab0410ef764e8150cc8db5261ef",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-gl.py",
+      "sha256": "8714d789a3c1f4668339ac881b23d1acc93bb6f2d0db292374b14ef6ca05dae5",
+      "original_sha256": "8714d789a3c1f4668339ac881b23d1acc93bb6f2d0db292374b14ef6ca05dae5",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-gx.py",
+      "sha256": "b5f1c19a953cac1ecd0b0e9e56d8491baf8b2d27d65705c3e4761ac0ef1f8ba0",
+      "original_sha256": "b5f1c19a953cac1ecd0b0e9e56d8491baf8b2d27d65705c3e4761ac0ef1f8ba0",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-hfi-core.py",
+      "sha256": "af53328ab0f8cff96a78eda4b24e39716e917c64f8a41934d1ba6fa6478baf46",
+      "original_sha256": "af53328ab0f8cff96a78eda4b24e39716e917c64f8a41934d1ba6fa6478baf46",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-hfi-io.py",
+      "sha256": "04b7bcb4aad5209201cc56a5f4e2101b895f15a18a80eddb7c6b3660ccd9254c",
+      "original_sha256": "04b7bcb4aad5209201cc56a5f4e2101b895f15a18a80eddb7c6b3660ccd9254c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-hfi-perf.py",
+      "sha256": "c6e36e884990bd063c31e648264abce5b1f543deb9711db9ebf96a18a4a71bef",
+      "original_sha256": "c6e36e884990bd063c31e648264abce5b1f543deb9711db9ebf96a18a4a71bef",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-ram-evidence.py",
+      "sha256": "c4ee7703efa8c56b47a4d6fb1f7814a1e6dff03b00e5fa9034e404c94c596ea2",
+      "original_sha256": "c4ee7703efa8c56b47a4d6fb1f7814a1e6dff03b00e5fa9034e404c94c596ea2",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-route.py",
+      "sha256": "0f48df6f221f50268ab9b56712d11f812a7df3f24825703e9a12b40d54ccd7b8",
+      "original_sha256": "0f48df6f221f50268ab9b56712d11f812a7df3f24825703e9a12b40d54ccd7b8",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-rsc-init.py",
+      "sha256": "ebd32c2aca87731bfffb4d19e7f53195b29aaf003a50d12104c3246da4450693",
+      "original_sha256": "ebd32c2aca87731bfffb4d19e7f53195b29aaf003a50d12104c3246da4450693",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-rsc-state.py",
+      "sha256": "7d5672ff2da9fd04bf1c2729309a0455548c6e8d356f0fb9344fec70601e23a5",
+      "original_sha256": "7d5672ff2da9fd04bf1c2729309a0455548c6e8d356f0fb9344fec70601e23a5",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-scm.py",
+      "sha256": "48824643384451df877763ff6ed8c6cffa36a0e63cd5e2a4baa104104ce6d94a",
+      "original_sha256": "48824643384451df877763ff6ed8c6cffa36a0e63cd5e2a4baa104104ce6d94a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-table-plan.py",
+      "sha256": "559812b5f12ccb80a6a20d81b260c5f2d257769a413dd558c5e974ffcbc3fab4",
+      "original_sha256": "559812b5f12ccb80a6a20d81b260c5f2d257769a413dd558c5e974ffcbc3fab4",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-tile.py",
+      "sha256": "389efbcb9bde4ae9d532931ce898f5530994268f2acf9bc768e4dfedf32b2a4b",
+      "original_sha256": "389efbcb9bde4ae9d532931ce898f5530994268f2acf9bc768e4dfedf32b2a4b",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-unsecure.py",
+      "sha256": "4fbb6a772be399e593ac5d0615935d0ba503bcf84e359cdf75ccffcf9558e0c0",
+      "original_sha256": "4fbb6a772be399e593ac5d0615935d0ba503bcf84e359cdf75ccffcf9558e0c0",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-zap-load.py",
+      "sha256": "acb83f1ea3385b46de2a158c73d7d5452378eee72d8276e6f9af1aba1d53e24e",
+      "original_sha256": "acb83f1ea3385b46de2a158c73d7d5452378eee72d8276e6f9af1aba1d53e24e",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "tools/verify-lmi-gpu-zap-metadata.py",
+      "sha256": "a7728d0dd59c9d99baef1565596e2c2af21bdc400ce1f83a1c7be190ca5b4239",
+      "original_sha256": "a7728d0dd59c9d99baef1565596e2c2af21bdc400ce1f83a1c7be190ca5b4239",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/build.sh",
+      "sha256": "69cf8dc0911e99cfc5ee5581b30e190fd0e65c25db613f493fa60e067f749225",
+      "original_sha256": "69cf8dc0911e99cfc5ee5581b30e190fd0e65c25db613f493fa60e067f749225",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/mkjobs.py",
+      "sha256": "468cd688fd0f937dfe199427d39992141fed8a7c75aca3635a00ee34b2917027",
+      "original_sha256": "468cd688fd0f937dfe199427d39992141fed8a7c75aca3635a00ee34b2917027",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/mkeagl.py",
+      "sha256": "c12e554fd53e0ba95c64cec75ce87e64f37ec64013539a2f271956ad1db4f66d",
+      "original_sha256": "c12e554fd53e0ba95c64cec75ce87e64f37ec64013539a2f271956ad1db4f66d",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/src/inject.c",
+      "sha256": "3091aaa29426f44084392a8654bef14093400ec05149e9292952c8719561142b",
+      "original_sha256": "3091aaa29426f44084392a8654bef14093400ec05149e9292952c8719561142b",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/src/inject_sb.c",
+      "sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc",
+      "original_sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/src/eagl.c",
+      "sha256": "f6a6cb00de2116de815f1ae593edc056dd46b8a9be1e7de7947691b6b0e89921",
+      "original_sha256": "f6a6cb00de2116de815f1ae593edc056dd46b8a9be1e7de7947691b6b0e89921",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/src/eagl_slots.txt",
+      "sha256": "da86f4a9fe193f53236128eaf8b56ca5e00060518e8f674f9b852e9886804cbf",
+      "original_sha256": "da86f4a9fe193f53236128eaf8b56ca5e00060518e8f674f9b852e9886804cbf",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/src/gl_osmesa.c",
+      "sha256": "30278e9357b53f9fb5530d21ea519911fb93b052a4f896a8474f13cd7f621aa7",
+      "original_sha256": "30278e9357b53f9fb5530d21ea519911fb93b052a4f896a8474f13cd7f621aa7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/src/redwood_gl.h",
+      "sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51",
+      "original_sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/src/redwood_input.h",
+      "sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec",
+      "original_sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/src/redwood_drawable.h",
+      "sha256": "7f66f2e1ac01a40c1d612ff0b746c94c8ba12b797666ed5c3347d3379a17998d",
+      "original_sha256": "7f66f2e1ac01a40c1d612ff0b746c94c8ba12b797666ed5c3347d3379a17998d",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/userland/src/rwtouch.c",
+      "sha256": "013133a862b304dac018b5f86df4c88e630f381359bf82ea5d7fc38d7115fccc",
+      "original_sha256": "013133a862b304dac018b5f86df4c88e630f381359bf82ea5d7fc38d7115fccc",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mk-mesa.sh",
+      "sha256": "cbb2a658a70bd15cb952dcdb2e1db662330d76c25a821ebfb76b9916d56922d6",
+      "original_sha256": "cbb2a658a70bd15cb952dcdb2e1db662330d76c25a821ebfb76b9916d56922d6",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air2nir.c",
+      "sha256": "e00a7b632731e7c8516a2a7e8f011b7fe576660d2c2b9f6595978741610018c0",
+      "original_sha256": "e00a7b632731e7c8516a2a7e8f011b7fe576660d2c2b9f6595978741610018c0",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_bitcode.c",
+      "sha256": "ca969c530025038e7370c4291ea3cb47ba770c638f238c58b4f81eb78251033b",
+      "original_sha256": "ca969c530025038e7370c4291ea3cb47ba770c638f238c58b4f81eb78251033b",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_bitcode.h",
+      "sha256": "0b13de6db8417b1fa45f140a3bc454e92d693721a9d190d821f1d282caf02fa5",
+      "original_sha256": "0b13de6db8417b1fa45f140a3bc454e92d693721a9d190d821f1d282caf02fa5",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_intrinsics.c",
+      "sha256": "20b81c678ad82f6b722906569557b8d7eaa5e285c28ec6a06b5ee835edd5d189",
+      "original_sha256": "20b81c678ad82f6b722906569557b8d7eaa5e285c28ec6a06b5ee835edd5d189",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_layout.c",
+      "sha256": "dbcebf6a54c508264cd6dde1684913732a3d3beddac01c18785bc4e2682a0063",
+      "original_sha256": "dbcebf6a54c508264cd6dde1684913732a3d3beddac01c18785bc4e2682a0063",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_metal.c",
+      "sha256": "f0f334b9fb326fa65634b79d2ab5b0b7a754f347bdfa8b27bc71bfc7632593d7",
+      "original_sha256": "f0f334b9fb326fa65634b79d2ab5b0b7a754f347bdfa8b27bc71bfc7632593d7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_metal.h",
+      "sha256": "afd8c348cbfd241e54c24126d66cd7b2dc350d155862400b9d77faf9ae0f5d11",
+      "original_sha256": "afd8c348cbfd241e54c24126d66cd7b2dc350d155862400b9d77faf9ae0f5d11",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_metal_test.c",
+      "sha256": "39b41a5997814581503e6335f72a4e3a98bb79c4c12225ac287ceb45fe1c9726",
+      "original_sha256": "39b41a5997814581503e6335f72a4e3a98bb79c4c12225ac287ceb45fe1c9726",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_metallib.c",
+      "sha256": "934bea3f4f338ba8c727a85c9a4c3cbe070fb594695f704238fff1f352bbf4b7",
+      "original_sha256": "934bea3f4f338ba8c727a85c9a4c3cbe070fb594695f704238fff1f352bbf4b7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_module.c",
+      "sha256": "7ffc9326fd22b85f309d0c4770c87649bf042aa234763a5f55d053b1ede6fae7",
+      "original_sha256": "7ffc9326fd22b85f309d0c4770c87649bf042aa234763a5f55d053b1ede6fae7",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_module.h",
+      "sha256": "829ed284d3f0c815aff38c08d8483b781e904ed5f5e36643076e3ae4554ffee2",
+      "original_sha256": "829ed284d3f0c815aff38c08d8483b781e904ed5f5e36643076e3ae4554ffee2",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_print.c",
+      "sha256": "bf69217c8ffa6f1c68e837660a8a14a4ef683d68bb00e3b0a74ae54a37651f04",
+      "original_sha256": "bf69217c8ffa6f1c68e837660a8a14a4ef683d68bb00e3b0a74ae54a37651f04",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_private.h",
+      "sha256": "db40ef89aef805e402a9eeb22a35efa93de7a47796601b1d3ed4cbeac6b075bc",
+      "original_sha256": "db40ef89aef805e402a9eeb22a35efa93de7a47796601b1d3ed4cbeac6b075bc",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_run.c",
+      "sha256": "15a02c4b1ef2a0618d1cb0028f6e933bcf8452451ba2fff80cb1d7f6a17316bb",
+      "original_sha256": "15a02c4b1ef2a0618d1cb0028f6e933bcf8452451ba2fff80cb1d7f6a17316bb",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_to_nir.c",
+      "sha256": "a2b29aae165f600ae5ee859559ed05d49060ffeaa28d229476275c3b4f2b039d",
+      "original_sha256": "a2b29aae165f600ae5ee859559ed05d49060ffeaa28d229476275c3b4f2b039d",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/meson.build",
+      "sha256": "5f34a52018ca5cac4609f1c2ae6903867f813b526a68b0c54480005e3a9f973c",
+      "original_sha256": "5f34a52018ca5cac4609f1c2ae6903867f813b526a68b0c54480005e3a9f973c",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air/nir_air.h",
+      "sha256": "e8e08782be84362b3f6247e3c62919976d8756ef2f4884b16ebedfdea3df5a80",
+      "original_sha256": "e8e08782be84362b3f6247e3c62919976d8756ef2f4884b16ebedfdea3df5a80",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air-frontend.patch",
+      "sha256": "c29e06eb539b713b8bc5340e37a49d3e39fb16426da79043ec2b49fd3953737a",
+      "original_sha256": "c29e06eb539b713b8bc5340e37a49d3e39fb16426da79043ec2b49fd3953737a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air-ir3.patch",
+      "sha256": "ce474060257c128199f9dc87a62ca40efc6ab7cc1089273c6bd59ccb7cbae86f",
+      "original_sha256": "ce474060257c128199f9dc87a62ca40efc6ab7cc1089273c6bd59ccb7cbae86f",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/air-metal.patch",
+      "sha256": "39d88efb499c7ae9451611ca668e8e87568eaf84c95cfbfcbe2a3f95afcf7f5a",
+      "original_sha256": "39d88efb499c7ae9451611ca668e8e87568eaf84c95cfbfcbe2a3f95afcf7f5a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/freedreno-darwin.patch",
+      "sha256": "16edbe15d0e263e644e3cf955fdfd497f153495a61d040b734780dfec1ec6ad2",
+      "original_sha256": "16edbe15d0e263e644e3cf955fdfd497f153495a61d040b734780dfec1ec6ad2",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/ir3-round-default.patch",
+      "sha256": "2065de1cb4fc0fcc5f9a8fee214b6a5112ea6182f983f192e0c235980879bb8e",
+      "original_sha256": "2065de1cb4fc0fcc5f9a8fee214b6a5112ea6182f983f192e0c235980879bb8e",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/ir3-shift-split.patch",
+      "sha256": "26ca6b1e512ca3a43bb2d1cab3942d247f914e5a1fa34432462ab93d33c369ef",
+      "original_sha256": "26ca6b1e512ca3a43bb2d1cab3942d247f914e5a1fa34432462ab93d33c369ef",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/ir3-ssbo-subdword.patch",
+      "sha256": "a545a0cdfec12b604ae0acca7d7b5b4b8c7f5789029ba3e82eeebbd40414624a",
+      "original_sha256": "a545a0cdfec12b604ae0acca7d7b5b4b8c7f5789029ba3e82eeebbd40414624a",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/osmesa-es-profile.patch",
+      "sha256": "9ca1cbbd0becbc1bc57a5cd616d60b8a53e3e42f4208241b34bded686bcfb0bd",
+      "original_sha256": "9ca1cbbd0becbc1bc57a5cd616d60b8a53e3e42f4208241b34bded686bcfb0bd",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/redwood-drm/redwood_drm.c",
+      "sha256": "76ef9a9d3d222004306eee0c2c54043afeaa38bf16a7d108b0409ca1cf644f9f",
+      "original_sha256": "76ef9a9d3d222004306eee0c2c54043afeaa38bf16a7d108b0409ca1cf644f9f",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "userland-source/tools/mesa/redwood-drm/xf86drm.h",
+      "sha256": "272f5285703bbe83e62748e4a3f8606c759eaf890a91e3ff7e6793c3ad894629",
+      "original_sha256": "272f5285703bbe83e62748e4a3f8606c759eaf890a91e3ff7e6793c3ad894629",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "LICENSES/upstream-userland-MIT.txt",
+      "sha256": "f6cfd96f40e34d3679e037e1192d24a3794e41aa196ca6df76c0826ed6cd60c5",
+      "original_sha256": "f6cfd96f40e34d3679e037e1192d24a3794e41aa196ca6df76c0826ed6cd60c5",
+      "device_serial_redacted": false
+    },
+    {
+      "path": "LICENSES/APSL-2.0.txt",
+      "sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+      "original_sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+      "device_serial_redacted": false
+    }
+  ],
+  "uefi_base": "e51cd877e31c8fbb322032dc4cb6715e83d25ad3",
+  "mu_basecore": "cfb93724a06ff86ff5ba971413368a7809ee42a5",
+  "public_files": [
+    {
+      "path": ".gitignore",
+      "sha256": "69669dbf6b739139afffb33eee64af9e95799e5eb6c0f1784399b01713ea40b6"
+    },
+    {
+      "path": "dependency-cache/manifest.json",
+      "sha256": "7e5e903e707ea537ab55f04be61efa6e48168ac24ee735985ccff851736183fe"
+    },
+    {
+      "path": "docs/BUILD.zh-CN.md",
+      "sha256": "d49ff77844d421823d58855203fce13ebdd19e040720faed26d9f415f4c3762e"
+    },
+    {
+      "path": "docs/EVIDENCE.zh-CN.md",
+      "sha256": "a39012317c0bcf7acfd9a38e7857ef9ba9bb0d33812c03f3dfc22dedff830426"
+    },
+    {
+      "path": "docs/GPU.zh-CN.md",
+      "sha256": "fefa5d29f92261e9863b7996d42adc02d7321ebd78d58c8ad7d8c710ebe4cbce"
+    },
+    {
+      "path": "docs/TOUCH.zh-CN.md",
+      "sha256": "08746039cc9b3f7d3261704ea31d7bc86ad0ee168705b9549a41c7bbb45d4c69"
+    },
+    {
+      "path": "docs/UEFI.zh-CN.md",
+      "sha256": "f55fddd46e5d51a865e2c016fb446bd56367de4399f6ef742bd53b156cd7119c"
+    },
+    {
+      "path": "evidence/quiet-v3-gl-excerpt.log",
+      "sha256": "bb70d6aa52225d83f82fcd177f6dd2ab98e503813546588c20c2b26dbf5c1cd2"
+    },
+    {
+      "path": "evidence/quiet-v3-provenance.json",
+      "sha256": "f1fcc2888972cab893c3778e1d74fa4663ae2825680586693136b13598d0e47c"
+    },
+    {
+      "path": "evidence/v22-input-analysis.json",
+      "sha256": "2134d9be1fe8f68a048a3bbcdaee9e80ee0a7084987b8689a4a40978554b9c6a"
+    },
+    {
+      "path": "evidence/v22-provenance.json",
+      "sha256": "1e883e37211a24646836f53b9b433c9ef2399f43799979d28b0051f2344b4a5e"
+    },
+    {
+      "path": "evidence/v22-user-interaction.json",
+      "sha256": "5675071f21e91a40f66c8f9ebb8d3dfe5f5a63d865f373c3d2283b0d415c9d33"
+    },
+    {
+      "path": "evidence/v23-input-analysis.json",
+      "sha256": "c81affdc4758e6d9c6e9f66ce5cb26223fcb5f9dbfe9aa3e2bbf062f2eff8100"
+    },
+    {
+      "path": "evidence/v23-provenance.json",
+      "sha256": "e10b45e7c1518f27df4b1e5352a95f11084ebc0d9b52dfcb5aab0e798726b404"
+    },
+    {
+      "path": "evidence/v23-user-interaction.json",
+      "sha256": "c421be26ac940380d3035f50260a1fad792a9694fbc70c1dfd609f408699ddc6"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "d021e188118936cf241c42b4ffedbc0ed250c8a7db5233348252926fb72bf9eb"
+    },
+    {
+      "path": "LICENSES/APSL-2.0.txt",
+      "sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b"
+    },
+    {
+      "path": "LICENSES/Mu-Basecore-License-History.txt",
+      "sha256": "ffa82412001a194d32486a7c4bcb4f438555b95f438e8c6dc0a25f0710f3f65a"
+    },
+    {
+      "path": "LICENSES/Mu-Basecore-License.txt",
+      "sha256": "50ce20c9cfdb0e19ee34fe0a51fc0afe961f743697b068359ab2f862b494df80"
+    },
+    {
+      "path": "LICENSES/Mu-Silicium-BSD.txt",
+      "sha256": "2b031880c646006165194888f9814806719ab4c91c26d330c4eb71e1983f0187"
+    },
+    {
+      "path": "LICENSES/upstream-userland-MIT.txt",
+      "sha256": "f6cfd96f40e34d3679e037e1192d24a3794e41aa196ca6df76c0826ed6cd60c5"
+    },
+    {
+      "path": "NOTICE.md",
+      "sha256": "118d4d63edfdd87504033271ccfaeb0d2c645ecb08f78d95eadc9e30f10304db"
+    },
+    {
+      "path": "patches/mu-basecore-local.patch",
+      "sha256": "2977380beb49762f1fa7964eb320f690d859612b4d39643a813e58bb2bfa64de"
+    },
+    {
+      "path": "patches/mu-silicium-local.patch",
+      "sha256": "114c3f6a98175d1a416b0f3c08597fd74f45fe43b3867ae260a3a6f895c5b683"
+    },
+    {
+      "path": "patches/upstream-hackios-mu.patch",
+      "sha256": "22dbdd861657f40112fe4a9c03f663b55ac890cd002f2ba9f0254dd74f0389c4"
+    },
+    {
+      "path": "patches/userland-local-changes.patch",
+      "sha256": "e7411a006fde1ff7390fcba86a06e84eb325ed1c719c52a1706841800c589b3f"
+    },
+    {
+      "path": "port-drafts/uefi/lmi.toml",
+      "sha256": "72a67f9ab211e359d4c2ff79fc4c8cbc3149181e97ff2df15ea52ece5e83f71d"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/DeviceBuild.py",
+      "sha256": "4d93864ccdb918bde52013927f46af1a4984764b1f32020441ab82682daebfc9"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/Include/APRIORI.inc",
+      "sha256": "b8215b5c09a2948fc5a7fd613a34b1992229dc71f2581ff9b74b31fc4bb82e60"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/Include/DXE.inc",
+      "sha256": "bad7f137f643c4a7cf5e141cbbc0d0484a59a4f13af9b738cffa98cb6328f5bf"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/Include/RAW.inc",
+      "sha256": "f417bc73fbd1bfdcea41ca619ac86664261fc92876be1c88584649697c092e32"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/Library/ConfigurationMapLib/ConfigurationMapLib.c",
+      "sha256": "4d5250c2ddfb6aef060151160ea0878308a57179051582b4a52af2409f73ded1"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/Library/ConfigurationMapLib/ConfigurationMapLib.inf",
+      "sha256": "78a620edb5af884083752071caf69ff4aa4c38eb9145340d53fc7079b98361b9"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/Library/MemoryMapLib/MemoryMapLib.c",
+      "sha256": "3e1b3fa5f9def9fb8b00fa3d271598182cf220d972bd871f8fc717fb27b6f855"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/Library/MemoryMapLib/MemoryMapLib.inf",
+      "sha256": "d9d3539e8a132b50c30a9d47cfb5fe103c2c79dc935b572c9d0a3e1942ccbd84"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/lmi.dec",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/lmi.dsc",
+      "sha256": "b047fc06ce88f1825c2c9cfaff845ac12695b82df5a2b37e6242ac9852b1149c"
+    },
+    {
+      "path": "port-drafts/uefi/Platforms/Xiaomi/lmiPkg/lmi.fdf",
+      "sha256": "d3f1bb470790d14544283b04f270883e4b59aeefd76bf6067065b6560412926c"
+    },
+    {
+      "path": "port-drafts/uefi/XnuLoader-lmi-diagnostics.c",
+      "sha256": "89c0e61d6d4c8a4dc7519689130cc7b759f4af4e1be2e9800834001480c7cff0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "88496b692684e25a72a41af2125590c532bf1f97e0972cdce597b43e98f6f9fe"
+    },
+    {
+      "path": "tools/analyze-lmi-loader-memory.py",
+      "sha256": "d953cc4014fc69fdab27d654ff6465ae2d5d4eb06c4d9b01ccfcd8829cdf67cc"
+    },
+    {
+      "path": "tools/analyze-lmi-touch-log.py",
+      "sha256": "f4c107b643422a0530d7f2421a7a239adec249be5c023d9fa1aeb20202bbaf84"
+    },
+    {
+      "path": "tools/analyze_memory.py",
+      "sha256": "18c07b2d3cc1dbba0a0ce06bd281c791eab4dddeddf7875e6cf1e97a27076fd6"
+    },
+    {
+      "path": "tools/audit-lmi-firmware.py",
+      "sha256": "e7a806939be0b7994e5e272f7980ad35e77c66d3c7fa1ca5a1fc200c5e8226c6"
+    },
+    {
+      "path": "tools/audit-lmi-gpu-desktop-region.py",
+      "sha256": "2099cc27e3360a67a82c1846c41368b81b0b7f076fc75508f0e7dee4bfbce438"
+    },
+    {
+      "path": "tools/audit-lmi-gpu-desktop.py",
+      "sha256": "df9b41b0a0d13af652f75a99242348c05f368f92dee37d342072c3daba13d230"
+    },
+    {
+      "path": "tools/audit-lmi-gpu-frame-region.py",
+      "sha256": "52a8406ea0652c89aaa55736ad2fc32df545d7463e017990a6cba0b1a66dac07"
+    },
+    {
+      "path": "tools/audit-lmi-gpu-init-region.py",
+      "sha256": "b37cbbe1f5ffb680246348e1a65b77b3113f6f26f895707f941db2ac52050f99"
+    },
+    {
+      "path": "tools/audit-lmi-gpu-normal-diag-region.py",
+      "sha256": "9141df30edf86fa25ae6154cd92a7f1bbb9586aedf8810add09e78717a9256a0"
+    },
+    {
+      "path": "tools/audit-lmi-gpu-padding.py",
+      "sha256": "ef95342ca2d20367803c6ef31346a6ae1cf907cb2f8b1cb6f997638db6b2e3e3"
+    },
+    {
+      "path": "tools/audit-lmi-gpu-unsecure-region.py",
+      "sha256": "97f41813e98b5d055635db46a23ae1e8b8e793f912857238e4ae84537ca87d99"
+    },
+    {
+      "path": "tools/audit-lmi-gpu.py",
+      "sha256": "e16e7a6d116b9cce6245576bfcf826e2917672cec322948c5d35e03d16c48821"
+    },
+    {
+      "path": "tools/build-lmi-aligned-hello.py",
+      "sha256": "69a084c472c2ccd781bac5366d6204a6ff8eaa03bbfe80c6f4f9a8ecc9370372"
+    },
+    {
+      "path": "tools/build-lmi-bootstrap-probe.py",
+      "sha256": "71b05afb5099ed7a94a334279fbc7bb937f349e138a2cab682cb4ca480228dcf"
+    },
+    {
+      "path": "tools/build-lmi-bsd-probe.py",
+      "sha256": "99b4370b7e3c1be16def9c8471a711f68ff424f8d3bb95b70d3036db9f2b73cc"
+    },
+    {
+      "path": "tools/build-lmi-console-probe.py",
+      "sha256": "5748073857c67e4e097d8af568c24aa1b9340335b5516912e4871f69afb0a6e9"
+    },
+    {
+      "path": "tools/build-lmi-driver-probe.py",
+      "sha256": "a6d9002bdbfa593ce957c79ef7959aba787f125e848dbc08b86131ba9e9be81b"
+    },
+    {
+      "path": "tools/build-lmi-gpu-gl-image.py",
+      "sha256": "c8ddc67bc4a5214070d51cd3c9c976d4738c15da1ffd4a020c8a997781421048"
+    },
+    {
+      "path": "tools/build-lmi-gpu-image.py",
+      "sha256": "54c197573e1cdbcdd6b48f513a6ca95ed27d1fa1de4f3b1a9f14aaa0916fb225"
+    },
+    {
+      "path": "tools/build-lmi-gpu-mode.py",
+      "sha256": "38201d5550afa0e1f5b0355cd1f57d2f79a8ded56b902242f696f5c7b7ce08bd"
+    },
+    {
+      "path": "tools/build-lmi-ios-probe.py",
+      "sha256": "fb520b94152c202ae4bc8422e9fb27f7890d6fc384bb9c847d8b8fad82c41c1e"
+    },
+    {
+      "path": "tools/build-lmi-irq-probe.py",
+      "sha256": "9af09895f34594cd98c1f62766a3b6f1b2bd93658acc15fc5e68b1000b700d05"
+    },
+    {
+      "path": "tools/build-lmi-loader.py",
+      "sha256": "c3ebe7745fd49d2ae64c43be7c8b9db72e4a09782fce2ae99844453d000aa370"
+    },
+    {
+      "path": "tools/build-lmi-lslog-image.py",
+      "sha256": "6baeddb6319dcceaef9129f364e9244daf39b80f50d7734698a5bec525fd2c6a"
+    },
+    {
+      "path": "tools/build-lmi-minimal-root.py",
+      "sha256": "502db887d6e9b23a6fe7914d744f30ed217c628b975f09d2e06d2777a0163cc2"
+    },
+    {
+      "path": "tools/build-lmi-preirq-probe.py",
+      "sha256": "5714871aafc6f162afcd804c7ae3b1446febd32efed6a01e0d933b76af0fb672"
+    },
+    {
+      "path": "tools/build-lmi-root-probe.py",
+      "sha256": "136cdafb7e109bf16676a8f4193e1e68220d109d68968c1d679bcd5f6b0c6b3c"
+    },
+    {
+      "path": "tools/build-lmi-shim.sh",
+      "sha256": "1cf53402fa43d338a7ed0e14a1c4d24883851db68258f26be76beffbc4167bcc"
+    },
+    {
+      "path": "tools/build-lmi-uefi.sh",
+      "sha256": "05244765336477f49537532d9d7f520b321f2299c4dd49acb3f5c5d125c495a5"
+    },
+    {
+      "path": "tools/build-lmi-usb-probe.py",
+      "sha256": "d71fd1266e913523f1b68f115449f20e77de1ed58fdbb32d3327168d9711bc0c"
+    },
+    {
+      "path": "tools/build-lmi-user-probe.py",
+      "sha256": "bd6c9cc5add27e42f2eb505f4e05bd8229c1c522661e14ed0a39e4ef6fa6ba16"
+    },
+    {
+      "path": "tools/build-lmi-wallpaper-image.py",
+      "sha256": "84d02b2d9febb05e572417b35a4733d08221be0df0d5f005a6dd1046b70f58f8"
+    },
+    {
+      "path": "tools/check-lmi-apfs-image.py",
+      "sha256": "e15a0b93ccd54f0ac9fdc203ecae5b4dc83710b2944d04b143da86692f76d519"
+    },
+    {
+      "path": "tools/check-lmi-gpu-boot-source.py",
+      "sha256": "cab87096d77c75a5946ac23d7ec8d27c2be4054418bdd3ec2a3ec3b858308cfe"
+    },
+    {
+      "path": "tools/check-lmi-gpu-boot.c",
+      "sha256": "e4fff38abdd8e63931a66bc3ed40ff44e1b51e1a5949b6f79d63dd5d43959cc3"
+    },
+    {
+      "path": "tools/check-lmi-gpu-bus.py",
+      "sha256": "937650b19af8ebb6671717157e679b24c5e1be6d6714c3ea10334e9755ae0b5d"
+    },
+    {
+      "path": "tools/check-lmi-gpu-clock.c",
+      "sha256": "e259d3ea5fe474fa3592d107ae5322b56b779ff03539bdf684af4fd05451d0b1"
+    },
+    {
+      "path": "tools/check-lmi-gpu-context.c",
+      "sha256": "b490d0d54392fc833f2eb0c4ac1ce5a8cd0966c7bb24e05e507d0a354988bc7b"
+    },
+    {
+      "path": "tools/check-lmi-gpu-core-access.c",
+      "sha256": "f420a048de5c1c33474496aeefbfbded3a470427aca1d436c7f024871acc36e6"
+    },
+    {
+      "path": "tools/check-lmi-gpu-core-memory.c",
+      "sha256": "3af8e53e0532117a558cb39aec3effab48896e7bd18138e7ca8cfef8d71387be"
+    },
+    {
+      "path": "tools/check-lmi-gpu-cp-plan.c",
+      "sha256": "50ca26adb2b9ddc2105864f9c91cea00cb7a5635bda2eae1a973d2323346abbd"
+    },
+    {
+      "path": "tools/check-lmi-gpu-cp-verifier.py",
+      "sha256": "999cb584da6b2adf2f3368e21a39c339ab4e65682cc26bdc48597423f73464a1"
+    },
+    {
+      "path": "tools/check-lmi-gpu-cp.c",
+      "sha256": "5784e63a42c4deff87ece77ead5cc18b14fd3d7cd2464337ded5ce8ac302c861"
+    },
+    {
+      "path": "tools/check-lmi-gpu-desktop-region.py",
+      "sha256": "ce1b21965ab06e1de129436a916e60f64f14e18ed68a810262d4118f0d8561de"
+    },
+    {
+      "path": "tools/check-lmi-gpu-desktop-source.py",
+      "sha256": "3541a8419908e555fb0da401f986007c8976cdf4a52e521cdfc88e27f5d142aa"
+    },
+    {
+      "path": "tools/check-lmi-gpu-desktop-verifier.py",
+      "sha256": "b6d5f6a5002337aaf8eec1885153c47707f00dc57c073b7a4dfaf6272779d95a"
+    },
+    {
+      "path": "tools/check-lmi-gpu-desktop.c",
+      "sha256": "68a1dfc0e0002dba458f511fbe43e6d45c2aab579788ce04829c21253fa9e404"
+    },
+    {
+      "path": "tools/check-lmi-gpu-gl-verifier.py",
+      "sha256": "eafda412dec33d1115cf2e5e424f26ca693d54a83e27f8be55519078179807c8"
+    },
+    {
+      "path": "tools/check-lmi-gpu-gx-verifier.py",
+      "sha256": "dca53add59ed2df0e2bc31c05ca7e41bd3c177b234be0fca77d12c3b7d41a809"
+    },
+    {
+      "path": "tools/check-lmi-gpu-gx.c",
+      "sha256": "ca062d93fc21109e2deba0ccfef26770693d64054ce42aaba73400f1ea3eab71"
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-core-verifier.py",
+      "sha256": "148365c677cd14ce997df724b7da4d1d5dd98b24e461c0fe9f91265df4ef701c"
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-core.c",
+      "sha256": "67f3aa71eaf1790005a4c3e824f9f39aa9b6b42b92b70a3d374c0a4f07e69e87"
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-io-verifier.py",
+      "sha256": "c578f8ad9dcc96592268c795c32f93b83c036918266a826d81c21a7b4b7200b0"
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-io.c",
+      "sha256": "0dae16ab764fd485a64749f0d2219f3ed1763eb764e26f5cfc2b24222fb9fc2b"
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-perf-verifier.py",
+      "sha256": "7bcac5b2a9c7bd9503c65c61df9424ab5b232bc2cf52697106ff7304bfcdfe05"
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi-perf.c",
+      "sha256": "34c90497ecf199b900ed87ab976abb8be1699947a65990c85b182a8d44281ebb"
+    },
+    {
+      "path": "tools/check-lmi-gpu-hfi.c",
+      "sha256": "8ad2009371bbc9924f7e82c731c88e82e08b8375a83894df20fb8844da1530fd"
+    },
+    {
+      "path": "tools/check-lmi-gpu-normal-diag-region.py",
+      "sha256": "76df6e65de2aa83a3e725409310d6c590b404509b48defa62b3cc05296b1e660"
+    },
+    {
+      "path": "tools/check-lmi-gpu-normal-preflight.py",
+      "sha256": "e57f3e698ee640b0b2d01fb07c9ad5c4ccb13023571eabf286bd1d87081a591e"
+    },
+    {
+      "path": "tools/check-lmi-gpu-normal-verifier.py",
+      "sha256": "55964f494b069de91a7acb9e46a2caa06cf4c19164eb664344fe43a321f70593"
+    },
+    {
+      "path": "tools/check-lmi-gpu-ram.py",
+      "sha256": "85601bd389e7a3926b3e160be4311fd33d71eafdaeb23379d980a99005fee3c6"
+    },
+    {
+      "path": "tools/check-lmi-gpu-resources.c",
+      "sha256": "ed466f5382b8d7d1eba182ae8c0d80a1ab078adf6ae3edff2f8134d381d2b0f7"
+    },
+    {
+      "path": "tools/check-lmi-gpu-route.c",
+      "sha256": "aee91f6629534b0ee9c576c66b6ae9fc31077bb5fec3e3fae62e29c1aa56a6e7"
+    },
+    {
+      "path": "tools/check-lmi-gpu-rpmh.c",
+      "sha256": "a957bf34ffb9c5bb112bb00ef48b80a09839e4b6a13c0c26702ad0c5c32a31ab"
+    },
+    {
+      "path": "tools/check-lmi-gpu-rsc-init.c",
+      "sha256": "c787c1640051fbfd03a7141e7fe693b87b723828dd5c09d2ebec95b54d826185"
+    },
+    {
+      "path": "tools/check-lmi-gpu-rsc-pdc-vote.c",
+      "sha256": "ea6f368c2bbd558a3b33eb6af780d6940288986cd716b83aac1c6344e83a38ee"
+    },
+    {
+      "path": "tools/check-lmi-gpu-rsc-state.py",
+      "sha256": "81b62d4781f369e4bab1945268c81bb73da9e73bf896704156b54a1534b9d6e2"
+    },
+    {
+      "path": "tools/check-lmi-gpu-scm.c",
+      "sha256": "d2fa2b032a5f71709e1d3cf02ccfcbfc2789f44fdb5367a2de974030d7ce31cb"
+    },
+    {
+      "path": "tools/check-lmi-gpu-smmu.py",
+      "sha256": "f1902e75f37be8a2212df8aa22bf1450b63f6f7542b7598d0ffc206683322f99"
+    },
+    {
+      "path": "tools/check-lmi-gpu-table-plan.c",
+      "sha256": "e161dab0679c6381916808eb8ce2ed881e863afdce474d9cd93f020c6ac218fd"
+    },
+    {
+      "path": "tools/check-lmi-gpu-table-verifier.py",
+      "sha256": "352f065bdf1b9742f21360d2348a45c5ce387346d83a57cf09203b878b8b4aeb"
+    },
+    {
+      "path": "tools/check-lmi-gpu-tcm.py",
+      "sha256": "3234e85f7b48b8f8f0a93ed1bf338fbf482eeda297d01648bd33b2e7d18d097d"
+    },
+    {
+      "path": "tools/check-lmi-gpu-tile-source.py",
+      "sha256": "9606f5b10d2be5ca7687594f4039e81a4fad6cf056266afced262f5088f6f214"
+    },
+    {
+      "path": "tools/check-lmi-gpu-tile-verifier.py",
+      "sha256": "c0fd40c5b45635b7f1850a737a047b92048ae81489d1b294070319340c55b04c"
+    },
+    {
+      "path": "tools/check-lmi-gpu-tile.c",
+      "sha256": "3d60304a842bc1a4973d77484a5a4641a1941848efff736e7e02c3d9dca51b6d"
+    },
+    {
+      "path": "tools/check-lmi-gpu-unsecure.c",
+      "sha256": "7573fd90f0d3bc9cf4993982b899ac5c93165602f7d29c5446bcdd3b823b4a23"
+    },
+    {
+      "path": "tools/check-lmi-gpu-zap-load.c",
+      "sha256": "31e6a9558ee4c7b809ec4f722007031f1b68d81d64b740a396f6914090b4f753"
+    },
+    {
+      "path": "tools/check-lmi-gpu-zap-metadata.c",
+      "sha256": "30eb875c902ff65145a00d0034557938afe6719a96e8a55aa1ce3c88912f0e1a"
+    },
+    {
+      "path": "tools/check-lmi-hid-routing.py",
+      "sha256": "d36893e978fc0a8cada494d98745675d363e3e81c474aa5d85eec33753dcad45"
+    },
+    {
+      "path": "tools/check-lmi-hid-startup.py",
+      "sha256": "fbd7e7b0053cb72395eb2eefa5ffc528478602687475b985a90f9070c39ea06c"
+    },
+    {
+      "path": "tools/check-lmi-input-observers.py",
+      "sha256": "181ba5df4e5396f2c675ddaeaccbe63325662c3a86891a461ce72d4d66be0e70"
+    },
+    {
+      "path": "tools/check-lmi-mkjobs-rest.py",
+      "sha256": "f625d2b296d9e8612d304352bffde7d2ad3bfd321864732070dbc3e7519db9ae"
+    },
+    {
+      "path": "tools/check-lmi-smp-return.py",
+      "sha256": "6120941e4cb57cf087aafd99765e13d9d9307f10d766d1d9fe50e6642aa70a58"
+    },
+    {
+      "path": "tools/check-lmi-touch-reports.py",
+      "sha256": "d9717778019c2d023a6903a721f223dfe936e982c0b4cc04fd8bd7c3e6a76ebc"
+    },
+    {
+      "path": "tools/check-lmi-touch-timing.c",
+      "sha256": "d224efda2f973d6364ece78c84121082665b1e4941be9f7a91572809089b5801"
+    },
+    {
+      "path": "tools/collect-lmi-recovery-logs.py",
+      "sha256": "e937f797874eaa9b724eba850ac798629be7c6b732ef079864b876eb1511ebc8"
+    },
+    {
+      "path": "tools/decode-lmi-framebuffer.py",
+      "sha256": "18117aecafdf9333f3565a92bb9e10d55e27f29086c1ba7af8adce707a63ceb3"
+    },
+    {
+      "path": "tools/export-lmi-ios-restfix.py",
+      "sha256": "277e0532d443106663600dbe3f645f5e68399b159724a4b4d37d16ae1d4687c2"
+    },
+    {
+      "path": "tools/export-lmi-uefi.py",
+      "sha256": "5e16bbfaef755c4064ff9a5ff03c4b1ef40613ad61aa59e90f7484ecdde52ec7"
+    },
+    {
+      "path": "tools/extract-lmi-a650-tables.py",
+      "sha256": "51ebafcaa281509e1177ea17a6d27f065983f6de26fe4da53bed8eed41566b6a"
+    },
+    {
+      "path": "tools/fetch-mu-dependencies.py",
+      "sha256": "d0cff08a2d77aeac685e6b322fdf42ebbf63721785ddefea878fb9023db415bf"
+    },
+    {
+      "path": "tools/generate_lmi_draft.py",
+      "sha256": "ce78823308955f81bb7e0a8295c34183991e1a082c2b0e4ec8afc007bafa83e2"
+    },
+    {
+      "path": "tools/guard-lmi-memory.py",
+      "sha256": "9c743775a5ee22d30266cfb26531ec3411b071ee355069f855052b2fbe4c0f1a"
+    },
+    {
+      "path": "tools/import-mu-dependencies.py",
+      "sha256": "517e00d19b264df600555e3c82773055d6730b44476e3495b4bf01cebdb09537"
+    },
+    {
+      "path": "tools/inspect-lmi-gmu-firmware.py",
+      "sha256": "351019e11b1c97fb1a01ac22449916c1bbda7111b72305b29608db12d213c5a8"
+    },
+    {
+      "path": "tools/inspect-lmi-wallpaper.py",
+      "sha256": "d2454c708537bb54c00f8e284adb549cfd2af79af71f0ebcf85644538c862f44"
+    },
+    {
+      "path": "tools/inspect_dtb.py",
+      "sha256": "d54e4067a245d95e21ba2ab6db068be5adcd5d4301cb065c5da5f77b4e657473"
+    },
+    {
+      "path": "tools/inventory_firmware.py",
+      "sha256": "da194f7c88b6935f8b44bc670a253f4031ec43f697de776d5d93b85f040810b4"
+    },
+    {
+      "path": "tools/lmi-gic-guard.c",
+      "sha256": "c49176837976eabcc00fbc073e72b1a7a8cd615a070050541eac8f86e112bd41"
+    },
+    {
+      "path": "tools/lmi-gpu-boot-regs.h",
+      "sha256": "437efd685f69bb10984495dd6364b5a300ba10505a85b7fa6d11bbd6d3107903"
+    },
+    {
+      "path": "tools/lmi-gpu-boot.c",
+      "sha256": "5c0908b6677cae4469b4da23600a32c2c80c2e635f9d8cee46ffa3d772df6247"
+    },
+    {
+      "path": "tools/lmi-gpu-clock.c",
+      "sha256": "4639dca3334e7b7414f5781f945e0044e664e51733c00556dcda09a7a255a8c2"
+    },
+    {
+      "path": "tools/lmi-gpu-context.c",
+      "sha256": "ecf8edfb4b18f38c2e369852e94c081654fa0bc24ea845543208f54d6cecc11d"
+    },
+    {
+      "path": "tools/lmi-gpu-core-access.c",
+      "sha256": "d5230921778d552a47f9bd88e50be89325478f6ae740f3e66112cd3ec91d4af7"
+    },
+    {
+      "path": "tools/lmi-gpu-core-memory.c",
+      "sha256": "7a0fe12b0f90c1186193e2327b93ca38d0303884db2e2eefe1c27391581ac2eb"
+    },
+    {
+      "path": "tools/lmi-gpu-cp-plan.c",
+      "sha256": "b03b0cd3fc1c21612ccb9f409a8614f29820842a22320c478fbaed9ca729f1b4"
+    },
+    {
+      "path": "tools/lmi-gpu-cp.c",
+      "sha256": "d8a03e25938be35432c17b9f7cc94ab8aabcf109407504cf5a4d181a999db837"
+    },
+    {
+      "path": "tools/lmi-gpu-desktop-profile.py",
+      "sha256": "1eb18b477483ee56f3582181814ef4ee2e705dbcb90bf3f6b1958873bb16fffd"
+    },
+    {
+      "path": "tools/lmi-gpu-desktop.c",
+      "sha256": "61dd1fa47603eb03a2c432851b062d1cae15c02946f421021f74ba9efda07b85"
+    },
+    {
+      "path": "tools/lmi-gpu-gl-probe.c",
+      "sha256": "f31ea4e7d4c3bdc88a2500489730620e938ad78368b6e8c3ebdb6c37c7a51191"
+    },
+    {
+      "path": "tools/lmi-gpu-gx.c",
+      "sha256": "4403c4c3711ce0f47972bddd633a75affb37b94130895ba718bbf1b414528adb"
+    },
+    {
+      "path": "tools/lmi-gpu-hfi-core.c",
+      "sha256": "2527aa5435bf499ebf73a19d51b77eb30a17d05aa57ccffd58bf55b66d1ee88f"
+    },
+    {
+      "path": "tools/lmi-gpu-hfi-io.c",
+      "sha256": "52463bc0ba8a4753b70ad2df26e85117300e8afae8ac538772ee6ed228ae8acf"
+    },
+    {
+      "path": "tools/lmi-gpu-hfi-perf.c",
+      "sha256": "f80e5f5c07dcd5758a1fcd5f4125fa51107f4234be0f84a6b0808129ff60e041"
+    },
+    {
+      "path": "tools/lmi-gpu-hfi-transfer.h",
+      "sha256": "e0a3fd90623b822768c0d69c4e15c916bc10f0e97fd349666efa0752e4d90887"
+    },
+    {
+      "path": "tools/lmi-gpu-hfi.c",
+      "sha256": "1c69a85600c1df93bb2e34b63c13b8f7318d8ccab209573f49ed4edbecc38b91"
+    },
+    {
+      "path": "tools/lmi-gpu-probe.c",
+      "sha256": "54621a676d0081d91c9cbe8e49a166290230dd9df4a8134aaf341a059a82bc08"
+    },
+    {
+      "path": "tools/lmi-gpu-ram.c",
+      "sha256": "2728645313e1c9230685393e8d08081c942befcdfdf6112e76754e926dd1882b"
+    },
+    {
+      "path": "tools/lmi-gpu-resources.c",
+      "sha256": "3cae183397d9165e8b6b19c5dcf670845d3e4afb8e01a83da0bb734ea35b0a59"
+    },
+    {
+      "path": "tools/lmi-gpu-resources.h",
+      "sha256": "00006a4fe1d8a686cccd6c188edbae0282042ad23d31d52d58929e67b364fd01"
+    },
+    {
+      "path": "tools/lmi-gpu-route.c",
+      "sha256": "e7e5dcfed7b8ab7a4cb1f0fd1f9b001b5308ecd32a2d0c72e0eb6f57a5465bab"
+    },
+    {
+      "path": "tools/lmi-gpu-rpmh.c",
+      "sha256": "296cf7489b6c7d6aa476e6be4acd09e45b99301a67f825302bc261f74d3f3bb8"
+    },
+    {
+      "path": "tools/lmi-gpu-rsc-init.c",
+      "sha256": "e1bbc71783a4cbe53b8b0583df29004f9a6bd8166aeda2142787c322f172665d"
+    },
+    {
+      "path": "tools/lmi-gpu-runtime.h",
+      "sha256": "3cdd424b12e957386c6e05a405609aaf3278a50251f1f43bd23c069e60c97fc5"
+    },
+    {
+      "path": "tools/lmi-gpu-scm.c",
+      "sha256": "f5806e158cea6a8bb304b502a95b82c034837d0149a03ba8bee7b948cf48cbbd"
+    },
+    {
+      "path": "tools/lmi-gpu-table-plan.c",
+      "sha256": "1ecb66b621db485201d0f9e1dd33f615460a1c3b31923e6f12f66bc724081b6c"
+    },
+    {
+      "path": "tools/lmi-gpu-table-plan.h",
+      "sha256": "0c9730934cacbb422a2c0e7acd4cf9f1151f2a64069bf5b489960171eb3cc8ed"
+    },
+    {
+      "path": "tools/lmi-gpu-tile.c",
+      "sha256": "f4e0109f044118dbef03a7d9aeb30177f6e33000067e18330784c78439dd387c"
+    },
+    {
+      "path": "tools/lmi-gpu-unsecure.c",
+      "sha256": "5eca088ed40f13f8e00dde23b0dc96dfd695d0f266a6aae9ff648e064b94fbcd"
+    },
+    {
+      "path": "tools/lmi-gpu-zap-load.c",
+      "sha256": "64491717f21695f56075cedc0804bfeb905d2f09d4adf82165679bef07aa41e5"
+    },
+    {
+      "path": "tools/lmi-gpu-zap-metadata.c",
+      "sha256": "9847866d824b24e318b15b552c8b787af44b4844782a1ddc5d210ff18912bcec"
+    },
+    {
+      "path": "tools/lmi-ios-ld64.sh",
+      "sha256": "ec3643548449a3b85b785b0a7d88c263d9da37803e9aa88b3b69ffa14d5742bf"
+    },
+    {
+      "path": "tools/lmi-kernel-log.c",
+      "sha256": "aa40686875625543432cb27843e2be04ecc1862d9eda550877d01f2c320c77f7"
+    },
+    {
+      "path": "tools/lmi-smp-return.S",
+      "sha256": "d10e8ab9f2b15383d9fb025c39a18049e5d140904b2209b7d4969a5eb1990f78"
+    },
+    {
+      "path": "tools/lmi-touch-timing.h",
+      "sha256": "f5791261a2c4adf83b27d9d07cf6b42fd81f5dc2d7fcb135ebd64c832bcc1e91"
+    },
+    {
+      "path": "tools/lmi-touch.c",
+      "sha256": "9c5560246fcaa168a2bd5667cb1d012c6dda6fd12cad1b9ec3795b369e784127"
+    },
+    {
+      "path": "tools/lmi-wallpaper-mount.c",
+      "sha256": "49f575899286809a37853c8b711e02a7baabc2fa842a16e43dc8b61d02f1a97e"
+    },
+    {
+      "path": "tools/lmi-wallpaper-probe.c",
+      "sha256": "247d0541c4dc7e9bd6187498d3422ba9e8ca520078d001ec1ff571d3d835a9ab"
+    },
+    {
+      "path": "tools/lmi_checkpoint_policy.py",
+      "sha256": "53388e41c3c897e866dc812cf494d4e900192058d80fd65c8623dc6453356a96"
+    },
+    {
+      "path": "tools/normalize-lmi-ios-sdk.py",
+      "sha256": "1504a67c0aec99e9db925629a6b8a16eba16893029eb571deb4a70fb7b83a958"
+    },
+    {
+      "path": "tools/package-lmi-diagnostics.py",
+      "sha256": "674cb98f2012b918f0a16684b4851ce67c3436f506f5b8ece9111e2dd31e9474"
+    },
+    {
+      "path": "tools/patch-lmi-early-return.py",
+      "sha256": "cb6671dd19045f0751a762cea985ab9b4f3515dec005694491e45126bbb8b0e1"
+    },
+    {
+      "path": "tools/patch-lmi-firmware.py",
+      "sha256": "0761b38c578882b92b3b3218c8eae641232e0072d9f45f3a5acbbd5da82bdb82"
+    },
+    {
+      "path": "tools/patch-lmi-return-guard.py",
+      "sha256": "679f0c4e627ce233f54c7af4294dec7bd437bd04c29748a062613d94fbd010cf"
+    },
+    {
+      "path": "tools/prepare-lmi-ios-images.py",
+      "sha256": "bf6f68c640db8b51975216a04277957ee05572ca2fdd03dd9df91cd3b161731e"
+    },
+    {
+      "path": "tools/prepare-lmi-wallpaper-png.py",
+      "sha256": "dab4c7eaac6880a159a3cf7d969381d4e4ff424bd59bc9ea288eada689e64ec9"
+    },
+    {
+      "path": "tools/prepare_uefi_libraries.py",
+      "sha256": "de8cbbcc396533ad1292260bd1ede5eca38055db161d9200fd03e143497228f6"
+    },
+    {
+      "path": "tools/stage-lmi-uefi.py",
+      "sha256": "aced56f72bcbcf748de1d704a38905b07dbf07cfbd82e362d1e9f25b55934bd8"
+    },
+    {
+      "path": "tools/symbolize-lmi-stacks.py",
+      "sha256": "3a29ee5df3901a7445782ec3752ec7b3215ef160378ddce0bfd999b07db71381"
+    },
+    {
+      "path": "tools/test-lmi-checkpoints.py",
+      "sha256": "7c3c8d59869ae76fe7860ca9837b484e7c29352b960af08a5e52021c86a3df55"
+    },
+    {
+      "path": "tools/test-lmi-loader.py",
+      "sha256": "bd2e26700f44273dfcdd9aa827186479973630209095ac13cac18af9e6cc82a8"
+    },
+    {
+      "path": "tools/verify-lmi-apple-services.py",
+      "sha256": "e0403c400ee770b118ee86f7d1756d21f97d966b0c9bcd2e87b9ad057a700572"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-boot.py",
+      "sha256": "d18fa018ef9547bcbbecdd7966df393135ec28fa1dc6b211ac614ac199b7f398"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-clock.py",
+      "sha256": "a40ba8e138087e8a72188144825e4f644f158d035db1da3a3d247286ea27597a"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-core-access.py",
+      "sha256": "5b1e22219dc593e627816c6209d7536637835ee3d677f2e1a44d82bd9169755c"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-core-memory.py",
+      "sha256": "0840915f40a55bb2f2948d4d7822068fe9d93d02cbdb5b0321d6770086eb332f"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-cp-config-plan.py",
+      "sha256": "abf11567a99cdba0e758053502ee6ea5cf6961fc07cacd023329c987c20e77e9"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-cp-plan.py",
+      "sha256": "6f63c5ae7af3b20ba5238557306acf1bb3d19af1972d51f3a295ce77f36e5629"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-cp.py",
+      "sha256": "7919a3a553003598c60c4fcbf55188708f486018beac90dc08e15427849517d7"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-desktop.py",
+      "sha256": "83fb6aa92d9be487bf283ca62de26245124d0ab0410ef764e8150cc8db5261ef"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-gl.py",
+      "sha256": "8714d789a3c1f4668339ac881b23d1acc93bb6f2d0db292374b14ef6ca05dae5"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-gx.py",
+      "sha256": "b5f1c19a953cac1ecd0b0e9e56d8491baf8b2d27d65705c3e4761ac0ef1f8ba0"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-hfi-core.py",
+      "sha256": "af53328ab0f8cff96a78eda4b24e39716e917c64f8a41934d1ba6fa6478baf46"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-hfi-io.py",
+      "sha256": "04b7bcb4aad5209201cc56a5f4e2101b895f15a18a80eddb7c6b3660ccd9254c"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-hfi-perf.py",
+      "sha256": "c6e36e884990bd063c31e648264abce5b1f543deb9711db9ebf96a18a4a71bef"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-ram-evidence.py",
+      "sha256": "c4ee7703efa8c56b47a4d6fb1f7814a1e6dff03b00e5fa9034e404c94c596ea2"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-route.py",
+      "sha256": "0f48df6f221f50268ab9b56712d11f812a7df3f24825703e9a12b40d54ccd7b8"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-rsc-init.py",
+      "sha256": "ebd32c2aca87731bfffb4d19e7f53195b29aaf003a50d12104c3246da4450693"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-rsc-state.py",
+      "sha256": "7d5672ff2da9fd04bf1c2729309a0455548c6e8d356f0fb9344fec70601e23a5"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-scm.py",
+      "sha256": "48824643384451df877763ff6ed8c6cffa36a0e63cd5e2a4baa104104ce6d94a"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-table-plan.py",
+      "sha256": "559812b5f12ccb80a6a20d81b260c5f2d257769a413dd558c5e974ffcbc3fab4"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-tile.py",
+      "sha256": "389efbcb9bde4ae9d532931ce898f5530994268f2acf9bc768e4dfedf32b2a4b"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-unsecure.py",
+      "sha256": "4fbb6a772be399e593ac5d0615935d0ba503bcf84e359cdf75ccffcf9558e0c0"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-zap-load.py",
+      "sha256": "acb83f1ea3385b46de2a158c73d7d5452378eee72d8276e6f9af1aba1d53e24e"
+    },
+    {
+      "path": "tools/verify-lmi-gpu-zap-metadata.py",
+      "sha256": "a7728d0dd59c9d99baef1565596e2c2af21bdc400ce1f83a1c7be190ca5b4239"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/BootShim/BootShim.S",
+      "sha256": "3898ce4bdf4507d5b22d5094eb252d6de9893768c8352f35fc2664396f4219c5"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/DeviceBuild.py",
+      "sha256": "4d93864ccdb918bde52013927f46af1a4984764b1f32020441ab82682daebfc9"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/Include/APRIORI.inc",
+      "sha256": "b8215b5c09a2948fc5a7fd613a34b1992229dc71f2581ff9b74b31fc4bb82e60"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/Include/DXE.inc",
+      "sha256": "bad7f137f643c4a7cf5e141cbbc0d0484a59a4f13af9b738cffa98cb6328f5bf"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/Include/RAW.inc",
+      "sha256": "f417bc73fbd1bfdcea41ca619ac86664261fc92876be1c88584649697c092e32"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/Library/ConfigurationMapLib/ConfigurationMapLib.c",
+      "sha256": "4d5250c2ddfb6aef060151160ea0878308a57179051582b4a52af2409f73ded1"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/Library/ConfigurationMapLib/ConfigurationMapLib.inf",
+      "sha256": "78a620edb5af884083752071caf69ff4aa4c38eb9145340d53fc7079b98361b9"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/Library/MemoryMapLib/MemoryMapLib.c",
+      "sha256": "3e1b3fa5f9def9fb8b00fa3d271598182cf220d972bd871f8fc717fb27b6f855"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/Library/MemoryMapLib/MemoryMapLib.inf",
+      "sha256": "d9d3539e8a132b50c30a9d47cfb5fe103c2c79dc935b572c9d0a3e1942ccbd84"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/lmi.dec",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/lmi.dsc",
+      "sha256": "b047fc06ce88f1825c2c9cfaff845ac12695b82df5a2b37e6242ac9852b1149c"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Platforms/Xiaomi/lmiPkg/lmi.fdf",
+      "sha256": "d3f1bb470790d14544283b04f270883e4b59aeefd76bf6067065b6560412926c"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Resources/Configs/lmi.toml",
+      "sha256": "72a67f9ab211e359d4c2ff79fc4c8cbc3149181e97ff2df15ea52ece5e83f71d"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Silicon/Silicium/SiliciumPkg/Library/BootManagerLib/BootManager.c",
+      "sha256": "059e7bbdb5d84e184e831812634bf8f5db338264c90063a36ab8d16e8fa64a2a"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Silicon/Silicium/SiliciumPkg/Library/BootManagerLib/BootManager.h",
+      "sha256": "318b460d38529210eae6dfba559eff17ceeb04e760493ac381f5a2598dbd988f"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Silicon/Silicium/SiliciumPkg/Library/BootManagerLib/BootManagerLib.inf",
+      "sha256": "4d5e133d6c007f85160b488e3021dcb922aa9acea3b9a7309bf585356bfdd512"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Silicon/Silicium/SiliciumPkg/Library/BootManagerLib/KeyCallback.c",
+      "sha256": "d7ee112dfad85d10d8f8e8e6272de7de55c8b2961cac481fc245093234ddfd85"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Silicon/Silicium/SiliciumPkg/Library/BootManagerLib/LmiUsbProbe.h",
+      "sha256": "adb72c3ace79a6f282d7f5a3a1fcadce5de84c6b1ff934fb2a7577c1f97a9447"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Silicon/Silicium/SiliciumPkg/Library/BootManagerLib/XnuLoader.c",
+      "sha256": "98d715fec7319e495c5368a2b0bf5abf7491f97e6e091b6ba7c4db1c23b29fcc"
+    },
+    {
+      "path": "uefi/mu-silicium-overlay/Silicon/Silicium/SiliciumPkg/Library/BootManagerLib/XnuLoader.h",
+      "sha256": "e086da545deef300ac946eb9ddafc44a30bef2aa4fe102b488ec66db03402f49"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air2nir.c",
+      "sha256": "e00a7b632731e7c8516a2a7e8f011b7fe576660d2c2b9f6595978741610018c0"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_bitcode.c",
+      "sha256": "ca969c530025038e7370c4291ea3cb47ba770c638f238c58b4f81eb78251033b"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_bitcode.h",
+      "sha256": "0b13de6db8417b1fa45f140a3bc454e92d693721a9d190d821f1d282caf02fa5"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_intrinsics.c",
+      "sha256": "20b81c678ad82f6b722906569557b8d7eaa5e285c28ec6a06b5ee835edd5d189"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_layout.c",
+      "sha256": "dbcebf6a54c508264cd6dde1684913732a3d3beddac01c18785bc4e2682a0063"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_metal.c",
+      "sha256": "f0f334b9fb326fa65634b79d2ab5b0b7a754f347bdfa8b27bc71bfc7632593d7"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_metal.h",
+      "sha256": "afd8c348cbfd241e54c24126d66cd7b2dc350d155862400b9d77faf9ae0f5d11"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_metal_test.c",
+      "sha256": "39b41a5997814581503e6335f72a4e3a98bb79c4c12225ac287ceb45fe1c9726"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_metallib.c",
+      "sha256": "934bea3f4f338ba8c727a85c9a4c3cbe070fb594695f704238fff1f352bbf4b7"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_module.c",
+      "sha256": "7ffc9326fd22b85f309d0c4770c87649bf042aa234763a5f55d053b1ede6fae7"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_module.h",
+      "sha256": "829ed284d3f0c815aff38c08d8483b781e904ed5f5e36643076e3ae4554ffee2"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_print.c",
+      "sha256": "bf69217c8ffa6f1c68e837660a8a14a4ef683d68bb00e3b0a74ae54a37651f04"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_private.h",
+      "sha256": "db40ef89aef805e402a9eeb22a35efa93de7a47796601b1d3ed4cbeac6b075bc"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_run.c",
+      "sha256": "15a02c4b1ef2a0618d1cb0028f6e933bcf8452451ba2fff80cb1d7f6a17316bb"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/air_to_nir.c",
+      "sha256": "a2b29aae165f600ae5ee859559ed05d49060ffeaa28d229476275c3b4f2b039d"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/meson.build",
+      "sha256": "5f34a52018ca5cac4609f1c2ae6903867f813b526a68b0c54480005e3a9f973c"
+    },
+    {
+      "path": "userland-source/tools/mesa/air/nir_air.h",
+      "sha256": "e8e08782be84362b3f6247e3c62919976d8756ef2f4884b16ebedfdea3df5a80"
+    },
+    {
+      "path": "userland-source/tools/mesa/air-frontend.patch",
+      "sha256": "c29e06eb539b713b8bc5340e37a49d3e39fb16426da79043ec2b49fd3953737a"
+    },
+    {
+      "path": "userland-source/tools/mesa/air-ir3.patch",
+      "sha256": "ce474060257c128199f9dc87a62ca40efc6ab7cc1089273c6bd59ccb7cbae86f"
+    },
+    {
+      "path": "userland-source/tools/mesa/air-metal.patch",
+      "sha256": "39d88efb499c7ae9451611ca668e8e87568eaf84c95cfbfcbe2a3f95afcf7f5a"
+    },
+    {
+      "path": "userland-source/tools/mesa/freedreno-darwin.patch",
+      "sha256": "16edbe15d0e263e644e3cf955fdfd497f153495a61d040b734780dfec1ec6ad2"
+    },
+    {
+      "path": "userland-source/tools/mesa/ir3-round-default.patch",
+      "sha256": "2065de1cb4fc0fcc5f9a8fee214b6a5112ea6182f983f192e0c235980879bb8e"
+    },
+    {
+      "path": "userland-source/tools/mesa/ir3-shift-split.patch",
+      "sha256": "26ca6b1e512ca3a43bb2d1cab3942d247f914e5a1fa34432462ab93d33c369ef"
+    },
+    {
+      "path": "userland-source/tools/mesa/ir3-ssbo-subdword.patch",
+      "sha256": "a545a0cdfec12b604ae0acca7d7b5b4b8c7f5789029ba3e82eeebbd40414624a"
+    },
+    {
+      "path": "userland-source/tools/mesa/osmesa-es-profile.patch",
+      "sha256": "9ca1cbbd0becbc1bc57a5cd616d60b8a53e3e42f4208241b34bded686bcfb0bd"
+    },
+    {
+      "path": "userland-source/tools/mesa/redwood-drm/redwood_drm.c",
+      "sha256": "76ef9a9d3d222004306eee0c2c54043afeaa38bf16a7d108b0409ca1cf644f9f"
+    },
+    {
+      "path": "userland-source/tools/mesa/redwood-drm/xf86drm.h",
+      "sha256": "272f5285703bbe83e62748e4a3f8606c759eaf890a91e3ff7e6793c3ad894629"
+    },
+    {
+      "path": "userland-source/tools/mk-mesa.sh",
+      "sha256": "cbb2a658a70bd15cb952dcdb2e1db662330d76c25a821ebfb76b9916d56922d6"
+    },
+    {
+      "path": "userland-source/userland/build.sh",
+      "sha256": "69cf8dc0911e99cfc5ee5581b30e190fd0e65c25db613f493fa60e067f749225"
+    },
+    {
+      "path": "userland-source/userland/mkeagl.py",
+      "sha256": "c12e554fd53e0ba95c64cec75ce87e64f37ec64013539a2f271956ad1db4f66d"
+    },
+    {
+      "path": "userland-source/userland/mkjobs.py",
+      "sha256": "468cd688fd0f937dfe199427d39992141fed8a7c75aca3635a00ee34b2917027"
+    },
+    {
+      "path": "userland-source/userland/src/eagl.c",
+      "sha256": "f6a6cb00de2116de815f1ae593edc056dd46b8a9be1e7de7947691b6b0e89921"
+    },
+    {
+      "path": "userland-source/userland/src/eagl_slots.txt",
+      "sha256": "da86f4a9fe193f53236128eaf8b56ca5e00060518e8f674f9b852e9886804cbf"
+    },
+    {
+      "path": "userland-source/userland/src/gl_osmesa.c",
+      "sha256": "30278e9357b53f9fb5530d21ea519911fb93b052a4f896a8474f13cd7f621aa7"
+    },
+    {
+      "path": "userland-source/userland/src/inject.c",
+      "sha256": "3091aaa29426f44084392a8654bef14093400ec05149e9292952c8719561142b"
+    },
+    {
+      "path": "userland-source/userland/src/inject_sb.c",
+      "sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc"
+    },
+    {
+      "path": "userland-source/userland/src/redwood_drawable.h",
+      "sha256": "7f66f2e1ac01a40c1d612ff0b746c94c8ba12b797666ed5c3347d3379a17998d"
+    },
+    {
+      "path": "userland-source/userland/src/redwood_gl.h",
+      "sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51"
+    },
+    {
+      "path": "userland-source/userland/src/redwood_input.h",
+      "sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec"
+    },
+    {
+      "path": "userland-source/userland/src/rwtouch.c",
+      "sha256": "013133a862b304dac018b5f86df4c88e630f381359bf82ea5d7fc38d7115fccc"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "316257eec0fed9429bc0db8fe1a3902e99baeefb18e2b891a938dd5de4e42f4a"
+    }
+  ]
+}

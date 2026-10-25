@@ -1,0 +1,10 @@
+LMI_GL_RENDERER FD650
+LMI_GL_FRAME 0 checked=4032 bad=0 error=0
+LMI_GL_FRAME 1 checked=4032 bad=0 error=0
+LMI_GL_FRAME 2 checked=4032 bad=0 error=0
+LMI_GL_FRAME 3 checked=4032 bad=0 error=0
+LMI_GL_FRAME 4 checked=4032 bad=0 error=0
+LMI_GL_FRAME 5 checked=4032 bad=0 error=0
+LMI_GL_FRAME 6 checked=4032 bad=0 error=0
+LMI_GL_FRAME 7 checked=4032 bad=0 error=0
+LMI_GL_PASS 8 hardware shader frames, 4032 exact RGBA pixels per frame, both CPU readback guards

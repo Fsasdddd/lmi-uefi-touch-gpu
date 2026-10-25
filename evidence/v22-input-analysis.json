@@ -1,0 +1,16 @@
+{
+  "user_feedback": "touch entirely unresponsive",
+  "samples": 192,
+  "hid_observer_records": 192,
+  "matched_original_timestamps": 192,
+  "hid_observer_delay_us": {
+    "median": 1554.0,
+    "max": 1844
+  },
+  "uikit_hooks": [
+    "LMI_UIKIT_INPUT_HOOK selector=_enqueueHIDEvent: observing_original=0x1a9bb5098",
+    "LMI_UIKIT_INPUT_HOOK selector=_handleHIDEvent: observing_original=0x1a9bb524c"
+  ],
+  "uikit_input_records": 0,
+  "scope": "HID monitor received events; the two observed UIKit entry points did not run. Does not identify the exact BackBoard filter or exclude other UIKit paths."
+}

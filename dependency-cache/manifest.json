@@ -1,0 +1,113 @@
+[
+  {
+    "path": "Common/Mu",
+    "url": "https://github.com/microsoft/mu_plus.git",
+    "commit": "b8d46c71610318e36a661819e1e3c0b8bdda413a",
+    "cache": "Common__Mu"
+  },
+  {
+    "path": "Common/Mu_OEM_Sample",
+    "url": "https://github.com/microsoft/mu_oem_sample.git",
+    "commit": "b70b4b7bb02c43bf9db2172dfb3ed0457e2361d6",
+    "cache": "Common__Mu_OEM_Sample"
+  },
+  {
+    "path": "Mu_Basecore",
+    "url": "https://github.com/microsoft/mu_basecore.git",
+    "commit": "cfb93724a06ff86ff5ba971413368a7809ee42a5",
+    "cache": "Mu_Basecore"
+  },
+  {
+    "path": "Silicium-ACPI",
+    "url": "https://github.com/Project-Silicium/Silicium-ACPI.git",
+    "commit": "2d465ad77c25de908f0ec7bdfcb57f865b61233c",
+    "cache": "Silicium-ACPI"
+  },
+  {
+    "path": "Silicon/Silicium/OpensslPkg/Library/OpensslLib/openssl",
+    "url": "https://github.com/openssl/openssl.git",
+    "commit": "67b5686b4419b4cb8caa502711c41815f5279751",
+    "cache": "Silicon__Silicium__OpensslPkg__Library__OpensslLib__openssl"
+  },
+  {
+    "path": "Mu_Basecore/UnitTestFrameworkPkg/Library/CmockaLib/cmocka",
+    "relative": "UnitTestFrameworkPkg/Library/CmockaLib/cmocka",
+    "parent_cache": "Mu_Basecore",
+    "parent_path": "Mu_Basecore",
+    "url": "https://github.com/tianocore/edk2-cmocka.git",
+    "commit": "1cc9cde3448cdd2e000886a26acf1caac2db7cf1",
+    "cache": "Mu_Basecore__UnitTestFrameworkPkg__Library__CmockaLib__cmocka"
+  },
+  {
+    "path": "Mu_Basecore/MdeModulePkg/Universal/RegularExpressionDxe/oniguruma",
+    "relative": "MdeModulePkg/Universal/RegularExpressionDxe/oniguruma",
+    "parent_cache": "Mu_Basecore",
+    "parent_path": "Mu_Basecore",
+    "url": "https://github.com/kkos/oniguruma",
+    "commit": "4ef89209a239c1aea328cf13c05a2807e5c146d1",
+    "cache": "Mu_Basecore__MdeModulePkg__Universal__RegularExpressionDxe__oniguruma"
+  },
+  {
+    "path": "Mu_Basecore/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli",
+    "relative": "MdeModulePkg/Library/BrotliCustomDecompressLib/brotli",
+    "parent_cache": "Mu_Basecore",
+    "parent_path": "Mu_Basecore",
+    "url": "https://github.com/google/brotli",
+    "commit": "e230f474b87134e8c6c85b630084c612057f253e",
+    "cache": "Mu_Basecore__MdeModulePkg__Library__BrotliCustomDecompressLib__brotli"
+  },
+  {
+    "path": "Mu_Basecore/BaseTools/Source/C/BrotliCompress/brotli",
+    "relative": "BaseTools/Source/C/BrotliCompress/brotli",
+    "parent_cache": "Mu_Basecore",
+    "parent_path": "Mu_Basecore",
+    "url": "https://github.com/google/brotli",
+    "commit": "e230f474b87134e8c6c85b630084c612057f253e",
+    "cache": "Mu_Basecore__BaseTools__Source__C__BrotliCompress__brotli"
+  },
+  {
+    "path": "Mu_Basecore/UnitTestFrameworkPkg/Library/GoogleTestLib/googletest",
+    "relative": "UnitTestFrameworkPkg/Library/GoogleTestLib/googletest",
+    "parent_cache": "Mu_Basecore",
+    "parent_path": "Mu_Basecore",
+    "url": "https://github.com/google/googletest.git",
+    "commit": "86add13493e5c881d7e4ba77fb91c1f57752b3a4",
+    "cache": "Mu_Basecore__UnitTestFrameworkPkg__Library__GoogleTestLib__googletest"
+  },
+  {
+    "path": "Mu_Basecore/UnitTestFrameworkPkg/Library/SubhookLib/subhook",
+    "relative": "UnitTestFrameworkPkg/Library/SubhookLib/subhook",
+    "parent_cache": "Mu_Basecore",
+    "parent_path": "Mu_Basecore",
+    "url": "https://github.com/tianocore/edk2-subhook.git",
+    "commit": "83d4e1ebef3588fae48b69a7352cc21801cb70bc",
+    "cache": "Mu_Basecore__UnitTestFrameworkPkg__Library__SubhookLib__subhook"
+  },
+  {
+    "path": "Mu_Basecore/MdePkg/Library/BaseFdtLib/libfdt",
+    "relative": "MdePkg/Library/BaseFdtLib/libfdt",
+    "parent_cache": "Mu_Basecore",
+    "parent_path": "Mu_Basecore",
+    "url": "https://github.com/devicetree-org/pylibfdt.git",
+    "commit": "cfff805481bdea27f900c32698171286542b8d3c",
+    "cache": "Mu_Basecore__MdePkg__Library__BaseFdtLib__libfdt"
+  },
+  {
+    "path": "Mu_Basecore/MdePkg/Library/MipiSysTLib/mipisyst",
+    "relative": "MdePkg/Library/MipiSysTLib/mipisyst",
+    "parent_cache": "Mu_Basecore",
+    "parent_path": "Mu_Basecore",
+    "url": "https://github.com/MIPI-Alliance/public-mipi-sys-t.git",
+    "commit": "370b5944c046bab043dd8b133727b2135af7747a",
+    "cache": "Mu_Basecore__MdePkg__Library__MipiSysTLib__mipisyst"
+  },
+  {
+    "path": "Mu_Basecore/SecurityPkg/DeviceSecurity/SpdmLib/libspdm",
+    "relative": "SecurityPkg/DeviceSecurity/SpdmLib/libspdm",
+    "parent_cache": "Mu_Basecore",
+    "parent_path": "Mu_Basecore",
+    "url": "https://github.com/DMTF/libspdm.git",
+    "commit": "f55cf6d48ec69b4ac60a63903e9c6a2cb0fd155d",
+    "cache": "Mu_Basecore__SecurityPkg__DeviceSecurity__SpdmLib__libspdm"
+  }
+]

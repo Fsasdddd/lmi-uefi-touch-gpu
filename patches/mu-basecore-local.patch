@@ -1,0 +1,264 @@
+diff --git a/ArmPkg/Library/ArmGenericTimerPhyCounterLib/ArmGenericTimerPhyCounterLib.c b/ArmPkg/Library/ArmGenericTimerPhyCounterLib/ArmGenericTimerPhyCounterLib.c
+index fbbecdc..9378c27 100644
+--- a/ArmPkg/Library/ArmGenericTimerPhyCounterLib/ArmGenericTimerPhyCounterLib.c
++++ b/ArmPkg/Library/ArmGenericTimerPhyCounterLib/ArmGenericTimerPhyCounterLib.c
+@@ -59,7 +59,14 @@ ArmGenericTimerGetTimerFreq (
+   VOID
+   )
+ {
+-  return ArmReadCntFrq ();
++  UINTN Freq;
++
++  Freq = ArmReadCntFrq ();
++  if (!Freq) {
++    Freq = FixedPcdGet64 (PcdTimerFreqOverwrite);
++  }
++
++  return Freq;
+ }
+ 
+ UINTN
+diff --git a/ArmPkg/Library/ArmGenericTimerPhyCounterLib/ArmGenericTimerPhyCounterLib.inf b/ArmPkg/Library/ArmGenericTimerPhyCounterLib/ArmGenericTimerPhyCounterLib.inf
+index c37f272..0462650 100644
+--- a/ArmPkg/Library/ArmGenericTimerPhyCounterLib/ArmGenericTimerPhyCounterLib.inf
++++ b/ArmPkg/Library/ArmGenericTimerPhyCounterLib/ArmGenericTimerPhyCounterLib.inf
+@@ -22,7 +22,12 @@
+ [Packages]
+   MdePkg/MdePkg.dec
+   ArmPkg/ArmPkg.dec
++  SiliciumPkg/SiliciumPkg.dec
+ 
+ [LibraryClasses]
+   ArmLib
+   BaseLib
++  PcdLib
++
++[FixedPcd]
++  gSiliciumPkgTokenSpaceGuid.PcdTimerFreqOverwrite
+diff --git a/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.c b/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.c
+index 893125a..4b1018b 100644
+--- a/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.c
++++ b/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.c
+@@ -59,7 +59,14 @@ ArmGenericTimerGetTimerFreq (
+   VOID
+   )
+ {
+-  return ArmReadCntFrq ();
++  UINTN Freq;
++
++  Freq = ArmReadCntFrq ();
++  if (!Freq) {
++    Freq = FixedPcdGet64 (PcdTimerFreqOverwrite);
++  }
++
++  return Freq;
+ }
+ 
+ UINTN
+diff --git a/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.inf b/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.inf
+index 89fcb71..5c29ece 100644
+--- a/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.inf
++++ b/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.inf
+@@ -22,7 +22,12 @@
+ [Packages]
+   MdePkg/MdePkg.dec
+   ArmPkg/ArmPkg.dec
++  SiliciumPkg/SiliciumPkg.dec
+ 
+ [LibraryClasses]
+   ArmLib
+   BaseLib
++  PcdLib
++
++[FixedPcd]
++  gSiliciumPkgTokenSpaceGuid.PcdTimerFreqOverwrite
+diff --git a/MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenu.c b/MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenu.c
+index 5bba6ea..8ad07ce 100644
+--- a/MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenu.c
++++ b/MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenu.c
+@@ -6,6 +6,8 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
+ 
+ **/
+ 
++#include <Library/UefiRuntimeServicesTableLib.h>
++
+ #include "BootManagerMenu.h"
+ 
+ EFI_HII_HANDLE  gStringPackHandle;
+@@ -344,9 +346,9 @@ IgnoreBootOption (
+   }
+ 
+   //
+-  // Ignore the hidden/inactive boot option.
++  // Ignore "UEFI Misc Device" boot options.
+   //
+-  if (((BootOption->Attributes & LOAD_OPTION_HIDDEN) != 0) || ((BootOption->Attributes & LOAD_OPTION_ACTIVE) == 0)) {
++  if (BootOption->Description != NULL && StrnCmp (BootOption->Description, L"UEFI Misc Device", 16) == 0) {
+     return TRUE;
+   }
+ 
+@@ -379,7 +381,7 @@ InitializeBootMenuData (
+   }
+ 
+   BootMenuData->TitleToken[0] = STRING_TOKEN (STR_BOOT_POPUP_MENU_TITLE_STRING);
+-  BootMenuData->PtrTokens     = AllocateZeroPool (BootOptionCount * sizeof (EFI_STRING_ID));
++  BootMenuData->PtrTokens     = AllocateZeroPool ((BootOptionCount + 2) * sizeof (EFI_STRING_ID));
+   ASSERT (BootMenuData->PtrTokens != NULL);
+ 
+   //
+@@ -399,10 +401,19 @@ InitializeBootMenuData (
+                                             );
+   }
+ 
++  //
++  // Add Power Off Option
++  //
++  BootMenuData->PtrTokens[StrIndex++] = HiiSetString (gStringPackHandle, 0, L"Power Off", NULL);
++
++  //
++  // Add Exit Option
++  //
++  BootMenuData->PtrTokens[StrIndex++] = HiiSetString (gStringPackHandle, 0, L"Exit", NULL);
++
+   BootMenuData->ItemCount    = StrIndex;
+   BootMenuData->HelpToken[0] = STRING_TOKEN (STR_BOOT_POPUP_MENU_HELP1_STRING);
+   BootMenuData->HelpToken[1] = STRING_TOKEN (STR_BOOT_POPUP_MENU_HELP2_STRING);
+-  BootMenuData->HelpToken[2] = STRING_TOKEN (STR_BOOT_POPUP_MENU_HELP3_STRING);
+   InitializeBootMenuScreen (BootMenuData);
+   BootMenuData->SelectItem = 0;
+   return EFI_SUCCESS;
+@@ -468,7 +479,7 @@ BootMenuSelectItem (
+       BootMenuData->ScrollBarControl.LastItem  = WantSelectItem;
+     }
+ 
+-    gST->ConOut->SetAttribute (gST->ConOut, EFI_WHITE | EFI_BACKGROUND_BLUE);
++    gST->ConOut->SetAttribute (gST->ConOut, EFI_WHITE | EFI_BACKGROUND_BLACK);
+     FirstItem   = BootMenuData->ScrollBarControl.FirstItem;
+     LastItem    = BootMenuData->ScrollBarControl.LastItem;
+     TopShadeNum = 0;
+@@ -539,7 +550,7 @@ BootMenuSelectItem (
+   //
+   FirstItem = BootMenuData->ScrollBarControl.FirstItem;
+   if ((WantSelectItem != BootMenuData->SelectItem) && !RePaintItems) {
+-    gST->ConOut->SetAttribute (gST->ConOut, EFI_WHITE | EFI_BACKGROUND_BLUE);
++    gST->ConOut->SetAttribute (gST->ConOut, EFI_WHITE | EFI_BACKGROUND_BLACK);
+     String   = HiiGetString (gStringPackHandle, BootMenuData->PtrTokens[BootMenuData->SelectItem], NULL);
+     PrintCol = StartCol  + 1;
+     PrintRow = StartRow + 3 + BootMenuData->SelectItem - FirstItem;
+@@ -550,7 +561,7 @@ BootMenuSelectItem (
+   //
+   // Print want to select item
+   //
+-  gST->ConOut->SetAttribute (gST->ConOut, EFI_WHITE | EFI_BACKGROUND_BLACK);
++  gST->ConOut->SetAttribute (gST->ConOut, EFI_BLACK | EFI_BACKGROUND_LIGHTGRAY);
+   String   = HiiGetString (gStringPackHandle, BootMenuData->PtrTokens[WantSelectItem], NULL);
+   PrintCol = StartCol  + 1;
+   PrintRow = StartRow + TITLE_TOKEN_COUNT + 2 + WantSelectItem - FirstItem;
+@@ -589,7 +600,7 @@ DrawBootPopupMenu (
+   gST->ConOut->ClearScreen (gST->ConOut);
+ 
+   SavedAttribute = gST->ConOut->Mode->Attribute;
+-  gST->ConOut->SetAttribute (gST->ConOut, EFI_WHITE | EFI_BACKGROUND_BLUE);
++  gST->ConOut->SetAttribute (gST->ConOut, EFI_WHITE | EFI_BACKGROUND_BLACK);
+   Width              = BootMenuData->MenuScreen.Width;
+   StartCol           = BootMenuData->MenuScreen.StartCol;
+   StartRow           = BootMenuData->MenuScreen.StartRow;
+@@ -754,6 +765,16 @@ BootFromSelectOption (
+       break;
+     }
+   }
++
++  // Power Off
++  if (SelectItem == ItemNum) {
++    gRT->ResetSystem (EfiResetShutdown, EFI_SUCCESS, 0, NULL);
++  }
++
++  // Exit
++  if (SelectItem == ItemNum + 1) {
++    gBS->Exit (gImageHandle, EFI_SUCCESS, 0, NULL);
++  }
+ }
+ 
+ /**
+diff --git a/MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenu.h b/MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenu.h
+index 697a44a..8b45ad1 100644
+--- a/MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenu.h
++++ b/MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenu.h
+@@ -22,7 +22,7 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
+ #include <Protocol/BootLogo.h>
+ 
+ #define TITLE_TOKEN_COUNT  1
+-#define HELP_TOKEN_COUNT   3
++#define HELP_TOKEN_COUNT   2
+ 
+ typedef struct _BOOT_MENU_SCREEN {
+   UINTN    StartCol;
+diff --git a/MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBus.h b/MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBus.h
+index d775ca1..e229b16 100644
+--- a/MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBus.h
++++ b/MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBus.h
+@@ -133,10 +133,10 @@ typedef struct _USB_HUB_API    USB_HUB_API;
+ #define USB_CLEAR_FEATURE_REQUEST_TIMEOUT  10
+ 
+ //
+-// Bus raises TPL to TPL_NOTIFY to serialize all its operations
++// Bus raises TPL to TPL_CALLBACK to serialize all its operations
+ // to protect shared data structures.
+ //
+-#define  USB_BUS_TPL  TPL_NOTIFY
++#define  USB_BUS_TPL  TPL_CALLBACK
+ 
+ #define  USB_INTERFACE_SIGNATURE  SIGNATURE_32 ('U', 'S', 'B', 'I')
+ #define  USB_BUS_SIGNATURE        SIGNATURE_32 ('U', 'S', 'B', 'B')
+diff --git a/MdePkg/Include/AArch64/AsmMacroLib.h b/MdePkg/Include/AArch64/AsmMacroLib.h
+index ccd8343..439b96b 100644
+--- a/MdePkg/Include/AArch64/AsmMacroLib.h
++++ b/MdePkg/Include/AArch64/AsmMacroLib.h
+@@ -37,10 +37,10 @@
+   Name:                                           ; \
+   AARCH64_BTI(c)
+ 
+-#define ASM_FUNC(Name)  _ASM_FUNC(ASM_PFX(Name), .text. ## Name)
++#define ASM_FUNC(Name)  _ASM_FUNC(ASM_PFX(Name), .text)
+ 
+ #define ASM_FUNC_ALIGN(Name, Align)  \
+-  _ASM_FUNC_ALIGN(ASM_PFX(Name), .text. ## Name, Align)
++  _ASM_FUNC_ALIGN(ASM_PFX(Name), .text, Align)
+ 
+ #define MOV32(Reg, Val)                             \
+   movz      Reg, ((Val) >> 16) & 0xffff, lsl #16  ; \
+diff --git a/SecurityPkg/Library/AuthVariableLib/AuthService.c b/SecurityPkg/Library/AuthVariableLib/AuthService.c
+index d6e9f9f..3bec1ee 100644
+--- a/SecurityPkg/Library/AuthVariableLib/AuthService.c
++++ b/SecurityPkg/Library/AuthVariableLib/AuthService.c
+@@ -29,6 +29,7 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
+ 
+ #include <Protocol/VariablePolicy.h>
+ #include <Library/VariablePolicyLib.h>
++#include <Library/UefiRuntimeLib.h>
+ 
+ #define SHA_DIGEST_SIZE_MAX  SHA512_DIGEST_SIZE
+ 
+@@ -2570,6 +2571,10 @@ VerifyTimeBasedPayloadAndUpdate (
+   AUTH_VARIABLE_INFO             OrgVariableInfo;
+   BOOLEAN                        IsDel;
+ 
++  if (EfiAtRuntime ()) {
++    return EFI_WRITE_PROTECTED;
++  }
++
+   ZeroMem (&OrgVariableInfo, sizeof (OrgVariableInfo));
+   FindStatus = mAuthVarLibContextIn->FindVariable (
+                                        VariableName,
+diff --git a/SecurityPkg/Library/AuthVariableLib/AuthVariableLib.inf b/SecurityPkg/Library/AuthVariableLib/AuthVariableLib.inf
+index 0b0f0a9..0f605de 100644
+--- a/SecurityPkg/Library/AuthVariableLib/AuthVariableLib.inf
++++ b/SecurityPkg/Library/AuthVariableLib/AuthVariableLib.inf
+@@ -43,6 +43,7 @@
+   BaseCryptLib
+   PlatformSecureLib
+   VariablePolicyLib
++  UefiRuntimeLib
+ 
+ # MU_CHANGE [BEGIN] - TCBZ2506
+ [FeaturePcd]
