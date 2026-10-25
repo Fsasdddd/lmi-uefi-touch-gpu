@@ -1,0 +1,14 @@
+{
+  "scope": "Published snapshot only; offline host checks, no device operation or full UEFI rebuild",
+  "checks": {
+    "GL_verifier": "PASS: 3 positive controls, 47 negative cases",
+    "FT3518_decoder": "PASS: down/move/final-up, zero padding, fallback release, multitouch, duplicate rejection; ASan/UBSan",
+    "touch_timing": "PASS: 5us minimum, jumps/wrap, wrong-frequency rejection; ASan/UBSan",
+    "GPU_desktop": "PASS: adoption, independent DMA/parity, ring wrap, cache ordering, CB1/ASID2 invalidation, held releases; ASan/UBSan",
+    "HID_startup": "PASS: 4 retry and 4 legacy controls; ASan/UBSan",
+    "input_observers": "PASS: 414 unchanged forwards, 384 bounded logs; ASan/UBSan",
+    "HID_routing": "PASS: 5 refusal controls, 140 unchanged forwards, 64 bounded records; ASan/UBSan",
+    "Python_syntax": "PASS"
+  },
+  "hardware_verified_by_this_publication": false
+}

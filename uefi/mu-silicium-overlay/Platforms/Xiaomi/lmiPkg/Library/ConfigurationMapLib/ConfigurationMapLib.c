@@ -1,0 +1,51 @@
+/* SPDX-License-Identifier: BSD-2-Clause */
+/* Adapted from Mu-Silicium v3.0 lmiPkg. bring-up adapter; see out/lmi-uefi/manifest.json for build status.
+ * Values preserve the historical lmi map; firmware/runtime validation is pending.
+ * New API uses an explicit count instead of a Terminator sentinel.
+ */
+#include <Library/ConfigurationMapLib.h>
+
+STATIC
+EFI_CONFIGURATION_ENTRY_DESCRIPTOR
+gConfigurationDescriptor[] = {
+  {"NumCpusFuseAddr", 0x5C04C},
+  {"EnableShell", 0x1},
+  {"EUDEnableAddr", 0x88E2000},
+  {"SecPagePoolCount", 0x800},
+  {"SharedIMEMBaseAddr", 0x146BF000},
+  {"DloadCookieAddr", 0x01FD3000},
+  {"DloadCookieValue", 0x10},
+  {"NumCpus", 8},
+  {"NumActiveCores", 8},
+  {"MaxLogFileSize", 0x400000},
+  {"UefiMemUseThreshold", 0x77},
+  {"USBHS1_Config", 0x0},
+  {"UsbFnIoRevNum", 0x00010001},
+  {"PwrBtnShutdownFlag", 0x0},
+  {"Sdc1GpioConfigOn", 0x1E92},
+  {"Sdc2GpioConfigOn", 0x1E92},
+  {"Sdc1GpioConfigOff", 0xA00},
+  {"Sdc2GpioConfigOff", 0xA00},
+  {"EnableSDHCSwitch", 0x1},
+  {"EnableUfsIOC", 0},
+  {"UfsSmmuConfigForOtherBootDev", 1},
+  {"SecurityFlag", 0xC4},
+  {"EnableLogFsSyncInRetail", 0x1},
+  {"ShmBridgememSize", 0xA00000},
+  {"EnableMultiThreading", 1},
+  {"MaxCoreCnt", 8},
+  {"EarlyInitCoreCnt", 1},
+  {"EnableUefiSecAppDebugLogDump", 0x0},
+  {"AllowNonPersistentVarsInRetail", 0x1},
+  {"EnableDisplayThread", 0x1},
+  {"EnableDisplayImageFv", 0x0},
+};
+
+VOID
+GetConfigurationMap (
+  OUT EFI_CONFIGURATION_ENTRY_DESCRIPTOR **ConfigurationDescriptor,
+  OUT UINT8 *ConfigurationDescriptorCount)
+{
+  *ConfigurationDescriptor = gConfigurationDescriptor;
+  *ConfigurationDescriptorCount = ARRAY_SIZE (gConfigurationDescriptor);
+}
