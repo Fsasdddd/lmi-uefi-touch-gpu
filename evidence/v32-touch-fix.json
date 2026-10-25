@@ -1,0 +1,39 @@
+{
+  "run": "gl-smp8-hid-usage-repeat-v32-180",
+  "raw_hardware_result": "PASS: MMU return path and XNU checkpoints 1,2,3,4,5,10,11,30,31,32,33,34,35,12,40,41,42,43,44,13,14,15,16,17,18,19,20,50,21,52,53,54,55,56,57,58,59,60,63",
+  "touch_working": true,
+  "settings_opened": true,
+  "touch_fix_verified": true,
+  "scope": "Two bounded identical-image eight-core runs confirmed touch and Settings; not a long-duration stability claim.",
+  "original_log_sha256": "f9fd3fc240d2ab8a78517b21d97d97c9c99baecd3bd93292b34b12e5d6765db4",
+  "image_sha256": "ca19afa138cd253132c7e0d761a14f56c0c66fce8f850209ae3aa54037de9416",
+  "inject_source_sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882",
+  "hid_usage_recheck": true,
+  "usage_recheck_records": [
+    "LMI_HID_USAGE_RECHECK installed",
+    "LMI_HID_USAGE_RECHECK restored page=13 usage=4"
+  ],
+  "sample_count": 192,
+  "accepted": {
+    "1": 192
+  },
+  "matched_original_timestamps": 192,
+  "post_to_hid_monitor_us": {
+    "count": 192,
+    "min": 1399,
+    "median": 2027.5,
+    "p95": 4695,
+    "max": 19653
+  },
+  "android_boot_completed": true,
+  "original_partition_hashes_match": {
+    "boot": true,
+    "dtbo": true
+  },
+  "remaining_issues": [
+    "Animation stutter",
+    "Vertical tearing",
+    "Long-duration touch stability unverified"
+  ],
+  "full_log_included": false
+}

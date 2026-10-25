@@ -1,0 +1,39 @@
+{
+  "run": "gl-smp8-hid-usage-recheck-v31-180",
+  "raw_hardware_result": "INCOMPLETE",
+  "touch_working": true,
+  "settings_opened": true,
+  "touch_fix_verified": true,
+  "scope": "Two bounded identical-image eight-core runs confirmed touch and Settings; not a long-duration stability claim.",
+  "original_log_sha256": "b56050fdbe30f8b71ba711bebe29760a5d6f4f44fdfe59cb1e59bdd2f373bfeb",
+  "image_sha256": "ca19afa138cd253132c7e0d761a14f56c0c66fce8f850209ae3aa54037de9416",
+  "inject_source_sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882",
+  "hid_usage_recheck": true,
+  "usage_recheck_records": [
+    "LMI_HID_USAGE_RECHECK installed",
+    "LMI_HID_USAGE_RECHECK restored page=13 usage=4"
+  ],
+  "sample_count": 192,
+  "accepted": {
+    "1": 192
+  },
+  "matched_original_timestamps": 192,
+  "post_to_hid_monitor_us": {
+    "count": 192,
+    "min": 1466,
+    "median": 1921.5,
+    "p95": 3470,
+    "max": 32375
+  },
+  "android_boot_completed": true,
+  "original_partition_hashes_match": {
+    "boot": true,
+    "dtbo": true
+  },
+  "remaining_issues": [
+    "Animation stutter",
+    "Vertical tearing",
+    "Long-duration touch stability unverified"
+  ],
+  "full_log_included": false
+}

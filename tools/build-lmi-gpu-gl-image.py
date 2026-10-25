@@ -17,6 +17,7 @@ parser.add_argument('--single-user-lsd', action='store_true', help='Opt-in lsd-o
 parser.add_argument('--hid-simple-retry', action='store_true', help='Retry the sending HID client during event-server startup; bounded dispatch diagnostics')
 parser.add_argument('--hid-routing-log', action='store_true', help='Observe backboardd HID routing decisions through its original os_log output')
 parser.add_argument('--hid-routing-trace', action='store_true', help='Bounded stock BackBoard processor and service-selection observers')
+parser.add_argument('--hid-usage-recheck', action='store_true', help='Recheck zero cached usages for the identified Redwood touch screen before service matching')
 args = parser.parse_args()
 assert not args.hid_routing_log or (args.input_trace and args.quiet_oslog)
 assert not args.hid_routing_trace or args.input_trace
@@ -49,7 +50,7 @@ job_text = jobs.read_text()
 assert 'lmi-gpu-gl-probe' not in job_text
 jobs.write_text('/redwood/bin/lmi-gpu-gl-probe\n' + job_text)
 diagnostic_files = []
-if args.input_trace or args.single_user_lsd or args.hid_simple_retry:
+if args.input_trace or args.single_user_lsd or args.hid_simple_retry or args.hid_usage_recheck:
     inject_source = out / 'inject.c'
     source_dir = repo / 'userland-source/userland/src'
     for name in ['inject.c', 'redwood_input.h', 'redwood_gl.h']:
@@ -60,6 +61,7 @@ if args.input_trace or args.single_user_lsd or args.hid_simple_retry:
         *(['-DLMI_LSD_SINGLE_USER=1'] if args.single_user_lsd else []),
         *(['-DLMI_HID_SIMPLE_RETRY=1'] if args.hid_simple_retry else []),
         *(['-DLMI_HID_ROUTING_TRACE=1'] if args.hid_routing_trace else []),
+        *(['-DLMI_HID_USAGE_RECHECK=1'] if args.hid_usage_recheck else []),
         '-dynamiclib', '-install_name', '/redwood/lib/libredwood.dylib',
         '-framework', 'CoreFoundation', '-framework', 'IOKit', '-lobjc',
         '-o', str(out / 'libredwood.dylib'), str(inject_source)], check=True)
@@ -143,6 +145,7 @@ manifest = dict(image=str(image), bytes=image.stat().st_size,
                 hid_simple_retry=args.hid_simple_retry,
                 hid_routing_log=args.hid_routing_log,
                 hid_routing_trace=args.hid_routing_trace,
+                hid_usage_recheck=args.hid_usage_recheck,
                 input_trace_source_sha256={name: hashlib.sha256((out / name).read_bytes()).hexdigest()
                     for name in ['inject.c', 'redwood_input.h', 'redwood_gl.h', *(['inject_sb.c'] if args.input_trace else [])]} if args.input_trace or args.single_user_lsd or args.hid_simple_retry else {},
                 diagnostic_source_sha256={name: hashlib.sha256((out / (name + '.c')).read_bytes()).hexdigest()
