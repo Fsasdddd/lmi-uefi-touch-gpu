@@ -6,10 +6,10 @@
 
 | 轮次 | 可支持的结论 | 限制 |
 | --- | --- | --- |
-| gl-touch-quiet-v3-180 | FD650 八帧 shader 回读；CA 连续帧；用户确认改善 | 应用仍卡、壁纸问题未解决 |
-| inputtrace-offwait-v21-180 | 192 次 HID 接受；发送中位约 229µs | 用户反馈完全无响应 |
+| gl-touch-quiet-v3-180 | FD650 八帧 shader 回读；CA 连续帧；实际交互体验改善 | 应用仍卡、壁纸问题未解决 |
+| inputtrace-offwait-v21-180 | 192 次 HID 接受；发送中位约 229µs | 实际交互完全无响应 |
 | input-observers-v22-180 | 192 个原始时间戳匹配 HID monitor；中位约 1554µs | 两个 UIKit observer 无输入日志，不能定位唯一丢点处 |
-| hid-routing-v23-180 | 用户反馈触控恢复、动画卡顿；192 个事件接受并匹配 | 原硬件报告 INCOMPLETE；单轮交互不能证明稳定 |
+| hid-routing-v23-180 | 实际交互中触控恢复、动画卡顿；192 个事件接受并匹配 | 原硬件报告 INCOMPLETE；单轮交互不能证明稳定 |
 
 v23 的严格桌面 verifier 拒绝了一条被其他日志打断的运行时完成记录；保留原始 INCOMPLETE，不静默改成 PASS。其五秒显示窗口包含空闲时间，不能作为持续动画 FPS。
 

@@ -26,6 +26,6 @@ SMP 启动会改变输入服务与 event server 的时序。当前 `make_service
 
 诊断将原始时间戳沿 post/read/sent/HID monitor 关联，并在 BackBoard 的处理/服务选择和 SpringBoard 的两个 UIKit 入口加入有界 observer。observer 保留原方法调用、返回值与输出参数，并检查方法签名/入口条件；它是观察工具，不能当作已经修复路由的证明。日志被限制数量以减小扰动。
 
-v21/v22：192 个事件都被接受/观测，但用户仍反馈完全无响应。v23：用户反馈触控恢复、动画卡顿；原严格 GPU 验证仍是 INCOMPLETE。由此只能确认这一轮交互恢复，不能推导长期触控修复完成，也不能仅凭 UIKit observer 无日志确定唯一丢点位置。
+v21/v22：192 个事件都被接受/观测，但实际交互仍完全无响应。v23：实际交互中触控恢复、动画卡顿；原严格 GPU 验证仍是 INCOMPLETE。由此只能确认这一轮交互恢复，不能推导长期触控修复完成，也不能仅凭 UIKit observer 无日志确定唯一丢点位置。
 
 相关测试：`check-lmi-hid-startup.py`、`check-lmi-input-observers.py`、`check-lmi-hid-routing.py`；分析器：`analyze-lmi-touch-log.py`。

@@ -1299,15 +1299,15 @@
     },
     {
       "path": "docs/EVIDENCE.zh-CN.md",
-      "sha256": "a39012317c0bcf7acfd9a38e7857ef9ba9bb0d33812c03f3dfc22dedff830426"
+      "sha256": "2aa08052d5691a42d838fc99e4fcc54d53f11d48e12a2b0a811551fb8081c0a4"
     },
     {
       "path": "docs/GPU.zh-CN.md",
-      "sha256": "fefa5d29f92261e9863b7996d42adc02d7321ebd78d58c8ad7d8c710ebe4cbce"
+      "sha256": "e0f59775cd3d8e8c7c81f41ac64baf515f21bd9a9691bc535272e08fc21d08b4"
     },
     {
       "path": "docs/TOUCH.zh-CN.md",
-      "sha256": "08746039cc9b3f7d3261704ea31d7bc86ad0ee168705b9549a41c7bbb45d4c69"
+      "sha256": "7f3601c7cee932e9d86e76a2f732cb296a6f60ef7dbe1fb57c8ea99fa97882b1"
     },
     {
       "path": "docs/UEFI.zh-CN.md",
@@ -1443,7 +1443,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "88496b692684e25a72a41af2125590c532bf1f97e0972cdce597b43e98f6f9fe"
+      "sha256": "2c70f4fe2a37401bc8e10053392f8d70db16dd8efacd725e6db93bfb5f4440cb"
     },
     {
       "path": "tools/analyze-lmi-loader-memory.py",
