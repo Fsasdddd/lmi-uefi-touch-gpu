@@ -1443,7 +1443,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "2c70f4fe2a37401bc8e10053392f8d70db16dd8efacd725e6db93bfb5f4440cb"
+      "sha256": "4e35c54ea54ca202294166a3a5d245c05bbf2b7539f9931a26ce09579be9568f"
     },
     {
       "path": "tools/analyze-lmi-loader-memory.py",
