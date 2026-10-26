@@ -12,6 +12,13 @@ assert digest(im/'lmi-diagnostics.img')==mm['sha256']
 assert lm['lmi_gpu_unsecure'] and km['lmi_gpu_unsecure']['enabled'] and not lm['persistent_storage_writes']
 smp_cpus=lm.get('smp_cpus',1)
 fb_threads=lm.get('fb_threads',1)
+fb_queue=lm.get('fb_queue',2)
+fb_beat=lm.get('fb_beat',1)
+assert fb_queue in (1,2) and fb_beat in (0,1)
+if lm.get('lmi_gpu_desktop'):
+    for key,value in [('fb_queue',fb_queue),('fb_beat',fb_beat)]:
+        assert re.findall(rb'\b'+key.encode()+rb'=(\d+)\b',(l/'loader.efi').read_bytes())==[str(value).encode()]
+    assert lm['desktop_framebuffer_threads']==fb_threads
 assert 1<=fb_threads<=smp_cpus
 assert re.findall(rb'\bfb_threads=(\d+)\b',(l/'loader.efi').read_bytes())==([str(fb_threads).encode()] if lm.get('lmi_gpu_desktop') else [])
 assert smp_cpus==km.get('smp_cpus',1) and smp_cpus in (1,2,4,8)
@@ -88,6 +95,15 @@ sources=[r/'tools'/s for s in ['lmi-gpu-unsecure.c','check-lmi-gpu-unsecure.c','
     'lmi-gpu-core-memory.c','build-lmi-loader.py','build-lmi-gpu-mode.py',
     'audit-lmi-gpu-normal-diag-region.py','check-lmi-gpu-normal-diag-region.py','check-lmi-gpu-normal-verifier.py','build-lmi-ios-probe.py','test-lmi-checkpoints.py']]
 sources += [r/'tools/lmi-gic-guard.c']
+sources += [r/'tools/lmi_display_v40_policy.py']
+sources += [r/'tools/lmi_display_v41_policy.py']
+sources += [r/'tools/lmi_display_v42_policy.py']
+if lm.get('display_census'):
+    census=r/'tools/lmi-display-census.c'
+    assert digest(census)==lm['display_census_source_sha256']
+    check=json.loads((r/'out/lmi-display-census-host/result.json').read_text())
+    assert check['result']=='PASS' and check['source_sha256']==digest(census)
+    sources += [census,r/'tools/check-lmi-display-census.py']
 if smp_cpus>1:sources += [r/'tools/lmi-smp-return.S',r/'tools/check-lmi-smp-return.py']
 if tile:
     tr=json.loads((r/'out/lmi-gpu-research/mode46-tile-offline-validation.json').read_text())
@@ -123,6 +139,9 @@ report['ios_observe_seconds']=lm['ios_observe_seconds']
 report['touch_input_enabled']=bool(lm.get('lmi_touch_input'))
 report['smp_cpus']=smp_cpus
 report['fb_threads']=fb_threads
+report['fb_queue']=fb_queue
+report['fb_beat']=fb_beat
+report['display_census']=bool(lm.get('display_census'))
 if tile:report.update(tile_host_scenarios=35,tile_verifier_negative_cases=72)
 (r/('out/lmi-gpu-research/mode46-desktop-preflight.json' if desktop else 'out/lmi-gpu-research/mode46-tile-preflight.json' if tile else 'out/lmi-gpu-research/mode46-diag-preflight.json')).write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))
