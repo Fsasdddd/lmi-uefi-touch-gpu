@@ -1,6 +1,6 @@
 """Temporary boot: return self-test and explicitly reviewed checkpoints. No flashing."""
 from pathlib import Path
-import argparse, datetime, hashlib, json, os, re, shutil, struct, subprocess, time, zlib
+import argparse, datetime, hashlib, json, os, re, shutil, struct, subprocess, time, traceback, zlib
 from lmi_checkpoint_policy import STAGE_CHOICES,checkpoints_through
 
 parser=argparse.ArgumentParser()
@@ -17,12 +17,56 @@ parser.add_argument('--root-probe',action='store_true',help='Use the pinned kern
 parser.add_argument('--user-probe',action='store_true',help='Verify PID1 SYS_exit with actual saved EL0 registers')
 parser.add_argument('--ios-probe',action='store_true',help='Stage verified iOS RAM images and observe original launchd.ios in EL0')
 parser.add_argument('--ios-continue',action='store_true',help='Checkpoint63: continue launchd and collect the bounded RAM-only return')
+parser.add_argument('--source-runtime',action='store_true',help='Use the separately audited v36 source reconstruction with the frozen lmi runtime')
+parser.add_argument('--display-v40',action='store_true',help='Use the separately pinned v40 read-only DPU observer and relocated runtime')
+parser.add_argument('--display-v41',action='store_true',help='Use the separately pinned v41 raw-return-log DPU observer')
+parser.add_argument('--display-v42',action='store_true',help='Use the separately pinned v42 synchronized CPU presentation prototype')
+parser.add_argument('--display-v43',action='store_true',help='Read-only QSEED/MDSS SMMU inventory before owned-buffer DMA')
+parser.add_argument('--display-v44',action='store_true',help='Automatic spatial pattern verification of owned DMA, QSEED and A/B flips')
+parser.add_argument('--display-v45',action='store_true',help='Owned DMA/scaler probe with exact preparation refusal evidence')
+parser.add_argument('--display-v46',action='store_true',help='Owned DMA/scaler probe with bypass SEP tolerance and stable first-frame baseline')
+parser.add_argument('--display-v47',action='store_true',help='Same-run spatial verification and conditional hardware-scaled double-buffer desktop')
+parser.add_argument('--display-v48',action='store_true',help='Wait for graphics before probing and retain final refusal diagnostics')
+parser.add_argument('--display-v49',action='store_true',help='ASIDPNE=0 with exact SCTLR readback for display mappings')
+parser.add_argument('--display-v50',action='store_true',help='QSEED4 preload/blend correction and retained spatial trace')
+parser.add_argument('--display-v51',action='store_true',help='Measured blend bit31=0 with exact QSEED4 readback')
+parser.add_argument('--display-v52',action='store_true',help='Exact measured global SMMU profiles with stable preparation')
+parser.add_argument('--display-v53',action='store_true',help='Batched scaler diagnostics; never enables new desktop')
+parser.add_argument('--display-v54',action='store_true',help='Bypass vs identity vs scaled diagnostics; no new desktop')
+parser.add_argument('--display-v59',action='store_true',help='One-copy complete BGRA frames with native queue/record and unchanged DPU mappings')
+parser.add_argument('--display-v58',action='store_true',help='One outstanding asynchronous GPU submission with guarded cache/mapping/exit drains')
+parser.add_argument('--display-v57',action='store_true',help='Stock speed-bin index7 GPU frequency request with v56 display')
+parser.add_argument('--display-v56',action='store_true',help='CPU cache and frame preservation performance experiment')
+parser.add_argument('--display-v55',action='store_true',help='Explicit color-normalized hardware desktop experiment')
+parser.add_argument('--prepare-only',action='store_true',help='Freeze and verify all test inputs, then exit before any device access')
 parser.add_argument('--ios-images',type=Path,default=Path('out/lmi-ios-images'))
 parser.add_argument('--root-image',type=Path,help='Small APFS RAM-root image for the root probe')
 parser.add_argument('--ios-boot-image',type=Path,help='Audited GPU GLES RAM image manifest (checkpoint63 md1 only)')
 parser.add_argument('--evidence-suffix',default='',help='Unique suffix to preserve earlier hardware evidence')
 parser.add_argument('--ios-result-delay-seconds',type=int,choices=(0,30,50,185),default=None,help='Checkpoint63 query delay: native duration plus5s; explicit0 retains the early-query control')
 args=parser.parse_args()
+assert not args.display_v59 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v58 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v57 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v56 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v55 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v54 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v53 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert sum(bool(getattr(args,'display_v'+str(v))) for v in range(40,60))<=1
+assert not args.display_v52 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.source_runtime or (args.ios_continue and args.max_checkpoint==63)
+assert not args.display_v40 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v41 or (not args.source_runtime and not args.display_v40 and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v42 or (not args.source_runtime and not args.display_v40 and not args.display_v41 and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v43 or (not any((args.source_runtime,args.display_v40,args.display_v41,args.display_v42)) and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v44 or (not any((args.source_runtime,args.display_v40,args.display_v41,args.display_v42,args.display_v43)) and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v45 or (not any((args.source_runtime,args.display_v40,args.display_v41,args.display_v42,args.display_v43,args.display_v44)) and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v46 or (not any((args.source_runtime,args.display_v40,args.display_v41,args.display_v42,args.display_v43,args.display_v44,args.display_v45)) and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v47 or (not any((args.source_runtime,args.display_v40,args.display_v41,args.display_v42,args.display_v43,args.display_v44,args.display_v45,args.display_v46)) and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v48 or (not any((args.source_runtime,args.display_v40,args.display_v41,args.display_v42,args.display_v43,args.display_v44,args.display_v45,args.display_v46,args.display_v47)) and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v49 or (not any((args.source_runtime,args.display_v40,args.display_v41,args.display_v42,args.display_v43,args.display_v44,args.display_v45,args.display_v46,args.display_v47,args.display_v48)) and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v50 or (not any((args.source_runtime,args.display_v40,args.display_v41,args.display_v42,args.display_v43,args.display_v44,args.display_v45,args.display_v46,args.display_v47,args.display_v48,args.display_v49)) and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v51 or (not any((args.source_runtime,args.display_v40,args.display_v41,args.display_v42,args.display_v43,args.display_v44,args.display_v45,args.display_v46,args.display_v47,args.display_v48,args.display_v49,args.display_v50)) and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
 assert not args.ios_boot_image or (args.ios_continue and args.max_checkpoint == 63)
 assert not args.ios_result_delay_seconds or args.ios_continue
 assert not args.evidence_suffix or re.fullmatch(r'[a-zA-Z0-9-]+',args.evidence_suffix)
@@ -96,8 +140,44 @@ if args.early_return_fix or args.return_guard:
     if args.user_probe:folder='lmi-kernel-user-probe'
     if args.ios_probe:folder='lmi-kernel-ios-probe'
     if args.ios_continue:folder='lmi-kernel-ios-continue'
+    if args.source_runtime:folder='lmi-kernel-source-runtime-v36'
     kernel=root/'out'/folder/'mach.development.bcm2837'
     kernel_meta=json.loads((kernel.parent/'manifest.json').read_text())
+    if args.display_v40 or args.display_v41 or args.display_v42 or args.display_v43 or args.display_v44 or args.display_v45 or args.display_v46 or args.display_v47 or args.display_v48 or args.display_v49 or args.display_v50 or args.display_v51 or args.display_v52 or args.display_v53 or args.display_v54 or args.display_v55 or args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59:
+        from lmi_display_v40_policy import IMAGE_SHA
+        if args.display_v59:from lmi_display_v59_policy import stage
+        elif args.display_v58:from lmi_display_v58_policy import stage
+        elif args.display_v57:from lmi_display_v57_policy import stage
+        elif args.display_v56:from lmi_display_v56_policy import stage
+        elif args.display_v55:from lmi_display_v55_policy import stage
+        elif args.display_v54:from lmi_display_v54_policy import stage
+        elif args.display_v53:from lmi_display_v53_policy import stage
+        elif args.display_v52:from lmi_display_v52_policy import stage
+        elif args.display_v51:from lmi_display_v51_policy import stage
+        elif args.display_v50:from lmi_display_v50_policy import stage
+        elif args.display_v49:from lmi_display_v49_policy import stage
+        elif args.display_v48:from lmi_display_v48_policy import stage
+        elif args.display_v47:from lmi_display_v47_policy import stage
+        elif args.display_v46:from lmi_display_v46_policy import stage
+        elif args.display_v45:from lmi_display_v45_policy import stage
+        elif args.display_v44:from lmi_display_v44_policy import stage
+        elif args.display_v43:from lmi_display_v43_policy import stage
+        elif args.display_v42:from lmi_display_v42_policy import stage
+        elif args.display_v41:from lmi_display_v41_policy import stage
+        else:from lmi_display_v40_policy import stage
+        assert profile.get('lmi_gpu_desktop') and profile.get('smp_cpus')==8
+        assert hashlib.sha256(args.ios_boot_image.read_bytes()).hexdigest()==IMAGE_SHA
+        kernel,kernel_meta=stage(root,out)
+    if args.source_runtime:
+        assert profile.get('lmi_gpu_desktop') and profile.get('smp_cpus')==8
+        assert kernel_meta['sha256']=='98ef20d5c5bf4a902982840ee0529f36c0594995e7d2ed6c1caed93e4798b8fc'
+        rebuild=kernel_meta['source_rebuild']
+        rebuild_audit=kernel.parent/'source-runtime-audit.json'
+        assert hashlib.sha256(rebuild_audit.read_bytes()).hexdigest()==rebuild['audit_sha256']
+        assert hashlib.sha256((root/'tools/build-lmi-source-runtime.py').read_bytes()).hexdigest()==rebuild['builder_sha256']
+        rebuilt=json.loads(rebuild_audit.read_text())
+        assert rebuilt['result']=='PASS' and rebuilt['candidate_sha256']==kernel_meta['sha256']
+        assert rebuilt['runtime_sha256']==rebuild['baseline_runtime_sha256']
     if args.bootstrap_probe or args.irq_probe or args.driver_probe or args.bsd_probe or args.root_probe or args.user_probe or args.ios_probe:assert args.max_checkpoint in kernel_meta['instrumented_checkpoints']
     assert hashlib.sha256(kernel.read_bytes()).hexdigest()==kernel_meta['sha256']
     if args.ios_continue:assert kernel_meta['ram_only_return']
@@ -207,7 +287,8 @@ if profile.get('lmi_gpu_tile'):
     preflight=json.loads((root/'out/lmi-gpu-research'/preflight_name).read_text())
     assert preflight['result']=='PASS' and preflight['tile']
     assert bool(preflight.get('desktop'))==bool(profile.get('lmi_gpu_desktop'))
-    assert preflight['kernel_sha256']==kernel_meta['sha256'] and preflight['loader_sha256']==profile['sha256'] and preflight['diagnostic_sha256']==meta['sha256']
+    expected_runtime=(kernel_meta['display_v59']['baseline_runtime_sha256'] if args.display_v59 else kernel_meta['display_v58']['baseline_runtime_sha256'] if args.display_v58 else kernel_meta['display_v57']['baseline_runtime_sha256'] if args.display_v57 else kernel_meta['display_v56']['baseline_runtime_sha256'] if args.display_v56 else kernel_meta['display_v55']['baseline_runtime_sha256'] if args.display_v55 else kernel_meta['display_v54']['baseline_runtime_sha256'] if args.display_v54 else kernel_meta['display_v53']['baseline_runtime_sha256'] if args.display_v53 else kernel_meta['display_v52']['baseline_runtime_sha256'] if args.display_v52 else kernel_meta['display_v51']['baseline_runtime_sha256'] if args.display_v51 else kernel_meta['display_v50']['baseline_runtime_sha256'] if args.display_v50 else kernel_meta['display_v49']['baseline_runtime_sha256'] if args.display_v49 else kernel_meta['display_v48']['baseline_runtime_sha256'] if args.display_v48 else kernel_meta['display_v47']['baseline_runtime_sha256'] if args.display_v47 else kernel_meta['display_v46']['baseline_runtime_sha256'] if args.display_v46 else kernel_meta['display_v45']['baseline_runtime_sha256'] if args.display_v45 else kernel_meta['display_v44']['baseline_runtime_sha256'] if args.display_v44 else kernel_meta['display_v43']['baseline_runtime_sha256'] if args.display_v43 else kernel_meta['display_v42']['baseline_runtime_sha256'] if args.display_v42 else kernel_meta['display_v41']['baseline_runtime_sha256'] if args.display_v41 else kernel_meta['display_v40']['baseline_runtime_sha256'] if args.display_v40 else kernel_meta['source_rebuild']['baseline_runtime_sha256'] if args.source_runtime else kernel_meta['sha256'])
+    assert preflight['kernel_sha256']==expected_runtime and preflight['loader_sha256']==profile['sha256'] and preflight['diagnostic_sha256']==meta['sha256']
     for name,sha in preflight['source_sha256'].items():
         assert hashlib.sha256((root/name).read_bytes()).hexdigest()==sha,'Stale tile preflight source: '+name
     for name in [preflight_name,'mode46-tile-source-audit.json','mode46-tile-offline-validation.json']:
@@ -219,6 +300,12 @@ if profile.get('lmi_gpu_desktop'):
     for name in ['mode46-desktop-source-audit.json','mode46-desktop-offline-validation.json','desktop-region-negative-check.json']:
         shutil.copy2(root/'out/lmi-gpu-research'/name,out/name)
     shutil.copy2(root/'out/lmi-gpu-desktop-host.log',out/'desktop-host.log')
+if profile.get('display_census'):
+    for name in ['lmi-display-census.c','check-lmi-display-census.py']:
+        shutil.copy2(root/'tools'/name,provenance/name)
+    census_check=json.loads((root/'out/lmi-display-census-host/result.json').read_text())
+    assert census_check['result']=='PASS' and census_check['source_sha256']==profile['display_census_source_sha256']
+    shutil.copy2(root/'out/lmi-display-census-host/result.json',out/'display-census-host.json')
 if args.ios_boot_image:
     assert profile.get('lmi_gpu_desktop'), 'GLES candidate requires the desktop GPU backend'
     for name in ['verify-lmi-gpu-gl.py','check-lmi-gpu-gl-verifier.py','lmi-gpu-gl-probe.c','build-lmi-gpu-gl-image.py','lmi-wallpaper-probe.c','lmi-kernel-log.c']:
@@ -270,6 +357,57 @@ if profile.get('lmi_gpu_gmu_200mhz_probe'):
         shutil.copy2(root/'tools'/name,provenance/name)
 for name in ['lmi-gpu-context.c','lmi-gpu-hfi.c','test-lmi-checkpoints.py','lmi_checkpoint_policy.py','build-lmi-loader.py','lmi-gic-guard.c','build-lmi-preirq-probe.py','build-lmi-bootstrap-probe.py','build-lmi-irq-probe.py','build-lmi-driver-probe.py','build-lmi-bsd-probe.py','build-lmi-root-probe.py','build-lmi-minimal-root.py','build-lmi-user-probe.py','build-lmi-aligned-hello.py','build-lmi-ios-probe.py','lmi-touch.c','prepare-lmi-ios-images.py','verify-ios165-downloads.py']:
     shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v40 or args.display_v41 or args.display_v42 or args.display_v43 or args.display_v44 or args.display_v45 or args.display_v46 or args.display_v47 or args.display_v48 or args.display_v49 or args.display_v50 or args.display_v51 or args.display_v52 or args.display_v53 or args.display_v54 or args.display_v55 or args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59:
+    shutil.copy2(root/'tools/lmi_display_v40_policy.py',provenance/'lmi_display_v40_policy.py')
+if args.display_v41 or args.display_v42 or args.display_v43:
+    shutil.copy2(root/'tools/lmi_display_v41_policy.py',provenance/'lmi_display_v41_policy.py')
+if args.display_v43:
+    shutil.copy2(root/'tools/lmi_display_v43_policy.py',provenance/'lmi_display_v43_policy.py')
+if args.display_v42:
+    shutil.copy2(root/'tools/lmi_display_v42_policy.py',provenance/'lmi_display_v42_policy.py')
+if args.display_v57 or args.display_v58 or args.display_v59:
+    for name in ('lmi_display_v57_policy.py','lmi-gpu-gx-v57.c','build-lmi-display-v57.py','check-lmi-gpu-gx-v57.py','check-lmi-gpu-gx-v57.c','check-lmi-display-v57-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v59:
+    for name in ('lmi_display_v59_policy.py','lmi-display-fast-v59.c','lmi-display-fast-v59.h','lmi-display-surface-abi.h','lmi-display-direct-plan.c','lmi-display-direct-plan.h','build-lmi-display-v59.py','check-lmi-display-fast-v59.py','check-lmi-display-fast-v59.c','check-lmi-display-v59-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v58 or args.display_v59:
+    for name in ('lmi_display_v58_policy.py','lmi-gpu-desktop-v58.c','build-lmi-gpu-async-v58.py','check-lmi-gpu-async-v58.py','check-lmi-display-v58-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59:
+    for name in ('lmi_display_v56_policy.py','lmi_display_v55_policy.py','lmi_display_v54_policy.py','lmi-display-native-v56.c','lmi-display-compositor-v56.c','build-lmi-display-v56.py','lmi-display-probe-v55.c','lmi-display-dma-v56.c','lmi-display-pipeline-v51.c','check-lmi-display-dma-v56.c','check-lmi-display-dma-v56.py','check-lmi-display-v56-startup.py','check-lmi-display-v56-desktop.py','check-lmi-display-probe-v56.py','check-lmi-display-probe-v56.c','check-lmi-display-v56-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v55:
+    for name in ('lmi_display_v55_policy.py','lmi_display_v54_policy.py','lmi-display-native-v55.c','lmi-display-probe-v55.c','lmi-display-dma-v55.c','lmi-display-pipeline-v51.c','check-lmi-display-dma-v55.c','check-lmi-display-dma-v55.py','check-lmi-display-v55-startup.py','check-lmi-display-v55-desktop.py','check-lmi-display-probe-v55.py','check-lmi-display-probe-v55.c','check-lmi-display-v55-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v54:
+    for name in ('lmi_display_v54_policy.py','lmi-display-native-v54.c','lmi-display-diagnostic-v54.c','lmi-display-dma-v54.c','lmi-display-pipeline-v51.c','check-lmi-display-dma-v54.c','check-lmi-display-dma-v54.py','check-lmi-display-native-v54.py','check-lmi-display-diagnostic-v54.py','check-lmi-display-diagnostic-v54.c','check-lmi-display-v54-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v53:
+    for name in ('lmi_display_v53_policy.py','lmi-display-native-v53.c','lmi-display-diagnostic-v53.c','lmi-display-dma-v53.c','lmi-display-pipeline-v51.c','check-lmi-display-dma-v53.c','check-lmi-display-dma-v53.py','check-lmi-display-native-v53.py','check-lmi-display-diagnostic-v53.py','check-lmi-display-diagnostic-v53.c'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v52:
+    for name in ('lmi_display_v52_policy.py','lmi-display-dma-v52.c','lmi-display-pipeline-v51.c','check-lmi-display-dma-v52.c','check-lmi-display-dma-v52.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v51:
+    for name in ('lmi_display_v51_policy.py','lmi-display-dma-v49.c','lmi-display-pipeline-v51.c','check-lmi-display-dma-v51.c','check-lmi-display-dma-v51.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v50:
+    for name in ('lmi_display_v50_policy.py','lmi-display-dma-v49.c','lmi-display-pipeline-v50.c','check-lmi-display-dma-v50.c','check-lmi-display-dma-v50.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v49:
+    for name in ('lmi_display_v49_policy.py','lmi-display-dma-v49.c','check-lmi-display-dma-v49.c','check-lmi-display-dma-v49.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v48:
+    shutil.copy2(root/'tools/lmi_display_v48_policy.py',provenance/'lmi_display_v48_policy.py')
+if args.display_v47:
+    shutil.copy2(root/'tools/lmi_display_v47_policy.py',provenance/'lmi_display_v47_policy.py')
+if args.display_v46:
+    shutil.copy2(root/'tools/lmi_display_v46_policy.py',provenance/'lmi_display_v46_policy.py')
+if args.display_v45:
+    shutil.copy2(root/'tools/lmi_display_v45_policy.py',provenance/'lmi_display_v45_policy.py')
+if args.display_v44:
+    shutil.copy2(root/'tools/lmi_display_v44_policy.py',provenance/'lmi_display_v44_policy.py')
 shutil.copy2(root/'tools/lmi-touch-timing.h',provenance/'lmi-touch-timing.h')
 payload=out/'kernel-checkpoint.bin'
 items=[f'kernel={kernel}']
@@ -313,6 +451,15 @@ if args.ios_probe:
         shutil.copy2(candidate, out / 'ios-boot.apfs')
         assert hashlib.sha256((out / 'ios-boot.apfs').read_bytes()).hexdigest() == gl_manifest['sha256']
         shutil.copy2(candidate.parent / 'manifest.json', out / 'gl-image.json')
+        if gl_manifest.get('gles_copy_regression'):
+            regression=gl_manifest['gles_copy_regression']
+            for name,expected in regression['source_sha256'].items():
+                path=root/name
+                assert hashlib.sha256(path.read_bytes()).hexdigest()==expected,'Stale GLES copy source: '+name
+                frozen=provenance/'gles-copy'/name
+                frozen.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copy2(path,frozen)
+            shutil.copy2(root/'tools/verify-lmi-gl-copy.py',provenance/'verify-lmi-gl-copy.py')
         if gl_manifest.get('bounded_input_trace'):
             for name,expected in gl_manifest['input_trace_source_sha256'].items():
                 path=candidate.parent/name
@@ -345,12 +492,45 @@ if args.ios_probe:
         if gl_manifest.get('hid_usage_recheck'):
             usage_check=root/'out/lmi-hid-usage-host/result.json'
             usage=json.loads(usage_check.read_text())
-            assert usage['result']=='PASS' and usage['scenarios']==14
+            assert usage['result']=='PASS' and usage['scenarios'] in (14,117)
+            if gl_manifest.get('hid_partial_usage_recheck'):
+                assert usage['scenarios']==117 and usage['cache_states']==9
+                assert usage['repaired_cache_states']==['0/0','13/0','0/4']
+                assert usage['invalid_native_controls']==12
+                partial=gl_manifest['hid_partial_usage_recheck']
+                builder=root/'tools/build-lmi-hid-partial-image.py'
+                assert hashlib.sha256(usage_check.read_bytes()).hexdigest()==partial['host_check_sha256']
+                assert hashlib.sha256(builder.read_bytes()).hexdigest()==partial['builder_sha256']
+                assert partial['baseline_image_sha256']=='4fe1b6afda3bf9543be923240c31accfac8e6e19316b926f7fc85a7e70aada3b'
+                assert partial['changed_files']==['lib/libredwood.dylib']
+                shutil.copy2(builder,provenance/builder.name)
             assert usage['source_sha256']==gl_manifest['input_trace_source_sha256']['inject.c']
             assert hashlib.sha256((candidate.parent/'inject.c').read_bytes()).hexdigest()==usage['source_sha256']
             shutil.copy2(usage_check,out/'hid-usage-host-check.json')
             shutil.copy2(root/'tools/check-lmi-hid-usage.py',provenance/'check-lmi-hid-usage.py')
+            if gl_manifest.get('hid_initial_retry'):
+                retry_check=root/'out/lmi-hid-initial-retry-host/result.json'
+                retry=json.loads(retry_check.read_text())
+                initial=gl_manifest['hid_initial_retry']
+                builder=root/'tools/build-lmi-hid-initial-image.py'
+                assert retry['result']=='PASS' and retry['scenarios']==1350
+                assert retry['max_native_calls']==initial['max_native_calls']==3
+                assert retry['manual_setters'] is False
+                assert retry['source_sha256']==usage['source_sha256']
+                assert hashlib.sha256(retry_check.read_bytes()).hexdigest()==initial['host_check_sha256']
+                assert hashlib.sha256(builder.read_bytes()).hexdigest()==initial['builder_sha256']
+                assert initial['baseline_image_sha256']=='4fe1b6afda3bf9543be923240c31accfac8e6e19316b926f7fc85a7e70aada3b'
+                assert initial['changed_files']==['lib/libredwood.dylib']
+                shutil.copy2(retry_check,out/'hid-initial-retry-host-check.json')
+                shutil.copy2(root/'tools/check-lmi-hid-initial-retry.py',provenance/'check-lmi-hid-initial-retry.py')
+                shutil.copy2(builder,provenance/builder.name)
 subprocess.run(['python',str(root/'hackios/xnuloader/mkpayload.py'),'-o',str(payload),*items,'--cmdline=-v','--checkpoint=1'],check=True)
+if args.prepare_only:
+    (out/'prepared-only.json').write_text(json.dumps(dict(
+        result='HOST_PREPARED_ONLY', device_access=False,
+        kernel_sha256=kernel_meta['sha256'], display_v40=args.display_v40,display_v41=args.display_v41,display_v42=args.display_v42,display_v43=args.display_v43,display_v44=args.display_v44,display_v45=args.display_v45,display_v46=args.display_v46,display_v47=args.display_v47,display_v48=args.display_v48,display_v49=args.display_v49,display_v50=args.display_v50,display_v51=args.display_v51,display_v52=args.display_v52,display_v53=args.display_v53,display_v54=args.display_v54,display_v55=args.display_v55,display_v56=args.display_v56,display_v57=args.display_v57,display_v58=args.display_v58,display_v59=args.display_v59),indent=2)+'\n')
+    print('HOST_PREPARED_ONLY: no device access',flush=True)
+    raise SystemExit(0)
 adb=['D:/Gaoji/adb.exe','-s','YOUR_ADB_SERIAL']
 fb=['D:/Gaoji/fastboot.exe']
 target=fb+['-s','xnuloader']
@@ -369,6 +549,27 @@ result['root_probe']=args.root_probe
 result['user_probe']=args.user_probe
 result['ios_probe']=args.ios_probe
 result['ios_continue']=args.ios_continue
+if args.source_runtime:result['source_rebuild']=kernel_meta['source_rebuild']
+if args.display_v40:result['display_v40']=kernel_meta['display_v40']
+if args.display_v41:result['display_v41']=kernel_meta['display_v41']
+if args.display_v43:result['display_v43']=kernel_meta['display_v43']
+if args.display_v42:result['display_v42']=kernel_meta['display_v42']
+if args.display_v44:result['display_v44']=kernel_meta['display_v44']
+if args.display_v45:result['display_v45']=kernel_meta['display_v45']
+if args.display_v46:result['display_v46']=kernel_meta['display_v46']
+if args.display_v59:result['display_v59']=kernel_meta['display_v59']
+if args.display_v58:result['display_v58']=kernel_meta['display_v58']
+if args.display_v57:result['display_v57']=kernel_meta['display_v57']
+if args.display_v56:result['display_v56']=kernel_meta['display_v56']
+if args.display_v55:result['display_v55']=kernel_meta['display_v55']
+if args.display_v54:result['display_v54']=kernel_meta['display_v54']
+if args.display_v53:result['display_v53']=kernel_meta['display_v53']
+if args.display_v52:result['display_v52']=kernel_meta['display_v52']
+if args.display_v51:result['display_v51']=kernel_meta['display_v51']
+if args.display_v50:result['display_v50']=kernel_meta['display_v50']
+if args.display_v49:result['display_v49']=kernel_meta['display_v49']
+if args.display_v48:result['display_v48']=kernel_meta['display_v48']
+if args.display_v47:result['display_v47']=kernel_meta['display_v47']
 result['ios_result_query_delay_seconds']=args.ios_result_delay_seconds
 if args.ios_probe:result['ios_images']=ios_meta
 if args.ios_boot_image:result['gl_image']=gl_manifest
@@ -449,6 +650,11 @@ try:
         # run_kernel already staged the combined loader and returned XNU log.
         # Idle `oem log` recomposes only the loader log and discards XNU text.
         run(target+['get_staged',str(out/f'{label}.log')])
+        if label=='checkpoint-63' and (args.display_v41 or args.display_v42 or args.display_v43 or args.display_v44 or args.display_v45 or args.display_v46 or args.display_v47 or args.display_v48 or args.display_v49 or args.display_v50 or args.display_v51 or args.display_v52 or args.display_v53 or args.display_v54 or args.display_v55 or args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59):
+            import runpy
+            observation=runpy.run_path(str(provenance/('lmi_display_v59_policy.py' if args.display_v59 else 'lmi_display_v58_policy.py' if args.display_v58 else 'lmi_display_v57_policy.py' if args.display_v57 else 'lmi_display_v56_policy.py' if args.display_v56 else 'lmi_display_v55_policy.py' if args.display_v55 else 'lmi_display_v54_policy.py' if args.display_v54 else 'lmi_display_v53_policy.py' if args.display_v53 else 'lmi_display_v52_policy.py' if args.display_v52 else 'lmi_display_v51_policy.py' if args.display_v51 else 'lmi_display_v50_policy.py' if args.display_v50 else 'lmi_display_v49_policy.py' if args.display_v49 else 'lmi_display_v48_policy.py' if args.display_v48 else 'lmi_display_v47_policy.py' if args.display_v47 else 'lmi_display_v46_policy.py' if args.display_v46 else 'lmi_display_v45_policy.py' if args.display_v45 else 'lmi_display_v44_policy.py' if args.display_v44 else 'lmi_display_v43_policy.py' if args.display_v43 else 'lmi_display_v42_policy.py' if args.display_v42 else 'lmi_display_v41_policy.py')))['observe']((out/f'{label}.log').read_text())
+            result['dpu_observation']=observation
+            (out/'dpu-observation.json').write_text(json.dumps(observation,indent=2)+'\n')
         if label=='checkpoint-63':
             # Preserve the visible outcome even if the kernel panicked early.
             run(target+['oem','screenshot'])
@@ -650,6 +856,8 @@ try:
             result['gpu_gl_probe']=dict(hardware_shader_readback_verified=False,
                 records=[line for line in log.splitlines() if 'LMI_GL_' in line])
             result['gpu_gl_probe']=runpy.run_path(str(provenance/'verify-lmi-gpu-gl.py'))['verify'](log)
+            if gl_manifest.get('gles_copy_regression'):
+                result['gles_copy_regression']=runpy.run_path(str(provenance/'verify-lmi-gl-copy.py'))['verify'](log)
         if label=='checkpoint-63' and profile.get('lmi_touch_input'):
             result['touch_input']=dict(driver_ready='LMI_TOUCH_READY\n' in log,
                 backboardd_touching_records=len(re.findall(r'contact \d+ presence: touching',log)),
@@ -861,6 +1069,8 @@ try:
 except Exception as e:
     result['result']='INCOMPLETE'
     result['error']=str(e)
+    result['error_type']=type(e).__name__
+    result['error_traceback']=traceback.format_exc()
     print('Test stopped:',e,flush=True)
 finally:
     (out/'hardware-test.json').write_text(json.dumps(result,indent=2)+'\n')

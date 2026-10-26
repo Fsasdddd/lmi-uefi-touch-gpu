@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "scenarios": 17,
+  "asan_ubsan": true,
+  "hardware_tested": false,
+  "original_compositor_used": true,
+  "sources": {
+    "lmi-display-fast-v59.c": "39e664d23bc7d7e667e0331137ddec56782055faf3fc4964338cc68cdebc60ec",
+    "lmi-display-fast-v59.h": "32ecd9f33c90f003738e0e7c10effb86bc2e563ccf93d1d9ebc7137e4016f768",
+    "lmi-display-surface-abi.h": "d15547bc9d6085ef514054a2aca9502cee1e7d3c986299d4f7100a9504b1693e",
+    "lmi-display-direct-plan.c": "be39704dfdd801d0a07b917b2d27acd41e7e90ae445aae77adf81a79f73ecf57",
+    "lmi-display-direct-plan.h": "f65128f3e65a895f4237811b4755f86dc3c66b0151fa1759b2b952b7adcadb61",
+    "lmi-display-compositor-v56.c": "04ec7eed0347c17a1c5daf86ef5b0cf1b12dae7640a6fddde05b1618c43bd4a0",
+    "lmi-display-compositor.h": "ba8838b4c2d0a6bb1041019e9f65c210889bbe51c59b1ebd1163d6166ec6d513",
+    "lmi-display-compositor-abi.h": "9aecfccfeedb254950c07972bad048a3c069d1da672e1b5f85d50a46700e4cd8",
+    "lmi-display-pipeline-v51.c": "3e08a645ae96427d9335a591b9991bcf1047dc93d9d7e298a7f09715ebeffb17",
+    "lmi-display-pipeline.h": "91b346263c17dfc4f17cf9c9303ca0d2a5047bc29ef193109087f1dacd21b8f0",
+    "check-lmi-display-fast-v59.c": "4b856e50736daa086fba6302fa9052fe5a493a64123b2bb40829deb24d20f889",
+    "check-lmi-display-fast-v59.py": "d1f81f4dc68124576755ba1a02d9b026274fdefb79e75922e519fc3d4f7a11a1"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "result": "HOST_BUILT_ONLY",
+  "sha256": "136c6a00184f8dd2527306f6df8e4fde1d1f6f91ed3f9f7971548a7996086f88",
+  "base_sha256": "52068a7d3c30af9cbbaea89cf906f61848c607f82d3e3bc7a7a35bdc1f14c0ea",
+  "sources": {
+    "lmi-display-fast-v59.c": "39e664d23bc7d7e667e0331137ddec56782055faf3fc4964338cc68cdebc60ec",
+    "lmi-display-fast-v59.h": "32ecd9f33c90f003738e0e7c10effb86bc2e563ccf93d1d9ebc7137e4016f768",
+    "lmi-display-surface-abi.h": "d15547bc9d6085ef514054a2aca9502cee1e7d3c986299d4f7100a9504b1693e",
+    "lmi-display-direct-plan.c": "be39704dfdd801d0a07b917b2d27acd41e7e90ae445aae77adf81a79f73ecf57",
+    "lmi-display-direct-plan.h": "f65128f3e65a895f4237811b4755f86dc3c66b0151fa1759b2b952b7adcadb61",
+    "lmi-display-compositor.h": "ba8838b4c2d0a6bb1041019e9f65c210889bbe51c59b1ebd1163d6166ec6d513",
+    "lmi-display-compositor-abi.h": "9aecfccfeedb254950c07972bad048a3c069d1da672e1b5f85d50a46700e4cd8",
+    "lmi-display-pipeline.h": "91b346263c17dfc4f17cf9c9303ca0d2a5047bc29ef193109087f1dacd21b8f0",
+    "build-lmi-display-v59.py": "f2d7e49d065d5b27ad1a16b08cc179509e7205e59390dcd169a88b1733f4ae60"
+  },
+  "reused_region_audit_sha256": "d7fc004d379648a06e818fbd6110fa323c5e907b710f2f0ce70d0201bbd978eb",
+  "surface_layout_sha256": "018a01e73923085fd6f69ff139a7a9b5d7bb8a5bd5edc6552e9221701d5af568",
+  "source_class_sha256": "48f962c8ce00188d79f5dc2ef8cb67891d532e4c163d59f19877f09d0fe1af83",
+  "allowed_file_ranges": [
+    [
+      5040644,
+      5040844
+    ],
+    [
+      5042468,
+      5042608
+    ],
+    [
+      5042804,
+      5042833
+    ],
+    [
+      5044584,
+      5045092
+    ],
+    [
+      5045332,
+      5046032
+    ],
+    [
+      11387068,
+      11387072
+    ],
+    [
+      10354048,
+      10354052
+    ],
+    [
+      5072428,
+      5072432
+    ]
+  ],
+  "sections": [
+    {
+      "section": ".slot0",
+      "start": "0xfffffff0074d2a04",
+      "bytes": 200,
+      "capacity": 200,
+      "inputs": [
+        [
+          "lmi-display-fast-v59.o",
+          ".text.lmi_fast_draw"
+        ],
+        [
+          "lmi-display-direct-plan.o",
+          ".text.word"
+        ]
+      ]
+    },
+    {
+      "section": ".slot2",
+      "start": "0xfffffff0074d3124",
+      "bytes": 140,
+      "capacity": 324,
+      "inputs": [
+        [
+          "lmi-display-direct-plan.o",
+          ".text.whole"
+        ]
+      ]
+    },
+    {
+      "section": ".slot3",
+      "start": "0xfffffff0074d3274",
+      "bytes": 29,
+      "capacity": 36,
+      "inputs": [
+        [
+          "lmi-display-fast-v59.o",
+          ".rodata.str1.1"
+        ]
+      ]
+    },
+    {
+      "section": ".slot6",
+      "start": "0xfffffff0074d3968",
+      "bytes": 508,
+      "capacity": 512,
+      "inputs": [
+        [
+          "lmi-display-direct-plan.o",
+          ".text.lmi_direct_plan"
+        ],
+        [
+          "lmi-display-fast-v59.o",
+          ".text.lmi_fast_cleanup"
+        ]
+      ]
+    },
+    {
+      "section": ".slot7",
+      "start": "0xfffffff0074d3c54",
+      "bytes": 700,
+      "capacity": 768,
+      "inputs": [
+        [
+          "lmi-display-fast-v59.o",
+          ".text.lmi_fast_frame"
+        ],
+        [
+          "lmi-display-direct-plan.o",
+          ".text.OUTLINED_FUNCTION_0"
+        ]
+      ]
+    }
+  ],
+  "hooks": [
+    {
+      "pc": "0xfffffff007ae00bc",
+      "old": "0xfffffff007ae393c",
+      "new": "0xfffffff0074d3c54",
+      "symbol": "lmi_fast_frame"
+    },
+    {
+      "pc": "0xfffffff0079e3d80",
+      "old": "0xfffffff0079e2d64",
+      "new": "0xfffffff0074d2a04",
+      "symbol": "lmi_fast_draw"
+    },
+    {
+      "pc": "0xfffffff0074da62c",
+      "old": "0xfffffff007ae0448",
+      "new": "0xfffffff0074d3b14",
+      "symbol": "lmi_fast_cleanup"
+    }
+  ],
+  "bindings": {
+    "lmi_fast_state": "0xfffffff007b46ff8",
+    "lmi_fast_original_fields": "0xfffffff007ae38ac",
+    "lmi_fast_original_frame": "0xfffffff007ae393c",
+    "lmi_fast_original_draw": "0xfffffff0079e2d64",
+    "lmi_fast_original_cleanup": "0xfffffff007ae0448",
+    "IOMallocAligned": "0xfffffff00798491c",
+    "memcpy": "0xfffffff007adbb10",
+    "memset": "0xfffffff007adbd40",
+    "bzero": "0xfffffff007adbcc0",
+    "snprintf": "0xfffffff00780bb4c",
+    "loader_log_line": "0xfffffff007472244"
+  },
+  "compile_flags": [
+    "--target=aarch64-none-elf",
+    "-Oz",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-mgeneral-regs-only",
+    "-fno-stack-protector",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "abi_entries_preserved": true,
+  "outside_edits_exact": true,
+  "dma_mappings_unchanged": true,
+  "gpu_async_unchanged": true,
+  "touch_unchanged": true,
+  "native_show_queue_record_retained": true,
+  "full_frame_one_copy": true,
+  "direct_surface_dma": false,
+  "hardware_tested": false
+}
