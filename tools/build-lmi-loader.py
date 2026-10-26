@@ -14,6 +14,9 @@ parser=argparse.ArgumentParser()
 parser.add_argument('--checkpoints', action='store_true', help='Enable only explicitly reviewed XNU checkpoints')
 parser.add_argument('--smp-cpus',type=int,choices=(1,2,4,8),default=1,help='Checkpoint63-only lmi SMP; requires matching SMP RAM-return kernel')
 parser.add_argument('--fb-threads',type=int,choices=range(1,9),default=1,help='Desktop framebuffer scaling workers, bounded by enabled CPU count')
+parser.add_argument('--fb-queue',type=int,choices=(1,2),default=2,help='Desktop pending-frame limit')
+parser.add_argument('--fb-beat',type=int,choices=(0,1),default=1,help='Desktop software pacing; not panel vsync')
+parser.add_argument('--display-census',action='store_true',help='Read-only fixed DPU register snapshots before and after checkpoint63')
 parser.add_argument('--max-checkpoint', type=int, choices=STAGE_CHOICES, default=1)
 parser.add_argument('--ios-observe-seconds',type=int,choices=(2,25,45,180),default=25,help='Bounded checkpoint63 observation;180 seconds allows first-boot database seeding')
 parser.add_argument('--ios-startup-stacks',action='store_true',help='Two bounded SpringBoard main-thread snapshots at32/42 seconds during checkpoint63')
@@ -78,6 +81,8 @@ parser.add_argument('--lmi-gpu-zap-load',action='store_true',help='Mode45: owned
 args=parser.parse_args()
 assert args.smp_cpus==1 or (args.checkpoints and args.max_checkpoint==63 and args.trace_return_stub)
 assert args.fb_threads<=args.smp_cpus and (args.fb_threads==1 or args.lmi_gpu_desktop)
+assert args.lmi_gpu_desktop or (args.fb_queue==2 and args.fb_beat==1 and not args.display_census)
+assert not args.display_census or (args.max_checkpoint==63 and args.trace_return_stub)
 assert not args.lmi_gpu_tile or args.lmi_gpu_unsecure
 assert not args.lmi_gpu_desktop or args.lmi_gpu_tile
 assert not args.lmi_gpu_unsecure or args.lmi_gpu_zap_load
@@ -170,6 +175,17 @@ def replace_function(signature,next_marker,replacement):
     start=s.index(signature)
     end=s.index(next_marker,start)
     s=s[:start]+replacement+s[end:]
+
+if args.display_census:
+    census=(root/'tools/lmi-display-census.c').read_text()
+    replace_once('static char log_buf[32768];','static char log_buf[131072];')
+    anchor='static int\nrun_kernel(int have_checkpoint, uint64_t checkpoint)'
+    replace_once(anchor,census+'\n'+anchor)
+    guard='checkpoint==63 && PLAT==&platform_lmi && SCREEN.base==0x9c000000ULL && SCREEN.width==1080 && SCREEN.height==2400 && SCREEN.stride==4320 && running_live==NULL'
+    replace_once('\tif (loader_save_ctx() == 0) {',
+        f'\tlmi_display_census("before", {guard});\n\tif (loader_save_ctx() == 0) {{')
+    replace_once('\thc_take_back("the kernel came back");   /* before anything here touches the storage */',
+        '\thc_take_back("the kernel came back");   /* before anything here touches the storage */\n'+f'\tlmi_display_census("after", {guard});')
 
 if args.trace_return_stub:
     # No stack, calls or memory reads: the first mark runs with MMU/cache off.
@@ -311,6 +327,7 @@ if 62 in checkpoints:
         + (' lmi_gpu_tile=1' if args.lmi_gpu_tile else '')
         + (' lmi_gpu_desktop=1' if args.lmi_gpu_desktop else '')
         + (f' fb_threads={args.fb_threads}' if args.lmi_gpu_desktop else '')
+        + (f' fb_queue={args.fb_queue} fb_beat={args.fb_beat}' if args.lmi_gpu_desktop else '')
         + (' lmi_gpu=7' if args.lmi_gpu_ram_plan and not args.lmi_gpu_wired_context and not args.lmi_gpu_gmu_route_probe else '')
         + '" : (checkpoint==62 ? "-v systrace=1 applog=1 loader_return_after=25" : "-v");')
     replace_once('\t\t\tparse_payload(&pi, 0);\n\t\t\tlog_len = 0;',
@@ -596,9 +613,14 @@ report['lmi_gpu_cb0_table_probe']=args.lmi_gpu_cb0_table_probe
 report['ios_lsd_stacks']=dict(enabled=args.ios_lsd_stacks,process='lsd',at_seconds=60 if args.ios_observe_seconds==180 else 32,interval_ms=60000 if args.ios_observe_seconds==180 else 10000,count=2,threads=96,loader_log=True)
 report['ios_top_stacks']=dict(enabled=args.ios_top_stacks,at_seconds=60,interval_ms=60000,count=2,loader_log=True)
 report['ios_process_stacks']=dict(enabled=bool(args.ios_process_stacks),process=args.ios_process_stacks,at_seconds=130,interval_ms=25000,count=2,threads=96,loader_log=True)
-report['desktop_framebuffer_threads']=1 if args.lmi_gpu_desktop else None
+report['desktop_framebuffer_threads']=args.fb_threads if args.lmi_gpu_desktop else None
 report['smp_cpus']=args.smp_cpus
 report['fb_threads']=args.fb_threads
+report['fb_queue']=args.fb_queue
+report['fb_beat']=args.fb_beat
+report['display_census']=args.display_census
+if args.display_census:
+    report['display_census_source_sha256']=hashlib.sha256((root/'tools/lmi-display-census.c').read_bytes()).hexdigest()
 report['smp_gic_sgis_restored']=args.smp_cpus>1
 report['physical_return_stub_trace']=dict(enabled=args.trace_return_stub,gop_pa='0x9c000000',pitch_bytes=4320,clear_rectangle=[960,2304,120,88],stages=[dict(index=i,color=c,event=e,rectangle=[960+32*(i%4),2304+24*(i//4),16,16]) for i,c,e in [(0,'red','MMU off'),(1,'green','context loaded before MMU on'),(2,'blue','UEFI MMU on'),(3,'cyan','context restore complete before GIC'),(4,'magenta','GIC restore returned'),(5,'yellow','original DAIF restored before stub ret'),(8,'blue','loader C resumed after stub ret'),(9,'cyan','GIC report complete; native kernel came back block'),(10,'magenta','hc_take_back returned'),(11,'yellow','other CPU queries complete'),(12,'red','recording and sound inspection complete'),(13,'green','before write_logs and compose_logs'),(14,'blue','write_logs returned before run_kernel return')]])
 report['physical_return_stub_trace']['clear_rectangle']=[800,2304,280,88]

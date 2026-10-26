@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "sources": {
+    "check-lmi-gpu-async-v58.py": "a869dcc9d7196dd78ce7c4a294ad70ffbb103d044fd06367c2dbe642f990f4c7",
+    "lmi-gpu-desktop-v58.c": "f55d5a6b3bfb075a9a5ada1be134c83491c36f7d34941d620da9cb4ff8d410d9",
+    "check-lmi-gpu-desktop.c": "68a1dfc0e0002dba458f511fbe43e6d45c2aab579788ce04829c21253fa9e404",
+    "lmi-gpu-boot-regs.h": "437efd685f69bb10984495dd6364b5a300ba10505a85b7fa6d11bbd6d3107903"
+  },
+  "asan_ubsan": true,
+  "hardware_tested": false,
+  "scenarios": 41
+}

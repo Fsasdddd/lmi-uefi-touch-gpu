@@ -49,7 +49,7 @@ index a92a4ef..ee349c4 100755
              job.setdefault('EnvironmentVariables', {})['OS_ACTIVITY_DT_MODE'] = 'YES'
          with open(f'{dest}/{name}', 'wb') as f:
 diff --git a/userland/src/inject.c b/userland/src/inject.c
-index c5e9d90..726eaf4 100644
+index c5e9d90..2c2253c 100644
 --- a/userland/src/inject.c
 +++ b/userland/src/inject.c
 @@ -33,6 +33,9 @@
@@ -79,14 +79,14 @@ index c5e9d90..726eaf4 100644
  			break;
  		}
  		for (int tenths = 0; tenths < 20 && !made->opened; tenths++) {
-@@ -932,8 +945,90 @@ make_service(IOHIDEventSystemClientRef client, const char *product, int page, in
+@@ -932,8 +945,169 @@ make_service(IOHIDEventSystemClientRef client, const char *product, int page, in
  	return service;
  }
  
 -/* One frame of the touch screen: the hand, and under it every finger that is down or has just lifted. */
 +#ifdef LMI_HID_USAGE_RECHECK
 +/* The virtual service can already advertise 0xd/4 while BKIOHIDService's
-+ * initial property reads cached 0/0 (v30). Re-read through the stock serialized
++ * initial property reads cached 0/0 (v30) or 0/4 (v36). Re-read through the stock serialized
 + * property accessor before matching publishes the initialized sender. Never
 + * infer a device type from an event or change a nonzero cached usage. */
 +static void (*input_usage_original)(id, SEL);
@@ -103,19 +103,85 @@ index c5e9d90..726eaf4 100644
 +	return ((unsigned (*)(id, SEL))objc_msgSend)(service, sel_registerName(selector));
 +}
 +
-+static void
+ static void
 +input_usage_set(id service, const char *selector, unsigned value)
 +{
 +	((void (*)(id, SEL, unsigned))objc_msgSend)(service, sel_registerName(selector), value);
 +}
 +
- static void
++#ifdef LMI_HID_INITIAL_RETRY
++static bool
++input_initial_native_properties_ready(id self)
++{
++	id product = input_usage_property(self, CFSTR("Product"));
++	id maker = input_usage_property(self, CFSTR("Manufacturer"));
++	id transport = input_usage_property(self, CFSTR("Transport"));
++	if (!product || !maker || !transport ||
++	    CFGetTypeID((CFTypeRef)product) != CFStringGetTypeID() ||
++	    CFGetTypeID((CFTypeRef)maker) != CFStringGetTypeID() ||
++	    CFGetTypeID((CFTypeRef)transport) != CFStringGetTypeID() ||
++	    !CFEqual((CFTypeRef)product, CFSTR("Redwood touch screen")) ||
++	    !CFEqual((CFTypeRef)maker, CFSTR("redwood")) ||
++	    !CFEqual((CFTypeRef)transport, CFSTR("SPI"))) {
++		return false;
++	}
++	id p = input_usage_property(self, CFSTR("PrimaryUsagePage"));
++	id u = input_usage_property(self, CFSTR("PrimaryUsage"));
++	int page = 0, usage = 0;
++	if (!p || !u || CFGetTypeID((CFTypeRef)p) != CFNumberGetTypeID() ||
++	    CFGetTypeID((CFTypeRef)u) != CFNumberGetTypeID() ||
++	    !CFNumberGetValue((CFNumberRef)p, kCFNumberIntType, &page) ||
++	    !CFNumberGetValue((CFNumberRef)u, kCFNumberIntType, &usage) ||
++	    page != HID_PAGE_DIGITIZER || usage != HID_USAGE_TOUCH_SCREEN) {
++		return false;
++	}
++	id built = input_usage_property(self, CFSTR("Built-In"));
++	id integrated = input_usage_property(self, CFSTR("DisplayIntegrated"));
++	return built && integrated && CFGetTypeID((CFTypeRef)built) == CFBooleanGetTypeID() &&
++	    CFGetTypeID((CFTypeRef)integrated) == CFBooleanGetTypeID() &&
++	    CFBooleanGetValue((CFBooleanRef)built) && CFBooleanGetValue((CFBooleanRef)integrated);
++}
++
++static void
++input_initial_retry(id self, SEL cmd)
++{
++	/* Still inside initialization, before the service is published to matchers.
++	 * The stock routine replaces its strong descriptor/display references and
++	 * derives source/authentication from the service's own properties. Invoke
++	 * its saved IMP directly, with no setter, async work, or recursive hook. */
++	for (unsigned retry = 1; retry <= 2; retry++) {
++		unsigned page = input_usage_cached(self, "primaryUsagePage");
++		unsigned usage = input_usage_cached(self, "primaryUsage");
++		bool built = ((bool (*)(id, SEL))objc_msgSend)(self, sel_registerName("isBuiltIn"));
++		if ((page != 0 && page != HID_PAGE_DIGITIZER) ||
++		    (usage != 0 && usage != HID_USAGE_TOUCH_SCREEN) ||
++		    (page == HID_PAGE_DIGITIZER && usage == HID_USAGE_TOUCH_SCREEN && built)) {
++			return;
++		}
++		if (!input_initial_native_properties_ready(self)) {
++			return;
++		}
++		input_usage_original(self, cmd);
++		say("LMI_HID_INITIAL_RETRY attempt=%u before_page=%u before_usage=%u before_builtin=%u page=%u usage=%u builtin=%u\n",
++		    retry, page, usage, built, input_usage_cached(self, "primaryUsagePage"),
++		    input_usage_cached(self, "primaryUsage"),
++		    ((bool (*)(id, SEL))objc_msgSend)(self, sel_registerName("isBuiltIn")));
++	}
++}
++#endif
++
++static void
 +input_usage_initial_properties(id self, SEL cmd)
 +{
 +	input_usage_original(self, cmd);
++#ifdef LMI_HID_INITIAL_RETRY
++	input_initial_retry(self, cmd);
++#else
 +	unsigned page = input_usage_cached(self, "primaryUsagePage");
 +	unsigned usage = input_usage_cached(self, "primaryUsage");
-+	if (page != 0 || usage != 0) {
++	if ((page == HID_PAGE_DIGITIZER && usage == HID_USAGE_TOUCH_SCREEN) ||
++	    (page != 0 && page != HID_PAGE_DIGITIZER) ||
++	    (usage != 0 && usage != HID_USAGE_TOUCH_SCREEN)) {
 +		return;
 +	}
 +	id product = input_usage_property(self, CFSTR("Product"));
@@ -135,9 +201,15 @@ index c5e9d90..726eaf4 100644
 +		say("LMI_HID_USAGE_RECHECK unavailable page=%d usage=%d\n", actual_page, actual_usage);
 +		return;
 +	}
-+	input_usage_set(self, "setPrimaryUsagePage:", actual_page);
-+	input_usage_set(self, "setPrimaryUsage:", actual_usage);
-+	say("LMI_HID_USAGE_RECHECK restored page=%d usage=%d\n", actual_page, actual_usage);
++	if (page == 0) {
++		input_usage_set(self, "setPrimaryUsagePage:", actual_page);
++	}
++	if (usage == 0) {
++		input_usage_set(self, "setPrimaryUsage:", actual_usage);
++	}
++	say("LMI_HID_USAGE_RECHECK restored page=%d usage=%d before_page=%u before_usage=%u\n",
++	    actual_page, actual_usage, page, usage);
++#endif
 +}
 +
 +static void
@@ -160,6 +232,13 @@ index c5e9d90..726eaf4 100644
 +			return;
 +		}
 +	}
++#ifdef LMI_HID_INITIAL_RETRY
++	Method built = class_getInstanceMethod(cls, sel_registerName("isBuiltIn"));
++	if (!built || strcmp(method_getTypeEncoding(built), "B16@0:8") != 0) {
++		say("LMI_HID_INITIAL_RETRY builtin_accessor_refused\n");
++		return;
++	}
++#endif
 +	input_usage_original = (void (*)(id, SEL))original;
 +	method_setImplementation(method, (IMP)input_usage_initial_properties);
 +	say("LMI_HID_USAGE_RECHECK installed\n");
@@ -171,7 +250,7 @@ index c5e9d90..726eaf4 100644
  send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
  {
  	uint32_t change = t->type == REDWOOD_TOUCH_MOVE ? DIGITIZER_POSITION : DIGITIZER_RANGE | DIGITIZER_TOUCH;
-@@ -942,7 +1037,12 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
+@@ -942,7 +1116,12 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
  	unsigned f = t->finger;
  
  	if (f >= MAX_FINGERS || (t->type != REDWOOD_TOUCH_DOWN && !fingers[f].touching)) {
@@ -185,7 +264,7 @@ index c5e9d90..726eaf4 100644
  	}
  	fingers[f].touching = t->type != REDWOOD_TOUCH_UP;
  	fingers[f].x = t->x / 65535.0;
-@@ -970,8 +1070,17 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
+@@ -970,8 +1149,17 @@ send_touch(IOHIDServiceClientRef screen, const struct redwood_touch *t)
  		IOHIDEventAppendEvent(hand, finger, 0);
  		CFRelease(finger);
  	}
@@ -204,7 +283,7 @@ index c5e9d90..726eaf4 100644
  }
  
  /*
-@@ -1025,10 +1134,179 @@ micros(uint64_t absolute)
+@@ -1025,10 +1213,179 @@ micros(uint64_t absolute)
  	return absolute * timebase.numer / timebase.denom / 1000;
  }
  
@@ -384,7 +463,7 @@ index c5e9d90..726eaf4 100644
  	IOHIDEventSystemClientRef client = NULL;
  	IOHIDServiceClientRef screen = NULL, buttons = NULL;
  	struct redwood_touch t;
-@@ -1044,6 +1322,10 @@ input_thread(__unused void *arg)
+@@ -1044,6 +1401,10 @@ input_thread(__unused void *arg)
  			touch_latency = strstr(arguments, "touch_lat=1") != NULL;
  		}
  		mach_timebase_info(&timebase);
@@ -395,7 +474,7 @@ index c5e9d90..726eaf4 100644
  	}
  	device = open(REDWOOD_TOUCH_DEVICE, O_RDONLY);
  	if (device < 0) {
-@@ -1072,9 +1354,17 @@ input_thread(__unused void *arg)
+@@ -1072,9 +1433,17 @@ input_thread(__unused void *arg)
  	if (screen == NULL) {
  		return NULL;
  	}
@@ -413,7 +492,7 @@ index c5e9d90..726eaf4 100644
  
  		if (count++ < 4) {
  			say("redwood: input: sample type %u finger %u at %u %u\n", t.type, t.finger, t.x, t.y);
-@@ -1084,6 +1374,7 @@ input_thread(__unused void *arg)
+@@ -1084,6 +1453,7 @@ input_thread(__unused void *arg)
  				send_button(buttons, &t);
  			}
  		} else if (t.type == REDWOOD_TOUCH_DOWN && (touch_mode & 0xff) == TOUCH_MODE_WAKE && buttons != NULL) {
@@ -421,7 +500,7 @@ index c5e9d90..726eaf4 100644
  			/*
  			 * The display is off and a tap is to wake it. The lock button is what wakes it here:
  			 * press it for the finger, and keep the rest of this touch to ourselves.
-@@ -1095,16 +1386,32 @@ input_thread(__unused void *arg)
+@@ -1095,16 +1465,32 @@ input_thread(__unused void *arg)
  			send_button(buttons, &press);
  			waking |= 1u << (t.finger & 31);
  		} else if (waking & (1u << (t.finger & 31))) {
@@ -455,7 +534,7 @@ index c5e9d90..726eaf4 100644
  	}
  	say("redwood: input: %s: %s\n", REDWOOD_TOUCH_DEVICE, strerror(errno));
  	return NULL;
-@@ -1145,6 +1452,47 @@ container_manager_fixes(void)
+@@ -1145,6 +1531,47 @@ container_manager_fixes(void)
  	say("redwood: container manager: no personas\n");
  }
  
@@ -503,7 +582,7 @@ index c5e9d90..726eaf4 100644
  /* ---------------------------------------------------------------------------------------------- */
  
  /*
-@@ -1259,8 +1607,16 @@ redwood_init(void)
+@@ -1259,8 +1686,16 @@ redwood_init(void)
  		 * moved the start of the event server onto the moment make_service() now knows how to
  		 * survive; not tried again since, and until it is, the five seconds stay.)
  		 */

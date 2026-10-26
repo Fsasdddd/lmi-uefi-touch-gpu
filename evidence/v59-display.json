@@ -1,0 +1,289 @@
+{
+  "version": "v59b",
+  "kernel_sha256": "136c6a00184f8dd2527306f6df8e4fde1d1f6f91ed3f9f7971548a7996086f88",
+  "boot_image_sha256": "5b41e393941ec7990a4feaab6e5f921460a3d05ce75976fe0a63c59df0eb31a6",
+  "whole_test_result": "INCOMPLETE",
+  "whole_test_error_type": "AssertionError",
+  "desktop_stats": [
+    {
+      "frames": 2812,
+      "submitted": 2852,
+      "completed": 2851,
+      "ticks": 3138657506,
+      "position": 11819
+    }
+  ],
+  "return_restored": true,
+  "cache_submit_us_per_frame": 625.0342653508773,
+  "timing_scope": "CPU cache clean plus guarded DPU kickoff; excludes asynchronous scanout, compositor and GPU rendering",
+  "gpu_frequency": {
+    "requested_gpu_mhz": 670,
+    "gpu_clock_measured": false,
+    "frequency_request_acknowledged": true
+  },
+  "async_gpu": {
+    "exit_gpu_drain_verified": true,
+    "fault_held": false,
+    "submission_overlap_measured": false,
+    "performance_verified": false
+  },
+  "fast_path": {
+    "counts_valid": false,
+    "fast_frames": 18446744043118313104,
+    "copy_calls": 6869485061210197324,
+    "ordinary_frames": 3762811503591506246,
+    "fast_path_exercised": false,
+    "direct_surface_dma": false,
+    "performance_verified": false
+  },
+  "hardware_scaling_verified": false,
+  "bypass_pixel_equivalence": false,
+  "performance_verified": false,
+  "frame_interval_summaries": [
+    {
+      "under_10ms": 1,
+      "under_18ms": 0,
+      "under_26ms": 0,
+      "under_35ms": 0,
+      "longer": 0,
+      "longest_ms": 4,
+      "median_below_ms": 5,
+      "p95_below_ms": 5,
+      "pauses": 1
+    },
+    {
+      "under_10ms": 4,
+      "under_18ms": 85,
+      "under_26ms": 59,
+      "under_35ms": 14,
+      "longer": 19,
+      "longest_ms": 86,
+      "median_below_ms": 19,
+      "p95_below_ms": 40,
+      "pauses": 10
+    },
+    {
+      "under_10ms": 6,
+      "under_18ms": 69,
+      "under_26ms": 83,
+      "under_35ms": 14,
+      "longer": 17,
+      "longest_ms": 80,
+      "median_below_ms": 19,
+      "p95_below_ms": 52,
+      "pauses": 8
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 42,
+      "under_26ms": 81,
+      "under_35ms": 30,
+      "longer": 28,
+      "longest_ms": 85,
+      "median_below_ms": 22,
+      "p95_below_ms": 55,
+      "pauses": 2
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 77,
+      "under_26ms": 54,
+      "under_35ms": 10,
+      "longer": 22,
+      "longest_ms": 81,
+      "median_below_ms": 19,
+      "p95_below_ms": 48,
+      "pauses": 8
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 91,
+      "under_26ms": 93,
+      "under_35ms": 7,
+      "longer": 25,
+      "longest_ms": 63,
+      "median_below_ms": 19,
+      "p95_below_ms": 51,
+      "pauses": 3
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 101,
+      "under_26ms": 84,
+      "under_35ms": 13,
+      "longer": 13,
+      "longest_ms": 83,
+      "median_below_ms": 19,
+      "p95_below_ms": 41,
+      "pauses": 4
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 68,
+      "under_26ms": 123,
+      "under_35ms": 15,
+      "longer": 10,
+      "longest_ms": 85,
+      "median_below_ms": 19,
+      "p95_below_ms": 33,
+      "pauses": 2
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 67,
+      "under_26ms": 48,
+      "under_35ms": 25,
+      "longer": 10,
+      "longest_ms": 70,
+      "median_below_ms": 19,
+      "p95_below_ms": 36,
+      "pauses": 4
+    },
+    {
+      "under_10ms": 1,
+      "under_18ms": 0,
+      "under_26ms": 0,
+      "under_35ms": 0,
+      "longer": 0,
+      "longest_ms": 4,
+      "median_below_ms": 5,
+      "p95_below_ms": 5,
+      "pauses": 1
+    },
+    {
+      "under_10ms": 4,
+      "under_18ms": 85,
+      "under_26ms": 59,
+      "under_35ms": 14,
+      "longer": 19,
+      "longest_ms": 86,
+      "median_below_ms": 19,
+      "p95_below_ms": 40,
+      "pauses": 10
+    },
+    {
+      "under_10ms": 6,
+      "under_18ms": 69,
+      "under_26ms": 83,
+      "under_35ms": 14,
+      "longer": 17,
+      "longest_ms": 80,
+      "median_below_ms": 19,
+      "p95_below_ms": 52,
+      "pauses": 8
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 42,
+      "under_26ms": 81,
+      "under_35ms": 30,
+      "longer": 28,
+      "longest_ms": 85,
+      "median_below_ms": 22,
+      "p95_below_ms": 55,
+      "pauses": 2
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 77,
+      "under_26ms": 54,
+      "under_35ms": 10,
+      "longer": 22,
+      "longest_ms": 81,
+      "median_below_ms": 19,
+      "p95_below_ms": 48,
+      "pauses": 8
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 91,
+      "under_26ms": 93,
+      "under_35ms": 7,
+      "longer": 25,
+      "longest_ms": 63,
+      "median_below_ms": 19,
+      "p95_below_ms": 51,
+      "pauses": 3
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 101,
+      "under_26ms": 84,
+      "under_35ms": 13,
+      "longer": 13,
+      "longest_ms": 83,
+      "median_below_ms": 19,
+      "p95_below_ms": 41,
+      "pauses": 4
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 68,
+      "under_26ms": 123,
+      "under_35ms": 15,
+      "longer": 10,
+      "longest_ms": 85,
+      "median_below_ms": 19,
+      "p95_below_ms": 33,
+      "pauses": 2
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 67,
+      "under_26ms": 48,
+      "under_35ms": 25,
+      "longer": 10,
+      "longest_ms": 70,
+      "median_below_ms": 19,
+      "p95_below_ms": 36,
+      "pauses": 4
+    },
+    {
+      "under_10ms": 2,
+      "under_18ms": 89,
+      "under_26ms": 114,
+      "under_35ms": 10,
+      "longer": 5,
+      "longest_ms": 60,
+      "median_below_ms": 19,
+      "p95_below_ms": 29,
+      "pauses": 5
+    },
+    {
+      "under_10ms": 0,
+      "under_18ms": 1,
+      "under_26ms": 0,
+      "under_35ms": 18,
+      "longer": 10,
+      "longest_ms": 40,
+      "median_below_ms": 33,
+      "p95_below_ms": 37,
+      "pauses": 1
+    }
+  ],
+  "measured_animation_fps": null,
+  "limitation": "Windows and whole-run counts include static periods and uncontrolled user input. Driver timing omits preservation copy and the outer DPU wait. Intervals are native show timestamps, not measured panel timestamps; pauses >=90ms are excluded by the native histogram. Do not infer controlled animation FPS or cross-version speedup.",
+  "interaction_feedback": {
+    "feedback": "流畅度有改善，其余正常",
+    "smoothness_improved": true,
+    "other_functions_normal": true,
+    "additional_feedback": "左右滑动会出现掉帧，但动画看起来帧率变高了",
+    "swipe_frame_drops": true,
+    "home_gesture_frame_drops": true,
+    "home_gesture_feedback": "上划返回桌面也会掉帧"
+  },
+  "android_boot_completed": true,
+  "original_partition_hashes_match": {
+    "boot": true,
+    "dtbo": true
+  },
+  "original_evidence_sha256": {
+    "checkpoint-63.log": "bb1b653c2b981bee4900d78881bee54a1fbaef1ca0b10dd21b325de25712fff9",
+    "hardware-test.json": "0264f7a7640cd8c7a7c2bae1b6d5eb12878c986eef0cef7f992cfb22ab00362e",
+    "dpu-observation.json": "8bfef98a4708b0a0f2a3c2514f894c912c7078919650d9e5cf20f1466ebc8268",
+    "display-timing-analysis.json": "d4630df82b08d93b4f7a040339329d5e70e877fd79364ac0101aa1f9070464eb",
+    "user-feedback.json": "1c5541666b2c583b14af09164b608dba22f9dc5ff0b155f61ca48fdbf65c643a",
+    "android-return.json": "9098309978806f2802bcb2ffd8f5823346026d4517da7b2e016dd7eca9203a78"
+  },
+  "full_raw_logs_included": false
+}

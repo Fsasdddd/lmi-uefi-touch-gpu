@@ -1,0 +1,17 @@
+{
+  "result": "ABI_COMPILED_ONLY",
+  "class_bytes": 728,
+  "offsets": {
+    "sid": 12,
+    "memory": 24,
+    "kbase": 32,
+    "client": 40,
+    "kpixels": 72,
+    "drawn": 80,
+    "info": 88,
+    "planes": 192
+  },
+  "source_sha256": "48f962c8ce00188d79f5dc2ef8cb67891d532e4c163d59f19877f09d0fe1af83",
+  "hardware_tested": false,
+  "desktop_integrated": false
+}

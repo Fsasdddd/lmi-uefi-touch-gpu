@@ -1295,23 +1295,27 @@
     },
     {
       "path": "docs/BUILD.zh-CN.md",
-      "sha256": "7cd15da5b1350c142a46b47692a10b2f9d76a1085aa264a5442093ba65e22030"
+      "sha256": "63e8643258a55d49cba76fceab3ae161c250e832b416a1804e53fa3a0f304380"
     },
     {
       "path": "docs/EVIDENCE.zh-CN.md",
-      "sha256": "5f0b63239199cff457a1aab8fb5915499fafd0ca8cd2ab2d57d5207f7c8ad1c3"
+      "sha256": "3daad57cb8b85244c3a9ef5e798910cacfc8b0556f759358487fa8cb6838efad"
     },
     {
       "path": "docs/GPU.zh-CN.md",
-      "sha256": "1721fbe304cae30d0b611a3652f47497a066f0506cab51fd0e0490849b115f3d"
+      "sha256": "88625e0a13df4ba97912b789d95866b4e599ef03be05eb170d5864dbc7af1e2b"
     },
     {
       "path": "docs/TOUCH.zh-CN.md",
-      "sha256": "a4d95f305189d2c9354600c7cf4f466327ff102ba6846654e4346ca0f39ed0c9"
+      "sha256": "210ecad92ccf62eb4583cef9f08fdadbb4e87d2913863bf90a990ce612431e25"
     },
     {
       "path": "docs/UEFI.zh-CN.md",
       "sha256": "f55fddd46e5d51a865e2c016fb446bd56367de4399f6ef742bd53b156cd7119c"
+    },
+    {
+      "path": "docs/V59.zh-CN.md",
+      "sha256": "94b1dca64ff74fdc3ac02b580be38fdb4c2d866bbd1944e74306b33700d77447"
     },
     {
       "path": "evidence/quiet-v3-gl-excerpt.log",
@@ -1352,6 +1356,42 @@
     {
       "path": "evidence/v32-touch-fix.json",
       "sha256": "f36d3bf52ba0e3bc6b196dc0b87aef4a239b18e513bb8a2a96f1626694938327"
+    },
+    {
+      "path": "evidence/v59-build/lmi-direct-surface-layout/layout.json",
+      "sha256": "d4bb6c4b9f6dcbaa281d1a01b4eefc8e3c2e777448dbbd034eb45264b5ef650a"
+    },
+    {
+      "path": "evidence/v59-build/lmi-display-fast-v59-host/result.json",
+      "sha256": "07580a642191c1592bd71cb11e30c8437bcfe420c72bba6ddbbdfea14a3ddcca"
+    },
+    {
+      "path": "evidence/v59-build/lmi-display-fast-v59b/build-audit.json",
+      "sha256": "9208d0d2946baad129040454d787201aeea93cabdf08917d8c32431471b89052"
+    },
+    {
+      "path": "evidence/v59-build/lmi-display-fast-v59b/runtime-symbols.json",
+      "sha256": "8e65505a2b14606d681c92ab7dbfda40c25342900056967196f02a1f153a0afe"
+    },
+    {
+      "path": "evidence/v59-build/lmi-display-v59-policy-host/result.json",
+      "sha256": "ed1bf6808501c31483edd3a993d96d1f5e8a2a4cb6414d39826cac8de93948d2"
+    },
+    {
+      "path": "evidence/v59-build/lmi-gpu-async-v58-host/result.json",
+      "sha256": "d0436d4f05b77f5709bd0153d89412735d2017542866ae424246be4692759e37"
+    },
+    {
+      "path": "evidence/v59-build/lmi-gpu-async-v58h/build-audit.json",
+      "sha256": "bd89523297561102e31186029554376b0cc263c52ccc3bec5b95b230d96eae25"
+    },
+    {
+      "path": "evidence/v59-build/lmi-replaced-gpu-body-audit/result.json",
+      "sha256": "d7fc004d379648a06e818fbd6110fa323c5e907b710f2f0ce70d0201bbd978eb"
+    },
+    {
+      "path": "evidence/v59-display.json",
+      "sha256": "bb76878c6814a7af0c015b8e8db04fbec46062a1aa19cee3170e09ebf77010b6"
     },
     {
       "path": "LICENSE",
@@ -1395,7 +1435,7 @@
     },
     {
       "path": "patches/userland-local-changes.patch",
-      "sha256": "df84e18c275003c5fbd85dc40761ad04e79a6be0ba9765316916e8853371e919"
+      "sha256": "14f4d496099e107634c857db7d841ee5ef9acfc6bdce48632f2631eddeb0dd4f"
     },
     {
       "path": "port-drafts/uefi/lmi.toml",
@@ -1451,7 +1491,15 @@
     },
     {
       "path": "README.md",
-      "sha256": "d67ab4bf6abd8419a725ce5cfe041c4186c7558db1645626f4a4c1db4a2cb2d6"
+      "sha256": "550f782d655bf35d4e44dfba311357bbc0cb853a248a45d629be214b1e779a12"
+    },
+    {
+      "path": "tools/analyze-lmi-display-census.py",
+      "sha256": "7c873f70f66a1fd55e25967b9d8634181dff205f53033a5710c8d4d29a5a1d04"
+    },
+    {
+      "path": "tools/analyze-lmi-display-timing.py",
+      "sha256": "17f755a70ddb83ff4b56ae5eec452e171abc6f8175de8e5ec0e36c49470d07f8"
     },
     {
       "path": "tools/analyze-lmi-loader-memory.py",
@@ -1468,6 +1516,10 @@
     {
       "path": "tools/audit-lmi-firmware.py",
       "sha256": "e7a806939be0b7994e5e272f7980ad35e77c66d3c7fa1ca5a1fc200c5e8226c6"
+    },
+    {
+      "path": "tools/audit-lmi-gpu-async-v58-link.py",
+      "sha256": "88dd984e9039a608e5d15fcbd4eee850268904dfad380bef9b2f8ed71828204f"
     },
     {
       "path": "tools/audit-lmi-gpu-desktop-region.py",
@@ -1502,6 +1554,10 @@
       "sha256": "e16e7a6d116b9cce6245576bfcf826e2917672cec322948c5d35e03d16c48821"
     },
     {
+      "path": "tools/audit-lmi-replaced-gpu-bodies.py",
+      "sha256": "59d02666267ff8cbf04986fe15118cc934c977ae397994a92dfee3f30c89217f"
+    },
+    {
       "path": "tools/build-lmi-aligned-hello.py",
       "sha256": "69a084c472c2ccd781bac5366d6204a6ff8eaa03bbfe80c6f4f9a8ecc9370372"
     },
@@ -1518,8 +1574,88 @@
       "sha256": "5748073857c67e4e097d8af568c24aa1b9340335b5516912e4871f69afb0a6e9"
     },
     {
+      "path": "tools/build-lmi-display-extension.py",
+      "sha256": "59353bdc3e35389c9ecb53a71b574dead378f45dfd21d159c80d1c0820cbd584"
+    },
+    {
+      "path": "tools/build-lmi-display-v41.py",
+      "sha256": "a8233ef7169de9ca71850cb79066b3bfbc2f90f2dc5e1d104228838a7d407c9b"
+    },
+    {
+      "path": "tools/build-lmi-display-v42.py",
+      "sha256": "86cf570bc77b7e3d5889670e01f2a99e36e745b176039a2d374cba34be3132b7"
+    },
+    {
+      "path": "tools/build-lmi-display-v43.py",
+      "sha256": "256582d362b857b49b282785b732cbee13034b855e8be76b9f85f01dc8f97056"
+    },
+    {
+      "path": "tools/build-lmi-display-v44.py",
+      "sha256": "2cc503a1b74e510a01c4ccf9725ceb83a535d071d78e6aa445db5f5211f26fac"
+    },
+    {
+      "path": "tools/build-lmi-display-v45.py",
+      "sha256": "71c12e73c3fe453f5545553d49ec94351b7f51154da4b7aceabe920ecc8f934b"
+    },
+    {
+      "path": "tools/build-lmi-display-v46.py",
+      "sha256": "8749f774688b2207d5b00317c01da606d19c93ec7fa2ee54ca64fea13456665a"
+    },
+    {
+      "path": "tools/build-lmi-display-v47.py",
+      "sha256": "c504ae716d339eea210bddbe6890893bd8d29472ed8986f17bf91e13eaf86478"
+    },
+    {
+      "path": "tools/build-lmi-display-v48.py",
+      "sha256": "8dc87e52eef2a373639f4480a60f58196e8925b4680feb9bb274819050da01b3"
+    },
+    {
+      "path": "tools/build-lmi-display-v49.py",
+      "sha256": "3bd124ad8d16dd0b1662ce098a7c37b5ebcdac6f70f0072548afc891e8689ae5"
+    },
+    {
+      "path": "tools/build-lmi-display-v50.py",
+      "sha256": "38fdd930280e40b708362b1468f1cf8ec04efd60cfa13aa95a385a71f89a36e1"
+    },
+    {
+      "path": "tools/build-lmi-display-v51.py",
+      "sha256": "6d9892d176f46b02fead8b3e4d13fba2542e651091b1064984519644d00e8bdc"
+    },
+    {
+      "path": "tools/build-lmi-display-v52.py",
+      "sha256": "0c5c766d7a929c59ff138b33528f16db98d943014ca8b23204c93668315baf6b"
+    },
+    {
+      "path": "tools/build-lmi-display-v53.py",
+      "sha256": "86d44812edc53efa345230bfa8e483d0a58521070bb51be3963d9d85af837a44"
+    },
+    {
+      "path": "tools/build-lmi-display-v54.py",
+      "sha256": "5e55580d701aba89f4fbbf2a474f087da178c66614388f6ba5c7a5ae901c5e35"
+    },
+    {
+      "path": "tools/build-lmi-display-v55.py",
+      "sha256": "cdf02e682f2a450da799f5fd155acab9ad9804d31965da6322e1d1e68befbece"
+    },
+    {
+      "path": "tools/build-lmi-display-v56.py",
+      "sha256": "b397252c714a4200a1164db58abfecde19a644accf7d8021a5a50f459b2523b6"
+    },
+    {
+      "path": "tools/build-lmi-display-v57.py",
+      "sha256": "943116799ea5617184023e59acc6edaeec4b91f2a6ed53e85e4796c036ff485c"
+    },
+    {
+      "path": "tools/build-lmi-display-v59.py",
+      "sha256": "f2d7e49d065d5b27ad1a16b08cc179509e7205e59390dcd169a88b1733f4ae60"
+    },
+    {
       "path": "tools/build-lmi-driver-probe.py",
       "sha256": "a6d9002bdbfa593ce957c79ef7959aba787f125e848dbc08b86131ba9e9be81b"
+    },
+    {
+      "path": "tools/build-lmi-gpu-async-v58.py",
+      "sha256": "344fb2ff91b1044656c96f779982853a22ec3693ff39b13684c336354c2fe2a3"
     },
     {
       "path": "tools/build-lmi-gpu-gl-image.py",
@@ -1531,7 +1667,15 @@
     },
     {
       "path": "tools/build-lmi-gpu-mode.py",
-      "sha256": "38201d5550afa0e1f5b0355cd1f57d2f79a8ded56b902242f696f5c7b7ce08bd"
+      "sha256": "327627662d39aeec4573b06ca80d7090bc5520ba18f7728b2a53e06ec391e6ff"
+    },
+    {
+      "path": "tools/build-lmi-hid-initial-image.py",
+      "sha256": "eb49fc3bf02434fe88610812709e09704b987f0651d71ff39c8342d9711d38c8"
+    },
+    {
+      "path": "tools/build-lmi-hid-partial-image.py",
+      "sha256": "f52e9b71eaa59efb1160cc7d97059153d1b764fca07020d15ca5801e8b0f1a4a"
     },
     {
       "path": "tools/build-lmi-ios-probe.py",
@@ -1543,7 +1687,7 @@
     },
     {
       "path": "tools/build-lmi-loader.py",
-      "sha256": "c3ebe7745fd49d2ae64c43be7c8b9db72e4a09782fce2ae99844453d000aa370"
+      "sha256": "68271eeb14a667bd34e7fb1df53c8477efe3ddeb10ab0f5d53dbce85cf1a5123"
     },
     {
       "path": "tools/build-lmi-lslog-image.py",
@@ -1566,6 +1710,10 @@
       "sha256": "1cf53402fa43d338a7ed0e14a1c4d24883851db68258f26be76beffbc4167bcc"
     },
     {
+      "path": "tools/build-lmi-source-runtime.py",
+      "sha256": "d7be06a1b2407e38ef1a8433c2901a89afe05df506d9fbaf7d41d40f0d1c6b72"
+    },
+    {
       "path": "tools/build-lmi-uefi.sh",
       "sha256": "05244765336477f49537532d9d7f520b321f2299c4dd49acb3f5c5d125c495a5"
     },
@@ -1584,6 +1732,266 @@
     {
       "path": "tools/check-lmi-apfs-image.py",
       "sha256": "e15a0b93ccd54f0ac9fdc203ecae5b4dc83710b2944d04b143da86692f76d519"
+    },
+    {
+      "path": "tools/check-lmi-display-census.py",
+      "sha256": "812880a41dafbb72143404c4cd588ff2b4fd9852fd7e7dc405d5eaf207344f87"
+    },
+    {
+      "path": "tools/check-lmi-display-compositor.c",
+      "sha256": "cd1f54ef2c6bd425cb416b8658ea936362600438bac60a52b8294262ca36ec0b"
+    },
+    {
+      "path": "tools/check-lmi-display-compositor.py",
+      "sha256": "a2b724d06b57e75a88175812a56f69f1aaeff3b3ed768ea4e42a3b2a291aecfe"
+    },
+    {
+      "path": "tools/check-lmi-display-diagnostic-v53.c",
+      "sha256": "c5a4726a50bc10316663471fcee2184a8147582c4ae29beb2b5fe6097e3b04c8"
+    },
+    {
+      "path": "tools/check-lmi-display-diagnostic-v53.py",
+      "sha256": "2389381ee0fc619b71efbcab17ba52f90dbe8ad4a5ed6e125dba75a092e3a559"
+    },
+    {
+      "path": "tools/check-lmi-display-diagnostic-v54.c",
+      "sha256": "1555d64faa0618990ef572df6cb53569c32749a58d7d2e271fb09358d7893157"
+    },
+    {
+      "path": "tools/check-lmi-display-diagnostic-v54.py",
+      "sha256": "165d64973e74a00b28e3f8dc521749462c08cdaf0cc4f2c52a8d76df25a40bb7"
+    },
+    {
+      "path": "tools/check-lmi-display-direct-plan.c",
+      "sha256": "e49cc1a0025e9e2a5ea3c5d93f18c5cd740846768fd210ba9552b870629addb1"
+    },
+    {
+      "path": "tools/check-lmi-display-direct-plan.py",
+      "sha256": "2968f190f7b8cef5d39cd1985b06108f7aca4dd277bfe81708d9f37941dc2443"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v49.c",
+      "sha256": "11b937108068c12ec531bddba1b17510f5930826a76be8cfef28ef0bf7b9ec3e"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v49.py",
+      "sha256": "790f0ca1679838745b9653012a0acc3852dedf2e4afffc19de8f54a402669e03"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v50.c",
+      "sha256": "11b937108068c12ec531bddba1b17510f5930826a76be8cfef28ef0bf7b9ec3e"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v50.py",
+      "sha256": "fc8cc541ee13d863f4f66f9a1e5c6a706244d953fd78d0da680bde1e97973756"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v51.c",
+      "sha256": "9345ca4dc884382aac35f0c524d94a61c5b326827f907eadd5337aa3dbc9e6e0"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v51.py",
+      "sha256": "d714f1ce84ba6badacb66aa277c3600922b9884190f824f05e1ecd924cac54ef"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v52.c",
+      "sha256": "8b3631a118c2fe6cd57c01827ca4c44fe8e72a8bed2e9fe1d6df18d370d436e1"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v52.py",
+      "sha256": "ee8b02e4bb475e01c0302a5de29c6e712711192fd19e4ab923451cbeac232886"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v53.c",
+      "sha256": "4534a592c6a71981168f001688b3cd43583292bb56fb00c4b0fa0499e333cd75"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v53.py",
+      "sha256": "78d33632131d856a2b996619ac0b4e095fa085c81f536a5573239155a1bde703"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v54.c",
+      "sha256": "9aec5c664edc670e57c8237cd0a6a207ca85dfb49b92218b3e4144278f55bd51"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v54.py",
+      "sha256": "7bc1fa99b70648d992e77fd9d1a4297375525c54f44fc25cb22db3b3fd3f0bc4"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v55.c",
+      "sha256": "ee83feec017684aec5f0d1a4a573892950624c26a88732f8806812b999b55544"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v55.py",
+      "sha256": "21aa6017898cea36773787d65ef12c4b09d0ddd1bf9ec1eb1c7b64ed7b597ead"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v56.c",
+      "sha256": "e745f6581e878608ce9cfc47d74e50232c0a7a3991b11b1ff211ba409ddaa749"
+    },
+    {
+      "path": "tools/check-lmi-display-dma-v56.py",
+      "sha256": "b9b0bbf36619dbbd574e6e9bbce8c785b60656ada52cd219af8577935a2c5992"
+    },
+    {
+      "path": "tools/check-lmi-display-dma.c",
+      "sha256": "561abc5b7237c0d138f2ebbf1ada9bcc5890e1b10c02c0face18d699f105229b"
+    },
+    {
+      "path": "tools/check-lmi-display-dma.py",
+      "sha256": "5505eaae2b914365371915a424aa428f7ebc892101ede14ea3e0ff69be610cbd"
+    },
+    {
+      "path": "tools/check-lmi-display-fast-v59.c",
+      "sha256": "4b856e50736daa086fba6302fa9052fe5a493a64123b2bb40829deb24d20f889"
+    },
+    {
+      "path": "tools/check-lmi-display-fast-v59.py",
+      "sha256": "d1f81f4dc68124576755ba1a02d9b026274fdefb79e75922e519fc3d4f7a11a1"
+    },
+    {
+      "path": "tools/check-lmi-display-native-v53.py",
+      "sha256": "c5d2f9b874261f2449270697fa42abe22967c1e371ef47032869cb185299bf51"
+    },
+    {
+      "path": "tools/check-lmi-display-native-v54.py",
+      "sha256": "5afdeb8a981d5b4ab7816ae751a30227fa57211a786563f1ef4e8125088dbe7d"
+    },
+    {
+      "path": "tools/check-lmi-display-native.py",
+      "sha256": "c09aa686bfdecaa6b67273499afb0a0dfcf8a112297ec624efbbf926911e944e"
+    },
+    {
+      "path": "tools/check-lmi-display-pipeline.c",
+      "sha256": "542f1f6c5dadedd27c48f7e2633168fb10963c1ee6ee4a673b7e4608983d492f"
+    },
+    {
+      "path": "tools/check-lmi-display-pipeline.py",
+      "sha256": "25fe99949b24c60ac32b304b1e380d075940d46c5b68a379bf623f725b0b5718"
+    },
+    {
+      "path": "tools/check-lmi-display-probe-v55.c",
+      "sha256": "8be8f262023b111fb69970f8a0ee06c82cc0e1154e17c9528bad8a04e69710bc"
+    },
+    {
+      "path": "tools/check-lmi-display-probe-v55.py",
+      "sha256": "d4c74ecf5692167bbc0c06207cf61c47f75d1cbe546cbda2dcda3c8e4112d5b9"
+    },
+    {
+      "path": "tools/check-lmi-display-probe-v56.c",
+      "sha256": "d9cc9c8aaff649b868fd691b8952aaa685dd0c86df87596ef4b6b128290757b2"
+    },
+    {
+      "path": "tools/check-lmi-display-probe-v56.py",
+      "sha256": "2a506b173d4abb6a733c1d295f263c2cd96e80a58fe86bc903e73ec1d426803e"
+    },
+    {
+      "path": "tools/check-lmi-display-runtime.py",
+      "sha256": "3825a53947c5d9e21bd999da6a3bdbf49c85b04c175a547847f5ddb5d57094a3"
+    },
+    {
+      "path": "tools/check-lmi-display-v44-policy.py",
+      "sha256": "5bdd4a5da604cbaa5712d22a5a2468ad218dbf36b7ebd72a5aa8d78dae332a0f"
+    },
+    {
+      "path": "tools/check-lmi-display-v45-policy.py",
+      "sha256": "199ffeac4ccc6ca83ee895c78008c04393886729a401ec39a5c0837392b9e443"
+    },
+    {
+      "path": "tools/check-lmi-display-v46-policy.py",
+      "sha256": "565242d14f65c721a27f6e2d34cdafaea0a264dba0d30f7c89c1c703b81d9b07"
+    },
+    {
+      "path": "tools/check-lmi-display-v47-policy.py",
+      "sha256": "488ce8e3b2a6592d5781dde07d7c493bc5cb851146332ec821ff7c75b882ed63"
+    },
+    {
+      "path": "tools/check-lmi-display-v48-policy.py",
+      "sha256": "0e47f25d99a78403db7d79d9fa1d8ca128ba00d4f6079c613af01e8ee08b6e7a"
+    },
+    {
+      "path": "tools/check-lmi-display-v48-startup.py",
+      "sha256": "403b3775e9f2393ae68f80a2416a8814d9e9575a5c8b8da37a0e6fc4bcc53ebe"
+    },
+    {
+      "path": "tools/check-lmi-display-v49-policy.py",
+      "sha256": "9fc140118405d2a585429eedaee746b5f0697d8070d7800fab9f35a577956f75"
+    },
+    {
+      "path": "tools/check-lmi-display-v50-evidence.py",
+      "sha256": "f69778c90368c5eb4ff0b34489144c80ef50090b5294b4dd2d1531b0a6fb9317"
+    },
+    {
+      "path": "tools/check-lmi-display-v50-policy.py",
+      "sha256": "7ac22e55534f8082b6ac553e60ff869227f56428a1428866633a4a56918b6b49"
+    },
+    {
+      "path": "tools/check-lmi-display-v50-startup.py",
+      "sha256": "d639324567a45f8e01026c138b264d99d7b01fc69d8c020686dc4a06c437bcd8"
+    },
+    {
+      "path": "tools/check-lmi-display-v51-evidence.py",
+      "sha256": "20ae8528ae29f758713756cde829fecf24b60c7189ec59195cc85deef72c7980"
+    },
+    {
+      "path": "tools/check-lmi-display-v51-policy.py",
+      "sha256": "160915bb890719ed245f4ae9654c7c185485818a484d28233ea61ff1268f923d"
+    },
+    {
+      "path": "tools/check-lmi-display-v52-policy.py",
+      "sha256": "6daafd1eb07c26d05697ac53c601f87455d4d4917ef6a0190c7785c556361e34"
+    },
+    {
+      "path": "tools/check-lmi-display-v53-policy.py",
+      "sha256": "961a55d160a3e44445dda448e92c70b88e47c7bd87685a271a4a51089ea3dd9b"
+    },
+    {
+      "path": "tools/check-lmi-display-v54-policy.py",
+      "sha256": "0371eab9e4fc9a4b63c59561fa4671e796c1be9592e4ab1976c0f9675d732560"
+    },
+    {
+      "path": "tools/check-lmi-display-v55-desktop.py",
+      "sha256": "f752cadb641e878e363cc79d75592cc94dd685ca3744194b0d932fea31c65f0c"
+    },
+    {
+      "path": "tools/check-lmi-display-v55-policy.py",
+      "sha256": "dc32f3e1e0a3588135158df4988480cf2c6c947052dbe0035108c534359cad59"
+    },
+    {
+      "path": "tools/check-lmi-display-v55-startup.py",
+      "sha256": "369c0ddcae063e6f9bdccf1270980446e642f2e7ab0ec2ea69fab1d607e7d9f5"
+    },
+    {
+      "path": "tools/check-lmi-display-v56-desktop.py",
+      "sha256": "7a11d4daa25c01238b957027309626ea59555c73383a46120761923fe37b8986"
+    },
+    {
+      "path": "tools/check-lmi-display-v56-policy.py",
+      "sha256": "94714b28d21f56d00063d6b6c8ca37596a023a187376befdd0d180459f6f1e72"
+    },
+    {
+      "path": "tools/check-lmi-display-v56-startup.py",
+      "sha256": "ec91083147ed8897664fd39c0218eed7ec227f0e764642395a301f93f651399b"
+    },
+    {
+      "path": "tools/check-lmi-display-v57-policy.py",
+      "sha256": "9bfa608cdc295bf3e7016ae80a94bb879aab4410305266dc74a423a306676013"
+    },
+    {
+      "path": "tools/check-lmi-display-v58-policy.py",
+      "sha256": "cb96ff7341abb35bed633d9ba2c5a661fd37d32ad3fa34886d4a717d395b0387"
+    },
+    {
+      "path": "tools/check-lmi-display-v59-policy.py",
+      "sha256": "2f6d3f9e118a492bc0b4890b25f2451c2c38b2313307905733605f0e3925d236"
+    },
+    {
+      "path": "tools/check-lmi-dpu-snapshot.py",
+      "sha256": "23db783b1a463efb358178575e3884422df1ce6f5f2768cb54481cc777832356"
+    },
+    {
+      "path": "tools/check-lmi-gpu-async-v58.py",
+      "sha256": "a869dcc9d7196dd78ce7c4a294ad70ffbb103d044fd06367c2dbe642f990f4c7"
     },
     {
       "path": "tools/check-lmi-gpu-boot-source.py",
@@ -1643,7 +2051,15 @@
     },
     {
       "path": "tools/check-lmi-gpu-gl-verifier.py",
-      "sha256": "eafda412dec33d1115cf2e5e424f26ca693d54a83e27f8be55519078179807c8"
+      "sha256": "e60d00c59fc388d559eb66c107605ab3fe2a72be9c8a493d4bca1431f02bfaa0"
+    },
+    {
+      "path": "tools/check-lmi-gpu-gx-v57.c",
+      "sha256": "5f284e984250db33b322ff9db1ec63dfa9eab7078526ddb15cf6f7990d317406"
+    },
+    {
+      "path": "tools/check-lmi-gpu-gx-v57.py",
+      "sha256": "371ffecf7d3cc2a515bd221745300495de6fe3d590b65fc0b0bbd47c2ab9b994"
     },
     {
       "path": "tools/check-lmi-gpu-gx-verifier.py",
@@ -1687,7 +2103,7 @@
     },
     {
       "path": "tools/check-lmi-gpu-normal-preflight.py",
-      "sha256": "e57f3e698ee640b0b2d01fb07c9ad5c4ccb13023571eabf286bd1d87081a591e"
+      "sha256": "d61a94b5d9e7ac4e6e9552f6a5eb079ec5a5b630a7c9a29c59f003f19ff34843"
     },
     {
       "path": "tools/check-lmi-gpu-normal-verifier.py",
@@ -1766,6 +2182,10 @@
       "sha256": "30eb875c902ff65145a00d0034557938afe6719a96e8a55aa1ce3c88912f0e1a"
     },
     {
+      "path": "tools/check-lmi-hid-initial-retry.py",
+      "sha256": "2988c757a50b30e7e2500cd2e4167211429dd4e0120addc6035e6463f17aa580"
+    },
+    {
       "path": "tools/check-lmi-hid-routing.py",
       "sha256": "a2107502b16568b9f3c87151bc6bbef71a22f5f3477c629caea8324494f85191"
     },
@@ -1775,7 +2195,7 @@
     },
     {
       "path": "tools/check-lmi-hid-usage.py",
-      "sha256": "d88cc3d37526c51d90ed02ef19a30a15d47e158e5a54b1ecfcf919aa4a6d4b3d"
+      "sha256": "555a9dfd4561f663a0c540e5fdb824d19cbadf5de744fbb4a80da8e985f23487"
     },
     {
       "path": "tools/check-lmi-input-observers.py",
@@ -1834,6 +2254,14 @@
       "sha256": "517e00d19b264df600555e3c82773055d6730b44476e3495b4bf01cebdb09537"
     },
     {
+      "path": "tools/inject.c",
+      "sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa"
+    },
+    {
+      "path": "tools/inject_sb.c",
+      "sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc"
+    },
+    {
       "path": "tools/inspect-lmi-gmu-firmware.py",
       "sha256": "351019e11b1c97fb1a01ac22449916c1bbda7111b72305b29608db12d213c5a8"
     },
@@ -1846,8 +2274,208 @@
       "sha256": "d54e4067a245d95e21ba2ab6db068be5adcd5d4301cb065c5da5f77b4e657473"
     },
     {
+      "path": "tools/integrate-lmi-display-runtime.py",
+      "sha256": "82d7fec627849d7e19d21507f3c37549eefcf508e3266e247aa6132fc97e80a5"
+    },
+    {
       "path": "tools/inventory_firmware.py",
       "sha256": "da194f7c88b6935f8b44bc670a253f4031ec43f697de776d5d93b85f040810b4"
+    },
+    {
+      "path": "tools/lmi-display-census.c",
+      "sha256": "58775d5e884739d4d807e2c28e29b0ff56e7e447376b81c72b32400b8a315eb1"
+    },
+    {
+      "path": "tools/lmi-display-compositor-abi.h",
+      "sha256": "9aecfccfeedb254950c07972bad048a3c069d1da672e1b5f85d50a46700e4cd8"
+    },
+    {
+      "path": "tools/lmi-display-compositor-v56.c",
+      "sha256": "04ec7eed0347c17a1c5daf86ef5b0cf1b12dae7640a6fddde05b1618c43bd4a0"
+    },
+    {
+      "path": "tools/lmi-display-compositor.c",
+      "sha256": "2eb2c294f8375ff20c484b247fd77a5829dc10388f583855909df22786f7fd1c"
+    },
+    {
+      "path": "tools/lmi-display-compositor.h",
+      "sha256": "ba8838b4c2d0a6bb1041019e9f65c210889bbe51c59b1ebd1163d6166ec6d513"
+    },
+    {
+      "path": "tools/lmi-display-diagnostic-v53.c",
+      "sha256": "37964facae1141814c9cb356aec3a9b547f43d306c499ebf86d39c5fc6db9f31"
+    },
+    {
+      "path": "tools/lmi-display-diagnostic-v54.c",
+      "sha256": "48a34b8b54074ae437d26e87d427c855d7bd3647b1c86edecad4957c49ccae3f"
+    },
+    {
+      "path": "tools/lmi-display-direct-plan.c",
+      "sha256": "be39704dfdd801d0a07b917b2d27acd41e7e90ae445aae77adf81a79f73ecf57"
+    },
+    {
+      "path": "tools/lmi-display-direct-plan.h",
+      "sha256": "f65128f3e65a895f4237811b4755f86dc3c66b0151fa1759b2b952b7adcadb61"
+    },
+    {
+      "path": "tools/lmi-display-dma-v49.c",
+      "sha256": "c7ecb2e3d7563021c6ca6ae34ec7a81f7a0be18a83a698629c666c591e73e9aa"
+    },
+    {
+      "path": "tools/lmi-display-dma-v52.c",
+      "sha256": "df516e9a7e72c32c1bb825102e38d14bfb27b66a9423ecfa588fd80bdf6856aa"
+    },
+    {
+      "path": "tools/lmi-display-dma-v53.c",
+      "sha256": "f86a835422cacf81c47697ffe4f683467d7931e28bc700522c9590bb94db3988"
+    },
+    {
+      "path": "tools/lmi-display-dma-v54.c",
+      "sha256": "ddd069584c541ff678807d6fe2193b02caa9f3eb6d74f51100a033fca50c5948"
+    },
+    {
+      "path": "tools/lmi-display-dma-v55.c",
+      "sha256": "fb525b59e4529838dc0c0e16750e8aed424fb519454b0c0f40164c10b8afc785"
+    },
+    {
+      "path": "tools/lmi-display-dma-v56.c",
+      "sha256": "cab3c2763be3fad08f5373488b3f9ba4a89d90e05976fc5a85b0249a767b91e9"
+    },
+    {
+      "path": "tools/lmi-display-dma.c",
+      "sha256": "3dd8c7776b3e4f6a081c1c0c1c7406758f4f3576ce1f9ee3fde28634b481785f"
+    },
+    {
+      "path": "tools/lmi-display-dma.h",
+      "sha256": "bc6145ea9cec7983eee57c6a111cfe55e0979670a3190486c230e71a02171f00"
+    },
+    {
+      "path": "tools/lmi-display-fast-v59.c",
+      "sha256": "39e664d23bc7d7e667e0331137ddec56782055faf3fc4964338cc68cdebc60ec"
+    },
+    {
+      "path": "tools/lmi-display-fast-v59.h",
+      "sha256": "32ecd9f33c90f003738e0e7c10effb86bc2e563ccf93d1d9ebc7137e4016f768"
+    },
+    {
+      "path": "tools/lmi-display-native-state-v44.S",
+      "sha256": "808b4dc2f256d7e94c1dd6e4e49a62f241d819cfee1172963b5e7235f5153cdc"
+    },
+    {
+      "path": "tools/lmi-display-native-state-v47.S",
+      "sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946"
+    },
+    {
+      "path": "tools/lmi-display-native-state-v48.S",
+      "sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946"
+    },
+    {
+      "path": "tools/lmi-display-native-state-v49.S",
+      "sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946"
+    },
+    {
+      "path": "tools/lmi-display-native-state-v50.S",
+      "sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946"
+    },
+    {
+      "path": "tools/lmi-display-native-v44.c",
+      "sha256": "1747ade3805afb07cf256f9ef8c5a7be5eb227d2573f5c7ccc6874e3f0426d29"
+    },
+    {
+      "path": "tools/lmi-display-native-v45.c",
+      "sha256": "f8e80990ddc58bab53aec75727514186c410f36722cfaa774f94f2c71bf9918f"
+    },
+    {
+      "path": "tools/lmi-display-native-v46.c",
+      "sha256": "6f86d988d7643d9e58da16e0c4e3743e6c10ca82e0d52d50292a8a9929ca57a3"
+    },
+    {
+      "path": "tools/lmi-display-native-v47.c",
+      "sha256": "2309e5df8a0a3c910bfd56a8d71b24bed77084a184deb924a6041b3584c3050d"
+    },
+    {
+      "path": "tools/lmi-display-native-v48.c",
+      "sha256": "dab90327d0e0f4b8a21ede3d411c11c796db04a5145301c0715c08aaa4ea93de"
+    },
+    {
+      "path": "tools/lmi-display-native-v49.c",
+      "sha256": "dab90327d0e0f4b8a21ede3d411c11c796db04a5145301c0715c08aaa4ea93de"
+    },
+    {
+      "path": "tools/lmi-display-native-v50.c",
+      "sha256": "ac35ddb32283ffab43f926b58bcd621ee909a3b4fc95403e7697eda4bdc62588"
+    },
+    {
+      "path": "tools/lmi-display-native-v53.c",
+      "sha256": "25fbc4482bd87f6e5098c33c3bc1e0fe8f4920e28f276693a720d18d8c59f340"
+    },
+    {
+      "path": "tools/lmi-display-native-v54.c",
+      "sha256": "b1932085416f867c680f736eaf991c1de3b94ea41e16479e39f27723557c474f"
+    },
+    {
+      "path": "tools/lmi-display-native-v55.c",
+      "sha256": "4295f24fd1376d08ebf0426f915c996f0352160dec2c05c4524ffaf5c53651ce"
+    },
+    {
+      "path": "tools/lmi-display-native-v56.c",
+      "sha256": "1108a355f048f0565a5fef21f67289cabf82b7cba61978f3fb1c2f74afcc54cc"
+    },
+    {
+      "path": "tools/lmi-display-pipeline-v50.c",
+      "sha256": "7e553059b90f19067998357cddb6e9e55d07447b29a9db58d3cbfc53439b175a"
+    },
+    {
+      "path": "tools/lmi-display-pipeline-v51.c",
+      "sha256": "3e08a645ae96427d9335a591b9991bcf1047dc93d9d7e298a7f09715ebeffb17"
+    },
+    {
+      "path": "tools/lmi-display-pipeline.c",
+      "sha256": "5bbb271432c0ff7af99f8c805bec9611f0e6ea0c19d92d33928e9c9f3bc249c1"
+    },
+    {
+      "path": "tools/lmi-display-pipeline.h",
+      "sha256": "91b346263c17dfc4f17cf9c9303ca0d2a5047bc29ef193109087f1dacd21b8f0"
+    },
+    {
+      "path": "tools/lmi-display-probe-v55.c",
+      "sha256": "40c19c043574c5d5435d1fe5b8f131bed19639843f40cee527d9c988cc0486a0"
+    },
+    {
+      "path": "tools/lmi-display-probe.c",
+      "sha256": "4e22581f68b82ba1bab3062c7ff679f756ddb4922242aa3e3c5b89a1f9a1b342"
+    },
+    {
+      "path": "tools/lmi-display-probe.h",
+      "sha256": "1b13e3dbbefdcb16edc73b15aec1d7849cce915699a7e9af63c53b54dc71bd66"
+    },
+    {
+      "path": "tools/lmi-display-surface-abi.h",
+      "sha256": "d15547bc9d6085ef514054a2aca9502cee1e7d3c986299d4f7100a9504b1693e"
+    },
+    {
+      "path": "tools/lmi-dpu-observer-v41.c",
+      "sha256": "175de6b7375202fe96b320b4f6c04fedda36a91c05232935cf801cb91e0f56ef"
+    },
+    {
+      "path": "tools/lmi-dpu-observer-v42.c",
+      "sha256": "605a2cb3be5d39228573355259723f6fe9c95c26eb01251c41bc5ed27e34634f"
+    },
+    {
+      "path": "tools/lmi-dpu-observer-v43.c",
+      "sha256": "0c6e96e2f4b8149ba265deafb11399168b7585153a60ac80adea9dd3d03c105b"
+    },
+    {
+      "path": "tools/lmi-dpu-snapshot.c",
+      "sha256": "6f3868ab6416c48b9634d4204696acd043b47b15645fceb75b66276a3d8c6c57"
+    },
+    {
+      "path": "tools/lmi-dpu-survey-v43.c",
+      "sha256": "d34c036b797cef6b56baa87496a79b8b7978e5e4ee4f59e761571932297be9b2"
+    },
+    {
+      "path": "tools/lmi-dpu-sync-v42.c",
+      "sha256": "7ea196239baf9fdef67ae35978c978589598088037c6470540de27145857e306"
     },
     {
       "path": "tools/lmi-gic-guard.c",
@@ -1890,12 +2518,20 @@
       "sha256": "1eb18b477483ee56f3582181814ef4ee2e705dbcb90bf3f6b1958873bb16fffd"
     },
     {
+      "path": "tools/lmi-gpu-desktop-v58.c",
+      "sha256": "f55d5a6b3bfb075a9a5ada1be134c83491c36f7d34941d620da9cb4ff8d410d9"
+    },
+    {
       "path": "tools/lmi-gpu-desktop.c",
       "sha256": "61dd1fa47603eb03a2c432851b062d1cae15c02946f421021f74ba9efda07b85"
     },
     {
       "path": "tools/lmi-gpu-gl-probe.c",
       "sha256": "f31ea4e7d4c3bdc88a2500489730620e938ad78368b6e8c3ebdb6c37c7a51191"
+    },
+    {
+      "path": "tools/lmi-gpu-gx-v57.c",
+      "sha256": "dc04079bd403b1063275c99c52e9c18db9772f8750a33bc30c518a3810ddd528"
     },
     {
       "path": "tools/lmi-gpu-gx.c",
@@ -2014,6 +2650,86 @@
       "sha256": "53388e41c3c897e866dc812cf494d4e900192058d80fd65c8623dc6453356a96"
     },
     {
+      "path": "tools/lmi_display_v40_policy.py",
+      "sha256": "a12fcdb6e8d984afce25b7672dcc259a26bbeee2d561cf6bc8cc66463684b8e4"
+    },
+    {
+      "path": "tools/lmi_display_v41_policy.py",
+      "sha256": "53edfe60be5b49840d4db04f2438d4afe95bc11577a6973b9453ed8182cfc834"
+    },
+    {
+      "path": "tools/lmi_display_v42_policy.py",
+      "sha256": "50865870aa1b3308153ce729a8a0b310496cb3591cf1d0310028926db01a9bef"
+    },
+    {
+      "path": "tools/lmi_display_v43_policy.py",
+      "sha256": "60e88f9dba175056e0143c65fd0500bb1a88f0c98c8831251a451b4f4e043c29"
+    },
+    {
+      "path": "tools/lmi_display_v44_policy.py",
+      "sha256": "9e9baf1edc0ca2d969b01031648ccc9448488759d7d7d71d0aac538a1121a417"
+    },
+    {
+      "path": "tools/lmi_display_v45_policy.py",
+      "sha256": "de02307cc7c0aa00cc4dfa9a6b7488e5e7f57fb0e56e5282d602f578d7cc35d6"
+    },
+    {
+      "path": "tools/lmi_display_v46_policy.py",
+      "sha256": "9207193081c5021c1c5c377a3943769a9355f296853e9e01f71b109de07137ce"
+    },
+    {
+      "path": "tools/lmi_display_v47_policy.py",
+      "sha256": "744f304943199671fed83f934138b88549163b57527ffddd034cf3193c518a7b"
+    },
+    {
+      "path": "tools/lmi_display_v48_policy.py",
+      "sha256": "6ca74da9562eb5aecfef21f8ff9e2e001d982e8c9cbcac9901550e03244695b9"
+    },
+    {
+      "path": "tools/lmi_display_v49_policy.py",
+      "sha256": "6b856954b45c58be9b8c65d2998ac97e684cf5588dc6e9c02ce5013b1aee8660"
+    },
+    {
+      "path": "tools/lmi_display_v50_policy.py",
+      "sha256": "07b638ef7f511348e3b041a3d9a3cc4be09e2e0b00804ea4aaccaf0e8fd2df50"
+    },
+    {
+      "path": "tools/lmi_display_v51_policy.py",
+      "sha256": "168be2c048fcbd8aa606e5d6fa97caf305b70cab9fc2ad6535274a306ed7e1a5"
+    },
+    {
+      "path": "tools/lmi_display_v52_policy.py",
+      "sha256": "4e0f7c8dbcad0000047ebee5e341d60a6eeaadd88ae9200f8b8bdabdd1ef5924"
+    },
+    {
+      "path": "tools/lmi_display_v53_policy.py",
+      "sha256": "890efff1a77492bdd6d7e6a00ecaf96af8eb4d0810b85a3b3883d548e1e9ddaf"
+    },
+    {
+      "path": "tools/lmi_display_v54_policy.py",
+      "sha256": "6ee86db23473789dac689d7110ba367f090d0ec71c087ac52aece8ee0d400a6b"
+    },
+    {
+      "path": "tools/lmi_display_v55_policy.py",
+      "sha256": "94e5c03cff5d4ad96731b49f8f66ce6c30d584b292a40add2ce8afd8cf1dde17"
+    },
+    {
+      "path": "tools/lmi_display_v56_policy.py",
+      "sha256": "4b61ca05543036fd5b0aa85059886ba24503ae857ec5125d4028aaa9f1e2a553"
+    },
+    {
+      "path": "tools/lmi_display_v57_policy.py",
+      "sha256": "d4ccf285f94c3cd8554e0090c6f4bc680e87ae39accbbe16285e0f5f2d71ed77"
+    },
+    {
+      "path": "tools/lmi_display_v58_policy.py",
+      "sha256": "2fa338a1b449a9fcb081e64bffb9a8f34693ca56238e15d479d32f948d2411e9"
+    },
+    {
+      "path": "tools/lmi_display_v59_policy.py",
+      "sha256": "0daa22db970e6ae19c9f4048c5fa78d88ff4f4853be5f2aba325b321a38b3f63"
+    },
+    {
       "path": "tools/normalize-lmi-ios-sdk.py",
       "sha256": "1504a67c0aec99e9db925629a6b8a16eba16893029eb571deb4a70fb7b83a958"
     },
@@ -2034,6 +2750,10 @@
       "sha256": "679f0c4e627ce233f54c7af4294dec7bd437bd04c29748a062613d94fbd010cf"
     },
     {
+      "path": "tools/prepare-lmi-display-compositor-layout.py",
+      "sha256": "2f14619d58007be66bd358be9dd94cdc62bdd5efc995d665c9644769209be67e"
+    },
+    {
       "path": "tools/prepare-lmi-ios-images.py",
       "sha256": "bf6f68c640db8b51975216a04277957ee05572ca2fdd03dd9df91cd3b161731e"
     },
@@ -2046,6 +2766,22 @@
       "sha256": "de8cbbcc396533ad1292260bd1ede5eca38055db161d9200fd03e143497228f6"
     },
     {
+      "path": "tools/redwood_gl.h",
+      "sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51"
+    },
+    {
+      "path": "tools/redwood_input.h",
+      "sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec"
+    },
+    {
+      "path": "tools/relink-lmi-display-early-thunks.py",
+      "sha256": "fe94c5243a576af01bd4ef2482ddc142a40527be69da86ea6b58f089d21a80b4"
+    },
+    {
+      "path": "tools/relink-lmi-display-runtime.py",
+      "sha256": "6aeaebbaaf12d3b2916694432e86ef75986666f5b4b27084ff33cce57175753d"
+    },
+    {
       "path": "tools/stage-lmi-uefi.py",
       "sha256": "aced56f72bcbcf748de1d704a38905b07dbf07cfbd82e362d1e9f25b55934bd8"
     },
@@ -2055,15 +2791,23 @@
     },
     {
       "path": "tools/test-lmi-checkpoints.py",
-      "sha256": "e25fa81d0e73bf2f7de0033860e2489c9953e5a1176dc6769b41bf622d5a9af5"
+      "sha256": "04a15046c20a5e00b1e9ef831a57a23dbe69dfe835dd12defb1ffb97074b1499"
     },
     {
       "path": "tools/test-lmi-loader.py",
       "sha256": "bd2e26700f44273dfcdd9aa827186479973630209095ac13cac18af9e6cc82a8"
     },
     {
+      "path": "tools/verify-ios165-downloads.py",
+      "sha256": "e1b1f9154a10afee0245e87333fc11084a573768526a208edf60d55dff1e7e27"
+    },
+    {
       "path": "tools/verify-lmi-apple-services.py",
       "sha256": "e0403c400ee770b118ee86f7d1756d21f97d966b0c9bcd2e87b9ad057a700572"
+    },
+    {
+      "path": "tools/verify-lmi-gl-copy.py",
+      "sha256": "e535a8cc4d34b292fd15e2a30d6e4f7589ca2cc5124e8123cd0f1e5619280a22"
     },
     {
       "path": "tools/verify-lmi-gpu-boot.py",
@@ -2099,7 +2843,7 @@
     },
     {
       "path": "tools/verify-lmi-gpu-gl.py",
-      "sha256": "8714d789a3c1f4668339ac881b23d1acc93bb6f2d0db292374b14ef6ca05dae5"
+      "sha256": "823c4fb132552983ab9c8c094abd9c89f379fa6d98c51c667b64a6aeab39e8ab"
     },
     {
       "path": "tools/verify-lmi-gpu-gx.py",
@@ -2375,7 +3119,7 @@
     },
     {
       "path": "userland-source/userland/src/inject.c",
-      "sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882"
+      "sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa"
     },
     {
       "path": "userland-source/userland/src/inject_sb.c",
@@ -2399,7 +3143,7 @@
     },
     {
       "path": "validation.json",
-      "sha256": "75afaa1458bf8e748bd02a4087b45983800255528e3bc1d9e3880a13793a58b5"
+      "sha256": "a5f0ea843f15532f72199fa0ef35d9374086a54eb0770058eade217bdd9f8a60"
     }
   ],
   "touch_update": {
@@ -2440,5 +3184,1837 @@
         "sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882"
       }
     ]
+  },
+  "v59_update": {
+    "version": "v59b",
+    "captured_at": "2026-10-27",
+    "kernel_sha256": "136c6a00184f8dd2527306f6df8e4fde1d1f6f91ed3f9f7971548a7996086f88",
+    "source_files": [
+      {
+        "path": "tools/analyze-lmi-display-census.py",
+        "original_sha256": "7c873f70f66a1fd55e25967b9d8634181dff205f53033a5710c8d4d29a5a1d04",
+        "sha256": "7c873f70f66a1fd55e25967b9d8634181dff205f53033a5710c8d4d29a5a1d04",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/analyze-lmi-display-timing.py",
+        "original_sha256": "17f755a70ddb83ff4b56ae5eec452e171abc6f8175de8e5ec0e36c49470d07f8",
+        "sha256": "17f755a70ddb83ff4b56ae5eec452e171abc6f8175de8e5ec0e36c49470d07f8",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/audit-lmi-gpu-async-v58-link.py",
+        "original_sha256": "88dd984e9039a608e5d15fcbd4eee850268904dfad380bef9b2f8ed71828204f",
+        "sha256": "88dd984e9039a608e5d15fcbd4eee850268904dfad380bef9b2f8ed71828204f",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/audit-lmi-gpu-desktop-region.py",
+        "original_sha256": "2099cc27e3360a67a82c1846c41368b81b0b7f076fc75508f0e7dee4bfbce438",
+        "sha256": "2099cc27e3360a67a82c1846c41368b81b0b7f076fc75508f0e7dee4bfbce438",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/audit-lmi-gpu-frame-region.py",
+        "original_sha256": "52a8406ea0652c89aaa55736ad2fc32df545d7463e017990a6cba0b1a66dac07",
+        "sha256": "52a8406ea0652c89aaa55736ad2fc32df545d7463e017990a6cba0b1a66dac07",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/audit-lmi-gpu-init-region.py",
+        "original_sha256": "b37cbbe1f5ffb680246348e1a65b77b3113f6f26f895707f941db2ac52050f99",
+        "sha256": "b37cbbe1f5ffb680246348e1a65b77b3113f6f26f895707f941db2ac52050f99",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/audit-lmi-gpu-normal-diag-region.py",
+        "original_sha256": "9141df30edf86fa25ae6154cd92a7f1bbb9586aedf8810add09e78717a9256a0",
+        "sha256": "9141df30edf86fa25ae6154cd92a7f1bbb9586aedf8810add09e78717a9256a0",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/audit-lmi-gpu-padding.py",
+        "original_sha256": "ef95342ca2d20367803c6ef31346a6ae1cf907cb2f8b1cb6f997638db6b2e3e3",
+        "sha256": "ef95342ca2d20367803c6ef31346a6ae1cf907cb2f8b1cb6f997638db6b2e3e3",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/audit-lmi-gpu-unsecure-region.py",
+        "original_sha256": "97f41813e98b5d055635db46a23ae1e8b8e793f912857238e4ae84537ca87d99",
+        "sha256": "97f41813e98b5d055635db46a23ae1e8b8e793f912857238e4ae84537ca87d99",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/audit-lmi-replaced-gpu-bodies.py",
+        "original_sha256": "59d02666267ff8cbf04986fe15118cc934c977ae397994a92dfee3f30c89217f",
+        "sha256": "59d02666267ff8cbf04986fe15118cc934c977ae397994a92dfee3f30c89217f",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-aligned-hello.py",
+        "original_sha256": "69a084c472c2ccd781bac5366d6204a6ff8eaa03bbfe80c6f4f9a8ecc9370372",
+        "sha256": "69a084c472c2ccd781bac5366d6204a6ff8eaa03bbfe80c6f4f9a8ecc9370372",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-bootstrap-probe.py",
+        "original_sha256": "71b05afb5099ed7a94a334279fbc7bb937f349e138a2cab682cb4ca480228dcf",
+        "sha256": "71b05afb5099ed7a94a334279fbc7bb937f349e138a2cab682cb4ca480228dcf",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-bsd-probe.py",
+        "original_sha256": "99b4370b7e3c1be16def9c8471a711f68ff424f8d3bb95b70d3036db9f2b73cc",
+        "sha256": "99b4370b7e3c1be16def9c8471a711f68ff424f8d3bb95b70d3036db9f2b73cc",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-display-extension.py",
+        "original_sha256": "59353bdc3e35389c9ecb53a71b574dead378f45dfd21d159c80d1c0820cbd584",
+        "sha256": "59353bdc3e35389c9ecb53a71b574dead378f45dfd21d159c80d1c0820cbd584",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v41.py",
+        "original_sha256": "a8233ef7169de9ca71850cb79066b3bfbc2f90f2dc5e1d104228838a7d407c9b",
+        "sha256": "a8233ef7169de9ca71850cb79066b3bfbc2f90f2dc5e1d104228838a7d407c9b",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v42.py",
+        "original_sha256": "86cf570bc77b7e3d5889670e01f2a99e36e745b176039a2d374cba34be3132b7",
+        "sha256": "86cf570bc77b7e3d5889670e01f2a99e36e745b176039a2d374cba34be3132b7",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v43.py",
+        "original_sha256": "256582d362b857b49b282785b732cbee13034b855e8be76b9f85f01dc8f97056",
+        "sha256": "256582d362b857b49b282785b732cbee13034b855e8be76b9f85f01dc8f97056",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v44.py",
+        "original_sha256": "2cc503a1b74e510a01c4ccf9725ceb83a535d071d78e6aa445db5f5211f26fac",
+        "sha256": "2cc503a1b74e510a01c4ccf9725ceb83a535d071d78e6aa445db5f5211f26fac",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v45.py",
+        "original_sha256": "71c12e73c3fe453f5545553d49ec94351b7f51154da4b7aceabe920ecc8f934b",
+        "sha256": "71c12e73c3fe453f5545553d49ec94351b7f51154da4b7aceabe920ecc8f934b",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v46.py",
+        "original_sha256": "8749f774688b2207d5b00317c01da606d19c93ec7fa2ee54ca64fea13456665a",
+        "sha256": "8749f774688b2207d5b00317c01da606d19c93ec7fa2ee54ca64fea13456665a",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v47.py",
+        "original_sha256": "c504ae716d339eea210bddbe6890893bd8d29472ed8986f17bf91e13eaf86478",
+        "sha256": "c504ae716d339eea210bddbe6890893bd8d29472ed8986f17bf91e13eaf86478",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v48.py",
+        "original_sha256": "8dc87e52eef2a373639f4480a60f58196e8925b4680feb9bb274819050da01b3",
+        "sha256": "8dc87e52eef2a373639f4480a60f58196e8925b4680feb9bb274819050da01b3",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v49.py",
+        "original_sha256": "3bd124ad8d16dd0b1662ce098a7c37b5ebcdac6f70f0072548afc891e8689ae5",
+        "sha256": "3bd124ad8d16dd0b1662ce098a7c37b5ebcdac6f70f0072548afc891e8689ae5",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v50.py",
+        "original_sha256": "38fdd930280e40b708362b1468f1cf8ec04efd60cfa13aa95a385a71f89a36e1",
+        "sha256": "38fdd930280e40b708362b1468f1cf8ec04efd60cfa13aa95a385a71f89a36e1",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v51.py",
+        "original_sha256": "6d9892d176f46b02fead8b3e4d13fba2542e651091b1064984519644d00e8bdc",
+        "sha256": "6d9892d176f46b02fead8b3e4d13fba2542e651091b1064984519644d00e8bdc",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v52.py",
+        "original_sha256": "0c5c766d7a929c59ff138b33528f16db98d943014ca8b23204c93668315baf6b",
+        "sha256": "0c5c766d7a929c59ff138b33528f16db98d943014ca8b23204c93668315baf6b",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v53.py",
+        "original_sha256": "86d44812edc53efa345230bfa8e483d0a58521070bb51be3963d9d85af837a44",
+        "sha256": "86d44812edc53efa345230bfa8e483d0a58521070bb51be3963d9d85af837a44",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v54.py",
+        "original_sha256": "5e55580d701aba89f4fbbf2a474f087da178c66614388f6ba5c7a5ae901c5e35",
+        "sha256": "5e55580d701aba89f4fbbf2a474f087da178c66614388f6ba5c7a5ae901c5e35",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v55.py",
+        "original_sha256": "cdf02e682f2a450da799f5fd155acab9ad9804d31965da6322e1d1e68befbece",
+        "sha256": "cdf02e682f2a450da799f5fd155acab9ad9804d31965da6322e1d1e68befbece",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-display-v56.py",
+        "original_sha256": "b397252c714a4200a1164db58abfecde19a644accf7d8021a5a50f459b2523b6",
+        "sha256": "b397252c714a4200a1164db58abfecde19a644accf7d8021a5a50f459b2523b6",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-display-v57.py",
+        "original_sha256": "943116799ea5617184023e59acc6edaeec4b91f2a6ed53e85e4796c036ff485c",
+        "sha256": "943116799ea5617184023e59acc6edaeec4b91f2a6ed53e85e4796c036ff485c",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-display-v59.py",
+        "original_sha256": "f2d7e49d065d5b27ad1a16b08cc179509e7205e59390dcd169a88b1733f4ae60",
+        "sha256": "f2d7e49d065d5b27ad1a16b08cc179509e7205e59390dcd169a88b1733f4ae60",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-driver-probe.py",
+        "original_sha256": "a6d9002bdbfa593ce957c79ef7959aba787f125e848dbc08b86131ba9e9be81b",
+        "sha256": "a6d9002bdbfa593ce957c79ef7959aba787f125e848dbc08b86131ba9e9be81b",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-gpu-async-v58.py",
+        "original_sha256": "344fb2ff91b1044656c96f779982853a22ec3693ff39b13684c336354c2fe2a3",
+        "sha256": "344fb2ff91b1044656c96f779982853a22ec3693ff39b13684c336354c2fe2a3",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-gpu-gl-image.py",
+        "original_sha256": "e46474d0974f1b0dfad80f24fee3e0c5cb674f0b53cbfa460a77aa56b8e9bc35",
+        "sha256": "e46474d0974f1b0dfad80f24fee3e0c5cb674f0b53cbfa460a77aa56b8e9bc35",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-gpu-mode.py",
+        "original_sha256": "327627662d39aeec4573b06ca80d7090bc5520ba18f7728b2a53e06ec391e6ff",
+        "sha256": "327627662d39aeec4573b06ca80d7090bc5520ba18f7728b2a53e06ec391e6ff",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-hid-initial-image.py",
+        "original_sha256": "eb49fc3bf02434fe88610812709e09704b987f0651d71ff39c8342d9711d38c8",
+        "sha256": "eb49fc3bf02434fe88610812709e09704b987f0651d71ff39c8342d9711d38c8",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-hid-partial-image.py",
+        "original_sha256": "f52e9b71eaa59efb1160cc7d97059153d1b764fca07020d15ca5801e8b0f1a4a",
+        "sha256": "f52e9b71eaa59efb1160cc7d97059153d1b764fca07020d15ca5801e8b0f1a4a",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-ios-probe.py",
+        "original_sha256": "fb520b94152c202ae4bc8422e9fb27f7890d6fc384bb9c847d8b8fad82c41c1e",
+        "sha256": "fb520b94152c202ae4bc8422e9fb27f7890d6fc384bb9c847d8b8fad82c41c1e",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-irq-probe.py",
+        "original_sha256": "9af09895f34594cd98c1f62766a3b6f1b2bd93658acc15fc5e68b1000b700d05",
+        "sha256": "9af09895f34594cd98c1f62766a3b6f1b2bd93658acc15fc5e68b1000b700d05",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-loader.py",
+        "original_sha256": "68271eeb14a667bd34e7fb1df53c8477efe3ddeb10ab0f5d53dbce85cf1a5123",
+        "sha256": "68271eeb14a667bd34e7fb1df53c8477efe3ddeb10ab0f5d53dbce85cf1a5123",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-minimal-root.py",
+        "original_sha256": "502db887d6e9b23a6fe7914d744f30ed217c628b975f09d2e06d2777a0163cc2",
+        "sha256": "502db887d6e9b23a6fe7914d744f30ed217c628b975f09d2e06d2777a0163cc2",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-preirq-probe.py",
+        "original_sha256": "5714871aafc6f162afcd804c7ae3b1446febd32efed6a01e0d933b76af0fb672",
+        "sha256": "5714871aafc6f162afcd804c7ae3b1446febd32efed6a01e0d933b76af0fb672",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-root-probe.py",
+        "original_sha256": "136cdafb7e109bf16676a8f4193e1e68220d109d68968c1d679bcd5f6b0c6b3c",
+        "sha256": "136cdafb7e109bf16676a8f4193e1e68220d109d68968c1d679bcd5f6b0c6b3c",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/build-lmi-source-runtime.py",
+        "original_sha256": "d7be06a1b2407e38ef1a8433c2901a89afe05df506d9fbaf7d41d40f0d1c6b72",
+        "sha256": "d7be06a1b2407e38ef1a8433c2901a89afe05df506d9fbaf7d41d40f0d1c6b72",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/build-lmi-user-probe.py",
+        "original_sha256": "bd6c9cc5add27e42f2eb505f4e05bd8229c1c522661e14ed0a39e4ef6fa6ba16",
+        "sha256": "bd6c9cc5add27e42f2eb505f4e05bd8229c1c522661e14ed0a39e4ef6fa6ba16",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-apfs-image.py",
+        "original_sha256": "e15a0b93ccd54f0ac9fdc203ecae5b4dc83710b2944d04b143da86692f76d519",
+        "sha256": "e15a0b93ccd54f0ac9fdc203ecae5b4dc83710b2944d04b143da86692f76d519",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-census.py",
+        "original_sha256": "812880a41dafbb72143404c4cd588ff2b4fd9852fd7e7dc405d5eaf207344f87",
+        "sha256": "812880a41dafbb72143404c4cd588ff2b4fd9852fd7e7dc405d5eaf207344f87",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-compositor.c",
+        "original_sha256": "cd1f54ef2c6bd425cb416b8658ea936362600438bac60a52b8294262ca36ec0b",
+        "sha256": "cd1f54ef2c6bd425cb416b8658ea936362600438bac60a52b8294262ca36ec0b",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-compositor.py",
+        "original_sha256": "a2b724d06b57e75a88175812a56f69f1aaeff3b3ed768ea4e42a3b2a291aecfe",
+        "sha256": "a2b724d06b57e75a88175812a56f69f1aaeff3b3ed768ea4e42a3b2a291aecfe",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-diagnostic-v53.c",
+        "original_sha256": "c5a4726a50bc10316663471fcee2184a8147582c4ae29beb2b5fe6097e3b04c8",
+        "sha256": "c5a4726a50bc10316663471fcee2184a8147582c4ae29beb2b5fe6097e3b04c8",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-diagnostic-v53.py",
+        "original_sha256": "2389381ee0fc619b71efbcab17ba52f90dbe8ad4a5ed6e125dba75a092e3a559",
+        "sha256": "2389381ee0fc619b71efbcab17ba52f90dbe8ad4a5ed6e125dba75a092e3a559",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-diagnostic-v54.c",
+        "original_sha256": "1555d64faa0618990ef572df6cb53569c32749a58d7d2e271fb09358d7893157",
+        "sha256": "1555d64faa0618990ef572df6cb53569c32749a58d7d2e271fb09358d7893157",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-diagnostic-v54.py",
+        "original_sha256": "165d64973e74a00b28e3f8dc521749462c08cdaf0cc4f2c52a8d76df25a40bb7",
+        "sha256": "165d64973e74a00b28e3f8dc521749462c08cdaf0cc4f2c52a8d76df25a40bb7",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-direct-plan.c",
+        "original_sha256": "e49cc1a0025e9e2a5ea3c5d93f18c5cd740846768fd210ba9552b870629addb1",
+        "sha256": "e49cc1a0025e9e2a5ea3c5d93f18c5cd740846768fd210ba9552b870629addb1",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-direct-plan.py",
+        "original_sha256": "2968f190f7b8cef5d39cd1985b06108f7aca4dd277bfe81708d9f37941dc2443",
+        "sha256": "2968f190f7b8cef5d39cd1985b06108f7aca4dd277bfe81708d9f37941dc2443",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v49.c",
+        "original_sha256": "11b937108068c12ec531bddba1b17510f5930826a76be8cfef28ef0bf7b9ec3e",
+        "sha256": "11b937108068c12ec531bddba1b17510f5930826a76be8cfef28ef0bf7b9ec3e",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v49.py",
+        "original_sha256": "790f0ca1679838745b9653012a0acc3852dedf2e4afffc19de8f54a402669e03",
+        "sha256": "790f0ca1679838745b9653012a0acc3852dedf2e4afffc19de8f54a402669e03",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v50.c",
+        "original_sha256": "11b937108068c12ec531bddba1b17510f5930826a76be8cfef28ef0bf7b9ec3e",
+        "sha256": "11b937108068c12ec531bddba1b17510f5930826a76be8cfef28ef0bf7b9ec3e",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v50.py",
+        "original_sha256": "fc8cc541ee13d863f4f66f9a1e5c6a706244d953fd78d0da680bde1e97973756",
+        "sha256": "fc8cc541ee13d863f4f66f9a1e5c6a706244d953fd78d0da680bde1e97973756",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v51.c",
+        "original_sha256": "9345ca4dc884382aac35f0c524d94a61c5b326827f907eadd5337aa3dbc9e6e0",
+        "sha256": "9345ca4dc884382aac35f0c524d94a61c5b326827f907eadd5337aa3dbc9e6e0",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v51.py",
+        "original_sha256": "d714f1ce84ba6badacb66aa277c3600922b9884190f824f05e1ecd924cac54ef",
+        "sha256": "d714f1ce84ba6badacb66aa277c3600922b9884190f824f05e1ecd924cac54ef",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v52.c",
+        "original_sha256": "8b3631a118c2fe6cd57c01827ca4c44fe8e72a8bed2e9fe1d6df18d370d436e1",
+        "sha256": "8b3631a118c2fe6cd57c01827ca4c44fe8e72a8bed2e9fe1d6df18d370d436e1",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v52.py",
+        "original_sha256": "ee8b02e4bb475e01c0302a5de29c6e712711192fd19e4ab923451cbeac232886",
+        "sha256": "ee8b02e4bb475e01c0302a5de29c6e712711192fd19e4ab923451cbeac232886",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v53.c",
+        "original_sha256": "4534a592c6a71981168f001688b3cd43583292bb56fb00c4b0fa0499e333cd75",
+        "sha256": "4534a592c6a71981168f001688b3cd43583292bb56fb00c4b0fa0499e333cd75",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v53.py",
+        "original_sha256": "78d33632131d856a2b996619ac0b4e095fa085c81f536a5573239155a1bde703",
+        "sha256": "78d33632131d856a2b996619ac0b4e095fa085c81f536a5573239155a1bde703",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v54.c",
+        "original_sha256": "9aec5c664edc670e57c8237cd0a6a207ca85dfb49b92218b3e4144278f55bd51",
+        "sha256": "9aec5c664edc670e57c8237cd0a6a207ca85dfb49b92218b3e4144278f55bd51",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v54.py",
+        "original_sha256": "7bc1fa99b70648d992e77fd9d1a4297375525c54f44fc25cb22db3b3fd3f0bc4",
+        "sha256": "7bc1fa99b70648d992e77fd9d1a4297375525c54f44fc25cb22db3b3fd3f0bc4",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v55.c",
+        "original_sha256": "ee83feec017684aec5f0d1a4a573892950624c26a88732f8806812b999b55544",
+        "sha256": "ee83feec017684aec5f0d1a4a573892950624c26a88732f8806812b999b55544",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v55.py",
+        "original_sha256": "21aa6017898cea36773787d65ef12c4b09d0ddd1bf9ec1eb1c7b64ed7b597ead",
+        "sha256": "21aa6017898cea36773787d65ef12c4b09d0ddd1bf9ec1eb1c7b64ed7b597ead",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v56.c",
+        "original_sha256": "e745f6581e878608ce9cfc47d74e50232c0a7a3991b11b1ff211ba409ddaa749",
+        "sha256": "e745f6581e878608ce9cfc47d74e50232c0a7a3991b11b1ff211ba409ddaa749",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-dma-v56.py",
+        "original_sha256": "b9b0bbf36619dbbd574e6e9bbce8c785b60656ada52cd219af8577935a2c5992",
+        "sha256": "b9b0bbf36619dbbd574e6e9bbce8c785b60656ada52cd219af8577935a2c5992",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-dma.c",
+        "original_sha256": "561abc5b7237c0d138f2ebbf1ada9bcc5890e1b10c02c0face18d699f105229b",
+        "sha256": "561abc5b7237c0d138f2ebbf1ada9bcc5890e1b10c02c0face18d699f105229b",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-dma.py",
+        "original_sha256": "5505eaae2b914365371915a424aa428f7ebc892101ede14ea3e0ff69be610cbd",
+        "sha256": "5505eaae2b914365371915a424aa428f7ebc892101ede14ea3e0ff69be610cbd",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-fast-v59.c",
+        "original_sha256": "4b856e50736daa086fba6302fa9052fe5a493a64123b2bb40829deb24d20f889",
+        "sha256": "4b856e50736daa086fba6302fa9052fe5a493a64123b2bb40829deb24d20f889",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-fast-v59.py",
+        "original_sha256": "d1f81f4dc68124576755ba1a02d9b026274fdefb79e75922e519fc3d4f7a11a1",
+        "sha256": "d1f81f4dc68124576755ba1a02d9b026274fdefb79e75922e519fc3d4f7a11a1",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-native-v53.py",
+        "original_sha256": "c5d2f9b874261f2449270697fa42abe22967c1e371ef47032869cb185299bf51",
+        "sha256": "c5d2f9b874261f2449270697fa42abe22967c1e371ef47032869cb185299bf51",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-native-v54.py",
+        "original_sha256": "5afdeb8a981d5b4ab7816ae751a30227fa57211a786563f1ef4e8125088dbe7d",
+        "sha256": "5afdeb8a981d5b4ab7816ae751a30227fa57211a786563f1ef4e8125088dbe7d",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-native.py",
+        "original_sha256": "c09aa686bfdecaa6b67273499afb0a0dfcf8a112297ec624efbbf926911e944e",
+        "sha256": "c09aa686bfdecaa6b67273499afb0a0dfcf8a112297ec624efbbf926911e944e",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-pipeline.c",
+        "original_sha256": "542f1f6c5dadedd27c48f7e2633168fb10963c1ee6ee4a673b7e4608983d492f",
+        "sha256": "542f1f6c5dadedd27c48f7e2633168fb10963c1ee6ee4a673b7e4608983d492f",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-pipeline.py",
+        "original_sha256": "25fe99949b24c60ac32b304b1e380d075940d46c5b68a379bf623f725b0b5718",
+        "sha256": "25fe99949b24c60ac32b304b1e380d075940d46c5b68a379bf623f725b0b5718",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-probe-v55.c",
+        "original_sha256": "8be8f262023b111fb69970f8a0ee06c82cc0e1154e17c9528bad8a04e69710bc",
+        "sha256": "8be8f262023b111fb69970f8a0ee06c82cc0e1154e17c9528bad8a04e69710bc",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-probe-v55.py",
+        "original_sha256": "d4c74ecf5692167bbc0c06207cf61c47f75d1cbe546cbda2dcda3c8e4112d5b9",
+        "sha256": "d4c74ecf5692167bbc0c06207cf61c47f75d1cbe546cbda2dcda3c8e4112d5b9",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-probe-v56.c",
+        "original_sha256": "d9cc9c8aaff649b868fd691b8952aaa685dd0c86df87596ef4b6b128290757b2",
+        "sha256": "d9cc9c8aaff649b868fd691b8952aaa685dd0c86df87596ef4b6b128290757b2",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-probe-v56.py",
+        "original_sha256": "2a506b173d4abb6a733c1d295f263c2cd96e80a58fe86bc903e73ec1d426803e",
+        "sha256": "2a506b173d4abb6a733c1d295f263c2cd96e80a58fe86bc903e73ec1d426803e",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-runtime.py",
+        "original_sha256": "3825a53947c5d9e21bd999da6a3bdbf49c85b04c175a547847f5ddb5d57094a3",
+        "sha256": "3825a53947c5d9e21bd999da6a3bdbf49c85b04c175a547847f5ddb5d57094a3",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v44-policy.py",
+        "original_sha256": "5bdd4a5da604cbaa5712d22a5a2468ad218dbf36b7ebd72a5aa8d78dae332a0f",
+        "sha256": "5bdd4a5da604cbaa5712d22a5a2468ad218dbf36b7ebd72a5aa8d78dae332a0f",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v45-policy.py",
+        "original_sha256": "199ffeac4ccc6ca83ee895c78008c04393886729a401ec39a5c0837392b9e443",
+        "sha256": "199ffeac4ccc6ca83ee895c78008c04393886729a401ec39a5c0837392b9e443",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v46-policy.py",
+        "original_sha256": "565242d14f65c721a27f6e2d34cdafaea0a264dba0d30f7c89c1c703b81d9b07",
+        "sha256": "565242d14f65c721a27f6e2d34cdafaea0a264dba0d30f7c89c1c703b81d9b07",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v47-policy.py",
+        "original_sha256": "488ce8e3b2a6592d5781dde07d7c493bc5cb851146332ec821ff7c75b882ed63",
+        "sha256": "488ce8e3b2a6592d5781dde07d7c493bc5cb851146332ec821ff7c75b882ed63",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v48-policy.py",
+        "original_sha256": "0e47f25d99a78403db7d79d9fa1d8ca128ba00d4f6079c613af01e8ee08b6e7a",
+        "sha256": "0e47f25d99a78403db7d79d9fa1d8ca128ba00d4f6079c613af01e8ee08b6e7a",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v48-startup.py",
+        "original_sha256": "403b3775e9f2393ae68f80a2416a8814d9e9575a5c8b8da37a0e6fc4bcc53ebe",
+        "sha256": "403b3775e9f2393ae68f80a2416a8814d9e9575a5c8b8da37a0e6fc4bcc53ebe",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v49-policy.py",
+        "original_sha256": "9fc140118405d2a585429eedaee746b5f0697d8070d7800fab9f35a577956f75",
+        "sha256": "9fc140118405d2a585429eedaee746b5f0697d8070d7800fab9f35a577956f75",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v50-evidence.py",
+        "original_sha256": "f69778c90368c5eb4ff0b34489144c80ef50090b5294b4dd2d1531b0a6fb9317",
+        "sha256": "f69778c90368c5eb4ff0b34489144c80ef50090b5294b4dd2d1531b0a6fb9317",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v50-policy.py",
+        "original_sha256": "7ac22e55534f8082b6ac553e60ff869227f56428a1428866633a4a56918b6b49",
+        "sha256": "7ac22e55534f8082b6ac553e60ff869227f56428a1428866633a4a56918b6b49",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v50-startup.py",
+        "original_sha256": "d639324567a45f8e01026c138b264d99d7b01fc69d8c020686dc4a06c437bcd8",
+        "sha256": "d639324567a45f8e01026c138b264d99d7b01fc69d8c020686dc4a06c437bcd8",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v51-evidence.py",
+        "original_sha256": "20ae8528ae29f758713756cde829fecf24b60c7189ec59195cc85deef72c7980",
+        "sha256": "20ae8528ae29f758713756cde829fecf24b60c7189ec59195cc85deef72c7980",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v51-policy.py",
+        "original_sha256": "160915bb890719ed245f4ae9654c7c185485818a484d28233ea61ff1268f923d",
+        "sha256": "160915bb890719ed245f4ae9654c7c185485818a484d28233ea61ff1268f923d",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v52-policy.py",
+        "original_sha256": "6daafd1eb07c26d05697ac53c601f87455d4d4917ef6a0190c7785c556361e34",
+        "sha256": "6daafd1eb07c26d05697ac53c601f87455d4d4917ef6a0190c7785c556361e34",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v53-policy.py",
+        "original_sha256": "961a55d160a3e44445dda448e92c70b88e47c7bd87685a271a4a51089ea3dd9b",
+        "sha256": "961a55d160a3e44445dda448e92c70b88e47c7bd87685a271a4a51089ea3dd9b",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v54-policy.py",
+        "original_sha256": "0371eab9e4fc9a4b63c59561fa4671e796c1be9592e4ab1976c0f9675d732560",
+        "sha256": "0371eab9e4fc9a4b63c59561fa4671e796c1be9592e4ab1976c0f9675d732560",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v55-desktop.py",
+        "original_sha256": "f752cadb641e878e363cc79d75592cc94dd685ca3744194b0d932fea31c65f0c",
+        "sha256": "f752cadb641e878e363cc79d75592cc94dd685ca3744194b0d932fea31c65f0c",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v55-policy.py",
+        "original_sha256": "dc32f3e1e0a3588135158df4988480cf2c6c947052dbe0035108c534359cad59",
+        "sha256": "dc32f3e1e0a3588135158df4988480cf2c6c947052dbe0035108c534359cad59",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v55-startup.py",
+        "original_sha256": "369c0ddcae063e6f9bdccf1270980446e642f2e7ab0ec2ea69fab1d607e7d9f5",
+        "sha256": "369c0ddcae063e6f9bdccf1270980446e642f2e7ab0ec2ea69fab1d607e7d9f5",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-display-v56-desktop.py",
+        "original_sha256": "7a11d4daa25c01238b957027309626ea59555c73383a46120761923fe37b8986",
+        "sha256": "7a11d4daa25c01238b957027309626ea59555c73383a46120761923fe37b8986",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-v56-policy.py",
+        "original_sha256": "94714b28d21f56d00063d6b6c8ca37596a023a187376befdd0d180459f6f1e72",
+        "sha256": "94714b28d21f56d00063d6b6c8ca37596a023a187376befdd0d180459f6f1e72",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-v56-startup.py",
+        "original_sha256": "ec91083147ed8897664fd39c0218eed7ec227f0e764642395a301f93f651399b",
+        "sha256": "ec91083147ed8897664fd39c0218eed7ec227f0e764642395a301f93f651399b",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-v57-policy.py",
+        "original_sha256": "9bfa608cdc295bf3e7016ae80a94bb879aab4410305266dc74a423a306676013",
+        "sha256": "9bfa608cdc295bf3e7016ae80a94bb879aab4410305266dc74a423a306676013",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-v58-policy.py",
+        "original_sha256": "cb96ff7341abb35bed633d9ba2c5a661fd37d32ad3fa34886d4a717d395b0387",
+        "sha256": "cb96ff7341abb35bed633d9ba2c5a661fd37d32ad3fa34886d4a717d395b0387",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-display-v59-policy.py",
+        "original_sha256": "2f6d3f9e118a492bc0b4890b25f2451c2c38b2313307905733605f0e3925d236",
+        "sha256": "2f6d3f9e118a492bc0b4890b25f2451c2c38b2313307905733605f0e3925d236",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-dpu-snapshot.py",
+        "original_sha256": "23db783b1a463efb358178575e3884422df1ce6f5f2768cb54481cc777832356",
+        "sha256": "23db783b1a463efb358178575e3884422df1ce6f5f2768cb54481cc777832356",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-gpu-async-v58.py",
+        "original_sha256": "a869dcc9d7196dd78ce7c4a294ad70ffbb103d044fd06367c2dbe642f990f4c7",
+        "sha256": "a869dcc9d7196dd78ce7c4a294ad70ffbb103d044fd06367c2dbe642f990f4c7",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-boot-source.py",
+        "original_sha256": "cab87096d77c75a5946ac23d7ec8d27c2be4054418bdd3ec2a3ec3b858308cfe",
+        "sha256": "cab87096d77c75a5946ac23d7ec8d27c2be4054418bdd3ec2a3ec3b858308cfe",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-boot.c",
+        "original_sha256": "e4fff38abdd8e63931a66bc3ed40ff44e1b51e1a5949b6f79d63dd5d43959cc3",
+        "sha256": "e4fff38abdd8e63931a66bc3ed40ff44e1b51e1a5949b6f79d63dd5d43959cc3",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-clock.c",
+        "original_sha256": "e259d3ea5fe474fa3592d107ae5322b56b779ff03539bdf684af4fd05451d0b1",
+        "sha256": "e259d3ea5fe474fa3592d107ae5322b56b779ff03539bdf684af4fd05451d0b1",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-core-access.c",
+        "original_sha256": "f420a048de5c1c33474496aeefbfbded3a470427aca1d436c7f024871acc36e6",
+        "sha256": "f420a048de5c1c33474496aeefbfbded3a470427aca1d436c7f024871acc36e6",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-gpu-core-memory.c",
+        "original_sha256": "3af8e53e0532117a558cb39aec3effab48896e7bd18138e7ca8cfef8d71387be",
+        "sha256": "3af8e53e0532117a558cb39aec3effab48896e7bd18138e7ca8cfef8d71387be",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-cp-plan.c",
+        "original_sha256": "50ca26adb2b9ddc2105864f9c91cea00cb7a5635bda2eae1a973d2323346abbd",
+        "sha256": "50ca26adb2b9ddc2105864f9c91cea00cb7a5635bda2eae1a973d2323346abbd",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-cp-verifier.py",
+        "original_sha256": "999cb584da6b2adf2f3368e21a39c339ab4e65682cc26bdc48597423f73464a1",
+        "sha256": "999cb584da6b2adf2f3368e21a39c339ab4e65682cc26bdc48597423f73464a1",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-cp.c",
+        "original_sha256": "5784e63a42c4deff87ece77ead5cc18b14fd3d7cd2464337ded5ce8ac302c861",
+        "sha256": "5784e63a42c4deff87ece77ead5cc18b14fd3d7cd2464337ded5ce8ac302c861",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-desktop-region.py",
+        "original_sha256": "ce1b21965ab06e1de129436a916e60f64f14e18ed68a810262d4118f0d8561de",
+        "sha256": "ce1b21965ab06e1de129436a916e60f64f14e18ed68a810262d4118f0d8561de",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-desktop-source.py",
+        "original_sha256": "3541a8419908e555fb0da401f986007c8976cdf4a52e521cdfc88e27f5d142aa",
+        "sha256": "3541a8419908e555fb0da401f986007c8976cdf4a52e521cdfc88e27f5d142aa",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-desktop-verifier.py",
+        "original_sha256": "b6d5f6a5002337aaf8eec1885153c47707f00dc57c073b7a4dfaf6272779d95a",
+        "sha256": "b6d5f6a5002337aaf8eec1885153c47707f00dc57c073b7a4dfaf6272779d95a",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-desktop.c",
+        "original_sha256": "68a1dfc0e0002dba458f511fbe43e6d45c2aab579788ce04829c21253fa9e404",
+        "sha256": "68a1dfc0e0002dba458f511fbe43e6d45c2aab579788ce04829c21253fa9e404",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-gl-verifier.py",
+        "original_sha256": "e60d00c59fc388d559eb66c107605ab3fe2a72be9c8a493d4bca1431f02bfaa0",
+        "sha256": "e60d00c59fc388d559eb66c107605ab3fe2a72be9c8a493d4bca1431f02bfaa0",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-gx-v57.c",
+        "original_sha256": "5f284e984250db33b322ff9db1ec63dfa9eab7078526ddb15cf6f7990d317406",
+        "sha256": "5f284e984250db33b322ff9db1ec63dfa9eab7078526ddb15cf6f7990d317406",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-gx-v57.py",
+        "original_sha256": "371ffecf7d3cc2a515bd221745300495de6fe3d590b65fc0b0bbd47c2ab9b994",
+        "sha256": "371ffecf7d3cc2a515bd221745300495de6fe3d590b65fc0b0bbd47c2ab9b994",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-gx.c",
+        "original_sha256": "ca062d93fc21109e2deba0ccfef26770693d64054ce42aaba73400f1ea3eab71",
+        "sha256": "ca062d93fc21109e2deba0ccfef26770693d64054ce42aaba73400f1ea3eab71",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-hfi-core.c",
+        "original_sha256": "67f3aa71eaf1790005a4c3e824f9f39aa9b6b42b92b70a3d374c0a4f07e69e87",
+        "sha256": "67f3aa71eaf1790005a4c3e824f9f39aa9b6b42b92b70a3d374c0a4f07e69e87",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-hfi-io.c",
+        "original_sha256": "0dae16ab764fd485a64749f0d2219f3ed1763eb764e26f5cfc2b24222fb9fc2b",
+        "sha256": "0dae16ab764fd485a64749f0d2219f3ed1763eb764e26f5cfc2b24222fb9fc2b",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-hfi-perf.c",
+        "original_sha256": "34c90497ecf199b900ed87ab976abb8be1699947a65990c85b182a8d44281ebb",
+        "sha256": "34c90497ecf199b900ed87ab976abb8be1699947a65990c85b182a8d44281ebb",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-normal-diag-region.py",
+        "original_sha256": "76df6e65de2aa83a3e725409310d6c590b404509b48defa62b3cc05296b1e660",
+        "sha256": "76df6e65de2aa83a3e725409310d6c590b404509b48defa62b3cc05296b1e660",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-gpu-normal-preflight.py",
+        "original_sha256": "d61a94b5d9e7ac4e6e9552f6a5eb079ec5a5b630a7c9a29c59f003f19ff34843",
+        "sha256": "d61a94b5d9e7ac4e6e9552f6a5eb079ec5a5b630a7c9a29c59f003f19ff34843",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-normal-verifier.py",
+        "original_sha256": "55964f494b069de91a7acb9e46a2caa06cf4c19164eb664344fe43a321f70593",
+        "sha256": "55964f494b069de91a7acb9e46a2caa06cf4c19164eb664344fe43a321f70593",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-gpu-route.c",
+        "original_sha256": "aee91f6629534b0ee9c576c66b6ae9fc31077bb5fec3e3fae62e29c1aa56a6e7",
+        "sha256": "aee91f6629534b0ee9c576c66b6ae9fc31077bb5fec3e3fae62e29c1aa56a6e7",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-rpmh.c",
+        "original_sha256": "a957bf34ffb9c5bb112bb00ef48b80a09839e4b6a13c0c26702ad0c5c32a31ab",
+        "sha256": "a957bf34ffb9c5bb112bb00ef48b80a09839e4b6a13c0c26702ad0c5c32a31ab",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-rsc-init.c",
+        "original_sha256": "c787c1640051fbfd03a7141e7fe693b87b723828dd5c09d2ebec95b54d826185",
+        "sha256": "c787c1640051fbfd03a7141e7fe693b87b723828dd5c09d2ebec95b54d826185",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-rsc-pdc-vote.c",
+        "original_sha256": "ea6f368c2bbd558a3b33eb6af780d6940288986cd716b83aac1c6344e83a38ee",
+        "sha256": "ea6f368c2bbd558a3b33eb6af780d6940288986cd716b83aac1c6344e83a38ee",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-scm.c",
+        "original_sha256": "d2fa2b032a5f71709e1d3cf02ccfcbfc2789f44fdb5367a2de974030d7ce31cb",
+        "sha256": "d2fa2b032a5f71709e1d3cf02ccfcbfc2789f44fdb5367a2de974030d7ce31cb",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/check-lmi-gpu-table-plan.c",
+        "original_sha256": "e161dab0679c6381916808eb8ce2ed881e863afdce474d9cd93f020c6ac218fd",
+        "sha256": "e161dab0679c6381916808eb8ce2ed881e863afdce474d9cd93f020c6ac218fd",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-tile-source.py",
+        "original_sha256": "9606f5b10d2be5ca7687594f4039e81a4fad6cf056266afced262f5088f6f214",
+        "sha256": "9606f5b10d2be5ca7687594f4039e81a4fad6cf056266afced262f5088f6f214",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-tile-verifier.py",
+        "original_sha256": "c0fd40c5b45635b7f1850a737a047b92048ae81489d1b294070319340c55b04c",
+        "sha256": "c0fd40c5b45635b7f1850a737a047b92048ae81489d1b294070319340c55b04c",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-tile.c",
+        "original_sha256": "3d60304a842bc1a4973d77484a5a4641a1941848efff736e7e02c3d9dca51b6d",
+        "sha256": "3d60304a842bc1a4973d77484a5a4641a1941848efff736e7e02c3d9dca51b6d",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-unsecure.c",
+        "original_sha256": "7573fd90f0d3bc9cf4993982b899ac5c93165602f7d29c5446bcdd3b823b4a23",
+        "sha256": "7573fd90f0d3bc9cf4993982b899ac5c93165602f7d29c5446bcdd3b823b4a23",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-zap-load.c",
+        "original_sha256": "31e6a9558ee4c7b809ec4f722007031f1b68d81d64b740a396f6914090b4f753",
+        "sha256": "31e6a9558ee4c7b809ec4f722007031f1b68d81d64b740a396f6914090b4f753",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-gpu-zap-metadata.c",
+        "original_sha256": "30eb875c902ff65145a00d0034557938afe6719a96e8a55aa1ce3c88912f0e1a",
+        "sha256": "30eb875c902ff65145a00d0034557938afe6719a96e8a55aa1ce3c88912f0e1a",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-hid-initial-retry.py",
+        "original_sha256": "2988c757a50b30e7e2500cd2e4167211429dd4e0120addc6035e6463f17aa580",
+        "sha256": "2988c757a50b30e7e2500cd2e4167211429dd4e0120addc6035e6463f17aa580",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-hid-routing.py",
+        "original_sha256": "a2107502b16568b9f3c87151bc6bbef71a22f5f3477c629caea8324494f85191",
+        "sha256": "a2107502b16568b9f3c87151bc6bbef71a22f5f3477c629caea8324494f85191",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-hid-startup.py",
+        "original_sha256": "fbd7e7b0053cb72395eb2eefa5ffc528478602687475b985a90f9070c39ea06c",
+        "sha256": "fbd7e7b0053cb72395eb2eefa5ffc528478602687475b985a90f9070c39ea06c",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-hid-usage.py",
+        "original_sha256": "555a9dfd4561f663a0c540e5fdb824d19cbadf5de744fbb4a80da8e985f23487",
+        "sha256": "555a9dfd4561f663a0c540e5fdb824d19cbadf5de744fbb4a80da8e985f23487",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-input-observers.py",
+        "original_sha256": "181ba5df4e5396f2c675ddaeaccbe63325662c3a86891a461ce72d4d66be0e70",
+        "sha256": "181ba5df4e5396f2c675ddaeaccbe63325662c3a86891a461ce72d4d66be0e70",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/check-lmi-smp-return.py",
+        "original_sha256": "6120941e4cb57cf087aafd99765e13d9d9307f10d766d1d9fe50e6642aa70a58",
+        "sha256": "6120941e4cb57cf087aafd99765e13d9d9307f10d766d1d9fe50e6642aa70a58",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/export-lmi-uefi.py",
+        "original_sha256": "5e16bbfaef755c4064ff9a5ff03c4b1ef40613ad61aa59e90f7484ecdde52ec7",
+        "sha256": "5e16bbfaef755c4064ff9a5ff03c4b1ef40613ad61aa59e90f7484ecdde52ec7",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/import-mu-dependencies.py",
+        "original_sha256": "517e00d19b264df600555e3c82773055d6730b44476e3495b4bf01cebdb09537",
+        "sha256": "517e00d19b264df600555e3c82773055d6730b44476e3495b4bf01cebdb09537",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/inject.c",
+        "original_sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa",
+        "sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/inject_sb.c",
+        "original_sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc",
+        "sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/integrate-lmi-display-runtime.py",
+        "original_sha256": "82d7fec627849d7e19d21507f3c37549eefcf508e3266e247aa6132fc97e80a5",
+        "sha256": "82d7fec627849d7e19d21507f3c37549eefcf508e3266e247aa6132fc97e80a5",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-census.c",
+        "original_sha256": "58775d5e884739d4d807e2c28e29b0ff56e7e447376b81c72b32400b8a315eb1",
+        "sha256": "58775d5e884739d4d807e2c28e29b0ff56e7e447376b81c72b32400b8a315eb1",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-compositor-abi.h",
+        "original_sha256": "9aecfccfeedb254950c07972bad048a3c069d1da672e1b5f85d50a46700e4cd8",
+        "sha256": "9aecfccfeedb254950c07972bad048a3c069d1da672e1b5f85d50a46700e4cd8",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-compositor-v56.c",
+        "original_sha256": "04ec7eed0347c17a1c5daf86ef5b0cf1b12dae7640a6fddde05b1618c43bd4a0",
+        "sha256": "04ec7eed0347c17a1c5daf86ef5b0cf1b12dae7640a6fddde05b1618c43bd4a0",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-compositor.c",
+        "original_sha256": "2eb2c294f8375ff20c484b247fd77a5829dc10388f583855909df22786f7fd1c",
+        "sha256": "2eb2c294f8375ff20c484b247fd77a5829dc10388f583855909df22786f7fd1c",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-compositor.h",
+        "original_sha256": "ba8838b4c2d0a6bb1041019e9f65c210889bbe51c59b1ebd1163d6166ec6d513",
+        "sha256": "ba8838b4c2d0a6bb1041019e9f65c210889bbe51c59b1ebd1163d6166ec6d513",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-diagnostic-v53.c",
+        "original_sha256": "37964facae1141814c9cb356aec3a9b547f43d306c499ebf86d39c5fc6db9f31",
+        "sha256": "37964facae1141814c9cb356aec3a9b547f43d306c499ebf86d39c5fc6db9f31",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-diagnostic-v54.c",
+        "original_sha256": "48a34b8b54074ae437d26e87d427c855d7bd3647b1c86edecad4957c49ccae3f",
+        "sha256": "48a34b8b54074ae437d26e87d427c855d7bd3647b1c86edecad4957c49ccae3f",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-direct-plan.c",
+        "original_sha256": "be39704dfdd801d0a07b917b2d27acd41e7e90ae445aae77adf81a79f73ecf57",
+        "sha256": "be39704dfdd801d0a07b917b2d27acd41e7e90ae445aae77adf81a79f73ecf57",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-direct-plan.h",
+        "original_sha256": "f65128f3e65a895f4237811b4755f86dc3c66b0151fa1759b2b952b7adcadb61",
+        "sha256": "f65128f3e65a895f4237811b4755f86dc3c66b0151fa1759b2b952b7adcadb61",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-dma-v49.c",
+        "original_sha256": "c7ecb2e3d7563021c6ca6ae34ec7a81f7a0be18a83a698629c666c591e73e9aa",
+        "sha256": "c7ecb2e3d7563021c6ca6ae34ec7a81f7a0be18a83a698629c666c591e73e9aa",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-dma-v52.c",
+        "original_sha256": "df516e9a7e72c32c1bb825102e38d14bfb27b66a9423ecfa588fd80bdf6856aa",
+        "sha256": "df516e9a7e72c32c1bb825102e38d14bfb27b66a9423ecfa588fd80bdf6856aa",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-dma-v53.c",
+        "original_sha256": "f86a835422cacf81c47697ffe4f683467d7931e28bc700522c9590bb94db3988",
+        "sha256": "f86a835422cacf81c47697ffe4f683467d7931e28bc700522c9590bb94db3988",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-dma-v54.c",
+        "original_sha256": "ddd069584c541ff678807d6fe2193b02caa9f3eb6d74f51100a033fca50c5948",
+        "sha256": "ddd069584c541ff678807d6fe2193b02caa9f3eb6d74f51100a033fca50c5948",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-dma-v55.c",
+        "original_sha256": "fb525b59e4529838dc0c0e16750e8aed424fb519454b0c0f40164c10b8afc785",
+        "sha256": "fb525b59e4529838dc0c0e16750e8aed424fb519454b0c0f40164c10b8afc785",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-dma-v56.c",
+        "original_sha256": "cab3c2763be3fad08f5373488b3f9ba4a89d90e05976fc5a85b0249a767b91e9",
+        "sha256": "cab3c2763be3fad08f5373488b3f9ba4a89d90e05976fc5a85b0249a767b91e9",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-dma.c",
+        "original_sha256": "3dd8c7776b3e4f6a081c1c0c1c7406758f4f3576ce1f9ee3fde28634b481785f",
+        "sha256": "3dd8c7776b3e4f6a081c1c0c1c7406758f4f3576ce1f9ee3fde28634b481785f",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-dma.h",
+        "original_sha256": "bc6145ea9cec7983eee57c6a111cfe55e0979670a3190486c230e71a02171f00",
+        "sha256": "bc6145ea9cec7983eee57c6a111cfe55e0979670a3190486c230e71a02171f00",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-fast-v59.c",
+        "original_sha256": "39e664d23bc7d7e667e0331137ddec56782055faf3fc4964338cc68cdebc60ec",
+        "sha256": "39e664d23bc7d7e667e0331137ddec56782055faf3fc4964338cc68cdebc60ec",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-fast-v59.h",
+        "original_sha256": "32ecd9f33c90f003738e0e7c10effb86bc2e563ccf93d1d9ebc7137e4016f768",
+        "sha256": "32ecd9f33c90f003738e0e7c10effb86bc2e563ccf93d1d9ebc7137e4016f768",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-native-state-v44.S",
+        "original_sha256": "808b4dc2f256d7e94c1dd6e4e49a62f241d819cfee1172963b5e7235f5153cdc",
+        "sha256": "808b4dc2f256d7e94c1dd6e4e49a62f241d819cfee1172963b5e7235f5153cdc",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-state-v47.S",
+        "original_sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946",
+        "sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-state-v48.S",
+        "original_sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946",
+        "sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-state-v49.S",
+        "original_sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946",
+        "sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-state-v50.S",
+        "original_sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946",
+        "sha256": "a2d68d60d146c5a4a837492df6ee39ea1475fb292df8842b7ca4010eed891946",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v44.c",
+        "original_sha256": "1747ade3805afb07cf256f9ef8c5a7be5eb227d2573f5c7ccc6874e3f0426d29",
+        "sha256": "1747ade3805afb07cf256f9ef8c5a7be5eb227d2573f5c7ccc6874e3f0426d29",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v45.c",
+        "original_sha256": "f8e80990ddc58bab53aec75727514186c410f36722cfaa774f94f2c71bf9918f",
+        "sha256": "f8e80990ddc58bab53aec75727514186c410f36722cfaa774f94f2c71bf9918f",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v46.c",
+        "original_sha256": "6f86d988d7643d9e58da16e0c4e3743e6c10ca82e0d52d50292a8a9929ca57a3",
+        "sha256": "6f86d988d7643d9e58da16e0c4e3743e6c10ca82e0d52d50292a8a9929ca57a3",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v47.c",
+        "original_sha256": "2309e5df8a0a3c910bfd56a8d71b24bed77084a184deb924a6041b3584c3050d",
+        "sha256": "2309e5df8a0a3c910bfd56a8d71b24bed77084a184deb924a6041b3584c3050d",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v48.c",
+        "original_sha256": "dab90327d0e0f4b8a21ede3d411c11c796db04a5145301c0715c08aaa4ea93de",
+        "sha256": "dab90327d0e0f4b8a21ede3d411c11c796db04a5145301c0715c08aaa4ea93de",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v49.c",
+        "original_sha256": "dab90327d0e0f4b8a21ede3d411c11c796db04a5145301c0715c08aaa4ea93de",
+        "sha256": "dab90327d0e0f4b8a21ede3d411c11c796db04a5145301c0715c08aaa4ea93de",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v50.c",
+        "original_sha256": "ac35ddb32283ffab43f926b58bcd621ee909a3b4fc95403e7697eda4bdc62588",
+        "sha256": "ac35ddb32283ffab43f926b58bcd621ee909a3b4fc95403e7697eda4bdc62588",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v53.c",
+        "original_sha256": "25fbc4482bd87f6e5098c33c3bc1e0fe8f4920e28f276693a720d18d8c59f340",
+        "sha256": "25fbc4482bd87f6e5098c33c3bc1e0fe8f4920e28f276693a720d18d8c59f340",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v54.c",
+        "original_sha256": "b1932085416f867c680f736eaf991c1de3b94ea41e16479e39f27723557c474f",
+        "sha256": "b1932085416f867c680f736eaf991c1de3b94ea41e16479e39f27723557c474f",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v55.c",
+        "original_sha256": "4295f24fd1376d08ebf0426f915c996f0352160dec2c05c4524ffaf5c53651ce",
+        "sha256": "4295f24fd1376d08ebf0426f915c996f0352160dec2c05c4524ffaf5c53651ce",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-native-v56.c",
+        "original_sha256": "1108a355f048f0565a5fef21f67289cabf82b7cba61978f3fb1c2f74afcc54cc",
+        "sha256": "1108a355f048f0565a5fef21f67289cabf82b7cba61978f3fb1c2f74afcc54cc",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-pipeline-v50.c",
+        "original_sha256": "7e553059b90f19067998357cddb6e9e55d07447b29a9db58d3cbfc53439b175a",
+        "sha256": "7e553059b90f19067998357cddb6e9e55d07447b29a9db58d3cbfc53439b175a",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-pipeline-v51.c",
+        "original_sha256": "3e08a645ae96427d9335a591b9991bcf1047dc93d9d7e298a7f09715ebeffb17",
+        "sha256": "3e08a645ae96427d9335a591b9991bcf1047dc93d9d7e298a7f09715ebeffb17",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-pipeline.c",
+        "original_sha256": "5bbb271432c0ff7af99f8c805bec9611f0e6ea0c19d92d33928e9c9f3bc249c1",
+        "sha256": "5bbb271432c0ff7af99f8c805bec9611f0e6ea0c19d92d33928e9c9f3bc249c1",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-pipeline.h",
+        "original_sha256": "91b346263c17dfc4f17cf9c9303ca0d2a5047bc29ef193109087f1dacd21b8f0",
+        "sha256": "91b346263c17dfc4f17cf9c9303ca0d2a5047bc29ef193109087f1dacd21b8f0",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-probe-v55.c",
+        "original_sha256": "40c19c043574c5d5435d1fe5b8f131bed19639843f40cee527d9c988cc0486a0",
+        "sha256": "40c19c043574c5d5435d1fe5b8f131bed19639843f40cee527d9c988cc0486a0",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-display-probe.c",
+        "original_sha256": "4e22581f68b82ba1bab3062c7ff679f756ddb4922242aa3e3c5b89a1f9a1b342",
+        "sha256": "4e22581f68b82ba1bab3062c7ff679f756ddb4922242aa3e3c5b89a1f9a1b342",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-probe.h",
+        "original_sha256": "1b13e3dbbefdcb16edc73b15aec1d7849cce915699a7e9af63c53b54dc71bd66",
+        "sha256": "1b13e3dbbefdcb16edc73b15aec1d7849cce915699a7e9af63c53b54dc71bd66",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-display-surface-abi.h",
+        "original_sha256": "d15547bc9d6085ef514054a2aca9502cee1e7d3c986299d4f7100a9504b1693e",
+        "sha256": "d15547bc9d6085ef514054a2aca9502cee1e7d3c986299d4f7100a9504b1693e",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-dpu-observer-v41.c",
+        "original_sha256": "175de6b7375202fe96b320b4f6c04fedda36a91c05232935cf801cb91e0f56ef",
+        "sha256": "175de6b7375202fe96b320b4f6c04fedda36a91c05232935cf801cb91e0f56ef",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-dpu-observer-v42.c",
+        "original_sha256": "605a2cb3be5d39228573355259723f6fe9c95c26eb01251c41bc5ed27e34634f",
+        "sha256": "605a2cb3be5d39228573355259723f6fe9c95c26eb01251c41bc5ed27e34634f",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-dpu-observer-v43.c",
+        "original_sha256": "0c6e96e2f4b8149ba265deafb11399168b7585153a60ac80adea9dd3d03c105b",
+        "sha256": "0c6e96e2f4b8149ba265deafb11399168b7585153a60ac80adea9dd3d03c105b",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-dpu-snapshot.c",
+        "original_sha256": "6f3868ab6416c48b9634d4204696acd043b47b15645fceb75b66276a3d8c6c57",
+        "sha256": "6f3868ab6416c48b9634d4204696acd043b47b15645fceb75b66276a3d8c6c57",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-dpu-survey-v43.c",
+        "original_sha256": "d34c036b797cef6b56baa87496a79b8b7978e5e4ee4f59e761571932297be9b2",
+        "sha256": "d34c036b797cef6b56baa87496a79b8b7978e5e4ee4f59e761571932297be9b2",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-dpu-sync-v42.c",
+        "original_sha256": "7ea196239baf9fdef67ae35978c978589598088037c6470540de27145857e306",
+        "sha256": "7ea196239baf9fdef67ae35978c978589598088037c6470540de27145857e306",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-gic-guard.c",
+        "original_sha256": "c49176837976eabcc00fbc073e72b1a7a8cd615a070050541eac8f86e112bd41",
+        "sha256": "c49176837976eabcc00fbc073e72b1a7a8cd615a070050541eac8f86e112bd41",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-boot-regs.h",
+        "original_sha256": "437efd685f69bb10984495dd6364b5a300ba10505a85b7fa6d11bbd6d3107903",
+        "sha256": "437efd685f69bb10984495dd6364b5a300ba10505a85b7fa6d11bbd6d3107903",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-boot.c",
+        "original_sha256": "5c0908b6677cae4469b4da23600a32c2c80c2e635f9d8cee46ffa3d772df6247",
+        "sha256": "5c0908b6677cae4469b4da23600a32c2c80c2e635f9d8cee46ffa3d772df6247",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-clock.c",
+        "original_sha256": "4639dca3334e7b7414f5781f945e0044e664e51733c00556dcda09a7a255a8c2",
+        "sha256": "4639dca3334e7b7414f5781f945e0044e664e51733c00556dcda09a7a255a8c2",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-context.c",
+        "original_sha256": "ecf8edfb4b18f38c2e369852e94c081654fa0bc24ea845543208f54d6cecc11d",
+        "sha256": "ecf8edfb4b18f38c2e369852e94c081654fa0bc24ea845543208f54d6cecc11d",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-core-access.c",
+        "original_sha256": "d5230921778d552a47f9bd88e50be89325478f6ae740f3e66112cd3ec91d4af7",
+        "sha256": "d5230921778d552a47f9bd88e50be89325478f6ae740f3e66112cd3ec91d4af7",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-gpu-core-memory.c",
+        "original_sha256": "7a0fe12b0f90c1186193e2327b93ca38d0303884db2e2eefe1c27391581ac2eb",
+        "sha256": "7a0fe12b0f90c1186193e2327b93ca38d0303884db2e2eefe1c27391581ac2eb",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-cp-plan.c",
+        "original_sha256": "b03b0cd3fc1c21612ccb9f409a8614f29820842a22320c478fbaed9ca729f1b4",
+        "sha256": "b03b0cd3fc1c21612ccb9f409a8614f29820842a22320c478fbaed9ca729f1b4",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-cp.c",
+        "original_sha256": "d8a03e25938be35432c17b9f7cc94ab8aabcf109407504cf5a4d181a999db837",
+        "sha256": "d8a03e25938be35432c17b9f7cc94ab8aabcf109407504cf5a4d181a999db837",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-desktop-profile.py",
+        "original_sha256": "1eb18b477483ee56f3582181814ef4ee2e705dbcb90bf3f6b1958873bb16fffd",
+        "sha256": "1eb18b477483ee56f3582181814ef4ee2e705dbcb90bf3f6b1958873bb16fffd",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-desktop-v58.c",
+        "original_sha256": "f55d5a6b3bfb075a9a5ada1be134c83491c36f7d34941d620da9cb4ff8d410d9",
+        "sha256": "f55d5a6b3bfb075a9a5ada1be134c83491c36f7d34941d620da9cb4ff8d410d9",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-desktop.c",
+        "original_sha256": "61dd1fa47603eb03a2c432851b062d1cae15c02946f421021f74ba9efda07b85",
+        "sha256": "61dd1fa47603eb03a2c432851b062d1cae15c02946f421021f74ba9efda07b85",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-gl-probe.c",
+        "original_sha256": "f31ea4e7d4c3bdc88a2500489730620e938ad78368b6e8c3ebdb6c37c7a51191",
+        "sha256": "f31ea4e7d4c3bdc88a2500489730620e938ad78368b6e8c3ebdb6c37c7a51191",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-gx-v57.c",
+        "original_sha256": "dc04079bd403b1063275c99c52e9c18db9772f8750a33bc30c518a3810ddd528",
+        "sha256": "dc04079bd403b1063275c99c52e9c18db9772f8750a33bc30c518a3810ddd528",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-gx.c",
+        "original_sha256": "4403c4c3711ce0f47972bddd633a75affb37b94130895ba718bbf1b414528adb",
+        "sha256": "4403c4c3711ce0f47972bddd633a75affb37b94130895ba718bbf1b414528adb",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-hfi-core.c",
+        "original_sha256": "2527aa5435bf499ebf73a19d51b77eb30a17d05aa57ccffd58bf55b66d1ee88f",
+        "sha256": "2527aa5435bf499ebf73a19d51b77eb30a17d05aa57ccffd58bf55b66d1ee88f",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-hfi-io.c",
+        "original_sha256": "52463bc0ba8a4753b70ad2df26e85117300e8afae8ac538772ee6ed228ae8acf",
+        "sha256": "52463bc0ba8a4753b70ad2df26e85117300e8afae8ac538772ee6ed228ae8acf",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-hfi-perf.c",
+        "original_sha256": "f80e5f5c07dcd5758a1fcd5f4125fa51107f4234be0f84a6b0808129ff60e041",
+        "sha256": "f80e5f5c07dcd5758a1fcd5f4125fa51107f4234be0f84a6b0808129ff60e041",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-hfi-transfer.h",
+        "original_sha256": "e0a3fd90623b822768c0d69c4e15c916bc10f0e97fd349666efa0752e4d90887",
+        "sha256": "e0a3fd90623b822768c0d69c4e15c916bc10f0e97fd349666efa0752e4d90887",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-hfi.c",
+        "original_sha256": "1c69a85600c1df93bb2e34b63c13b8f7318d8ccab209573f49ed4edbecc38b91",
+        "sha256": "1c69a85600c1df93bb2e34b63c13b8f7318d8ccab209573f49ed4edbecc38b91",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-probe.c",
+        "original_sha256": "54621a676d0081d91c9cbe8e49a166290230dd9df4a8134aaf341a059a82bc08",
+        "sha256": "54621a676d0081d91c9cbe8e49a166290230dd9df4a8134aaf341a059a82bc08",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-ram.c",
+        "original_sha256": "2728645313e1c9230685393e8d08081c942befcdfdf6112e76754e926dd1882b",
+        "sha256": "2728645313e1c9230685393e8d08081c942befcdfdf6112e76754e926dd1882b",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-resources.c",
+        "original_sha256": "3cae183397d9165e8b6b19c5dcf670845d3e4afb8e01a83da0bb734ea35b0a59",
+        "sha256": "3cae183397d9165e8b6b19c5dcf670845d3e4afb8e01a83da0bb734ea35b0a59",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-resources.h",
+        "original_sha256": "00006a4fe1d8a686cccd6c188edbae0282042ad23d31d52d58929e67b364fd01",
+        "sha256": "00006a4fe1d8a686cccd6c188edbae0282042ad23d31d52d58929e67b364fd01",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-route.c",
+        "original_sha256": "e7e5dcfed7b8ab7a4cb1f0fd1f9b001b5308ecd32a2d0c72e0eb6f57a5465bab",
+        "sha256": "e7e5dcfed7b8ab7a4cb1f0fd1f9b001b5308ecd32a2d0c72e0eb6f57a5465bab",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-rpmh.c",
+        "original_sha256": "296cf7489b6c7d6aa476e6be4acd09e45b99301a67f825302bc261f74d3f3bb8",
+        "sha256": "296cf7489b6c7d6aa476e6be4acd09e45b99301a67f825302bc261f74d3f3bb8",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-rsc-init.c",
+        "original_sha256": "e1bbc71783a4cbe53b8b0583df29004f9a6bd8166aeda2142787c322f172665d",
+        "sha256": "e1bbc71783a4cbe53b8b0583df29004f9a6bd8166aeda2142787c322f172665d",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-runtime.h",
+        "original_sha256": "3cdd424b12e957386c6e05a405609aaf3278a50251f1f43bd23c069e60c97fc5",
+        "sha256": "3cdd424b12e957386c6e05a405609aaf3278a50251f1f43bd23c069e60c97fc5",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-scm.c",
+        "original_sha256": "f5806e158cea6a8bb304b502a95b82c034837d0149a03ba8bee7b948cf48cbbd",
+        "sha256": "f5806e158cea6a8bb304b502a95b82c034837d0149a03ba8bee7b948cf48cbbd",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi-gpu-table-plan.c",
+        "original_sha256": "1ecb66b621db485201d0f9e1dd33f615460a1c3b31923e6f12f66bc724081b6c",
+        "sha256": "1ecb66b621db485201d0f9e1dd33f615460a1c3b31923e6f12f66bc724081b6c",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-table-plan.h",
+        "original_sha256": "0c9730934cacbb422a2c0e7acd4cf9f1151f2a64069bf5b489960171eb3cc8ed",
+        "sha256": "0c9730934cacbb422a2c0e7acd4cf9f1151f2a64069bf5b489960171eb3cc8ed",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-tile.c",
+        "original_sha256": "f4e0109f044118dbef03a7d9aeb30177f6e33000067e18330784c78439dd387c",
+        "sha256": "f4e0109f044118dbef03a7d9aeb30177f6e33000067e18330784c78439dd387c",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-unsecure.c",
+        "original_sha256": "5eca088ed40f13f8e00dde23b0dc96dfd695d0f266a6aae9ff648e064b94fbcd",
+        "sha256": "5eca088ed40f13f8e00dde23b0dc96dfd695d0f266a6aae9ff648e064b94fbcd",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-zap-load.c",
+        "original_sha256": "64491717f21695f56075cedc0804bfeb905d2f09d4adf82165679bef07aa41e5",
+        "sha256": "64491717f21695f56075cedc0804bfeb905d2f09d4adf82165679bef07aa41e5",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-gpu-zap-metadata.c",
+        "original_sha256": "9847866d824b24e318b15b552c8b787af44b4844782a1ddc5d210ff18912bcec",
+        "sha256": "9847866d824b24e318b15b552c8b787af44b4844782a1ddc5d210ff18912bcec",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-kernel-log.c",
+        "original_sha256": "aa40686875625543432cb27843e2be04ecc1862d9eda550877d01f2c320c77f7",
+        "sha256": "aa40686875625543432cb27843e2be04ecc1862d9eda550877d01f2c320c77f7",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-smp-return.S",
+        "original_sha256": "d10e8ab9f2b15383d9fb025c39a18049e5d140904b2209b7d4969a5eb1990f78",
+        "sha256": "d10e8ab9f2b15383d9fb025c39a18049e5d140904b2209b7d4969a5eb1990f78",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-touch-timing.h",
+        "original_sha256": "f5791261a2c4adf83b27d9d07cf6b42fd81f5dc2d7fcb135ebd64c832bcc1e91",
+        "sha256": "f5791261a2c4adf83b27d9d07cf6b42fd81f5dc2d7fcb135ebd64c832bcc1e91",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-touch.c",
+        "original_sha256": "9c5560246fcaa168a2bd5667cb1d012c6dda6fd12cad1b9ec3795b369e784127",
+        "sha256": "9c5560246fcaa168a2bd5667cb1d012c6dda6fd12cad1b9ec3795b369e784127",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi-wallpaper-probe.c",
+        "original_sha256": "247d0541c4dc7e9bd6187498d3422ba9e8ca520078d001ec1ff571d3d835a9ab",
+        "sha256": "247d0541c4dc7e9bd6187498d3422ba9e8ca520078d001ec1ff571d3d835a9ab",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi_checkpoint_policy.py",
+        "original_sha256": "53388e41c3c897e866dc812cf494d4e900192058d80fd65c8623dc6453356a96",
+        "sha256": "53388e41c3c897e866dc812cf494d4e900192058d80fd65c8623dc6453356a96",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi_display_v40_policy.py",
+        "original_sha256": "a12fcdb6e8d984afce25b7672dcc259a26bbeee2d561cf6bc8cc66463684b8e4",
+        "sha256": "a12fcdb6e8d984afce25b7672dcc259a26bbeee2d561cf6bc8cc66463684b8e4",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi_display_v41_policy.py",
+        "original_sha256": "53edfe60be5b49840d4db04f2438d4afe95bc11577a6973b9453ed8182cfc834",
+        "sha256": "53edfe60be5b49840d4db04f2438d4afe95bc11577a6973b9453ed8182cfc834",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v42_policy.py",
+        "original_sha256": "50865870aa1b3308153ce729a8a0b310496cb3591cf1d0310028926db01a9bef",
+        "sha256": "50865870aa1b3308153ce729a8a0b310496cb3591cf1d0310028926db01a9bef",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v43_policy.py",
+        "original_sha256": "60e88f9dba175056e0143c65fd0500bb1a88f0c98c8831251a451b4f4e043c29",
+        "sha256": "60e88f9dba175056e0143c65fd0500bb1a88f0c98c8831251a451b4f4e043c29",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v44_policy.py",
+        "original_sha256": "9e9baf1edc0ca2d969b01031648ccc9448488759d7d7d71d0aac538a1121a417",
+        "sha256": "9e9baf1edc0ca2d969b01031648ccc9448488759d7d7d71d0aac538a1121a417",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v45_policy.py",
+        "original_sha256": "de02307cc7c0aa00cc4dfa9a6b7488e5e7f57fb0e56e5282d602f578d7cc35d6",
+        "sha256": "de02307cc7c0aa00cc4dfa9a6b7488e5e7f57fb0e56e5282d602f578d7cc35d6",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v46_policy.py",
+        "original_sha256": "9207193081c5021c1c5c377a3943769a9355f296853e9e01f71b109de07137ce",
+        "sha256": "9207193081c5021c1c5c377a3943769a9355f296853e9e01f71b109de07137ce",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v47_policy.py",
+        "original_sha256": "744f304943199671fed83f934138b88549163b57527ffddd034cf3193c518a7b",
+        "sha256": "744f304943199671fed83f934138b88549163b57527ffddd034cf3193c518a7b",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v48_policy.py",
+        "original_sha256": "6ca74da9562eb5aecfef21f8ff9e2e001d982e8c9cbcac9901550e03244695b9",
+        "sha256": "6ca74da9562eb5aecfef21f8ff9e2e001d982e8c9cbcac9901550e03244695b9",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v49_policy.py",
+        "original_sha256": "6b856954b45c58be9b8c65d2998ac97e684cf5588dc6e9c02ce5013b1aee8660",
+        "sha256": "6b856954b45c58be9b8c65d2998ac97e684cf5588dc6e9c02ce5013b1aee8660",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v50_policy.py",
+        "original_sha256": "07b638ef7f511348e3b041a3d9a3cc4be09e2e0b00804ea4aaccaf0e8fd2df50",
+        "sha256": "07b638ef7f511348e3b041a3d9a3cc4be09e2e0b00804ea4aaccaf0e8fd2df50",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v51_policy.py",
+        "original_sha256": "168be2c048fcbd8aa606e5d6fa97caf305b70cab9fc2ad6535274a306ed7e1a5",
+        "sha256": "168be2c048fcbd8aa606e5d6fa97caf305b70cab9fc2ad6535274a306ed7e1a5",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v52_policy.py",
+        "original_sha256": "4e0f7c8dbcad0000047ebee5e341d60a6eeaadd88ae9200f8b8bdabdd1ef5924",
+        "sha256": "4e0f7c8dbcad0000047ebee5e341d60a6eeaadd88ae9200f8b8bdabdd1ef5924",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v53_policy.py",
+        "original_sha256": "890efff1a77492bdd6d7e6a00ecaf96af8eb4d0810b85a3b3883d548e1e9ddaf",
+        "sha256": "890efff1a77492bdd6d7e6a00ecaf96af8eb4d0810b85a3b3883d548e1e9ddaf",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/lmi_display_v54_policy.py",
+        "original_sha256": "6ee86db23473789dac689d7110ba367f090d0ec71c087ac52aece8ee0d400a6b",
+        "sha256": "6ee86db23473789dac689d7110ba367f090d0ec71c087ac52aece8ee0d400a6b",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi_display_v55_policy.py",
+        "original_sha256": "94e5c03cff5d4ad96731b49f8f66ce6c30d584b292a40add2ce8afd8cf1dde17",
+        "sha256": "94e5c03cff5d4ad96731b49f8f66ce6c30d584b292a40add2ce8afd8cf1dde17",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi_display_v56_policy.py",
+        "original_sha256": "4b61ca05543036fd5b0aa85059886ba24503ae857ec5125d4028aaa9f1e2a553",
+        "sha256": "4b61ca05543036fd5b0aa85059886ba24503ae857ec5125d4028aaa9f1e2a553",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi_display_v57_policy.py",
+        "original_sha256": "d4ccf285f94c3cd8554e0090c6f4bc680e87ae39accbbe16285e0f5f2d71ed77",
+        "sha256": "d4ccf285f94c3cd8554e0090c6f4bc680e87ae39accbbe16285e0f5f2d71ed77",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi_display_v58_policy.py",
+        "original_sha256": "2fa338a1b449a9fcb081e64bffb9a8f34693ca56238e15d479d32f948d2411e9",
+        "sha256": "2fa338a1b449a9fcb081e64bffb9a8f34693ca56238e15d479d32f948d2411e9",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/lmi_display_v59_policy.py",
+        "original_sha256": "0daa22db970e6ae19c9f4048c5fa78d88ff4f4853be5f2aba325b321a38b3f63",
+        "sha256": "0daa22db970e6ae19c9f4048c5fa78d88ff4f4853be5f2aba325b321a38b3f63",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/package-lmi-diagnostics.py",
+        "original_sha256": "674cb98f2012b918f0a16684b4851ce67c3436f506f5b8ece9111e2dd31e9474",
+        "sha256": "674cb98f2012b918f0a16684b4851ce67c3436f506f5b8ece9111e2dd31e9474",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/prepare-lmi-display-compositor-layout.py",
+        "original_sha256": "2f14619d58007be66bd358be9dd94cdc62bdd5efc995d665c9644769209be67e",
+        "sha256": "2f14619d58007be66bd358be9dd94cdc62bdd5efc995d665c9644769209be67e",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/prepare-lmi-ios-images.py",
+        "original_sha256": "bf6f68c640db8b51975216a04277957ee05572ca2fdd03dd9df91cd3b161731e",
+        "sha256": "bf6f68c640db8b51975216a04277957ee05572ca2fdd03dd9df91cd3b161731e",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/redwood_gl.h",
+        "original_sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51",
+        "sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/redwood_input.h",
+        "original_sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec",
+        "sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/relink-lmi-display-early-thunks.py",
+        "original_sha256": "fe94c5243a576af01bd4ef2482ddc142a40527be69da86ea6b58f089d21a80b4",
+        "sha256": "fe94c5243a576af01bd4ef2482ddc142a40527be69da86ea6b58f089d21a80b4",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/relink-lmi-display-runtime.py",
+        "original_sha256": "6aeaebbaaf12d3b2916694432e86ef75986666f5b4b27084ff33cce57175753d",
+        "sha256": "6aeaebbaaf12d3b2916694432e86ef75986666f5b4b27084ff33cce57175753d",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/stage-lmi-uefi.py",
+        "original_sha256": "aced56f72bcbcf748de1d704a38905b07dbf07cfbd82e362d1e9f25b55934bd8",
+        "sha256": "aced56f72bcbcf748de1d704a38905b07dbf07cfbd82e362d1e9f25b55934bd8",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/test-lmi-checkpoints.py",
+        "original_sha256": "e6a06e1a53b958e535339917cc93b2d549efe13d3ccafcf019a8690ba7fde167",
+        "sha256": "04a15046c20a5e00b1e9ef831a57a23dbe69dfe835dd12defb1ffb97074b1499",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-ios165-downloads.py",
+        "original_sha256": "e1b1f9154a10afee0245e87333fc11084a573768526a208edf60d55dff1e7e27",
+        "sha256": "e1b1f9154a10afee0245e87333fc11084a573768526a208edf60d55dff1e7e27",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gl-copy.py",
+        "original_sha256": "e535a8cc4d34b292fd15e2a30d6e4f7589ca2cc5124e8123cd0f1e5619280a22",
+        "sha256": "e535a8cc4d34b292fd15e2a30d6e4f7589ca2cc5124e8123cd0f1e5619280a22",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-boot.py",
+        "original_sha256": "d18fa018ef9547bcbbecdd7966df393135ec28fa1dc6b211ac614ac199b7f398",
+        "sha256": "d18fa018ef9547bcbbecdd7966df393135ec28fa1dc6b211ac614ac199b7f398",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-clock.py",
+        "original_sha256": "a40ba8e138087e8a72188144825e4f644f158d035db1da3a3d247286ea27597a",
+        "sha256": "a40ba8e138087e8a72188144825e4f644f158d035db1da3a3d247286ea27597a",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-core-access.py",
+        "original_sha256": "5b1e22219dc593e627816c6209d7536637835ee3d677f2e1a44d82bd9169755c",
+        "sha256": "5b1e22219dc593e627816c6209d7536637835ee3d677f2e1a44d82bd9169755c",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-core-memory.py",
+        "original_sha256": "0840915f40a55bb2f2948d4d7822068fe9d93d02cbdb5b0321d6770086eb332f",
+        "sha256": "0840915f40a55bb2f2948d4d7822068fe9d93d02cbdb5b0321d6770086eb332f",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-cp-config-plan.py",
+        "original_sha256": "abf11567a99cdba0e758053502ee6ea5cf6961fc07cacd023329c987c20e77e9",
+        "sha256": "abf11567a99cdba0e758053502ee6ea5cf6961fc07cacd023329c987c20e77e9",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-cp-plan.py",
+        "original_sha256": "6f63c5ae7af3b20ba5238557306acf1bb3d19af1972d51f3a295ce77f36e5629",
+        "sha256": "6f63c5ae7af3b20ba5238557306acf1bb3d19af1972d51f3a295ce77f36e5629",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-cp.py",
+        "original_sha256": "7919a3a553003598c60c4fcbf55188708f486018beac90dc08e15427849517d7",
+        "sha256": "7919a3a553003598c60c4fcbf55188708f486018beac90dc08e15427849517d7",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-desktop.py",
+        "original_sha256": "83fb6aa92d9be487bf283ca62de26245124d0ab0410ef764e8150cc8db5261ef",
+        "sha256": "83fb6aa92d9be487bf283ca62de26245124d0ab0410ef764e8150cc8db5261ef",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-gl.py",
+        "original_sha256": "823c4fb132552983ab9c8c094abd9c89f379fa6d98c51c667b64a6aeab39e8ab",
+        "sha256": "823c4fb132552983ab9c8c094abd9c89f379fa6d98c51c667b64a6aeab39e8ab",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-gx.py",
+        "original_sha256": "b5f1c19a953cac1ecd0b0e9e56d8491baf8b2d27d65705c3e4761ac0ef1f8ba0",
+        "sha256": "b5f1c19a953cac1ecd0b0e9e56d8491baf8b2d27d65705c3e4761ac0ef1f8ba0",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-hfi-core.py",
+        "original_sha256": "af53328ab0f8cff96a78eda4b24e39716e917c64f8a41934d1ba6fa6478baf46",
+        "sha256": "af53328ab0f8cff96a78eda4b24e39716e917c64f8a41934d1ba6fa6478baf46",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-hfi-io.py",
+        "original_sha256": "04b7bcb4aad5209201cc56a5f4e2101b895f15a18a80eddb7c6b3660ccd9254c",
+        "sha256": "04b7bcb4aad5209201cc56a5f4e2101b895f15a18a80eddb7c6b3660ccd9254c",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-hfi-perf.py",
+        "original_sha256": "c6e36e884990bd063c31e648264abce5b1f543deb9711db9ebf96a18a4a71bef",
+        "sha256": "c6e36e884990bd063c31e648264abce5b1f543deb9711db9ebf96a18a4a71bef",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-route.py",
+        "original_sha256": "0f48df6f221f50268ab9b56712d11f812a7df3f24825703e9a12b40d54ccd7b8",
+        "sha256": "0f48df6f221f50268ab9b56712d11f812a7df3f24825703e9a12b40d54ccd7b8",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-rsc-init.py",
+        "original_sha256": "ebd32c2aca87731bfffb4d19e7f53195b29aaf003a50d12104c3246da4450693",
+        "sha256": "ebd32c2aca87731bfffb4d19e7f53195b29aaf003a50d12104c3246da4450693",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-rsc-state.py",
+        "original_sha256": "7d5672ff2da9fd04bf1c2729309a0455548c6e8d356f0fb9344fec70601e23a5",
+        "sha256": "7d5672ff2da9fd04bf1c2729309a0455548c6e8d356f0fb9344fec70601e23a5",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-scm.py",
+        "original_sha256": "48824643384451df877763ff6ed8c6cffa36a0e63cd5e2a4baa104104ce6d94a",
+        "sha256": "48824643384451df877763ff6ed8c6cffa36a0e63cd5e2a4baa104104ce6d94a",
+        "origin": "workspace source dependency"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-table-plan.py",
+        "original_sha256": "559812b5f12ccb80a6a20d81b260c5f2d257769a413dd558c5e974ffcbc3fab4",
+        "sha256": "559812b5f12ccb80a6a20d81b260c5f2d257769a413dd558c5e974ffcbc3fab4",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-tile.py",
+        "original_sha256": "389efbcb9bde4ae9d532931ce898f5530994268f2acf9bc768e4dfedf32b2a4b",
+        "sha256": "389efbcb9bde4ae9d532931ce898f5530994268f2acf9bc768e4dfedf32b2a4b",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-unsecure.py",
+        "original_sha256": "4fbb6a772be399e593ac5d0615935d0ba503bcf84e359cdf75ccffcf9558e0c0",
+        "sha256": "4fbb6a772be399e593ac5d0615935d0ba503bcf84e359cdf75ccffcf9558e0c0",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-zap-load.py",
+        "original_sha256": "acb83f1ea3385b46de2a158c73d7d5452378eee72d8276e6f9af1aba1d53e24e",
+        "sha256": "acb83f1ea3385b46de2a158c73d7d5452378eee72d8276e6f9af1aba1d53e24e",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "tools/verify-lmi-gpu-zap-metadata.py",
+        "original_sha256": "a7728d0dd59c9d99baef1565596e2c2af21bdc400ce1f83a1c7be190ca5b4239",
+        "sha256": "a7728d0dd59c9d99baef1565596e2c2af21bdc400ce1f83a1c7be190ca5b4239",
+        "origin": "v59 test snapshot"
+      },
+      {
+        "path": "userland-source/userland/src/inject.c",
+        "original_sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa",
+        "sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa",
+        "origin": "v59 image matched source"
+      },
+      {
+        "path": "userland-source/userland/src/redwood_input.h",
+        "original_sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec",
+        "sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec",
+        "origin": "v59 image matched source"
+      },
+      {
+        "path": "userland-source/userland/src/redwood_gl.h",
+        "original_sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51",
+        "sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51",
+        "origin": "v59 image matched source"
+      },
+      {
+        "path": "userland-source/userland/src/inject_sb.c",
+        "original_sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc",
+        "sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc",
+        "origin": "v59 image matched source"
+      }
+    ],
+    "scope": "Frozen v59 tool snapshot plus source dependencies through v59; no later candidate code or proprietary images"
   }
 }

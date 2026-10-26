@@ -49,3 +49,8 @@ python3 tools/build-lmi-gpu-mode.py 46 --tile --desktop --ios-observe-seconds 18
 `test-lmi-checkpoints.py` 是会操作真实设备的历史测试器；本次发布未运行它。研究者应自行核实有界 RAM 返回、设备标识和前置条件。原测试采用临时 fastboot boot，不提供或要求分区刷写。
 
 触控用途缓存修正通过 `build-lmi-gpu-gl-image.py --hid-usage-recheck` 显式启用，需与已有 payload、固件、trace/ABI 检查保持匹配。v31/v32 的成功结论仅对应已归档的同一镜像，不默认推广到其他构建。
+
+
+## v59 更新
+
+2026-10-27 已结束测试的 v59b 源码、单层整帧复制原理、前序异步 GPU 管线、验证范围与统计 ABI 缺陷详见 [v59 专文](V59.zh-CN.md)。整体结果仍为 INCOMPLETE；交互改善不能覆盖无效 FAST 计数或长期稳定性缺口。

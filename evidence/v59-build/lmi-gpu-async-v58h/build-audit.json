@@ -1,0 +1,118 @@
+{
+  "result": "HOST_BUILT_ONLY",
+  "bytes": 5048,
+  "capacity": 5060,
+  "hardware_tested": false,
+  "sha256": "52068a7d3c30af9cbbaea89cf906f61848c607f82d3e3bc7a7a35bdc1f14c0ea",
+  "base_sha256": "5fe49222bc6bbed6678b2a2bfae7c32196f9414438e59fb457c5efd0198b4c43",
+  "sources": {
+    "build-lmi-gpu-async-v58.py": "344fb2ff91b1044656c96f779982853a22ec3693ff39b13684c336354c2fe2a3",
+    "lmi-gpu-desktop-v58.c": "f55d5a6b3bfb075a9a5ada1be134c83491c36f7d34941d620da9cb4ff8d410d9",
+    "lmi-gpu-boot-regs.h": "437efd685f69bb10984495dd6364b5a300ba10505a85b7fa6d11bbd6d3107903",
+    "lmi-gpu-desktop-profile.py": "1eb18b477483ee56f3582181814ef4ee2e705dbcb90bf3f6b1958873bb16fffd"
+  },
+  "compile_flags": [
+    "--target=aarch64-none-elf",
+    "-Oz",
+    "-mllvm",
+    "-enable-machine-outliner=always",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-mgeneral-regs-only",
+    "-fno-stack-protector",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "baseline_reproduced": true,
+  "outside_edits_exact": true,
+  "allowed_file_ranges": [
+    [
+      5069960,
+      5075008
+    ],
+    [
+      11381148,
+      11381152
+    ],
+    [
+      5037684,
+      5037688
+    ],
+    [
+      5038236,
+      5038240
+    ],
+    [
+      5038544,
+      5038548
+    ],
+    [
+      5040548,
+      5040552
+    ],
+    [
+      5040628,
+      5040632
+    ],
+    [
+      5040640,
+      5040644
+    ],
+    [
+      5041788,
+      5041792
+    ],
+    [
+      5042348,
+      5042352
+    ],
+    [
+      5042464,
+      5042468
+    ],
+    [
+      5042800,
+      5042804
+    ],
+    [
+      5042840,
+      5042844
+    ],
+    [
+      5042852,
+      5042856
+    ],
+    [
+      5043448,
+      5043452
+    ],
+    [
+      5044580,
+      5044584
+    ],
+    [
+      5045328,
+      5045332
+    ],
+    [
+      4574416,
+      4574420
+    ]
+  ],
+  "branch_relocations": [
+    {
+      "pc": "0xfffffff007ade99c",
+      "symbol": "lmi_gpu_tile_opt",
+      "before": "0xfffffff0074dacb8",
+      "after": "0xfffffff0074dad7c"
+    }
+  ],
+  "timer_cleanup": "0xfffffff007ae0448",
+  "timer_wrapper": "0xfffffff0074da624",
+  "single_outstanding": true,
+  "submission_asynchronous": true,
+  "hardware_ready": false
+}
