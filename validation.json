@@ -9,8 +9,16 @@
     "input_observers": "PASS: 414 unchanged forwards, 384 bounded logs; ASan/UBSan",
     "HID_routing": "PASS: 5 refusal controls, 210 unchanged forwards and return/output values; bounded records; ASan/UBSan",
     "Python_syntax": "PASS",
-    "HID_usage_recheck": "PASS: 1 restoration and 13 refusal/preservation controls; ASan/UBSan"
+    "HID_usage_recheck": "PASS: 117 v59 source cases; ASan/UBSan",
+    "V59_full_frame": "PASS: 17 integration scenarios with actual v56 compositor/v51 pipeline; ASan/UBSan",
+    "V59_evidence": "PASS: 46 cases",
+    "V58_async_GPU": "PASS: 41 scenarios; ASan/UBSan",
+    "HID_initial_retry": "PASS: 1350 cases, at most 3 native calls; ASan/UBSan"
   },
   "hardware_verified_by_this_publication": false,
-  "touch_update_source_sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882"
+  "touch_update_source_sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882",
+  "v59_hardware_result": "INCOMPLETE",
+  "v59_fast_counts_valid": false,
+  "target_abi_limitation": "Linux host sanitizers do not validate ELF to Darwin variadic snprintf ABI; v59 statistics are invalid",
+  "v59_inject_source_sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa"
 }

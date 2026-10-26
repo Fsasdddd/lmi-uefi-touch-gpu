@@ -13,7 +13,9 @@ def verify(log):
     joined=re.escape(PASS)+r'(com\.apple\.xpc\.launchd\|1970-01-01 \d{2}:\d{2}:\d{2}\.\d{6} <Notice>: Last log repeated 1 times)\n\n'
     log,joined_notices=re.subn('(?m)^'+joined,lambda m:PASS+'\n'+m[1]+'\n',log)
     assert joined_notices<=1, 'Duplicate joined GL completion'
-    lines = [line.strip() for line in log.splitlines() if 'LMI_GL_' in line]
+    # COPY has its own strict verifier. A line containing any shader marker,
+    # including a FAIL joined onto COPY output, must still be checked here.
+    lines = [line.strip() for line in log.splitlines() if re.search(r'LMI_GL_(?!COPY_)', line)]
     assert not any('LMI_GL_FAIL' in line for line in lines), 'GL probe reported failure'
     assert len(lines) == 10, 'GL probe missing, truncated, duplicated, or unexpected records'
     renderer = re.fullmatch(r'LMI_GL_RENDERER (.+)', lines[0])
