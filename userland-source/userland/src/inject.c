@@ -947,7 +947,7 @@ make_service(IOHIDEventSystemClientRef client, const char *product, int page, in
 
 #ifdef LMI_HID_USAGE_RECHECK
 /* The virtual service can already advertise 0xd/4 while BKIOHIDService's
- * initial property reads cached 0/0 (v30). Re-read through the stock serialized
+ * initial property reads cached 0/0 (v30) or 0/4 (v36). Re-read through the stock serialized
  * property accessor before matching publishes the initialized sender. Never
  * infer a device type from an event or change a nonzero cached usage. */
 static void (*input_usage_original)(id, SEL);
@@ -970,13 +970,79 @@ input_usage_set(id service, const char *selector, unsigned value)
 	((void (*)(id, SEL, unsigned))objc_msgSend)(service, sel_registerName(selector), value);
 }
 
+#ifdef LMI_HID_INITIAL_RETRY
+static bool
+input_initial_native_properties_ready(id self)
+{
+	id product = input_usage_property(self, CFSTR("Product"));
+	id maker = input_usage_property(self, CFSTR("Manufacturer"));
+	id transport = input_usage_property(self, CFSTR("Transport"));
+	if (!product || !maker || !transport ||
+	    CFGetTypeID((CFTypeRef)product) != CFStringGetTypeID() ||
+	    CFGetTypeID((CFTypeRef)maker) != CFStringGetTypeID() ||
+	    CFGetTypeID((CFTypeRef)transport) != CFStringGetTypeID() ||
+	    !CFEqual((CFTypeRef)product, CFSTR("Redwood touch screen")) ||
+	    !CFEqual((CFTypeRef)maker, CFSTR("redwood")) ||
+	    !CFEqual((CFTypeRef)transport, CFSTR("SPI"))) {
+		return false;
+	}
+	id p = input_usage_property(self, CFSTR("PrimaryUsagePage"));
+	id u = input_usage_property(self, CFSTR("PrimaryUsage"));
+	int page = 0, usage = 0;
+	if (!p || !u || CFGetTypeID((CFTypeRef)p) != CFNumberGetTypeID() ||
+	    CFGetTypeID((CFTypeRef)u) != CFNumberGetTypeID() ||
+	    !CFNumberGetValue((CFNumberRef)p, kCFNumberIntType, &page) ||
+	    !CFNumberGetValue((CFNumberRef)u, kCFNumberIntType, &usage) ||
+	    page != HID_PAGE_DIGITIZER || usage != HID_USAGE_TOUCH_SCREEN) {
+		return false;
+	}
+	id built = input_usage_property(self, CFSTR("Built-In"));
+	id integrated = input_usage_property(self, CFSTR("DisplayIntegrated"));
+	return built && integrated && CFGetTypeID((CFTypeRef)built) == CFBooleanGetTypeID() &&
+	    CFGetTypeID((CFTypeRef)integrated) == CFBooleanGetTypeID() &&
+	    CFBooleanGetValue((CFBooleanRef)built) && CFBooleanGetValue((CFBooleanRef)integrated);
+}
+
+static void
+input_initial_retry(id self, SEL cmd)
+{
+	/* Still inside initialization, before the service is published to matchers.
+	 * The stock routine replaces its strong descriptor/display references and
+	 * derives source/authentication from the service's own properties. Invoke
+	 * its saved IMP directly, with no setter, async work, or recursive hook. */
+	for (unsigned retry = 1; retry <= 2; retry++) {
+		unsigned page = input_usage_cached(self, "primaryUsagePage");
+		unsigned usage = input_usage_cached(self, "primaryUsage");
+		bool built = ((bool (*)(id, SEL))objc_msgSend)(self, sel_registerName("isBuiltIn"));
+		if ((page != 0 && page != HID_PAGE_DIGITIZER) ||
+		    (usage != 0 && usage != HID_USAGE_TOUCH_SCREEN) ||
+		    (page == HID_PAGE_DIGITIZER && usage == HID_USAGE_TOUCH_SCREEN && built)) {
+			return;
+		}
+		if (!input_initial_native_properties_ready(self)) {
+			return;
+		}
+		input_usage_original(self, cmd);
+		say("LMI_HID_INITIAL_RETRY attempt=%u before_page=%u before_usage=%u before_builtin=%u page=%u usage=%u builtin=%u\n",
+		    retry, page, usage, built, input_usage_cached(self, "primaryUsagePage"),
+		    input_usage_cached(self, "primaryUsage"),
+		    ((bool (*)(id, SEL))objc_msgSend)(self, sel_registerName("isBuiltIn")));
+	}
+}
+#endif
+
 static void
 input_usage_initial_properties(id self, SEL cmd)
 {
 	input_usage_original(self, cmd);
+#ifdef LMI_HID_INITIAL_RETRY
+	input_initial_retry(self, cmd);
+#else
 	unsigned page = input_usage_cached(self, "primaryUsagePage");
 	unsigned usage = input_usage_cached(self, "primaryUsage");
-	if (page != 0 || usage != 0) {
+	if ((page == HID_PAGE_DIGITIZER && usage == HID_USAGE_TOUCH_SCREEN) ||
+	    (page != 0 && page != HID_PAGE_DIGITIZER) ||
+	    (usage != 0 && usage != HID_USAGE_TOUCH_SCREEN)) {
 		return;
 	}
 	id product = input_usage_property(self, CFSTR("Product"));
@@ -996,9 +1062,15 @@ input_usage_initial_properties(id self, SEL cmd)
 		say("LMI_HID_USAGE_RECHECK unavailable page=%d usage=%d\n", actual_page, actual_usage);
 		return;
 	}
-	input_usage_set(self, "setPrimaryUsagePage:", actual_page);
-	input_usage_set(self, "setPrimaryUsage:", actual_usage);
-	say("LMI_HID_USAGE_RECHECK restored page=%d usage=%d\n", actual_page, actual_usage);
+	if (page == 0) {
+		input_usage_set(self, "setPrimaryUsagePage:", actual_page);
+	}
+	if (usage == 0) {
+		input_usage_set(self, "setPrimaryUsage:", actual_usage);
+	}
+	say("LMI_HID_USAGE_RECHECK restored page=%d usage=%d before_page=%u before_usage=%u\n",
+	    actual_page, actual_usage, page, usage);
+#endif
 }
 
 static void
@@ -1021,6 +1093,13 @@ input_usage_install(void)
 			return;
 		}
 	}
+#ifdef LMI_HID_INITIAL_RETRY
+	Method built = class_getInstanceMethod(cls, sel_registerName("isBuiltIn"));
+	if (!built || strcmp(method_getTypeEncoding(built), "B16@0:8") != 0) {
+		say("LMI_HID_INITIAL_RETRY builtin_accessor_refused\n");
+		return;
+	}
+#endif
 	input_usage_original = (void (*)(id, SEL))original;
 	method_setImplementation(method, (IMP)input_usage_initial_properties);
 	say("LMI_HID_USAGE_RECHECK installed\n");

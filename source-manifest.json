@@ -1307,7 +1307,7 @@
     },
     {
       "path": "docs/TOUCH.zh-CN.md",
-      "sha256": "a4d95f305189d2c9354600c7cf4f466327ff102ba6846654e4346ca0f39ed0c9"
+      "sha256": "210ecad92ccf62eb4583cef9f08fdadbb4e87d2913863bf90a990ce612431e25"
     },
     {
       "path": "docs/UEFI.zh-CN.md",
@@ -1435,7 +1435,7 @@
     },
     {
       "path": "patches/userland-local-changes.patch",
-      "sha256": "df84e18c275003c5fbd85dc40761ad04e79a6be0ba9765316916e8853371e919"
+      "sha256": "14f4d496099e107634c857db7d841ee5ef9acfc6bdce48632f2631eddeb0dd4f"
     },
     {
       "path": "port-drafts/uefi/lmi.toml",
@@ -3119,7 +3119,7 @@
     },
     {
       "path": "userland-source/userland/src/inject.c",
-      "sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882"
+      "sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa"
     },
     {
       "path": "userland-source/userland/src/inject_sb.c",
@@ -3143,7 +3143,7 @@
     },
     {
       "path": "validation.json",
-      "sha256": "b99e2b11fd64c7e8c67e09ada0870bd8496e6d03536b6cac13796cc1569a4735"
+      "sha256": "a5f0ea843f15532f72199fa0ef35d9374086a54eb0770058eade217bdd9f8a60"
     }
   ],
   "touch_update": {
@@ -4989,6 +4989,30 @@
         "original_sha256": "a7728d0dd59c9d99baef1565596e2c2af21bdc400ce1f83a1c7be190ca5b4239",
         "sha256": "a7728d0dd59c9d99baef1565596e2c2af21bdc400ce1f83a1c7be190ca5b4239",
         "origin": "v59 test snapshot"
+      },
+      {
+        "path": "userland-source/userland/src/inject.c",
+        "original_sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa",
+        "sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa",
+        "origin": "v59 image matched source"
+      },
+      {
+        "path": "userland-source/userland/src/redwood_input.h",
+        "original_sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec",
+        "sha256": "f1c49a8f29d29ee10a29c988fdd867a1c620f1e35dc53acd45daafd433b7d2ec",
+        "origin": "v59 image matched source"
+      },
+      {
+        "path": "userland-source/userland/src/redwood_gl.h",
+        "original_sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51",
+        "sha256": "09ea021f0ab8f88d3a4e52ef83bc15c2ff025b7fc4ffdd1da7324098845d3b51",
+        "origin": "v59 image matched source"
+      },
+      {
+        "path": "userland-source/userland/src/inject_sb.c",
+        "original_sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc",
+        "sha256": "4faf6787f79310154172e869407a9ac619bc394a19882ba9030094b87d77c6cc",
+        "origin": "v59 image matched source"
       }
     ],
     "scope": "Frozen v59 tool snapshot plus source dependencies through v59; no later candidate code or proprietary images"
