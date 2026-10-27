@@ -1,0 +1,50 @@
+{
+  "result": "HOST_BUILT_ONLY",
+  "base_sha256": "be0c25e5e871fe0b1d7f8378ec72eaf7b89414bcd675e07fc8219e4e18d9cf40",
+  "sha256": "1e76f68263c0e9c02d47fd2528f7f589087726f1d59fb96154e9b5c928077a8b",
+  "edits": [
+    {
+      "pc": "0xfffffff0074c2cb0",
+      "file_offset": 4975792,
+      "old": "0x713e827f",
+      "new": "0x7141927f",
+      "purpose": "Finite loop limit 4000 -> 409600; minimum 1ms yielding pause prevents early expiry during the RAM run"
+    },
+    {
+      "pc": "0xfffffff0074c2d28",
+      "file_offset": 4975912,
+      "old": "0x52986a00",
+      "new": "0x5280fa00",
+      "purpose": "Idle/header retry pause 50000us -> 2000us"
+    },
+    {
+      "pc": "0xfffffff0074c2ec8",
+      "file_offset": 4976328,
+      "old": "0x5289c400",
+      "new": "0x52807d00",
+      "purpose": "Valid report pause 20000us -> 1000us"
+    }
+  ],
+  "outside_edits_exact": true,
+  "changed_instruction_bytes": 12,
+  "active_pause_us": 1000,
+  "idle_pause_us": 2000,
+  "iteration_limit": 409600,
+  "error_pause_us": 20000,
+  "cold_invalid_pause_us": 200000,
+  "min_valid_loop_lifetime_seconds": 409.6,
+  "bus_edges_unchanged": true,
+  "touch_parser_unchanged": true,
+  "init_and_chip_id_gates_unchanged": true,
+  "gpu_and_dpu_unchanged": true,
+  "hardware_tested": false,
+  "performance_verified": false,
+  "inputs": {
+    "tools\\build-lmi-touch-cadence-v72.py": "e07c375376b8ababdb2c5a88c3ef591795e77f564e104905ae048eb19dd2cc1c",
+    "out\\lmi-gpu-deferred-cache-v71\\mach.development.bcm2837": "be0c25e5e871fe0b1d7f8378ec72eaf7b89414bcd675e07fc8219e4e18d9cf40",
+    "tools\\lmi-touch.c": "9c5560246fcaa168a2bd5667cb1d012c6dda6fd12cad1b9ec3795b369e784127",
+    "tools\\lmi-touch-timing.h": "f5791261a2c4adf83b27d9d07cf6b42fd81f5dc2d7fcb135ebd64c832bcc1e91",
+    "out\\lmi-kernel-ios-continue\\touch.elf": "2d87b1cf081716ba87941f4c2719c2535e188c0c7b260cd8077cdee3c5699cdb",
+    "out\\lmi-kernel-ios-continue\\touch-disassembly.txt": "0461e1b3a1835b225eebf2851e5720fb8222729c7517f5fa0f5fbb3f6050a569"
+  }
+}

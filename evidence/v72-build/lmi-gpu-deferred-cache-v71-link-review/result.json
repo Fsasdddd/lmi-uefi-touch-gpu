@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "kernel_sha256": "be0c25e5e871fe0b1d7f8378ec72eaf7b89414bcd675e07fc8219e4e18d9cf40",
+  "object_reproduced": true,
+  "link_reproduced": true,
+  "placed_sections_verified": true,
+  "hooks_verified": true,
+  "outside_edits_exact": true,
+  "full_rx_space_audit": true,
+  "obsolete_entries_disabled": true,
+  "loaded_entry_pointers_preserved": true,
+  "no_writable_globals": true,
+  "correct_native_gpu_lock": true,
+  "real_copy_fence_binding": true,
+  "unlocked_delay_binding": true,
+  "actual_full_frame_helper_binding": true,
+  "no_direct_queue_drain": true,
+  "frozen_backend_and_dpu_preserved": true,
+  "hardware_tested": false,
+  "performance_verified": false,
+  "inputs": {
+    "tools/audit-lmi-gpu-deferred-cache-v71-linked.py": "1ba16fd86cf94f1bb3af533fe1beec86ab855f6cf84f4982e4ad5cf704e72786",
+    "out/lmi-gpu-deferred-cache-v71/build-audit.json": "b26b2fac99ac1d62fd03c16bf2845b23ad07a16ddf0683322a8037211b5d81fc",
+    "out/lmi-gpu-deferred-cache-v71/frame.ld": "15290e5342fc74909a2da8c16cd91cd688a82cb533ce0f9694cb3670fd76c5ae"
+  },
+  "object_sha256": "a027e080e1188d549d893c2ac4a16c5be66336c362d29cd1c15fcb6b19819956",
+  "linked_elf_sha256": "bc998d894233a8a013d48a7e5ff1d5144462bb3e5e37239a8777c6408194e3ea"
+}

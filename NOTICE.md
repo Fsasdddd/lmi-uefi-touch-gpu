@@ -17,3 +17,6 @@
 - https://github.com/MiCode/Xiaomi_Kernel_OpenSource/tree/lmi-q-oss
 
 UEFI 平台/BootShim/Mu overlay 和相关差异沿用 Mu-Silicium、Mu_Basecore 及各文件原始许可，见 LICENSES/Mu-Silicium-BSD.txt；由公开 loader 源码生成的嵌入 C 数组按原源码许可。
+
+
+`build-support/v72/` 中的生成C源码、头文件和链接脚本保留原始来源关系；从已有合成/图形源码生成的测试输入沿用对应源文件许可，独立测试与构建辅助部分按根MIT许可。生成目录不含系统镜像、固件或内核二进制。

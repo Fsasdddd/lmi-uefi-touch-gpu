@@ -1,0 +1,384 @@
+{
+  "result": "HOST_BUILT_ONLY",
+  "sha256": "be0c25e5e871fe0b1d7f8378ec72eaf7b89414bcd675e07fc8219e4e18d9cf40",
+  "base_sha256": "64ff409c50ca8deccef195ac787227c4dce7f0720934b64f35fa9f7f372f84c1",
+  "sources": {
+    "build-lmi-gpu-deferred-cache-v71.py": "964895e942ece59e6e3d62cf465a67f7d5dab3c4a5efe9ec2fecada5dbcc3476",
+    "lmi-gpu-deferred-cache-v71.c": "51a8fb70407053bdba0dabfc0254668321ba6229f06ee090cf68e06ab5bbe5b3",
+    "lmi-gpu-deferred-cache-v71.h": "6ef3945904b3cf3752893c22f7a165bf9017d4b7d3665224765559db33c19bd9",
+    "lmi-display-preclean-v65.h": "27787e19a93b255ad49755263cb3bff6e5b23397a75d44c885ff7a29f4df56c6",
+    "lmi-display-fast-v62.h": "ed983a119054b8754d4acd61a1fa7a29bcfa184f9f0174a7c2742a2bda208e70",
+    "lmi-display-pipeline.h": "91b346263c17dfc4f17cf9c9303ca0d2a5047bc29ef193109087f1dacd21b8f0",
+    "lmi-display-dma.h": "bc6145ea9cec7983eee57c6a111cfe55e0979670a3190486c230e71a02171f00",
+    "lmi-display-compositor-abi.h": "9aecfccfeedb254950c07972bad048a3c069d1da672e1b5f85d50a46700e4cd8",
+    "lmi-display-surface-abi.h": "d15547bc9d6085ef514054a2aca9502cee1e7d3c986299d4f7100a9504b1693e",
+    "lmi-gpu-copy-v66.h": "ab9d875205d36498cef28cf68be8ea4ae97c35ec30b6c5ba3a566a9168ec0712",
+    "lmi-gpu-blit-v68.c": "8d459c250edb7459a98ba7b0e66d00dd639fc5fb6316c62205012e2010995796",
+    "lmi-gpu-blit-v68.h": "31011dcf0eff9de8567ad90e8327a7248f7bec740e914c2d4df7e28521f3eea4"
+  },
+  "inputs": {
+    "tools/build-lmi-gpu-deferred-cache-v71.py": "964895e942ece59e6e3d62cf465a67f7d5dab3c4a5efe9ec2fecada5dbcc3476",
+    "tools/prepare-lmi-gpu-deferred-build-v71.py": "0a80df000d8372dbacff037ee2135faf70290bdc84a3c4a6f9606b65280271dd",
+    "out/lmi-gpu-copy-v66c/mach.development.bcm2837": "64ff409c50ca8deccef195ac787227c4dce7f0720934b64f35fa9f7f372f84c1",
+    "out/lmi-gpu-frame-space-v67/result.json": "5d51ad76d63f38e1edbfe741f210be922e826336d2b2a36275a2fc4928cc01c6",
+    "out/lmi-gpu-deferred-cache-v71-host/result.json": "6ae0cb41746f2ff6ea2116519de075ae82cd0403770129e1070ac6bd70231f8a",
+    "out/lmi-gpu-deferred-cache-v71-stop/result.json": "338eefb7a451a7796d8a952b9ea26e0bbbbc66c06ffad950e22a53fa33f7c638",
+    "out/lmi-display-fast-v62d/runtime-symbols.json": "1c0cbcbc62c535ac07239b55ed5905e8e375c8854e78cc60d36c05c2e8bd1c44",
+    "out/lmi-display-preclean-v65b/runtime-symbols.json": "6dba01a32688b01e63164d3090cea59dc2b7a0b444c12895984cc63754c2c750",
+    "out/lmi-gpu-queue-v64b/runtime-symbols.json": "87cb8c59c7316f37a53654b18c85b3c686a26b69cc088670e1699dfecae941f9",
+    "out/lmi-display-preclean-v65b/preclean.o": "c05adf053b2ee7f874ef7402a40cddf774ab7281f6a3db20622fb74816e50607",
+    "out/lmi-display-probe-v56f/kernel-symbols.txt": "f3fd9662fc0158a0c8f31c9cde972c9abfae9fa1d9c8068559e3562cd0c9907d",
+    "tools/lmi-gpu-hfi-io.c": "52463bc0ba8a4753b70ad2df26e85117300e8afae8ac538772ee6ed228ae8acf",
+    "tools/lmi-display-compositor-v56.c": "04ec7eed0347c17a1c5daf86ef5b0cf1b12dae7640a6fddde05b1618c43bd4a0",
+    "out/lmi-display-probe-v56f/lmi-display-compositor-v56.c": "04ec7eed0347c17a1c5daf86ef5b0cf1b12dae7640a6fddde05b1618c43bd4a0",
+    "tools/lmi-display-fast-v62.c": "a74b62cfff5460802d0db7627964ee6981dd4eea0666ee71c093fbd0d4c628dc",
+    "hackios/xnu/files/iokit/Kernel/MiniIOMobileFramebuffer.cpp": "78141b3294b6c16b9173d5a7af64dc0b8a16f57d8027c93be608ef9dbbf764e9"
+  },
+  "compile_flags": [
+    "--target=aarch64-none-elf",
+    "-Oz",
+    "-mllvm",
+    "-enable-machine-outliner=always",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-mgeneral-regs-only",
+    "-fno-stack-protector",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "bindings": {
+    "lmi_fast_state": "0xfffffff007b46ff8",
+    "lmi_fast_draw": "0xfffffff0074d1e78",
+    "IOMallocAligned": "0xfffffff00798491c",
+    "bzero": "0xfffffff007adbcc0",
+    "IOLockLock": "0xfffffff0072e4944",
+    "IOLockUnlock": "0xfffffff0072e4bd8",
+    "lmi_preclean_frame": "0xfffffff0074d2538",
+    "lmi_preclean_cleanup": "0xfffffff0074d2888",
+    "lmi_preclean_original_clean": "0xfffffff007ae20a8",
+    "lmi_desktop_map": "0xfffffff0074d9d70",
+    "lmi_desktop_mapped": "0xfffffff0074d9edc",
+    "lmi_desktop_unmap": "0xfffffff0074d9fa0",
+    "lmi_desktop_to_memory": "0xfffffff0074d3338",
+    "lmi_desktop_submit": "0xfffffff0074da0c4",
+    "cache_sync": "0xfffffff007adc9d8",
+    "lmi_frame_full_pixels": "0xfffffff0074d36b4",
+    "lmi_fast_original_fields": "0xfffffff007ae38ac",
+    "lmi_frame_backend": "0xfffffff0074d9c98",
+    "lmi_frame_done": "0xfffffff0074da304",
+    "lmi_frame_pause": "0xfffffff0072c9238",
+    "lmi_frame_hold": "0xfffffff0074d9eb0",
+    "lmi_frame_ticks": "0xfffffff0074dac58",
+    "lmi_frame_physical": "0xfffffff00743ff58",
+    "lmi_frame_gpu_lock": "0xfffffff007f269e8",
+    "lmi_frame_retain": "0xfffffff00793ddc8",
+    "lmi_frame_release": "0xfffffff00793ddb8",
+    "lmi_frame_preclean_ready": "0xfffffff0074d26bc",
+    "lmi_frame_emit": "0xfffffff0074d3e74",
+    "redwood_gpu_address": "0xfffffff0074d2acc",
+    "redwood_gpu_address_free": "0xfffffff0074d2bd4"
+  },
+  "sections": [
+    {
+      "section": ".slot0",
+      "start": "0xfffffff0074d7878",
+      "bytes": 348,
+      "capacity": 348,
+      "inputs": [
+        ".text.full_frame",
+        ".text.OUTLINED_FUNCTION_1"
+      ]
+    },
+    {
+      "section": ".slot1",
+      "start": "0xfffffff0074d79dc",
+      "bytes": 360,
+      "capacity": 368,
+      "inputs": [
+        ".text.eligible",
+        ".text.uncertain"
+      ]
+    },
+    {
+      "section": ".slot2",
+      "start": "0xfffffff0074d7b54",
+      "bytes": 836,
+      "capacity": 836,
+      "inputs": [
+        ".text.lmi_blit_commands",
+        ".text.OUTLINED_FUNCTION_3"
+      ]
+    },
+    {
+      "section": ".slot4",
+      "start": "0xfffffff0074d83dc",
+      "bytes": 764,
+      "capacity": 768,
+      "inputs": [
+        ".text.finish",
+        ".text.save_restore"
+      ]
+    },
+    {
+      "section": ".slot6",
+      "start": "0xfffffff0074d8a94",
+      "bytes": 252,
+      "capacity": 252,
+      "inputs": [
+        ".text.mapping"
+      ]
+    },
+    {
+      "section": ".slot7",
+      "start": "0xfffffff0074d8b98",
+      "bytes": 488,
+      "capacity": 488,
+      "inputs": [
+        ".text.lmi_gpu_frame_frame",
+        ".text.command_mapping"
+      ]
+    },
+    {
+      "section": ".slot8",
+      "start": "0xfffffff0074d8d88",
+      "bytes": 240,
+      "capacity": 248,
+      "inputs": [
+        ".text.cpu_access",
+        ".text.OUTLINED_FUNCTION_2",
+        ".text.OUTLINED_FUNCTION_5"
+      ]
+    },
+    {
+      "section": ".slot9",
+      "start": "0xfffffff0074d8e88",
+      "bytes": 528,
+      "capacity": 532,
+      "inputs": [
+        ".text.source_mapping",
+        ".text.lmi_gpu_frame_draw"
+      ]
+    },
+    {
+      "section": ".slot11",
+      "start": "0xfffffff0074d94fc",
+      "bytes": 296,
+      "capacity": 296,
+      "inputs": [
+        ".text.lmi_gpu_frame_cleanup",
+        ".text.lmi_gpu_frame_allocate",
+        ".text.OUTLINED_FUNCTION_4"
+      ]
+    },
+    {
+      "section": ".slot12",
+      "start": "0xfffffff0074d962c",
+      "bytes": 612,
+      "capacity": 768,
+      "inputs": [
+        ".text.lmi_gpu_frame_clean",
+        ".rodata.str1.1",
+        ".text.lmi_blit_completed",
+        ".text.p7",
+        ".rodata.ranges",
+        ".text.event"
+      ]
+    },
+    {
+      "section": ".slot14",
+      "start": "0xfffffff0074db054",
+      "bytes": 708,
+      "capacity": 708,
+      "inputs": [
+        ".text.copy",
+        ".text.OUTLINED_FUNCTION_0"
+      ]
+    }
+  ],
+  "hooks": [
+    {
+      "pc": "0xfffffff007ae00bc",
+      "original": "0xfffffff0074d2538",
+      "target": "0xfffffff0074d8b98",
+      "symbol": "lmi_gpu_frame_frame"
+    },
+    {
+      "pc": "0xfffffff0074d30e4",
+      "original": "0xfffffff0074d349c",
+      "target": "0xfffffff0074d95c8",
+      "symbol": "lmi_gpu_frame_allocate"
+    },
+    {
+      "pc": "0xfffffff0074d24a0",
+      "original": "0xfffffff0074d2888",
+      "target": "0xfffffff0074d94fc",
+      "symbol": "lmi_gpu_frame_cleanup"
+    },
+    {
+      "pc": "0xfffffff0079e3d80",
+      "original": "0xfffffff0074d1e78",
+      "target": "0xfffffff0074d8fc8",
+      "symbol": "lmi_gpu_frame_draw"
+    },
+    {
+      "pc": "0xfffffff0074d262c",
+      "original": "0xfffffff007ae20a8",
+      "target": "0xfffffff0074d962c",
+      "symbol": "lmi_gpu_frame_clean"
+    }
+  ],
+  "entry_stubs": [
+    "0xfffffff0074d7870",
+    "0xfffffff0074d79d4",
+    "0xfffffff0074d7b4c",
+    "0xfffffff0074d83d4",
+    "0xfffffff0074d8a8c",
+    "0xfffffff0074d8b90",
+    "0xfffffff0074d8d80",
+    "0xfffffff0074d8e80",
+    "0xfffffff0074d94f4",
+    "0xfffffff0074d9624",
+    "0xfffffff0074db04c"
+  ],
+  "early_clean_function_bytes": 388,
+  "allowed_file_ranges": [
+    [
+      5060728,
+      5061076
+    ],
+    [
+      5060720,
+      5060728
+    ],
+    [
+      5061084,
+      5061444
+    ],
+    [
+      5061076,
+      5061084
+    ],
+    [
+      5061460,
+      5062296
+    ],
+    [
+      5061452,
+      5061460
+    ],
+    [
+      5063644,
+      5064408
+    ],
+    [
+      5063636,
+      5063644
+    ],
+    [
+      5065364,
+      5065616
+    ],
+    [
+      5065356,
+      5065364
+    ],
+    [
+      5065624,
+      5066112
+    ],
+    [
+      5065616,
+      5065624
+    ],
+    [
+      5066120,
+      5066360
+    ],
+    [
+      5066112,
+      5066120
+    ],
+    [
+      5066376,
+      5066904
+    ],
+    [
+      5066368,
+      5066376
+    ],
+    [
+      5068028,
+      5068324
+    ],
+    [
+      5068020,
+      5068028
+    ],
+    [
+      5068332,
+      5068944
+    ],
+    [
+      5068324,
+      5068332
+    ],
+    [
+      5075028,
+      5075736
+    ],
+    [
+      5075020,
+      5075028
+    ],
+    [
+      11387068,
+      11387072
+    ],
+    [
+      5042404,
+      5042408
+    ],
+    [
+      5039264,
+      5039268
+    ],
+    [
+      10354048,
+      10354052
+    ],
+    [
+      5039660,
+      5039664
+    ]
+  ],
+  "outside_edits_exact": true,
+  "full_rx_space_audit": true,
+  "journal_prefix_preserved": true,
+  "persistent_source_limit": 8,
+  "desktop_gpu_copy": true,
+  "gpu_2d_blit": true,
+  "state_page_gpu_writable": true,
+  "saved_registers": 21,
+  "register_readback": true,
+  "partial_cpu_compositor_preserved": true,
+  "source_retirement_unchanged": true,
+  "touch_unchanged": true,
+  "dpu_pipeline_unchanged": true,
+  "allocations_retained_until_ram_return": true,
+  "async_copy_join": true,
+  "per_copy_fence": true,
+  "unlocked_copy_wait": true,
+  "stop_pending_backing_preserved": true,
+  "target_cache_reuse": true,
+  "post_invalidate_preserved": false,
+  "deferred_target_cpu_invalidate": true,
+  "state_post_invalidate_preserved": true,
+  "cpu_preservation_requires_ownership_transfer": true,
+  "direct_surface_scanout": false,
+  "wifi_integrated": false,
+  "hardware_tested": false,
+  "performance_verified": false
+}

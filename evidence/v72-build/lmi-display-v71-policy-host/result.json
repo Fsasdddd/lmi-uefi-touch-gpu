@@ -1,0 +1,1528 @@
+{
+  "result": "PASS",
+  "scenarios": 145,
+  "synthetic_only": true,
+  "hardware_tested": false,
+  "raw_v66_rejected": true,
+  "legacy_policy_unchanged": true,
+  "failure_cases": [
+    {
+      "case": "LMI_DPU_FAST-missing",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_DPU_FAST-duplicate",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_DPU_FAST-malformed",
+      "failed_checks": [
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised"
+      ]
+    },
+    {
+      "case": "LMI_DPU_FAST-negative",
+      "failed_checks": [
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised"
+      ]
+    },
+    {
+      "case": "LMI_FRAME_STRIDE-missing",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_FRAME_STRIDE-duplicate",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_FRAME_STRIDE-malformed",
+      "failed_checks": [
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised"
+      ]
+    },
+    {
+      "case": "LMI_FRAME_STRIDE-negative",
+      "failed_checks": [
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised"
+      ]
+    },
+    {
+      "case": "LMI_SWAP_FENCE-missing",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_SWAP_FENCE-duplicate",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_SWAP_FENCE-malformed",
+      "failed_checks": [
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained"
+      ]
+    },
+    {
+      "case": "LMI_SWAP_FENCE-negative",
+      "failed_checks": [
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained"
+      ]
+    },
+    {
+      "case": "LMI_DPU_PRECLEAN-missing",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_DPU_PRECLEAN-duplicate",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_DPU_PRECLEAN-malformed",
+      "failed_checks": [
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised"
+      ]
+    },
+    {
+      "case": "LMI_DPU_PRECLEAN-negative",
+      "failed_checks": [
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised"
+      ]
+    },
+    {
+      "case": "LMI_GPU_BLIT-missing",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_BLIT-duplicate",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_BLIT-malformed",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_BLIT-negative",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_BLIT_LIFETIME-missing",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_BLIT_LIFETIME-duplicate",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_BLIT_LIFETIME-malformed",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_BLIT_LIFETIME-negative",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_TARGET_CACHE-missing",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_TARGET_CACHE-duplicate",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_TARGET_CACHE-malformed",
+      "failed_checks": [
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised"
+      ]
+    },
+    {
+      "case": "LMI_GPU_TARGET_CACHE-negative",
+      "failed_checks": [
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised"
+      ]
+    },
+    {
+      "case": "LMI_GPU_COPY_OVERLAP-missing",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_COPY_OVERLAP-duplicate",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_COPY_OVERLAP-malformed",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_COPY_OVERLAP-negative",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_COPY_PENDING-missing",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.pending_zero",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid",
+        "deferred_cpu_cache.pending_copy_zero"
+      ]
+    },
+    {
+      "case": "LMI_GPU_COPY_PENDING-duplicate",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.pending_zero",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid",
+        "deferred_cpu_cache.pending_copy_zero"
+      ]
+    },
+    {
+      "case": "LMI_GPU_COPY_PENDING-malformed",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.pending_zero",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.pending_copy_zero"
+      ]
+    },
+    {
+      "case": "LMI_GPU_COPY_PENDING-negative",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.pending_zero",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.pending_copy_zero"
+      ]
+    },
+    {
+      "case": "LMI_GPU_CPU_TRANSFER-missing",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_CPU_TRANSFER-duplicate",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_CPU_TRANSFER-malformed",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_CPU_TRANSFER-negative",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_CPU_OWNED-missing",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_CPU_OWNED-duplicate",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_CPU_OWNED-malformed",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_CPU_OWNED-negative",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "gpu-count-0",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "gpu-count-1",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "gpu-count-2",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "gpu-count-3",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "gpu-count-4",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "gpu-count-6",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "lifetime-0",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "lifetime-1",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "lifetime-2",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "lifetime-4",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "lifetime-5",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "lifetime-6",
+      "failed_checks": [
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "target-cache-0-0",
+      "failed_checks": [
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised"
+      ]
+    },
+    {
+      "case": "target-cache-0-11",
+      "failed_checks": [
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised"
+      ]
+    },
+    {
+      "case": "target-cache-1-1989",
+      "failed_checks": [
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised"
+      ]
+    },
+    {
+      "case": "target-cache-2-11",
+      "failed_checks": [
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised"
+      ]
+    },
+    {
+      "case": "target-cache-3-1",
+      "failed_checks": [
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised"
+      ]
+    },
+    {
+      "case": "target-cache-4-0",
+      "failed_checks": [
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised"
+      ]
+    },
+    {
+      "case": "GPU-pretended-to-be-CPU",
+      "failed_checks": [
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised"
+      ]
+    },
+    {
+      "case": "partial-frame-not-accounted",
+      "failed_checks": [
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised"
+      ]
+    },
+    {
+      "case": "CPU-strides-exceed-CPU-copies",
+      "failed_checks": [
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised"
+      ]
+    },
+    {
+      "case": "missing-fresh-copy",
+      "failed_checks": [
+        "copy_probe.counts_valid",
+        "copy_probe.fresh_completion_verified",
+        "copy_probe.before_service_result"
+      ]
+    },
+    {
+      "case": "fault-held",
+      "failed_checks": [
+        "async_gpu.exit_gpu_drain_verified",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "async_gpu.fault_held"
+      ]
+    },
+    {
+      "case": "out-of-order",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_QUEUE-missing",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_QUEUE-duplicate",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_QUEUE-extra-word",
+      "failed_checks": [
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained"
+      ]
+    },
+    {
+      "case": "LMI_GPU_MAP_BATCH-missing",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_MAP_BATCH-duplicate",
+      "failed_checks": [
+        "record_order_valid",
+        "gpu_frame.counts_valid",
+        "gpu_frame.exercised",
+        "gpu_frame.cpu_gpu_accounting_valid",
+        "gpu_frame.persistent_mappings_exercised",
+        "fast_path.counts_valid",
+        "fast_path.matches_desktop_frames",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "preclean.counts_valid",
+        "preclean.matches_desktop_frames",
+        "preclean.preclean_exercised",
+        "target_cache.counts_valid",
+        "target_cache.reuse_exercised",
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "LMI_GPU_MAP_BATCH-extra-word",
+      "failed_checks": [
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained"
+      ]
+    },
+    {
+      "case": "copy-overlap-0",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "copy-overlap-1",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "copy-overlap-2",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "copy-overlap-3",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "copy-overlap-4",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "copy-overlap-5",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "copy-still-pending",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.pending_zero",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.pending_copy_zero"
+      ]
+    },
+    {
+      "case": "copy-order",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "overlap-overflow",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "pending-overflow",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.pending_zero",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.pending_copy_zero"
+      ]
+    },
+    {
+      "case": "v69-has-no-async-copy-evidence",
+      "failed_checks": [
+        "gpu_copy_overlap.counts_valid",
+        "gpu_copy_overlap.pending_zero",
+        "gpu_copy_overlap.record_order_valid",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid",
+        "deferred_cpu_cache.pending_copy_zero"
+      ]
+    },
+    {
+      "case": "cpu-transfer-0",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "cpu-transfer-1",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "cpu-transfer-2",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "cpu-transfer-3",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "owned-mask-invalid",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "cpu-transfer-order",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid"
+      ]
+    },
+    {
+      "case": "cpu-transfer-overflow",
+      "failed_checks": [
+        "deferred_cpu_cache.counts_valid"
+      ]
+    },
+    {
+      "case": "v70-has-no-deferred-ownership-evidence",
+      "failed_checks": [
+        "desktop_pipeline_enabled",
+        "producer_retirement.counts_valid",
+        "producer_retirement.source_release_verified",
+        "producer_retirement.producer_wait_exercised",
+        "producer_retirement.matches_desktop_frames",
+        "gpu_map_batch.counts_valid",
+        "gpu_map_batch.batching_exercised",
+        "gpu_queue.counts_valid",
+        "gpu_queue.overlap_exercised",
+        "gpu_queue.real_completion_drained",
+        "deferred_cpu_cache.counts_valid",
+        "deferred_cpu_cache.record_order_valid"
+      ]
+    }
+  ],
+  "sources": {
+    "lmi_display_v71_policy.py": "2a5fb643808b90bbc42e69e3bff83190af5fa873248e84ea47b1793d43ec7c9e",
+    "check-lmi-display-v71-policy.py": "79a379e41e3a3625714fd02b2ffe4d7ad8da083ae94750c4ce77b8eda1886594"
+  }
+}

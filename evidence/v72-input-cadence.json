@@ -1,0 +1,74 @@
+{
+  "before_version": "v71",
+  "after_version": "v72b",
+  "before": {
+    "log_sha256": "6010b990256800e13c51c8c910cd09e484c45aed0747eb2723b37766d0e45467",
+    "samples": 192,
+    "phases": {
+      "1": 16,
+      "2": 161,
+      "3": 15
+    },
+    "same_contact_intervals_us": {
+      "count": 176,
+      "min": 29065,
+      "median": 30065.5,
+      "p95": 30419,
+      "max": 30736
+    },
+    "reciprocal_median_samples_per_second": 33.26071410753189,
+    "post_to_read_us": {
+      "count": 192,
+      "min": 28,
+      "median": 46.0,
+      "p95": 92,
+      "max": 12648
+    },
+    "post_to_sent_us": {
+      "count": 192,
+      "min": 161,
+      "median": 260.5,
+      "p95": 695,
+      "max": 12977
+    },
+    "touch_to_photon_ms": null,
+    "limitation": "Bounded first input records, with exact duplicates removed. Intervals pair consecutive samples of one active contact; they are input cadence, not panel FPS or physical touch-to-photon delay. The physical contact time and panel visibility time are not present."
+  },
+  "after": {
+    "log_sha256": "04ae539fcb12c390d60ccbbcfbf552d9a4423fed4730c095e4b2c01e1c3fb753",
+    "samples": 192,
+    "phases": {
+      "1": 9,
+      "2": 175,
+      "3": 8
+    },
+    "same_contact_intervals_us": {
+      "count": 183,
+      "min": 10091,
+      "median": 10215,
+      "p95": 10568,
+      "max": 11024
+    },
+    "reciprocal_median_samples_per_second": 97.8952520802741,
+    "post_to_read_us": {
+      "count": 192,
+      "min": 29,
+      "median": 45.0,
+      "p95": 228,
+      "max": 6966
+    },
+    "post_to_sent_us": {
+      "count": 192,
+      "min": 139,
+      "median": 262.0,
+      "p95": 958,
+      "max": 7271
+    },
+    "touch_to_photon_ms": null,
+    "limitation": "Bounded first input records, with exact duplicates removed. Intervals pair consecutive samples of one active contact; they are input cadence, not panel FPS or physical touch-to-photon delay. The physical contact time and panel visibility time are not present."
+  },
+  "median_sample_interval_reduction_us": 19850.5,
+  "input_cadence_ratio": 2.943269701419481,
+  "touch_to_photon_measured": false,
+  "animation_fps_speedup_proven": false
+}

@@ -33,6 +33,14 @@ parser.add_argument('--display-v51',action='store_true',help='Measured blend bit
 parser.add_argument('--display-v52',action='store_true',help='Exact measured global SMMU profiles with stable preparation')
 parser.add_argument('--display-v53',action='store_true',help='Batched scaler diagnostics; never enables new desktop')
 parser.add_argument('--display-v54',action='store_true',help='Bypass vs identity vs scaled diagnostics; no new desktop')
+parser.add_argument('--display-v67',action='store_true',help='Owned full-frame GPU copy with strict CPU/GPU accounting and original partial fallback')
+parser.add_argument('--display-v66',action='store_true',help='Mandatory boot-only GPU copy proof before service publication; desktop path unchanged')
+parser.add_argument('--display-v65',action='store_true',help='Overlap next-frame PoC maintenance with previous owned DPU scan')
+parser.add_argument('--display-v64',action='store_true',help='Four inflight GPU jobs with real TS retirement and nonblocking empty handoff')
+parser.add_argument('--display-v63',action='store_true',help='Batch GPU buffer page mappings at native lock boundaries, retaining v62 display and retirement checks')
+parser.add_argument('--display-v62',action='store_true',help='Producer retirement fence with native queue/source cleanup and unchanged DPU buffers')
+parser.add_argument('--display-v61',action='store_true',help='Fast full-frame copy for measured 4544 and 4608 source pitches; unchanged DPU buffers')
+parser.add_argument('--display-v60',action='store_true',help='One-copy path with fixed-ABI counter formatting and qualification metadata')
 parser.add_argument('--display-v59',action='store_true',help='One-copy complete BGRA frames with native queue/record and unchanged DPU mappings')
 parser.add_argument('--display-v58',action='store_true',help='One outstanding asynchronous GPU submission with guarded cache/mapping/exit drains')
 parser.add_argument('--display-v57',action='store_true',help='Stock speed-bin index7 GPU frequency request with v56 display')
@@ -45,6 +53,14 @@ parser.add_argument('--ios-boot-image',type=Path,help='Audited GPU GLES RAM imag
 parser.add_argument('--evidence-suffix',default='',help='Unique suffix to preserve earlier hardware evidence')
 parser.add_argument('--ios-result-delay-seconds',type=int,choices=(0,30,50,185),default=None,help='Checkpoint63 query delay: native duration plus5s; explicit0 retains the early-query control')
 args=parser.parse_args()
+assert not args.display_v67 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v66 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v65 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v64 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v63 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v62 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v61 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
+assert not args.display_v60 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
 assert not args.display_v59 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
 assert not args.display_v58 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
 assert not args.display_v57 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
@@ -52,7 +68,7 @@ assert not args.display_v56 or (not args.source_runtime and args.ios_continue an
 assert not args.display_v55 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
 assert not args.display_v54 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
 assert not args.display_v53 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
-assert sum(bool(getattr(args,'display_v'+str(v))) for v in range(40,60))<=1
+assert sum(bool(getattr(args,'display_v'+str(v))) for v in range(40,68))<=1
 assert not args.display_v52 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
 assert not args.source_runtime or (args.ios_continue and args.max_checkpoint==63)
 assert not args.display_v40 or (not args.source_runtime and args.ios_continue and args.max_checkpoint==63 and args.ios_boot_image and args.evidence_suffix)
@@ -143,9 +159,17 @@ if args.early_return_fix or args.return_guard:
     if args.source_runtime:folder='lmi-kernel-source-runtime-v36'
     kernel=root/'out'/folder/'mach.development.bcm2837'
     kernel_meta=json.loads((kernel.parent/'manifest.json').read_text())
-    if args.display_v40 or args.display_v41 or args.display_v42 or args.display_v43 or args.display_v44 or args.display_v45 or args.display_v46 or args.display_v47 or args.display_v48 or args.display_v49 or args.display_v50 or args.display_v51 or args.display_v52 or args.display_v53 or args.display_v54 or args.display_v55 or args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59:
+    if args.display_v40 or args.display_v41 or args.display_v42 or args.display_v43 or args.display_v44 or args.display_v45 or args.display_v46 or args.display_v47 or args.display_v48 or args.display_v49 or args.display_v50 or args.display_v51 or args.display_v52 or args.display_v53 or args.display_v54 or args.display_v55 or args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59 or args.display_v60 or args.display_v61 or args.display_v62 or args.display_v63 or args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67:
         from lmi_display_v40_policy import IMAGE_SHA
-        if args.display_v59:from lmi_display_v59_policy import stage
+        if args.display_v67:from lmi_display_v67_policy import stage
+        elif args.display_v66:from lmi_display_v66_policy import stage
+        elif args.display_v65:from lmi_display_v65_policy import stage
+        elif args.display_v64:from lmi_display_v64_policy import stage
+        elif args.display_v63:from lmi_display_v63_policy import stage
+        elif args.display_v62:from lmi_display_v62_policy import stage
+        elif args.display_v61:from lmi_display_v61_policy import stage
+        elif args.display_v60:from lmi_display_v60_policy import stage
+        elif args.display_v59:from lmi_display_v59_policy import stage
         elif args.display_v58:from lmi_display_v58_policy import stage
         elif args.display_v57:from lmi_display_v57_policy import stage
         elif args.display_v56:from lmi_display_v56_policy import stage
@@ -287,7 +311,7 @@ if profile.get('lmi_gpu_tile'):
     preflight=json.loads((root/'out/lmi-gpu-research'/preflight_name).read_text())
     assert preflight['result']=='PASS' and preflight['tile']
     assert bool(preflight.get('desktop'))==bool(profile.get('lmi_gpu_desktop'))
-    expected_runtime=(kernel_meta['display_v59']['baseline_runtime_sha256'] if args.display_v59 else kernel_meta['display_v58']['baseline_runtime_sha256'] if args.display_v58 else kernel_meta['display_v57']['baseline_runtime_sha256'] if args.display_v57 else kernel_meta['display_v56']['baseline_runtime_sha256'] if args.display_v56 else kernel_meta['display_v55']['baseline_runtime_sha256'] if args.display_v55 else kernel_meta['display_v54']['baseline_runtime_sha256'] if args.display_v54 else kernel_meta['display_v53']['baseline_runtime_sha256'] if args.display_v53 else kernel_meta['display_v52']['baseline_runtime_sha256'] if args.display_v52 else kernel_meta['display_v51']['baseline_runtime_sha256'] if args.display_v51 else kernel_meta['display_v50']['baseline_runtime_sha256'] if args.display_v50 else kernel_meta['display_v49']['baseline_runtime_sha256'] if args.display_v49 else kernel_meta['display_v48']['baseline_runtime_sha256'] if args.display_v48 else kernel_meta['display_v47']['baseline_runtime_sha256'] if args.display_v47 else kernel_meta['display_v46']['baseline_runtime_sha256'] if args.display_v46 else kernel_meta['display_v45']['baseline_runtime_sha256'] if args.display_v45 else kernel_meta['display_v44']['baseline_runtime_sha256'] if args.display_v44 else kernel_meta['display_v43']['baseline_runtime_sha256'] if args.display_v43 else kernel_meta['display_v42']['baseline_runtime_sha256'] if args.display_v42 else kernel_meta['display_v41']['baseline_runtime_sha256'] if args.display_v41 else kernel_meta['display_v40']['baseline_runtime_sha256'] if args.display_v40 else kernel_meta['source_rebuild']['baseline_runtime_sha256'] if args.source_runtime else kernel_meta['sha256'])
+    expected_runtime=(kernel_meta['display_v67']['baseline_runtime_sha256'] if args.display_v67 else kernel_meta['display_v66']['baseline_runtime_sha256'] if args.display_v66 else kernel_meta['display_v65']['baseline_runtime_sha256'] if args.display_v65 else kernel_meta['display_v64']['baseline_runtime_sha256'] if args.display_v64 else kernel_meta['display_v63']['baseline_runtime_sha256'] if args.display_v63 else kernel_meta['display_v62']['baseline_runtime_sha256'] if args.display_v62 else kernel_meta['display_v61']['baseline_runtime_sha256'] if args.display_v61 else kernel_meta['display_v60']['baseline_runtime_sha256'] if args.display_v60 else kernel_meta['display_v59']['baseline_runtime_sha256'] if args.display_v59 else kernel_meta['display_v58']['baseline_runtime_sha256'] if args.display_v58 else kernel_meta['display_v57']['baseline_runtime_sha256'] if args.display_v57 else kernel_meta['display_v56']['baseline_runtime_sha256'] if args.display_v56 else kernel_meta['display_v55']['baseline_runtime_sha256'] if args.display_v55 else kernel_meta['display_v54']['baseline_runtime_sha256'] if args.display_v54 else kernel_meta['display_v53']['baseline_runtime_sha256'] if args.display_v53 else kernel_meta['display_v52']['baseline_runtime_sha256'] if args.display_v52 else kernel_meta['display_v51']['baseline_runtime_sha256'] if args.display_v51 else kernel_meta['display_v50']['baseline_runtime_sha256'] if args.display_v50 else kernel_meta['display_v49']['baseline_runtime_sha256'] if args.display_v49 else kernel_meta['display_v48']['baseline_runtime_sha256'] if args.display_v48 else kernel_meta['display_v47']['baseline_runtime_sha256'] if args.display_v47 else kernel_meta['display_v46']['baseline_runtime_sha256'] if args.display_v46 else kernel_meta['display_v45']['baseline_runtime_sha256'] if args.display_v45 else kernel_meta['display_v44']['baseline_runtime_sha256'] if args.display_v44 else kernel_meta['display_v43']['baseline_runtime_sha256'] if args.display_v43 else kernel_meta['display_v42']['baseline_runtime_sha256'] if args.display_v42 else kernel_meta['display_v41']['baseline_runtime_sha256'] if args.display_v41 else kernel_meta['display_v40']['baseline_runtime_sha256'] if args.display_v40 else kernel_meta['source_rebuild']['baseline_runtime_sha256'] if args.source_runtime else kernel_meta['sha256'])
     assert preflight['kernel_sha256']==expected_runtime and preflight['loader_sha256']==profile['sha256'] and preflight['diagnostic_sha256']==meta['sha256']
     for name,sha in preflight['source_sha256'].items():
         assert hashlib.sha256((root/name).read_bytes()).hexdigest()==sha,'Stale tile preflight source: '+name
@@ -357,7 +381,7 @@ if profile.get('lmi_gpu_gmu_200mhz_probe'):
         shutil.copy2(root/'tools'/name,provenance/name)
 for name in ['lmi-gpu-context.c','lmi-gpu-hfi.c','test-lmi-checkpoints.py','lmi_checkpoint_policy.py','build-lmi-loader.py','lmi-gic-guard.c','build-lmi-preirq-probe.py','build-lmi-bootstrap-probe.py','build-lmi-irq-probe.py','build-lmi-driver-probe.py','build-lmi-bsd-probe.py','build-lmi-root-probe.py','build-lmi-minimal-root.py','build-lmi-user-probe.py','build-lmi-aligned-hello.py','build-lmi-ios-probe.py','lmi-touch.c','prepare-lmi-ios-images.py','verify-ios165-downloads.py']:
     shutil.copy2(root/'tools'/name,provenance/name)
-if args.display_v40 or args.display_v41 or args.display_v42 or args.display_v43 or args.display_v44 or args.display_v45 or args.display_v46 or args.display_v47 or args.display_v48 or args.display_v49 or args.display_v50 or args.display_v51 or args.display_v52 or args.display_v53 or args.display_v54 or args.display_v55 or args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59:
+if args.display_v40 or args.display_v41 or args.display_v42 or args.display_v43 or args.display_v44 or args.display_v45 or args.display_v46 or args.display_v47 or args.display_v48 or args.display_v49 or args.display_v50 or args.display_v51 or args.display_v52 or args.display_v53 or args.display_v54 or args.display_v55 or args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59 or args.display_v60 or args.display_v61 or args.display_v62 or args.display_v63 or args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67:
     shutil.copy2(root/'tools/lmi_display_v40_policy.py',provenance/'lmi_display_v40_policy.py')
 if args.display_v41 or args.display_v42 or args.display_v43:
     shutil.copy2(root/'tools/lmi_display_v41_policy.py',provenance/'lmi_display_v41_policy.py')
@@ -365,16 +389,40 @@ if args.display_v43:
     shutil.copy2(root/'tools/lmi_display_v43_policy.py',provenance/'lmi_display_v43_policy.py')
 if args.display_v42:
     shutil.copy2(root/'tools/lmi_display_v42_policy.py',provenance/'lmi_display_v42_policy.py')
-if args.display_v57 or args.display_v58 or args.display_v59:
+if args.display_v57 or args.display_v58 or args.display_v59 or args.display_v60 or args.display_v61 or args.display_v62 or args.display_v63 or args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67:
     for name in ('lmi_display_v57_policy.py','lmi-gpu-gx-v57.c','build-lmi-display-v57.py','check-lmi-gpu-gx-v57.py','check-lmi-gpu-gx-v57.c','check-lmi-display-v57-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v63 or args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67:
+    for name in ('lmi_display_v63_policy.py','lmi-gpu-desktop-v63.c','build-lmi-gpu-map-v63.py','check-lmi-gpu-map-v63.py','check-lmi-gpu-map-v63-native.py','check-lmi-display-v63-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67:
+    for name in ('lmi_display_v64_policy.py','lmi-gpu-desktop-v64.c','build-lmi-gpu-queue-v64.py','check-lmi-gpu-queue-v64.py','check-lmi-gpu-queue-v64-native.py','audit-lmi-gpu-queue-v64-linked.py','check-lmi-display-v64-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v67:
+    for name in ('lmi_display_v67_policy.py','lmi-gpu-frame-v67.c','lmi-gpu-frame-v67.h','build-lmi-gpu-frame-v67.py','audit-lmi-gpu-frame-space-v67.py','audit-lmi-gpu-frame-v67-linked.py','check-lmi-gpu-frame-v67.py','check-lmi-gpu-frame-v67.c','check-lmi-display-v67-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v66 or args.display_v67:
+    for name in ('lmi_display_v66_policy.py','lmi-gpu-copy-v66.c','lmi-gpu-copy-v66.h','build-lmi-gpu-copy-v66.py','audit-lmi-gpu-copy-v66-linked.py','audit-lmi-gpu-copy-space-v66.py','audit-lmi-gpu-copy-v66-tail.py','check-lmi-gpu-copy-v66.py','check-lmi-gpu-copy-v66.c','check-lmi-display-v66-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v65 or args.display_v66 or args.display_v67:
+    for name in ('lmi_display_v65_policy.py','lmi-display-preclean-v65.c','lmi-display-preclean-v65.h','build-lmi-display-preclean-v65.py','audit-lmi-display-preclean-v65-linked.py','check-lmi-display-preclean-v65.py','check-lmi-display-preclean-v65.c','check-lmi-display-v65-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v62 or args.display_v63 or args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67:
+    for name in ('lmi_display_v62_policy.py','lmi_display_v61_policy.py','lmi-display-fast-v62.c','lmi-display-fast-v62.h','lmi-display-fence-v62.c','lmi-display-fence-v62.h','lmi-display-fence-abi-v62.h','lmi-display-fence-tramp-v62.S','prepare-lmi-display-fence-layout-v62.py','audit-lmi-replaced-gpu-bodies-v62.py','lmi-display-surface-abi.h','lmi-display-direct-plan-v61.c','lmi-display-direct-plan-v61.h','build-lmi-display-v62.py','check-lmi-display-v62.py','check-lmi-display-fence-v62.c','check-lmi-display-fast-v61.c','check-lmi-display-v62-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v61:
+    for name in ('lmi_display_v61_policy.py','lmi-display-fast-v61.c','lmi-display-fast-v61.h','lmi-display-surface-abi.h','lmi-display-direct-plan-v61.c','lmi-display-direct-plan-v61.h','build-lmi-display-v61.py','check-lmi-display-fast-v61.py','check-lmi-display-fast-v61.c','check-lmi-display-v61-policy.py'):
+        shutil.copy2(root/'tools'/name,provenance/name)
+if args.display_v60:
+    for name in ('lmi_display_v60_policy.py','lmi-display-fast-v60.c','lmi-display-fast-v60.h','lmi-display-surface-abi.h','lmi-display-direct-plan.c','lmi-display-direct-plan.h','build-lmi-display-v60.py','check-lmi-display-fast-v60.py','check-lmi-display-fast-v60.c','check-lmi-display-v60-policy.py'):
         shutil.copy2(root/'tools'/name,provenance/name)
 if args.display_v59:
     for name in ('lmi_display_v59_policy.py','lmi-display-fast-v59.c','lmi-display-fast-v59.h','lmi-display-surface-abi.h','lmi-display-direct-plan.c','lmi-display-direct-plan.h','build-lmi-display-v59.py','check-lmi-display-fast-v59.py','check-lmi-display-fast-v59.c','check-lmi-display-v59-policy.py'):
         shutil.copy2(root/'tools'/name,provenance/name)
-if args.display_v58 or args.display_v59:
+if args.display_v58 or args.display_v59 or args.display_v60 or args.display_v61 or args.display_v62 or args.display_v63 or args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67:
     for name in ('lmi_display_v58_policy.py','lmi-gpu-desktop-v58.c','build-lmi-gpu-async-v58.py','check-lmi-gpu-async-v58.py','check-lmi-display-v58-policy.py'):
         shutil.copy2(root/'tools'/name,provenance/name)
-if args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59:
+if args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59 or args.display_v60 or args.display_v61 or args.display_v62 or args.display_v63 or args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67:
     for name in ('lmi_display_v56_policy.py','lmi_display_v55_policy.py','lmi_display_v54_policy.py','lmi-display-native-v56.c','lmi-display-compositor-v56.c','build-lmi-display-v56.py','lmi-display-probe-v55.c','lmi-display-dma-v56.c','lmi-display-pipeline-v51.c','check-lmi-display-dma-v56.c','check-lmi-display-dma-v56.py','check-lmi-display-v56-startup.py','check-lmi-display-v56-desktop.py','check-lmi-display-probe-v56.py','check-lmi-display-probe-v56.c','check-lmi-display-v56-policy.py'):
         shutil.copy2(root/'tools'/name,provenance/name)
 if args.display_v55:
@@ -528,7 +576,7 @@ subprocess.run(['python',str(root/'hackios/xnuloader/mkpayload.py'),'-o',str(pay
 if args.prepare_only:
     (out/'prepared-only.json').write_text(json.dumps(dict(
         result='HOST_PREPARED_ONLY', device_access=False,
-        kernel_sha256=kernel_meta['sha256'], display_v40=args.display_v40,display_v41=args.display_v41,display_v42=args.display_v42,display_v43=args.display_v43,display_v44=args.display_v44,display_v45=args.display_v45,display_v46=args.display_v46,display_v47=args.display_v47,display_v48=args.display_v48,display_v49=args.display_v49,display_v50=args.display_v50,display_v51=args.display_v51,display_v52=args.display_v52,display_v53=args.display_v53,display_v54=args.display_v54,display_v55=args.display_v55,display_v56=args.display_v56,display_v57=args.display_v57,display_v58=args.display_v58,display_v59=args.display_v59),indent=2)+'\n')
+        kernel_sha256=kernel_meta['sha256'], display_v40=args.display_v40,display_v41=args.display_v41,display_v42=args.display_v42,display_v43=args.display_v43,display_v44=args.display_v44,display_v45=args.display_v45,display_v46=args.display_v46,display_v47=args.display_v47,display_v48=args.display_v48,display_v49=args.display_v49,display_v50=args.display_v50,display_v51=args.display_v51,display_v52=args.display_v52,display_v53=args.display_v53,display_v54=args.display_v54,display_v55=args.display_v55,display_v56=args.display_v56,display_v57=args.display_v57,display_v58=args.display_v58,display_v59=args.display_v59,display_v60=args.display_v60,display_v61=args.display_v61,display_v62=args.display_v62,display_v63=args.display_v63,display_v64=args.display_v64,display_v65=args.display_v65,display_v66=args.display_v66,display_v67=args.display_v67),indent=2)+'\n')
     print('HOST_PREPARED_ONLY: no device access',flush=True)
     raise SystemExit(0)
 adb=['D:/Gaoji/adb.exe','-s','YOUR_ADB_SERIAL']
@@ -557,6 +605,14 @@ if args.display_v42:result['display_v42']=kernel_meta['display_v42']
 if args.display_v44:result['display_v44']=kernel_meta['display_v44']
 if args.display_v45:result['display_v45']=kernel_meta['display_v45']
 if args.display_v46:result['display_v46']=kernel_meta['display_v46']
+if args.display_v67:result['display_v67']=kernel_meta['display_v67']
+if args.display_v66:result['display_v66']=kernel_meta['display_v66']
+if args.display_v65:result['display_v65']=kernel_meta['display_v65']
+if args.display_v64:result['display_v64']=kernel_meta['display_v64']
+if args.display_v63:result['display_v63']=kernel_meta['display_v63']
+if args.display_v62:result['display_v62']=kernel_meta['display_v62']
+if args.display_v61:result['display_v61']=kernel_meta['display_v61']
+if args.display_v60:result['display_v60']=kernel_meta['display_v60']
 if args.display_v59:result['display_v59']=kernel_meta['display_v59']
 if args.display_v58:result['display_v58']=kernel_meta['display_v58']
 if args.display_v57:result['display_v57']=kernel_meta['display_v57']
@@ -650,9 +706,10 @@ try:
         # run_kernel already staged the combined loader and returned XNU log.
         # Idle `oem log` recomposes only the loader log and discards XNU text.
         run(target+['get_staged',str(out/f'{label}.log')])
-        if label=='checkpoint-63' and (args.display_v41 or args.display_v42 or args.display_v43 or args.display_v44 or args.display_v45 or args.display_v46 or args.display_v47 or args.display_v48 or args.display_v49 or args.display_v50 or args.display_v51 or args.display_v52 or args.display_v53 or args.display_v54 or args.display_v55 or args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59):
+        if label=='checkpoint-63' and (args.display_v41 or args.display_v42 or args.display_v43 or args.display_v44 or args.display_v45 or args.display_v46 or args.display_v47 or args.display_v48 or args.display_v49 or args.display_v50 or args.display_v51 or args.display_v52 or args.display_v53 or args.display_v54 or args.display_v55 or args.display_v56 or args.display_v57 or args.display_v58 or args.display_v59 or args.display_v60 or args.display_v61 or args.display_v62 or args.display_v63 or args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67):
             import runpy
-            observation=runpy.run_path(str(provenance/('lmi_display_v59_policy.py' if args.display_v59 else 'lmi_display_v58_policy.py' if args.display_v58 else 'lmi_display_v57_policy.py' if args.display_v57 else 'lmi_display_v56_policy.py' if args.display_v56 else 'lmi_display_v55_policy.py' if args.display_v55 else 'lmi_display_v54_policy.py' if args.display_v54 else 'lmi_display_v53_policy.py' if args.display_v53 else 'lmi_display_v52_policy.py' if args.display_v52 else 'lmi_display_v51_policy.py' if args.display_v51 else 'lmi_display_v50_policy.py' if args.display_v50 else 'lmi_display_v49_policy.py' if args.display_v49 else 'lmi_display_v48_policy.py' if args.display_v48 else 'lmi_display_v47_policy.py' if args.display_v47 else 'lmi_display_v46_policy.py' if args.display_v46 else 'lmi_display_v45_policy.py' if args.display_v45 else 'lmi_display_v44_policy.py' if args.display_v44 else 'lmi_display_v43_policy.py' if args.display_v43 else 'lmi_display_v42_policy.py' if args.display_v42 else 'lmi_display_v41_policy.py')))['observe']((out/f'{label}.log').read_text())
+            observation_policy=runpy.run_path(str(provenance/('lmi_display_v67_policy.py' if args.display_v67 else 'lmi_display_v66_policy.py' if args.display_v66 else 'lmi_display_v65_policy.py' if args.display_v65 else 'lmi_display_v64_policy.py' if args.display_v64 else 'lmi_display_v63_policy.py' if args.display_v63 else 'lmi_display_v62_policy.py' if args.display_v62 else 'lmi_display_v61_policy.py' if args.display_v61 else 'lmi_display_v60_policy.py' if args.display_v60 else 'lmi_display_v59_policy.py' if args.display_v59 else 'lmi_display_v58_policy.py' if args.display_v58 else 'lmi_display_v57_policy.py' if args.display_v57 else 'lmi_display_v56_policy.py' if args.display_v56 else 'lmi_display_v55_policy.py' if args.display_v55 else 'lmi_display_v54_policy.py' if args.display_v54 else 'lmi_display_v53_policy.py' if args.display_v53 else 'lmi_display_v52_policy.py' if args.display_v52 else 'lmi_display_v51_policy.py' if args.display_v51 else 'lmi_display_v50_policy.py' if args.display_v50 else 'lmi_display_v49_policy.py' if args.display_v49 else 'lmi_display_v48_policy.py' if args.display_v48 else 'lmi_display_v47_policy.py' if args.display_v47 else 'lmi_display_v46_policy.py' if args.display_v46 else 'lmi_display_v45_policy.py' if args.display_v45 else 'lmi_display_v44_policy.py' if args.display_v44 else 'lmi_display_v43_policy.py' if args.display_v43 else 'lmi_display_v42_policy.py' if args.display_v42 else 'lmi_display_v41_policy.py')))
+            observation=observation_policy['observe']((out/f'{label}.log').read_text())
             result['dpu_observation']=observation
             (out/'dpu-observation.json').write_text(json.dumps(observation,indent=2)+'\n')
         if label=='checkpoint-63':
@@ -660,6 +717,11 @@ try:
             run(target+['oem','screenshot'])
             run(target+['get_staged',str(out/'framebuffer-checkpoint-63.raw')],timeout=20)
         assert expected in response, f'{label} did not return as expected'
+        if label=='checkpoint-63' and (args.display_v63 or args.display_v64 or args.display_v65 or args.display_v66 or args.display_v67):
+            validation=observation_policy['validate_run'](observation)
+            version='v67' if args.display_v67 else 'v66' if args.display_v66 else 'v65' if args.display_v65 else 'v64' if args.display_v64 else 'v63'
+            result['display_'+version+'_validation']=validation
+            assert validation['passed'], version+' integration checks failed: '+', '.join(validation['failed_checks'])
         if label=='selftest':
             log=(out/f'{label}.log').read_text()
             claim=re.search(r'phys window ([0-9a-f]+) size ([0-9a-f]+), claim status 0',log)
