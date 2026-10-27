@@ -1,0 +1,66 @@
+{
+  "result": "PASS",
+  "fence_cases": 26,
+  "pixel_cases": 21,
+  "asan_ubsan": true,
+  "real_pthread_waiters": true,
+  "original_compositor_used": true,
+  "hardware_tested": false,
+  "commands": [
+    [
+      "clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-pthread",
+      "-I/mnt/f/PersonaLive/tools",
+      "/mnt/f/PersonaLive/tools/lmi-display-fence-v62.c",
+      "/mnt/f/PersonaLive/tools/check-lmi-display-fence-v62.c",
+      "-o",
+      "/mnt/f/PersonaLive/out/lmi-display-v62-host/fence"
+    ],
+    [
+      "clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-pthread",
+      "-I/mnt/f/PersonaLive/tools",
+      "/mnt/f/PersonaLive/out/lmi-display-v62-host/original-compositor.c",
+      "/mnt/f/PersonaLive/tools/lmi-display-fast-v62.c",
+      "/mnt/f/PersonaLive/tools/lmi-display-direct-plan-v61.c",
+      "/mnt/f/PersonaLive/tools/lmi-display-pipeline-v51.c",
+      "/mnt/f/PersonaLive/out/lmi-display-v62-host/fast-pixel-regression.c",
+      "-o",
+      "/mnt/f/PersonaLive/out/lmi-display-v62-host/pixels"
+    ]
+  ],
+  "sources": {
+    "check-lmi-display-v62.py": "371edbf901a714c6b4846404b6fb86a0713ddd1ad9891576ca4df939af6b3b57",
+    "check-lmi-display-fence-v62.c": "ea22e5f805762ca59fc8afd2ecb13d2715e8383e87f019e0acca3c3ef1123175",
+    "lmi-display-fence-v62.c": "cca53b783a3ec7124757ecebf363526da75b369893d5007d4480b58ac83b4d81",
+    "lmi-display-fence-v62.h": "21c9293e3c5c0e8124ea6276d187dd6e7da66fa05bbfe61b02f62521ac030c37",
+    "lmi-display-fence-abi-v62.h": "bce3fbf1e9d12b629ae0c6b59e29f64bc85b762f012e77b49b6025fcc4a6bc90",
+    "lmi-display-fast-v62.c": "a74b62cfff5460802d0db7627964ee6981dd4eea0666ee71c093fbd0d4c628dc",
+    "lmi-display-fast-v62.h": "ed983a119054b8754d4acd61a1fa7a29bcfa184f9f0174a7c2742a2bda208e70",
+    "lmi-display-surface-abi.h": "d15547bc9d6085ef514054a2aca9502cee1e7d3c986299d4f7100a9504b1693e",
+    "lmi-display-direct-plan-v61.c": "e9a1e6c821b9a73a9fd62551ee6a3a227643f309e8695c4b0a7166242e19db8d",
+    "lmi-display-direct-plan-v61.h": "ffe0e35cf1bc650d7f57f4de56141bf7000b5e0a935190ee0eb3bdc698e1b309",
+    "lmi-display-compositor-v56.c": "04ec7eed0347c17a1c5daf86ef5b0cf1b12dae7640a6fddde05b1618c43bd4a0",
+    "lmi-display-compositor.h": "ba8838b4c2d0a6bb1041019e9f65c210889bbe51c59b1ebd1163d6166ec6d513",
+    "lmi-display-compositor-abi.h": "9aecfccfeedb254950c07972bad048a3c069d1da672e1b5f85d50a46700e4cd8",
+    "lmi-display-pipeline-v51.c": "3e08a645ae96427d9335a591b9991bcf1047dc93d9d7e298a7f09715ebeffb17",
+    "lmi-display-pipeline.h": "91b346263c17dfc4f17cf9c9303ca0d2a5047bc29ef193109087f1dacd21b8f0",
+    "check-lmi-display-fast-v61.c": "6435ef091d303f9b61e9a64634ae3be8b8764f8bac42ac95d049893f660b6ff6"
+  },
+  "generated_sources": {
+    "original-compositor.c": "708271cf6e1aea70f21465acf9c7ddaf565ccbfa1cdc0d5f533b16b7e3f06579",
+    "fast-pixel-regression.c": "7f6a8bb2a0a3d38e5e672548708a302d5f9b55fac1638d86c6440e45c3414d78"
+  }
+}
