@@ -8,3 +8,6 @@ __pycache__/
 *.elf
 *.o
 *.vhdx
+
+# Public generated source inputs; these contain no binary build outputs.
+!/build-support/**

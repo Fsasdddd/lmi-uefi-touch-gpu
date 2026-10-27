@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "actual_backend": true,
+  "asan_ubsan": true,
+  "outstanding_copy_stopped": true,
+  "backing_retained": true,
+  "no_service_lock_after_stop": true,
+  "hardware_tested": false,
+  "attempt": "out/lmi-gpu-deferred-cache-v71-stop/attempt-1",
+  "inputs": {
+    "tools/check-lmi-gpu-deferred-stop-v71.py": "38eb63466b3d23a8a2165881b249ee2fe8cf0a9539275bf931473e218160f5e0",
+    "out/lmi-gpu-deferred-cache-v71-host/result.json": "6ae0cb41746f2ff6ea2116519de075ae82cd0403770129e1070ac6bd70231f8a",
+    "out/lmi-gpu-deferred-cache-v71-stop/attempt-1/check.c": "43877fee46d36dbc51531f940cfb931d589629251431c28dac2fc75fc07f4e3e",
+    "out/lmi-gpu-deferred-cache-v71-host/original-compositor.c": "6f01ff72966e5c7afecd6f95cf5fa4176442eb94c1dfaeaf04bb2590182c3202",
+    "out/lmi-gpu-deferred-cache-v71-host/preclean.c": "9b2b1ea73705dade7ec219d37f9317316f3ad61b0c617a612b90caecf6b0521e",
+    "out/lmi-gpu-deferred-cache-v71-host/fast.c": "157aefacfa7649e083590031e3d7c2cf255b90e9a44333f779527be6dfcb0254",
+    "tools/lmi-display-direct-plan-v61.c": "e9a1e6c821b9a73a9fd62551ee6a3a227643f309e8695c4b0a7166242e19db8d",
+    "tools/lmi-display-pipeline-v51.c": "3e08a645ae96427d9335a591b9991bcf1047dc93d9d7e298a7f09715ebeffb17",
+    "tools/lmi-gpu-deferred-cache-v71.c": "51a8fb70407053bdba0dabfc0254668321ba6229f06ee090cf68e06ab5bbe5b3"
+  }
+}

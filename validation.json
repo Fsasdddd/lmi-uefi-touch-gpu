@@ -1,6 +1,12 @@
 {
   "scope": "Published snapshot only; offline host checks, no device operation or full UEFI rebuild",
-  "checks": {
+  "hardware_verified_by_this_publication": false,
+  "touch_update_source_sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882",
+  "v59_hardware_result": "INCOMPLETE",
+  "v59_fast_counts_valid": false,
+  "target_abi_limitation": "Linux host sanitizers do not validate ELF to Darwin variadic snprintf ABI; v59 statistics are invalid",
+  "v59_inject_source_sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa",
+  "historical_checks_through_v59": {
     "GL_verifier": "PASS: 3 positive controls, 47 negative cases",
     "FT3518_decoder": "PASS: down/move/final-up, zero padding, fallback release, multitouch, duplicate rejection; ASan/UBSan",
     "touch_timing": "PASS: 5us minimum, jumps/wrap, wrong-frequency rejection; ASan/UBSan",
@@ -15,10 +21,21 @@
     "V58_async_GPU": "PASS: 41 scenarios; ASan/UBSan",
     "HID_initial_retry": "PASS: 1350 cases, at most 3 native calls; ASan/UBSan"
   },
-  "hardware_verified_by_this_publication": false,
-  "touch_update_source_sha256": "12a73c139903391bd3e6576dccbaf7c1fab47197d64bea04e5e3f622e65db882",
-  "v59_hardware_result": "INCOMPLETE",
-  "v59_fast_counts_valid": false,
-  "target_abi_limitation": "Linux host sanitizers do not validate ELF to Darwin variadic snprintf ABI; v59 statistics are invalid",
-  "v59_inject_source_sha256": "8f51dacc5b0b51e5733f25dd0dc73c7d8e57597312b7cd3cbc75f8d0b9826cfa"
+  "current_public_version": "v72b",
+  "checks": {
+    "V72_ARM64_loop": "PASS: 15 actual ARM64 loop cases; independent Capstone decode, Unicorn execution and exact whole-image restoration; local ignored binary inputs used",
+    "V72_saved_observations": "PASS: public parser reproduces original GPU/DPU observations and strict admission",
+    "V72_input_cadence": "PASS: public analyzer reproduces archived input distributions",
+    "Python_syntax": "PASS",
+    "V71_GPU_integration": "PASS: 32 scenarios, 20 rejected mutations, static analysis; ASan/UBSan; actual v64 backend and separate CPU/DMA views",
+    "V71_copy_stop": "PASS: queued-copy stop retains backing, avoids service lock and drains actual backend",
+    "original_v72_freeze": "PASS: 1875 original frozen items unchanged",
+    "wording_and_identifier_scan": "PASS",
+    "public_file_hashes": "PASS"
+  },
+  "v72_hardware_result": "INCOMPLETE",
+  "v72_strict_gpu_display_admission_passed": true,
+  "v72_legacy_verifier_passed": false,
+  "v72_legacy_failure": "verify-lmi-gpu-route.py:62 bus-clock records interrupted by diagnostics in original log",
+  "publication_device_access": false
 }

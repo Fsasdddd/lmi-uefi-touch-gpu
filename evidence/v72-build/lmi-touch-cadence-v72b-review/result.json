@@ -1,0 +1,446 @@
+{
+  "result": "PASS",
+  "scenarios": 15,
+  "kernel_sha256": "1e76f68263c0e9c02d47fd2528f7f589087726f1d59fb96154e9b5c928077a8b",
+  "actual_arm64_loop_emulated": true,
+  "independent_instruction_decode": true,
+  "original_decoder_events_and_reads_equal": true,
+  "finite_loop_cleanup_verified": true,
+  "idle_185_seconds_without_expiry": true,
+  "outside_edits_exact": true,
+  "bus_edges_unchanged": true,
+  "gpu_and_dpu_unchanged": true,
+  "instructions": [
+    {
+      "pc": "0xfffffff0074c2cb0",
+      "mnemonic": "cmp",
+      "operands": "w19, #0x64, lsl #12"
+    },
+    {
+      "pc": "0xfffffff0074c2d28",
+      "mnemonic": "mov",
+      "operands": "w0, #0x7d0"
+    },
+    {
+      "pc": "0xfffffff0074c2ec8",
+      "mnemonic": "mov",
+      "operands": "w0, #0x3e8"
+    }
+  ],
+  "cases": {
+    "idle": {
+      "events": [],
+      "read_lengths": [
+        3,
+        3,
+        3
+      ],
+      "pauses_us": [
+        2000,
+        2000,
+        2000
+      ]
+    },
+    "tap": {
+      "events": [
+        [
+          1,
+          0,
+          6073,
+          13658
+        ],
+        [
+          3,
+          0,
+          6073,
+          13658
+        ]
+      ],
+      "read_lengths": [
+        3,
+        63,
+        63
+      ],
+      "pauses_us": [
+        1000,
+        1000
+      ]
+    },
+    "swipe-final-position": {
+      "events": [
+        [
+          1,
+          0,
+          6073,
+          13658
+        ],
+        [
+          2,
+          0,
+          24294,
+          16390
+        ],
+        [
+          3,
+          0,
+          57699,
+          19122
+        ]
+      ],
+      "read_lengths": [
+        3,
+        63,
+        63,
+        63
+      ],
+      "pauses_us": [
+        1000,
+        1000,
+        1000
+      ]
+    },
+    "missing-up": {
+      "events": [
+        [
+          1,
+          0,
+          7470,
+          12456
+        ],
+        [
+          3,
+          0,
+          7470,
+          12456
+        ]
+      ],
+      "read_lengths": [
+        3,
+        63,
+        63
+      ],
+      "pauses_us": [
+        1000,
+        1000
+      ]
+    },
+    "multitouch": {
+      "events": [
+        [
+          1,
+          2,
+          6073,
+          5463
+        ],
+        [
+          1,
+          5,
+          18221,
+          10927
+        ],
+        [
+          2,
+          5,
+          21257,
+          10927
+        ],
+        [
+          3,
+          2,
+          48589,
+          5463
+        ],
+        [
+          3,
+          5,
+          21257,
+          10927
+        ]
+      ],
+      "read_lengths": [
+        3,
+        63,
+        63,
+        63
+      ],
+      "pauses_us": [
+        1000,
+        1000,
+        1000
+      ]
+    },
+    "duplicate-live-id": {
+      "events": [
+        [
+          1,
+          0,
+          6073,
+          13658
+        ],
+        [
+          3,
+          0,
+          6073,
+          13658
+        ]
+      ],
+      "read_lengths": [
+        3,
+        63,
+        63,
+        63
+      ],
+      "pauses_us": [
+        1000,
+        20000,
+        1000
+      ]
+    },
+    "cold-ff": {
+      "events": [],
+      "read_lengths": [
+        3,
+        3
+      ],
+      "pauses_us": [
+        200000,
+        2000
+      ]
+    },
+    "read-failure": {
+      "events": [],
+      "read_lengths": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "pauses_us": [
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000,
+        20000
+      ]
+    },
+    "transient-read-failure": {
+      "events": [
+        [
+          1,
+          0,
+          6073,
+          13658
+        ],
+        [
+          3,
+          0,
+          6073,
+          13658
+        ]
+      ],
+      "read_lengths": [
+        3,
+        3,
+        63,
+        63,
+        63
+      ],
+      "pauses_us": [
+        20000,
+        1000,
+        20000,
+        1000
+      ]
+    },
+    "first-full-read-failure": {
+      "events": [],
+      "read_lengths": [
+        3,
+        63,
+        3
+      ],
+      "pauses_us": [
+        2000,
+        2000
+      ]
+    },
+    "coordinate-clamp": {
+      "events": [
+        [
+          1,
+          0,
+          65535,
+          65535
+        ],
+        [
+          3,
+          0,
+          65535,
+          65535
+        ]
+      ],
+      "read_lengths": [
+        3,
+        63,
+        63
+      ],
+      "pauses_us": [
+        1000,
+        1000
+      ]
+    },
+    "cleanup-active-contact": {
+      "events": [
+        [
+          1,
+          0,
+          7470,
+          12456
+        ],
+        [
+          3,
+          0,
+          7470,
+          12456
+        ]
+      ],
+      "read_lengths": [
+        3,
+        63
+      ],
+      "pauses_us": [
+        1000
+      ]
+    },
+    "185-second-idle-no-early-expiry": {
+      "modeled_time_us": 185000400,
+      "loops": 71155
+    }
+  },
+  "hardware_tested": false,
+  "performance_verified": false,
+  "limitation": "External report reads, yielding delays, posting and diagnostic calls are stubbed. Elapsed time is modeled and is not hardware performance evidence.",
+  "inputs": {
+    "tools\\check-lmi-touch-cadence-v72.py": "3622a334aef6bf710b6080e2de9a3b7df9155b5a8bbcd9d35cb5f60744353059",
+    "out\\lmi-touch-cadence-v72b\\build-audit.json": "4661701a99b1df1d90e785e300705960786a5f676e9d969d3262d88b94abe02d",
+    "tools\\build-lmi-touch-cadence-v72.py": "e07c375376b8ababdb2c5a88c3ef591795e77f564e104905ae048eb19dd2cc1c"
+  }
+}

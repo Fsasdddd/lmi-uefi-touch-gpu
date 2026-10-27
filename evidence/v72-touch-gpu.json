@@ -1,0 +1,209 @@
+{
+  "result": "INCOMPLETE",
+  "kernel_sha256": "1e76f68263c0e9c02d47fd2528f7f589087726f1d59fb96154e9b5c928077a8b",
+  "validation": {
+    "passed": true,
+    "failed_checks": [],
+    "performance_verified": false,
+    "scope": "v71 deferred CPU cache transfers, actual copy-fence completion and unchanged strict display/source/queue safety; legacy verification separate"
+  },
+  "gpu_frame": {
+    "counts_valid": true,
+    "counts": {
+      "draws": 4513,
+      "frames": 4513,
+      "bytes": 49955227392,
+      "linear": 262,
+      "strided": 4251,
+      "map_hits": 4510,
+      "map_new": 7,
+      "evicted": 0,
+      "retained": 3,
+      "released": 0,
+      "fallback": 1,
+      "skipped_clean": 4513,
+      "copy_ticks": 108462065,
+      "held": 0
+    },
+    "exercised": true,
+    "cpu_gpu_accounting_valid": true,
+    "persistent_mappings_exercised": true,
+    "performance_verified": false
+  },
+  "fast_path": {
+    "counts_valid": true,
+    "fast_frames": 4513,
+    "cpu_copy_calls": 0,
+    "ordinary_frames": 3,
+    "cpu_strided_frames": 0,
+    "matches_desktop_frames": true,
+    "scope": "Fast qualified frames = actual CPU copies + completed GPU frames; ordinary frames use native compositor"
+  },
+  "desktop_stats": [
+    {
+      "frames": 4516,
+      "submitted": 4556,
+      "completed": 4555,
+      "ticks": 3129366806,
+      "position": 12718
+    }
+  ],
+  "preclean": {
+    "counts_valid": true,
+    "matches_desktop_frames": true,
+    "preclean_exercised": true,
+    "counts": [
+      4516,
+      4515,
+      4516,
+      0,
+      0,
+      106826103
+    ]
+  },
+  "target_cache": {
+    "counts_valid": true,
+    "reuse_exercised": true,
+    "counts": [
+      5,
+      4508,
+      2,
+      99857465344,
+      117972
+    ],
+    "post_invalidate_preserved": false,
+    "performance_verified": false,
+    "cpu_transition_invalidate_required": true
+  },
+  "gpu_copy_overlap": {
+    "counts_valid": true,
+    "pending_zero": true,
+    "counts": {
+      "queued": 4513,
+      "finished": 4513,
+      "wait_polls": 53975,
+      "busy_polls": 49462,
+      "later_queued": 31,
+      "unlocked_wait_ticks": 95082080
+    },
+    "pending": [
+      0
+    ],
+    "record_order_valid": true,
+    "later_submission_observed": true,
+    "unlocked_wait_exercised": true,
+    "execution_overlap_proven": false,
+    "performance_verified": false
+  },
+  "deferred_cpu_cache": {
+    "counts_valid": true,
+    "record_order_valid": true,
+    "counts": {
+      "post_deferred": 4513,
+      "cpu_sync_targets": 3,
+      "cpu_sync_bytes": 33226752,
+      "cpu_sync_ticks": 30976
+    },
+    "gpu_owned_mask": 3,
+    "skipped_full_target_traversals": 4510,
+    "pending_copy_zero": true,
+    "performance_verified": false,
+    "scope": "A GPU-owned target may retain stale clean CPU cache until an explicit CPU access transition; this is separate from pending DMA."
+  },
+  "producer_retirement": {
+    "counts_valid": true,
+    "source_release_verified": true,
+    "producer_wait_exercised": true,
+    "matches_desktop_frames": true,
+    "counts": [
+      4517,
+      4517,
+      10257,
+      3,
+      1,
+      2582,
+      0,
+      0,
+      0,
+      4527
+    ]
+  },
+  "gpu_queue": {
+    "counts_valid": true,
+    "counts": [
+      4,
+      4,
+      6537,
+      161,
+      26440,
+      26440,
+      26440,
+      2
+    ],
+    "overlap_exercised": true,
+    "real_completion_drained": true
+  },
+  "gpu_map_batch": {
+    "counts_valid": true,
+    "batching_exercised": true,
+    "counts": [
+      1816,
+      1026735,
+      0
+    ]
+  },
+  "stop_boundary": {
+    "source_begun": 4517,
+    "source_retired": 4517,
+    "outstanding_source_retirements": 0,
+    "expected_submissions_including_probe": 4556,
+    "observed_submissions": 4556,
+    "note": "Preserve strict rejection: a composed frame is not proof of DPU submission or source retirement; no counter is rewritten."
+  },
+  "extra_source_retains_at_return": 3,
+  "allocations_retained_until_ram_return": true,
+  "wifi_integrated": false,
+  "performance_verified": false,
+  "measured_animation_fps": null,
+  "panic_found": false,
+  "ram_timer_expired": true,
+  "other_cores_stopped": true,
+  "sources": {
+    "hardware-test.json": "2ac4ebc19a5612c233471b8902e1840014dfb79a7faef46119a435142898738d",
+    "checkpoint-63.log": "04ae539fcb12c390d60ccbbcfbf552d9a4423fed4730c095e4b2c01e1c3fb753",
+    "dpu-observation.json": "6edaebd5f062994755cd6522e1e0d586fdba2d3e1bea85f9a4bcf631880b5d62",
+    "android-return.json": "9098309978806f2802bcb2ffd8f5823346026d4517da7b2e016dd7eca9203a78",
+    "user-feedback.json": "76f32f28db6546ae8eebd9bef9753337d7a16542593667d5d5c098fcb0373c2e"
+  },
+  "android_return": {
+    "android_boot_completed": true,
+    "original_partition_hashes_match": {
+      "boot": true,
+      "dtbo": true
+    }
+  },
+  "interaction_feedback": {
+    "version": "v72b",
+    "touch_response_improved": true,
+    "tracking_improved": true,
+    "animation_fps_improved": null,
+    "dropped_frames_resolved": null,
+    "settings_normal": null,
+    "wallpaper_normal": null
+  },
+  "legacy_verifier": {
+    "passed": false,
+    "file": "verify-lmi-gpu-route.py",
+    "line": 62,
+    "failure": "Bus clock record set assertion; button diagnostics interleave the LMI_GPU_SMMU_CLOCK tag in the original log",
+    "original_log_changed": false,
+    "verifier_changed": false
+  },
+  "first_attempt": {
+    "result": "INCOMPLETE",
+    "desktop_started": false,
+    "reason": "USB system image transfer failed before v72 runtime startup",
+    "android_return_verified": true
+  },
+  "scope": "Selected ended-run evidence; no raw device logs or system images included. Hardware checks and legacy whole-run result remain separate."
+}

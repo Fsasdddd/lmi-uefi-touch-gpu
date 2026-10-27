@@ -1,0 +1,8 @@
+{
+  "result": "FAIL",
+  "stage": "independent ARM64 immediate decode",
+  "rejected_kernel_sha256": "312fa280e7a6667be4fa2ae8a07640fde58083b09dcd8f618a424beea3a555b0",
+  "wrong_cmp": "0x7164027f",
+  "corrected_cmp": "0x7141927f",
+  "hardware_tested": false
+}
