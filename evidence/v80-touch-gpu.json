@@ -1,0 +1,419 @@
+{
+  "result": "INCOMPLETE",
+  "primary_error": "",
+  "error_type": "AssertionError",
+  "kernel_sha256": "988f7afd8ef6b1f08cc7600b12cf686776efcd8e7e8128348093f141d8201a39",
+  "android_return": {
+    "android_boot_completed": true,
+    "original_partition_hashes_match": {
+      "boot": true,
+      "dtbo": true
+    }
+  },
+  "raw_log_changed": false,
+  "legacy_verifier_changed": false,
+  "performance_verified": false,
+  "measured_animation_fps": null,
+  "wifi_integrated": false,
+  "ios_payload_crc_verified": true,
+  "run63_command_acknowledged": true,
+  "validation": {
+    "passed": true,
+    "failed_checks": [],
+    "performance_verified": false,
+    "scope": "v73 timing records plus unchanged v72/v71 GPU, source and DPU safety; legacy verification remains separate"
+  },
+  "async_dpu": {
+    "records_and_counts_valid": true,
+    "counts": {
+      "attempted": 1,
+      "started": 1,
+      "failed": 0,
+      "enqueued": 780,
+      "submitted": 780,
+      "completed": 779,
+      "waits": 442,
+      "polls": 147961,
+      "failures": 0,
+      "pending": 18446744073709551615
+    },
+    "hardware_concurrency_measured": false,
+    "measured_animation_fps": null,
+    "performance_verified": false,
+    "scope": "Worker start, queued/submitted frames and real inherited completion accounting. Does not measure physical render/scan overlap or FPS."
+  },
+  "cpu_epss": {
+    "records_and_requests_valid": true,
+    "domains": [
+      {
+        "domain": 0,
+        "original_request_index": 13,
+        "target_request_index": 16,
+        "requested_khz": 1804800,
+        "restore_readback": 13,
+        "unchanged_request": false,
+        "measured_cpu_frequency": null
+      },
+      {
+        "domain": 1,
+        "original_request_index": 0,
+        "target_request_index": 17,
+        "requested_khz": 2419200,
+        "restore_readback": 0,
+        "unchanged_request": false,
+        "measured_cpu_frequency": null
+      },
+      {
+        "domain": 2,
+        "original_request_index": 0,
+        "target_request_index": 19,
+        "requested_khz": 2841600,
+        "restore_readback": 0,
+        "unchanged_request": false,
+        "measured_cpu_frequency": null
+      }
+    ],
+    "changed_mask": 7,
+    "measured_cpu_frequency": null,
+    "measured_animation_fps": null,
+    "performance_verified": false,
+    "scope": "Validates board LUT selection, requested index readback and restoration of modified requests. Neither EPSS request nor Android policy is a CPU or animation frequency measurement."
+  },
+  "display_timing": {
+    "histograms_valid": true,
+    "counter_relations_valid": true,
+    "record_order_valid": true,
+    "counts": {
+      "frame_ok": 780,
+      "frame_other": 0,
+      "submit_ok": 780,
+      "submit_other": 0,
+      "matched": 780,
+      "unmatched": 0
+    },
+    "metrics": {
+      "frame": {
+        "count": 780,
+        "ticks": 29291192,
+        "max_ticks": 191490,
+        "bins": [
+          0,
+          730,
+          48,
+          2,
+          0,
+          0
+        ],
+        "mean_us": 1955.8755341880344,
+        "max_us": 9973.4375
+      },
+      "gap": {
+        "count": 779,
+        "ticks": 468573263,
+        "max_ticks": 225341574,
+        "bins": [
+          460,
+          37,
+          49,
+          111,
+          78,
+          44
+        ],
+        "mean_us": 31328.44345047069,
+        "max_us": 11736540.3125
+      },
+      "source": {
+        "count": 776,
+        "ticks": 4282290,
+        "max_ticks": 80173,
+        "bins": [
+          703,
+          72,
+          1,
+          0,
+          0,
+          0
+        ],
+        "mean_us": 287.41744523195877,
+        "max_us": 4175.677083333334
+      },
+      "copy": {
+        "count": 776,
+        "ticks": 24287241,
+        "max_ticks": 190938,
+        "bins": [
+          0,
+          749,
+          25,
+          2,
+          0,
+          0
+        ],
+        "mean_us": 1630.1036968427836,
+        "max_us": 9944.6875
+      },
+      "dpu_wait": {
+        "count": 780,
+        "ticks": 156739520,
+        "max_ticks": 509046,
+        "bins": [
+          145,
+          25,
+          68,
+          540,
+          2,
+          0
+        ],
+        "mean_us": 10466.04700854701,
+        "max_us": 26512.8125
+      },
+      "submit": {
+        "count": 780,
+        "ticks": 285582,
+        "max_ticks": 1864,
+        "bins": [
+          780,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_us": 19.069310897435898,
+        "max_us": 97.08333333333334
+      },
+      "total": {
+        "count": 780,
+        "ticks": 186316294,
+        "max_ticks": 570593,
+        "bins": [
+          0,
+          153,
+          55,
+          312,
+          260,
+          0
+        ],
+        "mean_us": 12440.991853632479,
+        "max_us": 29718.385416666668
+      },
+      "cadence": {
+        "count": 779,
+        "ticks": 654842667,
+        "max_ticks": 225407955,
+        "bins": [
+          0,
+          0,
+          0,
+          200,
+          532,
+          47
+        ],
+        "mean_us": 43782.270739730426,
+        "max_us": 11739997.65625
+      }
+    },
+    "counter_hz": 19200000,
+    "bin_upper_us": [
+      1000,
+      4000,
+      8333.333333333334,
+      16666.666666666668,
+      33333.333333333336,
+      null
+    ],
+    "measured_animation_fps": null,
+    "performance_verified": false,
+    "scope": "FRAME includes native source waits and submit-to-copy-join. COPY overlaps FRAME and includes its native tail; SOURCE is the compositor ready callback, not every backend wait. DPU_WAIT is frame-return to native submit entry, including the original outer poll/delay. GAP is last successful submit return to frame entry and may include idle or failed frames. CADENCE includes idle; none of these counters measures panel FPS or physical touch-to-photon latency."
+  },
+  "gpu_frame": {
+    "counts_valid": true,
+    "counts": {
+      "draws": 776,
+      "frames": 776,
+      "bytes": 8589686784,
+      "linear": 3,
+      "strided": 773,
+      "map_hits": 773,
+      "map_new": 7,
+      "evicted": 0,
+      "retained": 3,
+      "released": 0,
+      "fallback": 1,
+      "skipped_clean": 776,
+      "copy_ticks": 24287241,
+      "held": 0
+    },
+    "exercised": true,
+    "cpu_gpu_accounting_valid": true,
+    "persistent_mappings_exercised": true,
+    "performance_verified": false
+  },
+  "fast_path": {
+    "counts_valid": true,
+    "fast_frames": 776,
+    "cpu_copy_calls": 0,
+    "ordinary_frames": 4,
+    "cpu_strided_frames": 0,
+    "matches_desktop_frames": true,
+    "scope": "Fast qualified frames = actual CPU copies + completed GPU frames; ordinary frames use native compositor"
+  },
+  "desktop_stats": [
+    {
+      "frames": 780,
+      "submitted": 820,
+      "completed": 819,
+      "ticks": 657690477,
+      "position": 11643
+    }
+  ],
+  "preclean": {
+    "counts_valid": true,
+    "matches_desktop_frames": true,
+    "preclean_exercised": true,
+    "counts": [
+      780,
+      676,
+      780,
+      0,
+      0,
+      24040643
+    ]
+  },
+  "target_cache": {
+    "counts_valid": true,
+    "reuse_exercised": true,
+    "counts": [
+      5,
+      771,
+      2,
+      17078550528,
+      107538
+    ],
+    "post_invalidate_preserved": false,
+    "performance_verified": false,
+    "cpu_transition_invalidate_required": true
+  },
+  "gpu_copy_overlap": {
+    "counts_valid": true,
+    "pending_zero": true,
+    "counts": {
+      "queued": 776,
+      "finished": 776,
+      "wait_polls": 10103,
+      "busy_polls": 9327,
+      "later_queued": 106,
+      "unlocked_wait_ticks": 17960025
+    },
+    "pending": [
+      0
+    ],
+    "record_order_valid": true,
+    "later_submission_observed": true,
+    "unlocked_wait_exercised": true,
+    "execution_overlap_proven": false,
+    "performance_verified": false
+  },
+  "deferred_cpu_cache": {
+    "counts_valid": true,
+    "record_order_valid": true,
+    "counts": {
+      "post_deferred": 776,
+      "cpu_sync_targets": 3,
+      "cpu_sync_bytes": 33226752,
+      "cpu_sync_ticks": 43439
+    },
+    "gpu_owned_mask": 3,
+    "skipped_full_target_traversals": 773,
+    "pending_copy_zero": true,
+    "performance_verified": false,
+    "scope": "A GPU-owned target may retain stale clean CPU cache until an explicit CPU access transition; this is separate from pending DMA."
+  },
+  "producer_retirement": {
+    "counts_valid": true,
+    "source_release_verified": true,
+    "producer_wait_exercised": true,
+    "matches_desktop_frames": true,
+    "counts": [
+      781,
+      781,
+      1579,
+      3,
+      1,
+      269,
+      0,
+      0,
+      0,
+      793
+    ]
+  },
+  "gpu_queue": {
+    "counts_valid": true,
+    "counts": [
+      4,
+      4,
+      1682,
+      110,
+      4901,
+      4901,
+      4901,
+      2
+    ],
+    "overlap_exercised": true,
+    "real_completion_drained": true
+  },
+  "gpu_map_batch": {
+    "counts_valid": true,
+    "batching_exercised": true,
+    "counts": [
+      702,
+      492843,
+      0
+    ]
+  },
+  "copy_probe": {
+    "counts_valid": true,
+    "counts": {
+      "bytes": 1020,
+      "ring_end": 90,
+      "flush_marker": 1712066022,
+      "write_marker": 1712066023,
+      "mismatches": 0,
+      "elapsed_ticks": 338
+    },
+    "fresh_completion_verified": true,
+    "before_service_result": true,
+    "scope": "One 1020-byte boot-only GPU copy; does not replace desktop CPU copying or measure FPS/bandwidth",
+    "desktop_gpu_copy": false,
+    "performance_verified": false
+  },
+  "independent_legacy": {
+    "passed": false,
+    "error_type": "AssertionError",
+    "error": "",
+    "failure": "verify-lmi-gpu-gx.py:11: frozen HFI DCVS request assertion"
+  },
+  "panic_found": false,
+  "ram_timer_expired": true,
+  "other_cores_stopped": true,
+  "timing_mean_us": {
+    "frame": 1955.8755341880344,
+    "gap": 31328.44345047069,
+    "source": 287.41744523195877,
+    "copy": 1630.1036968427836,
+    "dpu_wait": 10466.04700854701,
+    "submit": 19.069310897435898,
+    "total": 12440.991853632479,
+    "cadence": 43782.270739730426
+  },
+  "cpu_request_interpretation": "Requested LUT index readback is not measured CPU frequency or animation FPS.",
+  "timing_interpretation": "SOURCE and COPY overlap FRAME. GAP/CADENCE include idle/scheduling; these means and frame totals do not measure animation FPS. Different user actions prevent a controlled speedup claim.",
+  "user_feedback": {
+    "recorded_at": "2026-10-28T23:23:20.126342+08:00",
+    "version": "v80",
+    "response": "流畅度改善，基本功能正常",
+    "followup": "流畅度改善了很多",
+    "source": "本轮v80异步测试回复及随后用户补充",
+    "performance_comparison": "用户体感明显改善；没有测得动画FPS"
+  }
+}

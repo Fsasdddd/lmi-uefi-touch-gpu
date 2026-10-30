@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "kernel_sha256": "988f7afd8ef6b1f08cc7600b12cf686776efcd8e7e8128348093f141d8201a39",
+  "linked_code_reproduced": true,
+  "outside_edits_exact": true,
+  "host_scenarios": 12,
+  "stream_frames": 512,
+  "asan_ubsan": true,
+  "thread_sanitizer": true,
+  "native_scenarios": 11,
+  "mutations_caught": [
+    {
+      "name": "bypass-pending-and-buffer-pressure",
+      "compiled": true,
+      "returncode": -6,
+      "assertion_detected": true
+    },
+    {
+      "name": "skip-idle-scan-completion",
+      "compiled": true,
+      "returncode": -6,
+      "assertion_detected": true
+    },
+    {
+      "name": "publish-partial-frame",
+      "compiled": true,
+      "returncode": -6,
+      "assertion_detected": true
+    }
+  ],
+  "hardware_tested": false,
+  "performance_verified": false,
+  "wifi_integrated": false,
+  "limitation": "Concurrency, ABI and fail/retain paths use modeled OS/hardware services; physical completion and FPS remain unverified."
+}

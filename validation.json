@@ -37,5 +37,16 @@
   "v72_strict_gpu_display_admission_passed": true,
   "v72_legacy_verifier_passed": false,
   "v72_legacy_failure": "verify-lmi-gpu-route.py:62 bus-clock records interrupted by diagnostics in original log",
-  "publication_device_access": false
+  "publication_device_access": false,
+  "v80_public_copy": {
+    "validated_at": "2026-10-30",
+    "result": "PASS",
+    "host_scenarios": 12,
+    "stream_frames": 512,
+    "asan_ubsan": true,
+    "hardware_rerun": false,
+    "historical_frozen_files_verified": 3967,
+    "overall_hardware_result": "INCOMPLETE",
+    "performance_verified": false
+  }
 }

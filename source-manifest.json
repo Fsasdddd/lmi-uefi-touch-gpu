@@ -1430,8 +1430,200 @@
       "sha256": "e89c4d285e911291aef0df31d33b337d28cefbc79b965c9ffff66cbd0a83c2e0"
     },
     {
-      "path": "dependency-cache/manifest.json",
-      "sha256": "7e5e903e707ea537ab55f04be61efa6e48168ac24ee735985ccff851736183fe"
+      "path": "build-support/v80/out/lmi-cpu-epss/host-c/accept-request-mismatch.c",
+      "sha256": "0224c8e2ec21701ac333e38e755ab3e497b71ea4f5eeef0490d72686cbda9aeb"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/host-c/clear-dirty-on-restore-failure.c",
+      "sha256": "b568d150c9d5db86b40e598a52e78b06ec431bb7e03a24303c37805844e37840"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/host-c/forget-dirty-before-write.c",
+      "sha256": "e0a4d5e9b7049d4deecf6999686c17fd4f8ce76844a08fd5ec8fecad86a8db3e"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/host-c/ignore-cap.c",
+      "sha256": "91f80ab8ec0098e5647074338dd8a16584e8cf7a88a5c4dd1c8d747851c269a7"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/host-c/ignore-core-count.c",
+      "sha256": "840272e7f09d0bf2d1fd0f835c82f5266a4126d53a40d5bdb328583cca12f7aa"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/host-c/restore-target-instead.c",
+      "sha256": "e68808f6d07867deed7e062aa50557a242d4e8e47723d827247dab104b5a46ca"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/host-c/skip-rollback.c",
+      "sha256": "dcad81b957a5f3eb371fe0d2f153217b1f9fd6ecd2a9974bdfe276aee7d41bc8"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/host-c/stop-on-frequency-only.c",
+      "sha256": "cd786d7ff3f35c7cd6f9b0afb11ba9fc6e544be7f448a12200f557719a9f67bd"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/link-c/epss.ld",
+      "sha256": "8aa6d087ad590a53adadc565eb113fc3d0668d26cf2f5827bf0ec1872611bef8"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/source-review/clk-rpmh.c",
+      "sha256": "7b92640d29442a26f0f3d4e19baf987be297f51e532e98c458e71ee56ccbad48"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/source-review/gcc-kona.c",
+      "sha256": "ed208678508c983d0989f1f135fac898c5a9a91c14af1fa42cd7ea2f24cd14cd"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss/source-review/qcom-cpufreq-hw.c",
+      "sha256": "9df0b59a590b8719d020d7d0b3d4a14b555ddf29355268df7c1cdb2a071bc6cf"
+    },
+    {
+      "path": "build-support/v80/out/lmi-cpu-epss-v77e/epss.ld",
+      "sha256": "8aa6d087ad590a53adadc565eb113fc3d0668d26cf2f5827bf0ec1872611bef8"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-async-v80-review-b/bypass-pending-and-buffer-pressure/mutant.c",
+      "sha256": "bb5e8c91e28dba7bec90d5486642bc108db305cb5df3ef35aceab54129eba299"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-async-v80-review-b/publish-partial-frame/mutant.c",
+      "sha256": "be95503734a7cad00056430fd82f19cb071a7aa1c9f92d78c1894d28b6f1fc68"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-async-v80-review-b/skip-idle-scan-completion/mutant.c",
+      "sha256": "c8cd4ac82b667cc723e88017d5f5f682701ca50c7e9b8cbd26a610b70c2c64bd"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-async-v80a/async.ld",
+      "sha256": "84a1842caf50e65a2ede4a601949bc97ae1c68a400d4be48bc8c4e24b82fedf8"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-timing-v73/timing.ld",
+      "sha256": "9602a9fd40faf50a104cf2feb5b365e1c1744ec3ec9fdd789806cdda1cf11944"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-timing-v73-host/changed-submit-time.c",
+      "sha256": "cbf0b591161487d0efe0b4634b394444fd3475e5bdd0b1d57ce92e77a1c2e820"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-timing-v73b-host/changed-source-timeout.c",
+      "sha256": "56c89985d4e636501dc6245a583d29692e1a9f6e67e1ea897df2d3fd389b85a7"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-timing-v73b-host/changed-submit-time.c",
+      "sha256": "a297bba22254079e51941273e77d2e9748a6a867de5d570e911d767dd5a98e9e"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-timing-v73b-host/false-submit-success.c",
+      "sha256": "bcf456b89e12b2c0430899b1991a6d1fab9a1949d52e65c686f45ecf7471cbe2"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-timing-v73b-host/logging-before-stop.c",
+      "sha256": "f4772a80abcf6f41be7242e1df4413c499ee6d7fbaa64312794c55589e30e553"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-timing-v73b-host/small-allocation.c",
+      "sha256": "0abccffd97f2032f96dcc9fa81a26708e182f977f8044595120a25d6613ea1a6"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-timing-v73b-host/wrong-ticket-match.c",
+      "sha256": "26554b653c8a0193f2165a6276ef7a3984e58fa9a09f27f56255187d3b9aae69"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-wait-v74/wait.ld",
+      "sha256": "fd38eb54cbcd764d4223a9797243b3a25b60404d1e7f8b7df55ee807e7affc3d"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-wait-v74-host/armed-check-removed.c",
+      "sha256": "4fe94d24742e9c0faa1f3da21e1d89b1526433e1c75ae43433af96a39c2be1d9"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-wait-v74-host/budget-disabled.c",
+      "sha256": "cd1b77829bd9aeb529664769b527a8edf719155300e076f33ecb18c0ca384c9b"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-wait-v74-host/fallback-argument-changed.c",
+      "sha256": "280965a8b80cf899a3157f8e529d55e540c7b1b6cc5ba0db18e3ac869baa5775"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-wait-v74-host/short-allocation.c",
+      "sha256": "3eaf8c909e6d5ebbef23af92391987087dceb8dac81091d7b79928381fb2f76c"
+    },
+    {
+      "path": "build-support/v80/out/lmi-display-wait-v74-host/stop-removed.c",
+      "sha256": "117c3f66ce1dd7be0220807d4d6e933ab86c4d90749bc7c52943ce4686d2c920"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader/efi.h",
+      "sha256": "4d5023e673cd8ae62b53424ad8c6bf665097990bd0d500e763959a1a1d3a8b22"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader/identity.h",
+      "sha256": "41d05bd8afe2edf00179a067d9be91b938e68899e3eb3c2467c22bb65507d010"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader/LmiUsbProbe.h",
+      "sha256": "d2ab5909676cc527fcd62a9dc9c758a7a2e49fbaf79d2acbb4b00993c79d3a7d"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader/loader.c",
+      "sha256": "9d10538901b6dfb833ba4b9d4e6583497d1899f7475f4e399af08c303858a66f"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader/simd-reference.S",
+      "sha256": "2ba63a383eabe0b63ac8f7c5851ce545633032790c2cec4e4df726669af55397"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader/XnuLoader-lmi-usb-probe.c",
+      "sha256": "98d715fec7319e495c5368a2b0bf5abf7491f97e6e091b6ba7c4db1c23b29fcc"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader-v78/efi.h",
+      "sha256": "4d5023e673cd8ae62b53424ad8c6bf665097990bd0d500e763959a1a1d3a8b22"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader-v78/identity.h",
+      "sha256": "41d05bd8afe2edf00179a067d9be91b938e68899e3eb3c2467c22bb65507d010"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader-v78/LmiUsbProbe.h",
+      "sha256": "ce711e3f0f3d645ad12e6dc516fd076aa06496c4b5eb4703be77095d878cf01c"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader-v78/loader.c",
+      "sha256": "91fcbc9cc4086ad3e9acfe9057b5422093b7e6c56c2c039de63e045fc70e49eb"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader-v78/simd-reference.S",
+      "sha256": "2ba63a383eabe0b63ac8f7c5851ce545633032790c2cec4e4df726669af55397"
+    },
+    {
+      "path": "build-support/v80/out/lmi-loader-v78/XnuLoader-lmi-usb-probe.c",
+      "sha256": "98d715fec7319e495c5368a2b0bf5abf7491f97e6e091b6ba7c4db1c23b29fcc"
+    },
+    {
+      "path": "build-support/v80/out/lmi-render-wait-v75/wait.ld",
+      "sha256": "9bddb4fb882159c123a25a3ef09cdabd450704220977acbb0f1c4a0d98d75139"
+    },
+    {
+      "path": "build-support/v80/out/lmi-render-wait-v75-host/changed-interval.c",
+      "sha256": "1f9e8ad8676a084569bed43d9850f545e86bb5710dbb9f29961ba8608d737a78"
+    },
+    {
+      "path": "build-support/v80/out/lmi-render-wait-v75-host/changed-scale.c",
+      "sha256": "40f0a8b68d0977e952c55ea8d112552304656d4cf80a8e70a37dd88b236cc78c"
+    },
+    {
+      "path": "build-support/v80/out/lmi-render-wait-v75-host/short-allocation.c",
+      "sha256": "8843e1409595e324f88e633541cd11e1bf6a3c9793678b63222e513e635f9787"
+    },
+    {
+      "path": "build-support/v80/out/lmi-render-wait-v75-host/stop-removed.c",
+      "sha256": "28b7efdc391ffa3db148be2d7f808713cff495a233149a092ff3ca435c887282"
+    },
+    {
+      "path": "build-support/v80/out/lmi-render-wait-v75-host/wrong-histogram.c",
+      "sha256": "11456cde6d183bb7b3083f5de92b6b7fa154dce2d8965b3d9d68b30a901ce8f1"
     },
     {
       "path": "docs/BUILD.zh-CN.md",
@@ -1460,6 +1652,22 @@
     {
       "path": "docs/V72.zh-CN.md",
       "sha256": "2ae14c397008a45c8657cbfa7053283ed17e7e253e61898168659683d91613c2"
+    },
+    {
+      "path": "docs/V80.zh-CN.md",
+      "sha256": "54280b7ca33bbe1b031edbef4dbfb10b8d1e740cd4198e6715f70febfe646239"
+    },
+    {
+      "path": "evidence/lmi-display-async-v80-native-a.json",
+      "sha256": "bb13e2d7fa9e7bfb58062129d5d336d98f9f1aacc4c1dfc133a5d3bd9f6d0119"
+    },
+    {
+      "path": "evidence/lmi-display-async-v80-policy-a.json",
+      "sha256": "650ff4dbe9a304cef0885a37c9b49b187c10a99527136a1ea6f0260235d42b55"
+    },
+    {
+      "path": "evidence/lmi-display-async-v80-review-b.json",
+      "sha256": "6663d2055f2c6d296e458b2fed924f54c6e728141d4acf49d995c9cafde81f92"
     },
     {
       "path": "evidence/quiet-v3-gl-excerpt.log",
@@ -1594,6 +1802,14 @@
       "sha256": "bba6eb3952b99a6670355cded1ee0497655d245c8528b48b5c94fc321d4d6056"
     },
     {
+      "path": "evidence/v80-source-provenance.json",
+      "sha256": "c0053ad95dad68ee0538963d9baa6f6b20a041f8654fd546105c8fbbabbd6111"
+    },
+    {
+      "path": "evidence/v80-touch-gpu.json",
+      "sha256": "1bf18210faea0fd368dd08a071064d2ebe4038ea7765bff786c087397930dc2d"
+    },
+    {
       "path": "LICENSE",
       "sha256": "d021e188118936cf241c42b4ffedbc0ed250c8a7db5233348252926fb72bf9eb"
     },
@@ -1691,7 +1907,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "95a53967b2c13e7f86fd0a99aa98032502ba84c1c13afe57ee0de9c153177cc4"
+      "sha256": "3d5615ea3e40bb40cfe942cbaca74a86d881f894dee235cfa8d51439d448b0e0"
     },
     {
       "path": "tools/analyze-lmi-display-census.py",
@@ -1704,6 +1920,18 @@
     {
       "path": "tools/analyze-lmi-display-v72.py",
       "sha256": "00ebca31f7faa46330ddad9e03b6b1a308fd32e523b4dd2a202e4b4024cca9c3"
+    },
+    {
+      "path": "tools/analyze-lmi-display-v77.py",
+      "sha256": "376406a5b1d5d246c6b2547987d0867bfebc01abd8046c463243b0c091eb5a92"
+    },
+    {
+      "path": "tools/analyze-lmi-display-v79.py",
+      "sha256": "8b7f9d04920b08970e0bdd8dd5ca27984bb602b74f49cc8ecd0d15dc373ce39e"
+    },
+    {
+      "path": "tools/analyze-lmi-display-v80.py",
+      "sha256": "644ba4612760482962f5f3293d03c0552c6702b00b735bbd66b4ed8ec8844bf1"
     },
     {
       "path": "tools/analyze-lmi-input-cadence.py",
@@ -1722,12 +1950,28 @@
       "sha256": "18c07b2d3cc1dbba0a0ce06bd281c791eab4dddeddf7875e6cf1e97a27076fd6"
     },
     {
+      "path": "tools/audit-lmi-cpu-epss-linked.py",
+      "sha256": "99a9d4e6138695044c5124e53741d94e2c9b2dbcf2ee7d7ffdf3a535db774d03"
+    },
+    {
+      "path": "tools/audit-lmi-cpu-epss-space.py",
+      "sha256": "ca8895d816fc9e8bfcdd6b0f88ec4532ce3327b60b36a24006eb7f1a2573d0b7"
+    },
+    {
       "path": "tools/audit-lmi-display-preclean-v65-linked.py",
       "sha256": "7577d211c81a814c8e3c6495370e3268fdf1362cb5eb49bef8ee71c2b5268c40"
     },
     {
       "path": "tools/audit-lmi-display-quiesce-space-v64.py",
       "sha256": "4355725504c5bf2a85df5d9e43349f3faa4dbe3f806f0c02e24096f30b72f183"
+    },
+    {
+      "path": "tools/audit-lmi-display-timing-v73-linked.py",
+      "sha256": "87106b327f0b2ef417cb576d988f6eee1ae5bf0a1d67d80691125960cd285bf4"
+    },
+    {
+      "path": "tools/audit-lmi-display-wait-v74-linked.py",
+      "sha256": "e7ca6f0a6ade60fe3951ef1b3778f5684128e031b718587699c7df0ac7635454"
     },
     {
       "path": "tools/audit-lmi-firmware.py",
@@ -1810,6 +2054,10 @@
       "sha256": "e16e7a6d116b9cce6245576bfcf826e2917672cec322948c5d35e03d16c48821"
     },
     {
+      "path": "tools/audit-lmi-render-wait-v75-linked.py",
+      "sha256": "fa2e5764b86c9bcb3da96b279d31943d99d0fc3fef1c15e75e00f03aacc89874"
+    },
+    {
       "path": "tools/audit-lmi-replaced-gpu-bodies-v62.py",
       "sha256": "b91077d6b742bbd837299d288959d5359f04ce5c399b55f80146a094ed9b610e"
     },
@@ -1834,12 +2082,24 @@
       "sha256": "5748073857c67e4e097d8af568c24aa1b9340335b5516912e4871f69afb0a6e9"
     },
     {
+      "path": "tools/build-lmi-cpu-epss-v77.py",
+      "sha256": "189fafa5ecec01f712ae38980c84be5f24baac25c322d04b85831808e1781305"
+    },
+    {
+      "path": "tools/build-lmi-display-async-v80.py",
+      "sha256": "02de65521e227e59a499ee46ebf6aa057a0139bdbbba487836fdcf002aab2fac"
+    },
+    {
       "path": "tools/build-lmi-display-extension.py",
       "sha256": "59353bdc3e35389c9ecb53a71b574dead378f45dfd21d159c80d1c0820cbd584"
     },
     {
       "path": "tools/build-lmi-display-preclean-v65.py",
       "sha256": "85a2b03aa5e8b38b03ae2b175caa92edc4b7034f12f31d3e613a871549056c7d"
+    },
+    {
+      "path": "tools/build-lmi-display-timing-v73.py",
+      "sha256": "e6ad4b4e5591b4e0b07bda0d144167401d0c9eb8e9e717b0b7c6c14c4a2a95b6"
     },
     {
       "path": "tools/build-lmi-display-v41.py",
@@ -1926,6 +2186,10 @@
       "sha256": "6a82401dc71e2af5ce61cb58f432d25f775ca3b6eea8d3fba874eeee2f9c8913"
     },
     {
+      "path": "tools/build-lmi-display-wait-v74.py",
+      "sha256": "f87525cbda989ee552114773e1719aa350ff0afc5a8a989fe7ef4199c8b35ecc"
+    },
+    {
       "path": "tools/build-lmi-driver-probe.py",
       "sha256": "a6d9002bdbfa593ce957c79ef7959aba787f125e848dbc08b86131ba9e9be81b"
     },
@@ -1998,6 +2262,10 @@
       "sha256": "9af09895f34594cd98c1f62766a3b6f1b2bd93658acc15fc5e68b1000b700d05"
     },
     {
+      "path": "tools/build-lmi-loader-v77.py",
+      "sha256": "2068c0b2ba02ac911e5f602cd8c4dccb0e12694547216b66cb8b9da8ab1b30ea"
+    },
+    {
       "path": "tools/build-lmi-loader.py",
       "sha256": "68271eeb14a667bd34e7fb1df53c8477efe3ddeb10ab0f5d53dbce85cf1a5123"
     },
@@ -2012,6 +2280,18 @@
     {
       "path": "tools/build-lmi-preirq-probe.py",
       "sha256": "5714871aafc6f162afcd804c7ae3b1446febd32efed6a01e0d933b76af0fb672"
+    },
+    {
+      "path": "tools/build-lmi-render-cpu-v79.py",
+      "sha256": "b95efc2bbc18ea268dc6f9349149b3bb1eba3c7ae8fab53de20c75305b6fd69b"
+    },
+    {
+      "path": "tools/build-lmi-render-minimal-v76.py",
+      "sha256": "0ac93a9670ce9abc6798747edc78eee71a7d111a9cef8956b09ee30ea9b58ad6"
+    },
+    {
+      "path": "tools/build-lmi-render-wait-v75.py",
+      "sha256": "d163e9d25556509168b224aac222eb68b8ad6c82f7d514464b81db4a3e432534"
     },
     {
       "path": "tools/build-lmi-root-probe.py",
@@ -2046,8 +2326,32 @@
       "sha256": "84d02b2d9febb05e572417b35a4733d08221be0df0d5f005a6dd1046b70f58f8"
     },
     {
+      "path": "tools/capture-lmi-cpu-epss-profile.py",
+      "sha256": "dca35ef0cd389d1b08fd43b03b5955f1180718bc3450751e235e81ce278e6e2e"
+    },
+    {
       "path": "tools/check-lmi-apfs-image.py",
       "sha256": "e15a0b93ccd54f0ac9fdc203ecae5b4dc83710b2944d04b143da86692f76d519"
+    },
+    {
+      "path": "tools/check-lmi-cpu-epss-native.py",
+      "sha256": "06feb891df38de9ea0595361513754d0753892e7bba3af1cdb28e51668fb4e5d"
+    },
+    {
+      "path": "tools/check-lmi-cpu-epss.c",
+      "sha256": "a40cb764bc5b77012e95ad4629e3475dc1c81b9923c476cb43af7890ea20c181"
+    },
+    {
+      "path": "tools/check-lmi-cpu-epss.py",
+      "sha256": "ea21598afc984c1d65651bdcfa0f49efae1e496e554d7fa44906dd75cf333479"
+    },
+    {
+      "path": "tools/check-lmi-display-async-v80-native.py",
+      "sha256": "e7d7a677c2a0c2c3f41c00d8dc1fad5ab83e5adafb732dbc882b2ff44d2bc348"
+    },
+    {
+      "path": "tools/check-lmi-display-async-v80.c",
+      "sha256": "2311e93728483a4e777897f6e980db98fccc37dd005247ab3d016f1007fc6d75"
     },
     {
       "path": "tools/check-lmi-display-census.py",
@@ -2234,6 +2538,14 @@
       "sha256": "3825a53947c5d9e21bd999da6a3bdbf49c85b04c175a547847f5ddb5d57094a3"
     },
     {
+      "path": "tools/check-lmi-display-timing-v73.c",
+      "sha256": "01a5ed47e6aee6ae0b92efea1c0b0a255ddcba774b00ca42758744f4e2bbda11"
+    },
+    {
+      "path": "tools/check-lmi-display-timing-v73.py",
+      "sha256": "43df771c5058481fec2b04972e9e50fc72646d370fa5e51832ee1d070f65de3b"
+    },
+    {
       "path": "tools/check-lmi-display-v44-policy.py",
       "sha256": "5bdd4a5da604cbaa5712d22a5a2468ad218dbf36b7ebd72a5aa8d78dae332a0f"
     },
@@ -2380,6 +2692,42 @@
     {
       "path": "tools/check-lmi-display-v71-policy.py",
       "sha256": "79a379e41e3a3625714fd02b2ffe4d7ad8da083ae94750c4ce77b8eda1886594"
+    },
+    {
+      "path": "tools/check-lmi-display-v73-policy.py",
+      "sha256": "f2c2770fef548520371a0561232a1be120d80cb81dc5a04c341548025bd740b7"
+    },
+    {
+      "path": "tools/check-lmi-display-v74-policy.py",
+      "sha256": "cf3660b1ff3415339af2a7e1ddd50dd7459cfb37804df2b47b74ada857e0b52f"
+    },
+    {
+      "path": "tools/check-lmi-display-v75-policy.py",
+      "sha256": "d9183e07f74a243a8d74082dac29be99b4a44d3c4226d957eb8e9566af21a102"
+    },
+    {
+      "path": "tools/check-lmi-display-v76-policy.py",
+      "sha256": "50b2e2b085922a237d15703919ef84c55a0e96c33c8d1a6afca85199fb1e32c6"
+    },
+    {
+      "path": "tools/check-lmi-display-v77-policy.py",
+      "sha256": "2b5b90292a5d38563315d3bdfe0c1fece1f64a5fc656c38dbe36b020617ae6b6"
+    },
+    {
+      "path": "tools/check-lmi-display-v79-policy.py",
+      "sha256": "3923b40e5fb4d222ed1e8a669b31a13bb84d04a9a21d1baa56d9e8962f2d23c5"
+    },
+    {
+      "path": "tools/check-lmi-display-v80-policy.py",
+      "sha256": "50caf0c81a5e1f0eba5ce208c4a5416fb5b99cefcbbc2a87bcbbeef28e4475d1"
+    },
+    {
+      "path": "tools/check-lmi-display-wait-v74.c",
+      "sha256": "75d17e725185a5326eb5a90bdd2f61ec78050e0a37dae8769319e142d3c2d40d"
+    },
+    {
+      "path": "tools/check-lmi-display-wait-v74.py",
+      "sha256": "5cb4f0c62703e624a3edbfb7125b1595898f9c17436f2eec319f43a91bbc75b7"
     },
     {
       "path": "tools/check-lmi-dpu-snapshot.py",
@@ -2554,6 +2902,10 @@
       "sha256": "76df6e65de2aa83a3e725409310d6c590b404509b48defa62b3cc05296b1e660"
     },
     {
+      "path": "tools/check-lmi-gpu-normal-preflight-v77.py",
+      "sha256": "b36a682ff5079fd473f501bc32202954faff326a6ac66255e8f3c7761fd89b9c"
+    },
+    {
       "path": "tools/check-lmi-gpu-normal-preflight.py",
       "sha256": "d61a94b5d9e7ac4e6e9552f6a5eb079ec5a5b630a7c9a29c59f003f19ff34843"
     },
@@ -2678,6 +3030,22 @@
       "sha256": "f625d2b296d9e8612d304352bffde7d2ad3bfd321864732070dbc3e7519db9ae"
     },
     {
+      "path": "tools/check-lmi-render-cpu-v79.py",
+      "sha256": "4261a5bc097f31896cb2874bbe273ab1ae5f01bb9e37677eba62c33fb5853e05"
+    },
+    {
+      "path": "tools/check-lmi-render-minimal-v76.py",
+      "sha256": "e1f1010914e8eb3a66116b287b79a8fb81e755fa616ec3be9382ecf30032e78b"
+    },
+    {
+      "path": "tools/check-lmi-render-wait-v75.c",
+      "sha256": "2e8c19ea19c581d449155cca6d7132254af687995c87fa56fdc665aca0da77d0"
+    },
+    {
+      "path": "tools/check-lmi-render-wait-v75.py",
+      "sha256": "4c8dbbfdccd5b302bb5698f62c53809fea37fdb04c92be8cd24a1136297157de"
+    },
+    {
       "path": "tools/check-lmi-smp-return.py",
       "sha256": "6120941e4cb57cf087aafd99765e13d9d9307f10d766d1d9fe50e6642aa70a58"
     },
@@ -2718,8 +3086,28 @@
       "sha256": "d0cff08a2d77aeac685e6b322fdf42ebbf63721785ddefea878fb9023db415bf"
     },
     {
+      "path": "tools/finalize-lmi-render-cpu-v79.py",
+      "sha256": "6c4eb887f47a34ab0a2195095c96a732f099051ebf9690725d40debfa85b7c9f"
+    },
+    {
       "path": "tools/finalize-lmi-touch-v72.py",
       "sha256": "b4dfc0de8699824838c2eb8f747ceaaf25e901436ccb85970cfec6b04e8ed574"
+    },
+    {
+      "path": "tools/freeze-lmi-cpu-epss-v77.py",
+      "sha256": "a7e210da4ebec6e221e43b874af8704417a4962b52a9c6ebf4ba17b8c99b6cd1"
+    },
+    {
+      "path": "tools/freeze-lmi-display-async-v80.py",
+      "sha256": "25fbba98f8176a9ee165e4ada8d612cd353ecf4ed2244c72e01fdafdf639c440"
+    },
+    {
+      "path": "tools/freeze-lmi-display-timing-v73.py",
+      "sha256": "a4d76f0d7e7e5da828a4ececf673c33560f74d149a9c9a0392e71d1b36afd099"
+    },
+    {
+      "path": "tools/freeze-lmi-display-wait-v74.py",
+      "sha256": "63423564502c650fb7ac2c5257b42d22b04baa489ad421b31fab8174fb3bbdfb"
     },
     {
       "path": "tools/freeze-lmi-gpu-cache-v69.py",
@@ -2740,6 +3128,18 @@
     {
       "path": "tools/freeze-lmi-gpu-overlap-v70.py",
       "sha256": "71b2692ae37f0ac466c8409f7daace0ab74ec2de7a498a00c0d9e29132f00d5b"
+    },
+    {
+      "path": "tools/freeze-lmi-render-cpu-v79.py",
+      "sha256": "ff503c29ebd58a71fff3f0672a4131f42d78e7d7e0dd05218f0ba00c11082cc9"
+    },
+    {
+      "path": "tools/freeze-lmi-render-minimal-v76.py",
+      "sha256": "f8ddb45a3a66cece29abb74aec680ab839e7e31cf7e278118342c7f2eb057b7d"
+    },
+    {
+      "path": "tools/freeze-lmi-render-wait-v75.py",
+      "sha256": "d4e6a6229a5e4d9d415acb99b2f35b5fc7dfd836d42d0d05f8d0738e260f1139"
     },
     {
       "path": "tools/freeze-lmi-touch-cadence-v72.py",
@@ -2784,6 +3184,30 @@
     {
       "path": "tools/inventory_firmware.py",
       "sha256": "da194f7c88b6935f8b44bc670a253f4031ec43f697de776d5d93b85f040810b4"
+    },
+    {
+      "path": "tools/lmi-cpu-epss-native.c",
+      "sha256": "56b849afa2223598a48ae2f1e3dff98e4beebfd037bbffe4e7eee57e71034126"
+    },
+    {
+      "path": "tools/lmi-cpu-epss.c",
+      "sha256": "1c572a6e1822e6976630e59dac218c65eb434bc3cc2dba8cb60ce74c115f708b"
+    },
+    {
+      "path": "tools/lmi-cpu-epss.h",
+      "sha256": "866d99fc1c8d9b7a6548f7c36624ebf5c698d2cc6ee71f561e9ff8d9464156b1"
+    },
+    {
+      "path": "tools/lmi-display-async-layout-v80.c",
+      "sha256": "2d906d2add60402182ea48356b883803ca0c0cd95242c849fb63105489720794"
+    },
+    {
+      "path": "tools/lmi-display-async-v80.c",
+      "sha256": "eb7eb28d8f0ba4d956251bfde209a10b2d315a9cf84da5391d506d76541bf4f6"
+    },
+    {
+      "path": "tools/lmi-display-async-v80.h",
+      "sha256": "1a2e11b6313dc457a82976c6c380632f1fd2f8f89bf9624ac01a5da25695bded"
     },
     {
       "path": "tools/lmi-display-census.c",
@@ -3012,6 +3436,22 @@
     {
       "path": "tools/lmi-display-surface-abi.h",
       "sha256": "d15547bc9d6085ef514054a2aca9502cee1e7d3c986299d4f7100a9504b1693e"
+    },
+    {
+      "path": "tools/lmi-display-timing-v73.c",
+      "sha256": "214b10244e95c2bd9914885656e97a600c53c88b6a6146b129784e391f990a9b"
+    },
+    {
+      "path": "tools/lmi-display-timing-v73.h",
+      "sha256": "49fe3cac0c934076066a305a48fd51b55c1464b36105eb2e8f37be4042e2bf96"
+    },
+    {
+      "path": "tools/lmi-display-wait-v74.c",
+      "sha256": "efb05ecba91df73275780e6961c27ec9fd5d5b42d4954f6fd168e02fa2287bca"
+    },
+    {
+      "path": "tools/lmi-display-wait-v74.h",
+      "sha256": "b448bf87dd63db02f37350f3e6123cec9963c215fb428aaaf8d515f2cdeb35bb"
     },
     {
       "path": "tools/lmi-dpu-observer-v41.c",
@@ -3254,6 +3694,14 @@
       "sha256": "aa40686875625543432cb27843e2be04ecc1862d9eda550877d01f2c320c77f7"
     },
     {
+      "path": "tools/lmi-render-wait-v75.c",
+      "sha256": "1616e98abee190f3a0f9fbf77fd2d496c2590ea20349173a8d8ee1944e274a56"
+    },
+    {
+      "path": "tools/lmi-render-wait-v75.h",
+      "sha256": "42ab15031e13c316a90abc823f0b56dc97c5a1ee15f30720799ef9226e714aa7"
+    },
+    {
       "path": "tools/lmi-smp-return.S",
       "sha256": "d10e8ab9f2b15383d9fb025c39a18049e5d140904b2209b7d4969a5eb1990f78"
     },
@@ -3410,6 +3858,34 @@
       "sha256": "e24fdadaf1852a68cd13a52f6c2f9ebac61a033b49c8cf9f590538b8996a063c"
     },
     {
+      "path": "tools/lmi_display_v73_policy.py",
+      "sha256": "8cf330b0787fe9c4a8aa393e3d5a6237f07bee3ec97444f6015dae273b961ee3"
+    },
+    {
+      "path": "tools/lmi_display_v74_policy.py",
+      "sha256": "f15116e8b54871941d730ed850539d7f01f2224ef0b7b86c5f7262fd4b48a685"
+    },
+    {
+      "path": "tools/lmi_display_v75_policy.py",
+      "sha256": "946b55ffc4abda424e3481dc3be01e669c6f992d8a47248334839bb5aba702e4"
+    },
+    {
+      "path": "tools/lmi_display_v76_policy.py",
+      "sha256": "d50003abc761d1aaf35387cff86f3a9f5437bc8ceae649ce6c1b059720263bdc"
+    },
+    {
+      "path": "tools/lmi_display_v77_policy.py",
+      "sha256": "c6c86b633f0a83457630406fd25040d44a5af13c18fd173fe586bfa04bbc5b9c"
+    },
+    {
+      "path": "tools/lmi_display_v79_policy.py",
+      "sha256": "a8e4fae9039d13e7eeb67a4ec8b78646da9e763a7aa9e1849377643ea431b50a"
+    },
+    {
+      "path": "tools/lmi_display_v80_policy.py",
+      "sha256": "0cfb9921b412723800578e97e2f29487101ffd3118dec48f36e886c6a4bd0490"
+    },
+    {
       "path": "tools/normalize-lmi-ios-sdk.py",
       "sha256": "1504a67c0aec99e9db925629a6b8a16eba16893029eb571deb4a70fb7b83a958"
     },
@@ -3430,12 +3906,32 @@
       "sha256": "679f0c4e627ce233f54c7af4294dec7bd437bd04c29748a062613d94fbd010cf"
     },
     {
+      "path": "tools/prepare-lmi-cpu-loader-v77.py",
+      "sha256": "2a5ce859ce559fe6934f45f7ab951852302ac3251c877df9c7094da3400af895"
+    },
+    {
+      "path": "tools/prepare-lmi-cpu-v77.py",
+      "sha256": "66f905a48ac2b2541398f411e3ff54a18f91c67e8227ae6fa83052debc07bd17"
+    },
+    {
+      "path": "tools/prepare-lmi-display-async-v80.py",
+      "sha256": "ba4bfde91ad614da142e9ba5720e7f7454f7d17eae2e357168310737720e2e56"
+    },
+    {
       "path": "tools/prepare-lmi-display-compositor-layout.py",
       "sha256": "2f14619d58007be66bd358be9dd94cdc62bdd5efc995d665c9644769209be67e"
     },
     {
       "path": "tools/prepare-lmi-display-fence-layout-v62.py",
       "sha256": "a1171be66729a63691c81442ee3c30ec01f601116966acc86aba4738742f0069"
+    },
+    {
+      "path": "tools/prepare-lmi-display-timing-v73.py",
+      "sha256": "6ca00920b480cfa3f9849ee92f02bc924a82d9c45c41d36c1c7c3734b676930e"
+    },
+    {
+      "path": "tools/prepare-lmi-display-wait-v74.py",
+      "sha256": "c558db6930e832aecff85b0041e5f9a4ca4ef785ff306e64b3022c7d9f6cec89"
     },
     {
       "path": "tools/prepare-lmi-gpu-cache-build-v69.py",
@@ -3486,6 +3982,18 @@
       "sha256": "bf6f68c640db8b51975216a04277957ee05572ca2fdd03dd9df91cd3b161731e"
     },
     {
+      "path": "tools/prepare-lmi-render-cpu-v79.py",
+      "sha256": "935cec35cac6fadf80061ff6ed68f884cba0a2b58f322e25f47cde83d80750c6"
+    },
+    {
+      "path": "tools/prepare-lmi-render-minimal-v76.py",
+      "sha256": "ae66acb3009cc2a490b71f245a35b88963134898f216dd85b6378c69dd399558"
+    },
+    {
+      "path": "tools/prepare-lmi-render-wait-v75.py",
+      "sha256": "fd8e01828c2a14609ec8ce8b3a3bdf38804af5caeb8726b63afcb3a3595e2bce"
+    },
+    {
       "path": "tools/prepare-lmi-touch-cadence-v72.py",
       "sha256": "d607672d617dd284b4a32f50d65fc20add3827c1cfcc139a58544fe5a0b8012f"
     },
@@ -3515,7 +4023,15 @@
     },
     {
       "path": "tools/restore-lmi-public-build-support.py",
-      "sha256": "29847d6e5e7bff396dd5121ddf12c4e39b9c66503892042ce8e6b0d1381738f8"
+      "sha256": "752f4e57d8303db76c68e62392161f35229da39a51bbcad3c169d2b78fd670b0"
+    },
+    {
+      "path": "tools/review-lmi-display-async-v80-v2.py",
+      "sha256": "21d4b2a7f94b68d180e728fc7b39ed9da61b9e1923b580d225dc6652450a3eed"
+    },
+    {
+      "path": "tools/review-lmi-display-async-v80.py",
+      "sha256": "d21ff14feb7d5dbfd041188f8a9a0299108cb305d88dcf8b10b7a8dfc29ad0d6"
     },
     {
       "path": "tools/stage-lmi-uefi.py",
@@ -3546,12 +4062,44 @@
       "sha256": "91f2f54cbf312e610ce521236946da531f26855875d6044644cd1bc75646e285"
     },
     {
+      "path": "tools/test-lmi-checkpoints-v73.py",
+      "sha256": "ed906e67ccd374305cc7d1bd8ccf833cccb18f670b2296c0591071c01204b679"
+    },
+    {
+      "path": "tools/test-lmi-checkpoints-v74.py",
+      "sha256": "67ee51e1e75f9fa2b2c37ac549a8e4c666a9b6deba9c508d90daccffd6fcbb34"
+    },
+    {
+      "path": "tools/test-lmi-checkpoints-v75.py",
+      "sha256": "77abbbf7ddf499e6eb1445e52789049c289908f6c81f1a822ccead450bb9a377"
+    },
+    {
+      "path": "tools/test-lmi-checkpoints-v76.py",
+      "sha256": "df9bed8cae909404d8f7e947ad509f5f40edf5d3a8768406cd7b83eb7401bc74"
+    },
+    {
+      "path": "tools/test-lmi-checkpoints-v77.py",
+      "sha256": "bc894082c89a2a257c6320b091f086f4e7d74bfb3e1b8cc6aeadeed39736817c"
+    },
+    {
       "path": "tools/test-lmi-checkpoints.py",
       "sha256": "22d5ed5d69008c469ae00b88dd41191dd58de61faeec11728409c4910609be98"
     },
     {
+      "path": "tools/test-lmi-display-async-v80.py",
+      "sha256": "35e3e33ec770547c85a3861a29b123ca59d170b9e2b42d057662d07f1253e212"
+    },
+    {
       "path": "tools/test-lmi-loader.py",
       "sha256": "bd2e26700f44273dfcdd9aa827186479973630209095ac13cac18af9e6cc82a8"
+    },
+    {
+      "path": "tools/test-lmi-render-cpu-v79.py",
+      "sha256": "8c6be2d5d915d5f7b800fda087a29e71978bbdd089b25ce1883c656ff3e3f59a"
+    },
+    {
+      "path": "tools/test-lmi-return-short-v78.py",
+      "sha256": "3b363b0a55c6d4661d6afb40ffdfc0704f0c877e3a927ccf597ce308a3c01c62"
     },
     {
       "path": "tools/verify-ios165-downloads.py",
@@ -3656,6 +4204,18 @@
     {
       "path": "tools/verify-lmi-gpu-zap-metadata.py",
       "sha256": "a7728d0dd59c9d99baef1565596e2c2af21bdc400ce1f83a1c7be190ca5b4239"
+    },
+    {
+      "path": "tools/verify-lmi-v75-release.py",
+      "sha256": "b4e4f41cf4b5ebc635cd4348ad5b0a1a1e043d5f4ae72799b84cc9e112abfa1e"
+    },
+    {
+      "path": "tools/verify-lmi-v76-release.py",
+      "sha256": "5966e76c394357ba5378c795e70a3ab94e7a57eba17f471938d52989ff08e543"
+    },
+    {
+      "path": "tools/verify-lmi-v77-release.py",
+      "sha256": "654556bc30d7f607422ab0dcff340280d4a0195628629243f34193903cbed2a5"
     },
     {
       "path": "uefi/mu-silicium-overlay/BootShim/BootShim.S",
@@ -3899,7 +4459,7 @@
     },
     {
       "path": "validation.json",
-      "sha256": "a29fa036ef45c1117e80b005509d715aa97b163c967711b67f04b9e298fd8ac3"
+      "sha256": "bac3f59861c77706ba462a261fd8861a240ecf944d0849d83267928694d5b88a"
     }
   ],
   "touch_update": {
@@ -7993,5 +8553,10 @@
       "wording_and_identifier_scan": "PASS",
       "public_file_hashes": "PASS"
     }
+  },
+  "v80_release": {
+    "published_scope": "source, generated source, principles and selected validation summaries",
+    "frozen_files_verified": 3967,
+    "date": "2026-10-30"
   }
 }

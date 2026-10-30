@@ -1,0 +1,27 @@
+{
+  "result": "PASS",
+  "scenarios": 18,
+  "synthetic_records_are_not_hardware_evidence": true,
+  "original_hardware_log_unchanged": true,
+  "record_mutations_rejected": [
+    "duplicate",
+    "missing-cpu-restore",
+    "missing-source-lifetime",
+    "missing-timing",
+    "not-started",
+    "worker-failed",
+    "wrong-enqueued",
+    "wrong-submitted",
+    "wrong-completed",
+    "failure-count",
+    "pending-ready-frame"
+  ],
+  "image_mutations_rejected": [
+    "unmodified-v79",
+    "wrong-parent",
+    "truncated",
+    "extra-gpu-wait-edit"
+  ],
+  "original_cpu_gpu_and_dpu_admission_retained": true,
+  "hardware_tested": false
+}
